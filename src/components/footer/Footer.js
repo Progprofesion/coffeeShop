@@ -1,6 +1,6 @@
 import './footer.scss';
 import coffeeBeansIconBlack from '../footer/img/coffeeBeansIconBlack.svg';
-
+import IconLine from '../iconLine/IconLine';
 const Footer = () => {
     return (
         <div className="footer">
@@ -10,6 +10,7 @@ const Footer = () => {
                 <a className="fz-14Black" href='#'>Our coffee</a>
                 <a className="fz-14Black" href='#'>For your pleasure</a>
             </div>
+            <IconLine />
         </div>
     )
 };

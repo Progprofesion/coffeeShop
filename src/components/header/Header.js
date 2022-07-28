@@ -6,10 +6,10 @@ import coffeeBeans from './img/coffeeBeansIcon.svg'
 const Header = () => {
     return (
         <div className="header">
-            <img className="header__img" src={coffeeIcon} alt="coffee" />
+
             <div className="header__wrapp">
                 {/* <div className="header__img"><img src={coffeeIcon} alt="coffee" /></div> */}
-
+                <img className="header__img" src={coffeeIcon} alt="coffee" />
                 <a className="fz-12" href='#'>Coffee house</a>
                 <a className="fz-12" href='#'>Our coffee</a>
                 <a className="fz-12" href='#'>For your pleasure</a>

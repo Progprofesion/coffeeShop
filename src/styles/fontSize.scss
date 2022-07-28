@@ -1,5 +1,4 @@
 .fz-12 {
-    font-family: 'Merienda';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -9,11 +8,18 @@
 }
 
 .fz-14 {   
-    font-family: 'Merienda';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     text-align: center;
+    color: #000000;
+}
+
+.fz-14Black {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
     color: #000000;
 }

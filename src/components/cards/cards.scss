@@ -1,0 +1,21 @@
+.cards {
+    width: 220px;
+    height: 240px;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 8px;
+    &__item {
+    margin: 20px auto;
+    width: 151px;
+    height: 130px;
+        img {
+            margin: 20px auto;
+        }
+    }
+    &__subtitle {
+        padding-top: 14px;
+    }
+    &__price {
+        text-align: right;
+        padding: 10px 20px;
+    }
+}

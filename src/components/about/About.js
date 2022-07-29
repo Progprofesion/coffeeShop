@@ -1,6 +1,5 @@
 import "./about.scss"
 import "../../styles/fontSize.scss";
-import coffeeBeansIconBlack from "./img/coffeeBeansIconBlack.svg";
 import IconLine from "../iconLine/IconLine";
 
 const About = () => {

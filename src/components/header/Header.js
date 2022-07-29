@@ -8,7 +8,6 @@ const Header = () => {
         <div className="header">
 
             <div className="header__wrapp">
-                {/* <div className="header__img"><img src={coffeeIcon} alt="coffee" /></div> */}
                 <img className="header__img" src={coffeeIcon} alt="coffee" />
                 <a className="fz-12" href='#'>Coffee house</a>
                 <a className="fz-12" href='#'>Our coffee</a>

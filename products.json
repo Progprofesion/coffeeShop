@@ -1,0 +1,22 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "img": "http://127.0.0.1:5500/coffe-shop-app/src/assets/JSONimg/SolimoCoffeeBeans.svg",
+            "title": "Solimo Coffee Beans 2 kg",
+            "price": "10.73$"
+        },
+        {
+            "id": 2,
+            "img": "http://127.0.0.1:5500/coffe-shop-app/src/assets/JSONimg/PrestoCoffeeBeans.svg",
+            "title": "Presto Coffee Beans 1 kg",
+            "price": "15.99$"
+        },
+        {
+            "id": 3,
+            "img": "http://127.0.0.1:5500/coffe-shop-app/src/assets/JSONimg/AROMISTICOCoffee.svg",
+            "title": "AROMISTICO Coffee 1 kg",
+            "price": "6.99$"
+        }
+    ]
+}

@@ -1,6 +1,5 @@
 .best {
     margin-top: 110px;
-    width: 1440px;
     height: 495px;
     background: url('../../components/best/img/bgBest.svg') center / cover no-repeat;
     h2 {
@@ -11,5 +10,12 @@
         line-height: 35px;
         text-align: center;
         color: #000000;
+    }
+    &__wrapper {
+        width: 800px;
+        margin: 40px auto;
+        display: flex;
+        justify-content: space-between;
+        
     }
 }

@@ -5,7 +5,10 @@ const Best = () => {
     return (
         <section className="best">
             <h2 className="best__title">Our best</h2>
-            <Cards />
+            <div className="best__wrapper">
+                <Cards />
+            </div>
+
         </section>
     )
 }

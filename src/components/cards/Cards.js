@@ -17,8 +17,9 @@ const Cards = () => {
         return <div>Error</div>
     }
 
-
+    console.log(products);
     return products.map(({ id, img, title, price }) => {
+
         return (
             <div key={id} className="cards">
                 <div className="cards__item">

@@ -2,18 +2,12 @@ import './header.scss';
 import '../../styles/fontSize.scss';
 import coffeeIcon from './img/coffeeIcon.svg';
 import coffeeBeans from './img/coffeeBeansIcon.svg'
+import LinkPage from '../linkPage/LinkPage';
 
 const Header = () => {
     return (
         <div className="header">
-
-            <div className="header__wrapp">
-                <img className="header__img" src={coffeeIcon} alt="coffee" />
-                <a className="fz-12" href='#'>Coffee house</a>
-                <a className="fz-12" href='#'>Our coffee</a>
-                <a className="fz-12" href='#'>For your pleasure</a>
-            </div>
-
+            <LinkPage />
             <h1 className="header__title">Everything You Love About Coffee</h1>
             <div className="header__item">
                 <div className="header__item-line"></div>

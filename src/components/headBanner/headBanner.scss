@@ -1,0 +1,13 @@
+.banner {
+    background: url('../../components/headBanner/headBG.svg') center / cover no-repeat;
+    height: 260px;
+    &__title {
+        margin-top: 130px;
+        text-align: center;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 58px;
+        color: #FFFFFF;
+    }
+}

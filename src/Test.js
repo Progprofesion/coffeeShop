@@ -1,4 +1,4 @@
-// import img from './components/cards/JSONimg/AROMISTICOCoffee.svg';
+// import img from './assets/JSONimg/AROMISTICOCoffee.svg';
 
 // console.log(img);
 

@@ -1,0 +1,25 @@
+.cardsFull {
+    width: 220px;
+    height: 260px;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 8px;   
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+
+    &__item {
+    display: block;
+    margin: 37px auto 0;
+    width: 151px;
+    height: 130px;
+    }
+
+    &__price {
+        text-align: right;
+        padding: 0px 25px;
+    }
+
+    &__variety {
+        text-align: right;
+        padding: 9px 25px;
+    }
+}

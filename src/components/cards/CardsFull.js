@@ -4,9 +4,9 @@ import AROMISTICOCoffee from '../../assets/JSONimg/AROMISTICOCoffee.svg';
 
 import { useGetProductsQuery } from '../api/apiSlice';
 
-import "./cards.scss"
+import "./cardsFull.scss"
 
-const Cards = () => {
+const CardsFull = () => {
     const {
         data: products = [],
         isLoading,
@@ -19,15 +19,16 @@ const Cards = () => {
         return <div>Error</div>
     }
 
-    return products.map(({ id, title, price }) => {
+    return products.map(({ id, title, variety, price }) => {
 
         return (
-            <div key={id} className="cards">
-                <div className="cards__item">
+            <div key={id} className="cardsFull">
+                <div className="cardsFull__item">
                     <img src={AROMISTICOCoffee} alt="coffee" />
                 </div>
-                <h3 className="cards__subtitle fz-14">{title}</h3>
-                <div className="cards__price fz-14">{price}</div>
+                <h3 className="cardsFull__subtitle fz-14">{title}</h3>
+                <div className="cardsFull__variety fz-14">{variety}</div>
+                <div className="cardsFull__price fz-14">{price}</div>
             </div>
         )
     })
@@ -35,4 +36,4 @@ const Cards = () => {
 
 
 
-export default Cards;
+export default CardsFull;

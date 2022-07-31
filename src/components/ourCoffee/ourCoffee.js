@@ -3,10 +3,26 @@ import girlCoffee from './girlCoffee.svg';
 import IconLineBlack from '../iconLine/IconLineBlack';
 import LinkPageBlack from '../linkPage/LinkPageBlack';
 
-import Cards from '../cards/Cards';
+import CardsFull from '../cards/CardsFull';
 
+import { useGetProductsQuery } from '../api/apiSlice';
 
 const OurCoffee = () => {
+
+    const {
+        data: products = [],
+        isLoading,
+        isError
+    } = useGetProductsQuery();
+
+    const search = (id) => {
+        products.map(({ id }) => {
+            if (id === 1) {
+                return
+            }
+        })
+    }
+
     return (
         <div className="ourcoffee">
             <div className="ourcoffee__about">
@@ -33,15 +49,15 @@ const OurCoffee = () => {
 
                 <div className="ourcoffee__filter">
                     <div className="ourcoffee__filter-title fz-14"> Or filter </div>
-                    <button className="ourcoffee__filter-Brazil">Brazil</button>
-                    <button className="ourcoffee__filter-Kenya">Kenya</button>
-                    <button className="ourcoffee__filter-Columbia">Columbia</button>
+                    <button onClick={search} className="ourcoffee__filter-Brazil">Brazil</button>
+                    <button onClick={search} className="ourcoffee__filter-Kenya">Kenya</button>
+                    <button onClick={search} className="ourcoffee__filter-Columbia">Columbia</button>
 
                 </div>
             </div>
             <div className="ourcoffee__cards" >
-                <Cards />
-                <Cards />
+                <CardsFull />
+                <CardsFull />
             </div>
             <div className="ourcoffee__footer">
                 <div className="ourcoffee__footer-link">

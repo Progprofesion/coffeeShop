@@ -1,16 +1,21 @@
 import { Link } from 'react-router-dom';
 
-import coffeeIconBlack from '../linkPage/coffeeIconBlack.svg';
 import './linkPageBlack.scss';
+import coffeeIconBlack from '../linkPage/coffeeIconBlack.svg';
+
 
 
 const LinkPageBlack = () => {
     return (
         <div className="linkPageBlack">
             <img className="linkPageBlack__img" src={coffeeIconBlack} alt="coffee" />
-            <a className="fz-12Black" href='#'>Coffee house</a>
-            <a className="fz-12Black" href='#'>Our coffee</a>
-            <a className="fz-12Black" href='#'>For your pleasure</a>
+            <Link to='/'>
+                <div className="fz-12Black" href='#'>Coffee house</div>
+            </Link>
+            <Link to='/ourcoffee'>
+                <div className="fz-12Black" href='#'>Our coffee</div>
+            </Link>
+            <div className="fz-12Black" href='#'>For your pleasure</div>
         </div>
     )
 }

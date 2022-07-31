@@ -5,7 +5,7 @@ import IconLineBlack from "../iconLine/IconLineBlack";
 const About = () => {
     return (
         <div className="about">
-            <h2 className="about__title">About Us</h2>
+            <h2 className="about__title fz-24">About Us</h2>
             <IconLineBlack />
             <h3 className="about__descr fz-14">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
                 Afraid at highly months do things on at. Situation recommend objection do intention

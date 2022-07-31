@@ -1,5 +1,93 @@
-.ourCoffee {
-    width: 500px;
-    height: 500px;
-    color: red;
+.ourcoffee {
+    &__about {
+        display: flex;
+        width: 700px;
+        margin: 0 auto;
+    }
+    &__descr {
+        margin-top: 80px;
+        text-align: center;
+    }
+    &__girl {
+        margin-top: 80px;
+        margin-right: 70px;
+    }
+    &__text {
+        width: 346px;
+    }
+    &__line {
+        margin: 60px auto;
+        width: 240px;
+        height: 0px;
+        border: 1px solid #000000;
+    }
+    &__lookiing {
+        display: flex;
+        width: 700px;
+        margin: 0 auto;
+    }
+    &__search {
+        display: flex;
+        &-title {
+            margin-right: 20px;
+        }
+        &-input {
+            width: 180px;
+            height: 30px;
+            background: #FFFFFF;
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+            border-radius: 4px;
+        }
+    }
+    &__filter {
+        display: flex;
+        &-title {
+            margin-left: 85px;
+        }
+        &-Brazil {
+            width: 75px;
+            height: 30px;
+            margin-left: 35px;
+            background: #FFFFFF;
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+            border-radius: 4px 0px 0px 4px;
+            cursor: pointer;
+
+        }
+        &-Kenya {
+            width: 75px;
+            height: 30px;
+            margin-left: 5px;
+            background: #FFFFFF;
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+            border-radius: 4px 0px 0px 4px;
+            cursor: pointer;            
+        }
+        &-Columbia {
+            width: 75px;
+            height: 30px;
+            margin-left: 5px;
+            background: #FFFFFF;
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+            border-radius: 4px 0px 0px 4px;
+            cursor: pointer;
+        }
+    }
+
+    &__cards {
+        width: 800px;
+        margin: 60px auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 220px);
+        justify-content: space-between;
+        grid-row-gap: 60px;
+    }
+    &__footer {
+        &-link {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+
 }

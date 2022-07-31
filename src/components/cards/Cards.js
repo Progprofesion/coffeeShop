@@ -17,21 +17,19 @@ const Cards = () => {
         return <div>Error</div>
     }
 
-    console.log(products);
     return products.map(({ id, img, title, price }) => {
 
         return (
             <div key={id} className="cards">
                 <div className="cards__item">
-                    <img src={img} alt="" />
+                    <img src={img} alt="coffee" />
                 </div>
                 <h3 className="cards__subtitle fz-14">{title}</h3>
                 <div className="cards__price fz-14">{price}</div>
             </div>
         )
     })
-
-}
+};
 
 
 

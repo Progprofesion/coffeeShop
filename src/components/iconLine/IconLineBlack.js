@@ -3,10 +3,10 @@ import coffeeBeansIconBlack from './img/coffeeBeansIconBlack.svg';
 
 const IconLineBlack = () => {
     return (
-        <div className="iconLine__item">
-            <div className="iconLine__item-line"></div>
+        <div className="iconLine">
+            <div className="iconLine__item"></div>
             <img src={coffeeBeansIconBlack} alt="coffeeBeans" />
-            <div className="iconLine__item-line"></div>
+            <div className="iconLine__item"></div>
         </div>
     )
 }

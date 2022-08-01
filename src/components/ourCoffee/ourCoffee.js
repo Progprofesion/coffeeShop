@@ -57,7 +57,7 @@ const OurCoffee = () => {
             </div>
             <div className="ourcoffee__cards" >
                 <CardsFull />
-                <CardsFull />
+
             </div>
             <div className="ourcoffee__footer">
                 <div className="ourcoffee__footer-link">

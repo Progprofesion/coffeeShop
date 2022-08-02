@@ -2,26 +2,26 @@ import './ourCoffee.scss';
 import girlCoffee from './girlCoffee.svg';
 import IconLineBlack from '../iconLine/IconLineBlack';
 import LinkPageBlack from '../linkPage/LinkPageBlack';
+// import CardsList from '../cards/CardsList';
+import Cards from '../cards/Cards';
 
-import CardsFull from '../cards/CardsFull';
-
-import { useGetProductsQuery } from '../api/apiSlice';
 
 const OurCoffee = () => {
 
-    const {
-        data: products = [],
-        isLoading,
-        isError
-    } = useGetProductsQuery();
+    // const {
+    //     data: products = [],
+    //     isLoading,
+    //     isError
+    // } = useGetProductsQuery();
 
-    const search = (id) => {
-        products.map(({ id }) => {
-            if (id === 1) {
-                return
-            }
-        })
-    }
+    // const search = (id) => {
+    //     products.map(({ id }) => {
+    //         if (id === 1) {
+    //             return
+    //         }
+    //     })
+    // }
+
 
     return (
         <div className="ourcoffee">
@@ -46,18 +46,11 @@ const OurCoffee = () => {
                     <div className="ourcoffee__search-title fz-14">Lookiing for</div>
                     <input type="text" className="ourcoffee__search-input" />
                 </div>
+                {/* <CardsList /> */}
 
-                <div className="ourcoffee__filter">
-                    <div className="ourcoffee__filter-title fz-14"> Or filter </div>
-                    <button onClick={search} className="ourcoffee__filter-Brazil">Brazil</button>
-                    <button onClick={search} className="ourcoffee__filter-Kenya">Kenya</button>
-                    <button onClick={search} className="ourcoffee__filter-Columbia">Columbia</button>
-
-                </div>
             </div>
             <div className="ourcoffee__cards" >
-                <CardsFull />
-
+                <Cards />
             </div>
             <div className="ourcoffee__footer">
                 <div className="ourcoffee__footer-link">

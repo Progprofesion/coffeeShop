@@ -1,6 +1,5 @@
 import './header.scss';
 import '../../styles/fontSize.scss';
-import coffeeIcon from './img/coffeeIcon.svg';
 import coffeeBeans from './img/coffeeBeansIcon.svg'
 import LinkPage from '../linkPage/LinkPage';
 

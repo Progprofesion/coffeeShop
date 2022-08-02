@@ -36,5 +36,25 @@
             "variety": "Columbias",
             "price": "6.99$"
         }
+    ],
+    "filters": [
+        {
+            "id": "Brazil",
+            "name": "Brazil",
+            "label": "Brazil",
+            "className": "btn-outline-dark"
+        },
+        {
+            "id": "Kenya",
+            "name": "Kenya",
+            "label": "Kenya",
+            "className": "btn-danger"
+        },
+        {
+            "id": "Columbia",
+            "name": "Columbia",
+            "label": "Columbia",
+            "className": "btn-primary"
+        }
     ]
 }

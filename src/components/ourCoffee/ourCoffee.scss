@@ -37,6 +37,7 @@
             background: #FFFFFF;
             box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
             border-radius: 4px;
+            border: unset;
         }
     }
     &__filter {
@@ -52,6 +53,7 @@
             box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
             border-radius: 4px 0px 0px 4px;
             cursor: pointer;
+            border: unset;
 
         }
         &-Kenya {
@@ -61,7 +63,8 @@
             background: #FFFFFF;
             box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
             border-radius: 4px 0px 0px 4px;
-            cursor: pointer;            
+            cursor: pointer;
+            border: unset;            
         }
         &-Columbia {
             width: 75px;
@@ -71,6 +74,7 @@
             box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
             border-radius: 4px 0px 0px 4px;
             cursor: pointer;
+            border: unset;
         }
     }
 

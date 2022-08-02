@@ -19,14 +19,14 @@ const Cards = () => {
         return <div>Error</div>
     }
 
-    return products.map(({ id, title, price }) => {
-
+    return products.map(({ id, title, variety, price }) => {
         return (
             <div key={id} className="cards">
                 <div className="cards__item">
                     <img src={AROMISTICOCoffee} alt="coffee" />
                 </div>
                 <h3 className="cards__subtitle fz-14">{title}</h3>
+                <div className="cards__variety fz-14">{variety}</div>
                 <div className="cards__price fz-14">{price}</div>
             </div>
         )

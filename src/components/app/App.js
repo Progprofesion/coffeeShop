@@ -2,7 +2,8 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom'
 
 import MainPage from '../page/MainPage';
 import OurCoffeePage from '../page/OurCoffeePage';
-// import Test from '../../../Test';
+// import CardsFilters from '../cardsFilters/CardsFilters';
+
 
 import './app.scss';
 
@@ -16,7 +17,7 @@ const App = () => {
                         <Route path="/" element={<MainPage />} />
                         <Route path="/ourCoffee" element={<OurCoffeePage />} />
                     </Routes>
-                    {/* <Test /> */}
+
 
                 </div>
             </main>

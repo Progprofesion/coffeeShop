@@ -2,8 +2,8 @@ import './ourCoffee.scss';
 import girlCoffee from './girlCoffee.svg';
 import IconLineBlack from '../iconLine/IconLineBlack';
 import LinkPageBlack from '../linkPage/LinkPageBlack';
-// import CardsList from '../cards/CardsList';
-import Cards from '../cards/Cards';
+import CardsFilters from '../cardsFilters/CardsFilters';
+import CardsList from '../cardsList/CardsList';
 
 
 const OurCoffee = () => {
@@ -46,11 +46,11 @@ const OurCoffee = () => {
                     <div className="ourcoffee__search-title fz-14">Lookiing for</div>
                     <input type="text" className="ourcoffee__search-input" />
                 </div>
-                {/* <CardsList /> */}
+                <CardsFilters />
 
             </div>
             <div className="ourcoffee__cards" >
-                <Cards />
+                <CardsList />
             </div>
             <div className="ourcoffee__footer">
                 <div className="ourcoffee__footer-link">

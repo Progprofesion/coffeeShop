@@ -48,6 +48,7 @@ export default reducer;
 
 export const { selectAll } = filtersAdapter.getSelectors(state => state.filters);
 
+
 export const {
     activeFilterChanged,
 } = actions;

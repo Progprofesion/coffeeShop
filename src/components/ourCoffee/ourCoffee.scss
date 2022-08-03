@@ -40,43 +40,6 @@
             border: unset;
         }
     }
-    &__filter {
-        display: flex;
-        &-title {
-            margin-left: 85px;
-        }
-        &-Brazil {
-            width: 75px;
-            height: 30px;
-            margin-left: 35px;
-            background: #FFFFFF;
-            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
-            border-radius: 4px 0px 0px 4px;
-            cursor: pointer;
-            border: unset;
-
-        }
-        &-Kenya {
-            width: 75px;
-            height: 30px;
-            margin-left: 5px;
-            background: #FFFFFF;
-            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
-            border-radius: 4px 0px 0px 4px;
-            cursor: pointer;
-            border: unset;            
-        }
-        &-Columbia {
-            width: 75px;
-            height: 30px;
-            margin-left: 5px;
-            background: #FFFFFF;
-            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
-            border-radius: 4px 0px 0px 4px;
-            cursor: pointer;
-            border: unset;
-        }
-    }
 
     &__cards {
         width: 800px;

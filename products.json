@@ -39,22 +39,28 @@
     ],
     "filters": [
         {
+            "id": "all",
+            "name": "all",
+            "label": "all",
+            "className": "btn-outline-dark"
+        },
+        {
             "id": "Brazil",
             "name": "Brazil",
             "label": "Brazil",
-            "className": "btn-outline-dark"
+            "className": "filter__brazil"
         },
         {
             "id": "Kenya",
             "name": "Kenya",
             "label": "Kenya",
-            "className": "btn-danger"
+            "className": "filter__Kenya"
         },
         {
-            "id": "Columbia",
-            "name": "Columbia",
-            "label": "Columbia",
-            "className": "btn-primary"
+            "id": "Columbias",
+            "name": "Columbias",
+            "label": "Columbias",
+            "className": "filter__Columbias"
         }
     ]
 }

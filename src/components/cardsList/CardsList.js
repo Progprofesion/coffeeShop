@@ -5,9 +5,9 @@ import { useGetProductsQuery } from '../api/apiSlice';
 
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-// import HeroesListItem from "../heroesListItem/HeroesListItem";
+import CardsListItem from "../cardsListItem/cardsListItem";
 
-// import './heroesList.scss';
+import './cardsList.scss';
 
 const CardsList = () => {
 
@@ -25,19 +25,14 @@ const CardsList = () => {
         if (activeFilter === 'all') {
             return filteredHeroes;
         } else {
-            return filteredHeroes.filter(item => item.element === activeFilter);
+            return filteredHeroes.filter(item => item.variety === activeFilter);
         }
     }, [heroes, activeFilter]);
 
-    // const onDelete = useCallback((id) => {
-    //     deleteHero(id)
-    //     // eslint-disable-next-line
-    // }, [])
-
     if (isLoading) {
-        return <div>Loading</div>;
+        return <h2>Loading</h2>;
     } else if (isError) {
-        return <h5 >Ошибка загрузки</h5>
+        return <h5>Ошибка загрузки</h5>
     }
 
     const renderHeroesList = (arr) => {
@@ -45,30 +40,30 @@ const CardsList = () => {
             return (
                 <CSSTransition
                     timeout={0}
-                    classNames="hero">
-                    <h5 className="text-center mt-5">Героев пока нет</h5>
+                    classNames="products">
+                    <h5 >Героев пока нет</h5>
                 </CSSTransition>
             )
         }
 
         return arr.map(({ id, ...props }) => {
-            // return (
-            //     <CSSTransition
-            //         key={id}
-            //         timeout={500}
-            //         classNames="hero">
-            //         <HeroesListItem key={id} {...props} onDelete={() => onDelete(id)} />
-            //     </CSSTransition>
-            // )
+            return (
+                <CSSTransition
+                    key={id}
+                    timeout={500}
+                    classNames="products">
+                    <CardsListItem key={id} {...props} />
+                </CSSTransition>
+            )
 
         })
     }
 
     const elements = renderHeroesList(filteredHeroes);
     return (
-        <TransitionGroup component='ul'>
-            {elements}
-        </TransitionGroup>
+
+        elements
+
 
     )
 }

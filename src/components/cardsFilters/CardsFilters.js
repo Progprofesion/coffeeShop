@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { activeFilterChanged, selectAll, fetchFilters } from './cadsSlice';
@@ -27,7 +26,7 @@ const CardsFilters = () => {
     }, []);
 
     if (filtersLoadingStatus === "loading") {
-        return <div>Loading</div>;
+        return <h5>Загрузка</h5>
     } else if (filtersLoadingStatus === "error") {
         return <h5 >Ошибка загрузки</h5>
     }
@@ -39,7 +38,7 @@ const CardsFilters = () => {
 
         return arr.map(({ name, className, label }) => {
 
-            const btnClass = classNames('filter', className, {
+            const btnClass = classNames('filter__btn', className, {
                 'active': name === activeFilter
             });
 
@@ -55,13 +54,9 @@ const CardsFilters = () => {
     const elements = renderFilters(filters)
 
     return (
-        <div className="card shadow-lg mt-4">
-            <div className="card-body">
-                <p className="card-text">Отфильтруйте героев по элементам</p>
-                <div className="btn-group">
-                    {elements}
-                </div>
-            </div>
+        <div className="filter">
+            <p className="filter__title">Or filter</p>
+            {elements}
         </div>
     )
 }

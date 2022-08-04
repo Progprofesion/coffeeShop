@@ -8,21 +8,6 @@ import CardsList from '../cardsList/CardsList';
 
 const OurCoffee = () => {
 
-    // const {
-    //     data: products = [],
-    //     isLoading,
-    //     isError
-    // } = useGetProductsQuery();
-
-    // const search = (id) => {
-    //     products.map(({ id }) => {
-    //         if (id === 1) {
-    //             return
-    //         }
-    //     })
-    // }
-
-
     return (
         <div className="ourcoffee">
             <div className="ourcoffee__about">

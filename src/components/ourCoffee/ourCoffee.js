@@ -4,24 +4,13 @@ import IconLineBlack from '../iconLine/IconLineBlack';
 import LinkPageBlack from '../linkPage/LinkPageBlack';
 import CardsFilters from '../cardsFilters/CardsFilters';
 import CardsList from '../cardsList/CardsList';
+import { useDispatch } from 'react-redux';
 
+import { activeSearchCoffee } from '../cardsFilters/cadsSlice';
 
 const OurCoffee = () => {
 
-    // const {
-    //     data: products = [],
-    //     isLoading,
-    //     isError
-    // } = useGetProductsQuery();
-
-    // const search = (id) => {
-    //     products.map(({ id }) => {
-    //         if (id === 1) {
-    //             return
-    //         }
-    //     })
-    // }
-
+    const dispatch = useDispatch();
 
     return (
         <div className="ourcoffee">
@@ -43,8 +32,16 @@ const OurCoffee = () => {
             <div className="ourcoffee__line"></div>
             <div className="ourcoffee__lookiing">
                 <div className="ourcoffee__search">
-                    <div className="ourcoffee__search-title fz-14">Lookiing for</div>
-                    <input type="text" className="ourcoffee__search-input" />
+                    <h5 className="ourcoffee__search-title fz-14">Looking foor</h5>
+                    <form>
+                        <input
+                            type="text"
+                            placeholder='start typing here...'
+                            className="ourcoffee__search-input"
+                            onChange={(e) => dispatch(activeSearchCoffee(e.target.value))} />
+
+                    </form>
+
                 </div>
                 <CardsFilters />
 
@@ -60,6 +57,7 @@ const OurCoffee = () => {
             </div>
         </div>
     )
+
 }
 
 export default OurCoffee;

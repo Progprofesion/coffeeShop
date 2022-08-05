@@ -1,71 +1,67 @@
 import { useMemo } from 'react';
-import { useSelector } from 'react-redux';
-
 import { useGetProductsQuery } from '../api/apiSlice';
-
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-
-import CardsListItem from "../cardsListItem/cardsListItem";
+import { useSelector } from 'react-redux';
+import CardsListItem from '../cardsListItem/cardsListItem';
 
 import './cardsList.scss';
 
 const CardsList = () => {
-
     const {
-        data: heroes = [],
+        data: products = [],
         isLoading,
         isError
     } = useGetProductsQuery();
 
     const activeFilter = useSelector(state => state.filters.activeFilter);
+    const searchCoffee = useSelector(state => state.filters.searchCoffee);
 
 
-    const filteredHeroes = useMemo(() => {
-        const filteredHeroes = heroes.slice();
+
+
+    const filteredCards = useMemo(() => {
+        const filteredCards = products.slice();
         if (activeFilter === 'all') {
-            return filteredHeroes;
+            return filteredCards
         } else {
-            return filteredHeroes.filter(item => item.variety === activeFilter);
+            return filteredCards.filter(item => item.variety === activeFilter);
+        };
+    }, [products, activeFilter]);
+
+
+
+    const searchCoffeeFiltered = useMemo(() => {
+        const searchCoffeeFiltered = products.slice();
+        if (searchCoffee == '') {
+            return searchCoffeeFiltered;
+        } else {
+            return searchCoffeeFiltered.filter(item => item.title === searchCoffee)
         }
-    }, [heroes, activeFilter]);
+    }, [products, searchCoffee]);
+
 
     if (isLoading) {
-        return <h2>Loading</h2>;
+        return <h5>Loading</h5>
     } else if (isError) {
-        return <h5>Ошибка загрузки</h5>
+        return <h5>Error</h5>
     }
 
-    const renderHeroesList = (arr) => {
-        if (arr.length === 0) {
-            return (
-                <CSSTransition
-                    timeout={0}
-                    classNames="products">
-                    <h5 >Героев пока нет</h5>
-                </CSSTransition>
-            )
+
+    const renderCardsList = (arr) => {
+        if (arr.lenght === 0) {
+            return <h5>Not products</h5>
         }
 
         return arr.map(({ id, ...props }) => {
-            return (
-                <CSSTransition
-                    key={id}
-                    timeout={500}
-                    classNames="products">
-                    <CardsListItem key={id} {...props} />
-                </CSSTransition>
-            )
+            return <CardsListItem key={id} {...props} />
+        });
+    };
 
-        })
-    }
+    const elements = renderCardsList(searchCoffeeFiltered);
 
-    const elements = renderHeroesList(filteredHeroes);
     return (
-
         elements
-
-
     )
-}
+
+};
 
 export default CardsList;

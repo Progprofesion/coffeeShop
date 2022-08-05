@@ -13,6 +13,9 @@ const CardsList = () => {
     } = useGetProductsQuery();
 
     const activeFilter = useSelector(state => state.filters.activeFilter);
+    const searchCoffee = useSelector(state => state.filters.searchCoffee);
+
+
 
 
     const filteredCards = useMemo(() => {
@@ -23,6 +26,18 @@ const CardsList = () => {
             return filteredCards.filter(item => item.variety === activeFilter);
         };
     }, [products, activeFilter]);
+
+
+
+    const searchCoffeeFiltered = useMemo(() => {
+        const searchCoffeeFiltered = products.slice();
+        if (searchCoffee == '') {
+            return searchCoffeeFiltered;
+        } else {
+            return searchCoffeeFiltered.filter(item => item.title === searchCoffee)
+        }
+    }, [products, searchCoffee]);
+
 
     if (isLoading) {
         return <h5>Loading</h5>
@@ -41,7 +56,7 @@ const CardsList = () => {
         });
     };
 
-    const elements = renderCardsList(filteredCards);
+    const elements = renderCardsList(searchCoffeeFiltered);
 
     return (
         elements

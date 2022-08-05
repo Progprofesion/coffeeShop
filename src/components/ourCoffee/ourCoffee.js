@@ -4,11 +4,13 @@ import IconLineBlack from '../iconLine/IconLineBlack';
 import LinkPageBlack from '../linkPage/LinkPageBlack';
 import CardsFilters from '../cardsFilters/CardsFilters';
 import CardsList from '../cardsList/CardsList';
+import { useDispatch } from 'react-redux';
 
-import { searchCoffee } from '../cardsFilters/cadsSlice';
-
+import { activeSearchCoffee } from '../cardsFilters/cadsSlice';
 
 const OurCoffee = () => {
+
+    const dispatch = useDispatch();
 
     return (
         <div className="ourcoffee">
@@ -36,7 +38,8 @@ const OurCoffee = () => {
                             type="text"
                             placeholder='start typing here...'
                             className="ourcoffee__search-input"
-                            onChange={(e) => searchCoffee(e.target.value)} />
+                            onChange={(e) => dispatch(activeSearchCoffee(e.target.value))} />
+
                     </form>
 
                 </div>
@@ -54,6 +57,7 @@ const OurCoffee = () => {
             </div>
         </div>
     )
+
 }
 
 export default OurCoffee;

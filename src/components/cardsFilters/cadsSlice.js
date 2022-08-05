@@ -2,12 +2,13 @@ import { createSlice, createAsyncThunk, createEntityAdapter } from '@reduxjs/too
 import { useHttp } from '../../hooks/http.hook';
 
 const cardsAdapter = createEntityAdapter();
-
 const initialState = cardsAdapter.getInitialState({
     filtersLoadingStatus: 'idle',
     activeFilter: 'all',
-    searchCoffee: 'all',
+    searchCoffee: '',
 });
+
+
 
 export const fetchFilters = createAsyncThunk(
     'filters/fetchFilters',
@@ -24,7 +25,7 @@ const cardsSlice = createSlice({
         activeFilterChanged: (state, action) => {
             state.activeFilter = action.payload
         },
-        searchCoffee: (state, action) => {
+        activeSearchCoffee: (state, action) => {
             state.searchCoffee = action.payload
         }
     },
@@ -45,10 +46,12 @@ const cardsSlice = createSlice({
 
 });
 
+
+
 const { actions, reducer } = cardsSlice;
 
 export default reducer;
 
 export const { selectAll } = cardsAdapter.getSelectors(state => state.filters)
 
-export const { activeFilterChanged, searchCoffee } = actions;
+export const { activeFilterChanged, activeSearchCoffee } = actions;

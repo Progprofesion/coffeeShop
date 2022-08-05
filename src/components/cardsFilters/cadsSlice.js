@@ -5,16 +5,17 @@ const cardsAdapter = createEntityAdapter();
 
 const initialState = cardsAdapter.getInitialState({
     filtersLoadingStatus: 'idle',
-    activeFilter: 'all'
+    activeFilter: 'all',
+    searchCoffee: 'all',
 });
 
 export const fetchFilters = createAsyncThunk(
     'filters/fetchFilters',
     async () => {
         const { request } = useHttp();
-        return await request("http://localhost:3001/filters")
+        return await request('http://localhost:3001/filters')
     }
-);
+)
 
 const cardsSlice = createSlice({
     name: 'filters',
@@ -22,6 +23,9 @@ const cardsSlice = createSlice({
     reducers: {
         activeFilterChanged: (state, action) => {
             state.activeFilter = action.payload
+        },
+        searchCoffee: (state, action) => {
+            state.searchCoffee = action.payload
         }
     },
     extraReducers: (builder) => {
@@ -38,14 +42,13 @@ const cardsSlice = createSlice({
             })
             .addDefaultCase(() => { })
     }
-});
 
+});
 
 const { actions, reducer } = cardsSlice;
 
 export default reducer;
 
-export const { selectAll } = cardsAdapter.getSelectors(state => state.filters);
+export const { selectAll } = cardsAdapter.getSelectors(state => state.filters)
 
-
-export const { activeFilterChanged } = actions;
+export const { activeFilterChanged, searchCoffee } = actions;

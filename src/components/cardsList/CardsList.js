@@ -1,28 +1,28 @@
-import { useSelector } from 'react-redux';
-import { useMemo } from 'react'
+import { useMemo } from 'react';
 import { useGetProductsQuery } from '../api/apiSlice';
-
+import { useSelector } from 'react-redux';
 import CardsListItem from '../cardsListItem/cardsListItem';
 
-const CardsList = () => {
+import './cardsList.scss';
 
+const CardsList = () => {
     const {
         data: products = [],
         isLoading,
         isError
     } = useGetProductsQuery();
 
-    const activeFilter = useSelector(state => state.filters.activeFilter)
+    const activeFilter = useSelector(state => state.filters.activeFilter);
 
-    const filteredHeroes = useMemo(() => {
-        const filteredHeroes = products.slice();
+
+    const filteredCards = useMemo(() => {
+        const filteredCards = products.slice();
         if (activeFilter === 'all') {
-            return filteredHeroes;
+            return filteredCards
         } else {
-            return filteredHeroes.filter(item => item.variety === activeFilter);
-        }
+            return filteredCards.filter(item => item.variety === activeFilter);
+        };
     }, [products, activeFilter]);
-
 
     if (isLoading) {
         return <h5>Loading</h5>
@@ -30,24 +30,23 @@ const CardsList = () => {
         return <h5>Error</h5>
     }
 
-    const renderCards = (arr) => {
-        if (arr.length === 0) {
-            return <h5>Not item</h5>
+
+    const renderCardsList = (arr) => {
+        if (arr.lenght === 0) {
+            return <h5>Not products</h5>
         }
 
         return arr.map(({ id, ...props }) => {
             return <CardsListItem key={id} {...props} />
-        })
-    }
+        });
+    };
 
-    const elements = renderCards(filteredHeroes)
+    const elements = renderCardsList(filteredCards);
 
     return (
         elements
     )
 
-
-
-}
+};
 
 export default CardsList;

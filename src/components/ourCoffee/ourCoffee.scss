@@ -36,14 +36,18 @@
         &-input {
             width: 180px;
             height: 30px;
+            padding-left: 15px;
+            padding-right: 15px;
             background: #FFFFFF;
             box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
             border-radius: 4px;
-            border: unset;
+            border: unset;   
+        }     
+        ::placeholder {
             text-align: center;
-        }
+        }      
     }
-
+    
     &__cards {
         width: 800px;
         margin: 60px auto;

@@ -15,28 +15,25 @@ const CardsList = () => {
     const activeFilter = useSelector(state => state.filters.activeFilter);
     const searchCoffee = useSelector(state => state.filters.searchCoffee);
 
-
-
+    const searchCoffeeFiltered = useMemo(() => {
+        const searchCoffeeFiltered = products.slice();
+        if (searchCoffee === '') {
+            return searchCoffeeFiltered;
+        } else {
+            return searchCoffeeFiltered.filter(item => {
+                return item.title.toLowerCase().indexOf(searchCoffee.toLowerCase()) > -1
+            })
+        }
+    }, [products, searchCoffee]);
 
     const filteredCards = useMemo(() => {
-        const filteredCards = products.slice();
+        const filteredCards = searchCoffeeFiltered.slice();
         if (activeFilter === 'all') {
             return filteredCards
         } else {
             return filteredCards.filter(item => item.variety === activeFilter);
         };
-    }, [products, activeFilter]);
-
-
-
-    const searchCoffeeFiltered = useMemo(() => {
-        const searchCoffeeFiltered = products.slice();
-        if (searchCoffee == '') {
-            return searchCoffeeFiltered;
-        } else {
-            return searchCoffeeFiltered.filter(item => item.title === searchCoffee)
-        }
-    }, [products, searchCoffee]);
+    }, [activeFilter, searchCoffeeFiltered]);
 
 
     if (isLoading) {
@@ -54,12 +51,15 @@ const CardsList = () => {
         return arr.map(({ id, ...props }) => {
             return <CardsListItem key={id} {...props} />
         });
+
     };
 
-    const elements = renderCardsList(searchCoffeeFiltered);
+
+    const elements = renderCardsList(filteredCards);
 
     return (
         elements
+
     )
 
 };

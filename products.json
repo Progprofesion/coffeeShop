@@ -2,42 +2,42 @@
     "products": [
         {
             "id": 1,
-            "idd": 1,
+            "page": 1,
             "title": "Solimo Coffee Beans 2 kg",
             "variety": "Brazil",
             "price": "10.73$"
         },
         {
             "id": 2,
-            "idd": 2,
+            "page": 2,
             "title": "Presto Coffee Beans 1 kg",
             "variety": "Kenya",
             "price": "15.99$"
         },
         {
             "id": 3,
-            "idd": 3,
+            "page": 3,
             "title": "AROMISTICO Coffee 1 kg",
             "variety": "Columbias",
             "price": "6.99$"
         },
         {
             "id": 4,
-            "idd": 4,
+            "page": 4,
             "title": "Solimo Coffee Beans 2 kg",
             "variety": "Brazil",
             "price": "10.73$"
         },
         {
             "id": 5,
-            "idd": 5,
+            "page": 5,
             "title": "Presto Coffee Beans 1 kg",
             "variety": "Kenya",
             "price": "15.99$"
         },
         {
             "id": 6,
-            "idd": 6,
+            "page": 6,
             "title": "AROMISTICO Coffee 1 kg",
             "variety": "Columbias",
             "price": "6.99$"

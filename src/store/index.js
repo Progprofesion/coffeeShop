@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import filters from '../components/cardsFilters/cadsSlice';
+import filters from '../components/cardsFilters/cadsFiltersSlice';
 
 import { apiSlice } from '../components/api/apiSlice';
 

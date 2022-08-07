@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './cardsFilters.scss';
-import { activeFilterChanged, selectAll, fetchFilters } from './cadsSlice';
+import { activeFilterChanged, selectAll, fetchFilters } from './cadsFiltersSlice';
 import store from '../../store';
 import { useHttp } from '../../hooks/http.hook';
 import classNames from 'classnames';

@@ -6,7 +6,7 @@ import CardsFilters from '../cardsFilters/CardsFilters';
 import CardsList from '../cardsList/CardsList';
 import { useDispatch } from 'react-redux';
 
-import { activeSearchCoffee } from '../cardsFilters/cadsSlice';
+import { activeSearchCoffee } from '../cardsFilters/cadsFiltersSlice';
 
 const OurCoffee = () => {
 

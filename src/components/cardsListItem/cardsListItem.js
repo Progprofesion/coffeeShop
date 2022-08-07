@@ -1,16 +1,12 @@
 import AROMISTICOCoffee from '../../assets/JSONimg/AROMISTICOCoffee.svg';
 import { Link } from 'react-router-dom';
-// import PrestoCoffeeBeans from '../../assets/JSONimg/PrestoCoffeeBeans.svg';
-// import SolimoCoffeeBeans from '../../assets/JSONimg/SolimoCoffeeBeans.svg';
 
 import './cardsList.scss';
 
-const Cards = ({ id, idd, title, variety, price }) => {
-
+const Cards = ({ page, title, variety, price }) => {
     return (
         <div className="cards">
-            <Link to={`/ourcoffee/${idd}`}>
-
+            <Link to={`/ourcoffee/${page}`}>
                 <div className="cards__item">
                     <img src={AROMISTICOCoffee} alt="coffee" />
                 </div>

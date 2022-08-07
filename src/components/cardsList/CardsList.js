@@ -42,7 +42,6 @@ const CardsList = () => {
         return <h5>Error</h5>
     }
 
-
     const renderCardsList = (arr) => {
         if (arr.lenght === 0) {
             return <h5>Not products</h5>

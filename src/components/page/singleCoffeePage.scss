@@ -1,0 +1,20 @@
+.singleCoffeePage {
+    display: flex;
+    justify-content: center;
+    &__img {
+        margin-top: 70px;
+        height: 355px;      
+    }
+    &__about {
+        width: 421px;
+        margin-top: 80px;
+        margin-left: 55px;
+       &-title {
+        text-align: center;
+       }
+       &-descr{
+        padding: 15px 0;
+       }
+    }
+    
+}

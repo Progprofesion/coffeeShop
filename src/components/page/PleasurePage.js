@@ -5,7 +5,7 @@ import LinkPageBlack from '../linkPage/LinkPageBlack';
 import CardsList from '../cardsList/CardsList';
 import './pleasure.scss';
 
-const Pleasure = () => {
+const PleasurePage = () => {
     return (
         <div className="pleasure">
             <div className="pleasure__bannerWrapp">
@@ -43,4 +43,4 @@ const Pleasure = () => {
     )
 }
 
-export default Pleasure;
+export default PleasurePage;

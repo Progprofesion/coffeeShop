@@ -1,13 +1,15 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import { lazy, Suspense } from 'react'
 
 import MainPage from '../page/MainPage';
-import OurCoffeePage from '../page/OurCoffeePage';
-import Page404 from '../page/404';
-import SingleCoffeePage from '../page/SingleCoffeePage';
-import Pleasure from '../page/Pleasure';
-
-
 import './app.scss';
+
+// const MainPage = lazy(() => import('../page/MainPage'));
+const Page404 = lazy(() => import('../page/404'));
+const OurCoffeePage = lazy(() => import('../page/OurCoffeePage'));
+const SingleCoffeePage = lazy(() => import('../page/SingleCoffeePage'));
+const PleasurePage = lazy(() => import('../page/PleasurePage'));
+
 
 const App = () => {
     return (
@@ -15,21 +17,18 @@ const App = () => {
 
             <main className="app">
                 <div className="content">
-                    <Routes>
-                        <Route path="/" element={<MainPage />} />
-                        <Route path="/ourCoffee" element={<OurCoffeePage />} />
+                    <Suspense fallback={<span>Loading...</span>}>
+                        <Routes>
+                            <Route path="/" element={<MainPage />} />
+                            <Route path="/ourCoffee" element={<OurCoffeePage />} />
 
-                        <Route path="/ourCoffee/:coffeeId" element={<SingleCoffeePage />} />
-                        <Route path="/pleasure" element={<Pleasure />} />
-                        <Route exath path="*" element={<Page404 />} />
-                    </Routes>
-
-
+                            <Route path="/ourCoffee/:coffeeId" element={<SingleCoffeePage />} />
+                            <Route path="/pleasure" element={<PleasurePage />} />
+                            <Route path="*" element={<Page404 />} />
+                        </Routes>
+                    </Suspense>
                 </div>
             </main>
-
-
-
         </BrowserRouter>
 
     )

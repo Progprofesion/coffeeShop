@@ -15,7 +15,9 @@ const LinkPageBlack = () => {
             <Link to='/ourcoffee'>
                 <div className="fz-12Black" href='#'>Our coffee</div>
             </Link>
-            <div className="fz-12Black" href='#'>For your pleasure</div>
+            <Link to="/pleasure">
+                <div className="fz-12Black" href='#'>For your pleasure</div>
+            </Link>
         </div>
     )
 }

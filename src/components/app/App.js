@@ -4,7 +4,7 @@ import MainPage from '../page/MainPage';
 import OurCoffeePage from '../page/OurCoffeePage';
 import Page404 from '../page/404';
 import SingleCoffeePage from '../page/SingleCoffeePage';
-import SingleCoffeeLayout from '../page/singleCoffeeLoyout/singleCoffeeLoyout';
+import Pleasure from '../page/Pleasure';
 
 
 import './app.scss';
@@ -20,6 +20,7 @@ const App = () => {
                         <Route path="/ourCoffee" element={<OurCoffeePage />} />
 
                         <Route path="/ourCoffee/:coffeeId" element={<SingleCoffeePage />} />
+                        <Route path="/pleasure" element={<Pleasure />} />
                         <Route exath path="*" element={<Page404 />} />
                     </Routes>
 

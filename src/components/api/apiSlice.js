@@ -11,11 +11,11 @@ export const apiSlice = createApi({
         }),
         getfilters: builder.query({
             query: () => '/filters',
-            invalidatesTags: ['Heroes']
+            invalidatesTags: ['Products']
         }),
         getProductsId: builder.query({
             query: (id) => `/products/${id}`,
-            invalidatesTags: ['Heroes']
+            invalidatesTags: ['Products']
         })
     })
 });

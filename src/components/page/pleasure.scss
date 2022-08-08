@@ -1,0 +1,48 @@
+.pleasure {
+    background: url('../../components/page/img/bgHeader.svg') center / cover no-repeat;
+    height: 260px;
+    &__title {
+        margin-top: 60px;
+        text-align: center;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 58px;
+        color: #FFFFFF;
+    }
+    &__bannerWrapp {
+        height: 260px;
+    }
+    &__about {
+        display: flex;
+        width: 700px;
+        margin: 0 auto;
+    }
+    &__descr {
+        margin-top: 80px;
+        text-align: center;
+    }
+    &__coffeeImg {
+        width: 272px;
+        height: 355px;
+        margin-top: 80px;
+        margin-right: 70px;
+    }
+    &__text {
+        width: 346px;
+    }
+    &__line {
+        margin: 60px auto;
+        width: 240px;
+        height: 0px;
+        border: 1px solid #000000;
+    }
+    &__cards {
+        width: 800px;
+        margin: 60px auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 220px);
+        justify-content: space-between;
+        grid-row-gap: 60px;
+    }
+}

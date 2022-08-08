@@ -12,8 +12,20 @@
        &-title {
         text-align: center;
        }
+       &-subtitle {
+        font-weight: 700;
+        line-height: 19px;
+        padding-right: 10px;
+       }
        &-descr{
         padding: 15px 0;
+       }
+       &-wrapper {
+        display: flex;
+        &-price {
+            line-height: 40px;
+            padding-right: 15px;
+        }
        }
     }
     

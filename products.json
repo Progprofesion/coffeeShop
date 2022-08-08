@@ -48,7 +48,7 @@
             "id": "all",
             "name": "all",
             "label": "all",
-            "className": "btn-outline-dark"
+            "className": "filter__all"
         },
         {
             "id": "Brazil",

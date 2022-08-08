@@ -7,7 +7,6 @@ const initialState = cardsAdapter.getInitialState({
     filtersLoadingStatus: 'idle',
     activeFilter: 'all',
     searchCoffee: '',
-    // page: null
 });
 
 
@@ -22,15 +21,16 @@ export const fetchFilters = createAsyncThunk(
 
 
 
-export const fetchSingleCoffee = createAsyncThunk(
-    'products/fetchSingleCoffee',
-    async () => {
-        const { request } = useHttp();
-        const { page } = Cards;
-        return await request(`http://localhost:3000/ourcoffee/${page}`)
-    }
 
-)
+// export const fetchSingleCoffee = createAsyncThunk(
+//     'products/fetchSingleCoffee',
+//     async () => {
+//         const { request } = useHttp();
+//         const { page } = Cards;
+//         return await request(`http://localhost:3000/ourcoffee/${page}`)
+//     }
+
+// )
 
 
 const cardsSlice = createSlice({
@@ -42,10 +42,7 @@ const cardsSlice = createSlice({
         },
         activeSearchCoffee: (state, action) => {
             state.searchCoffee = action.payload
-        },
-        // activePage: (state, action) => {
-        //     state.page = action.payload
-        // }
+        }
     },
     extraReducers: (builder) => {
         builder

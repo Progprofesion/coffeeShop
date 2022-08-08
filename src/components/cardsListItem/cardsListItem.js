@@ -1,11 +1,17 @@
 import AROMISTICOCoffee from '../../assets/JSONimg/AROMISTICOCoffee.svg';
 import { Link } from 'react-router-dom';
 
+import 'animate.css';
+
+import { WOW } from 'wowjs';
+
 import './cardsList.scss';
 
+
 const Cards = ({ page, title, variety, price }) => {
+
     return (
-        <div className="cards">
+        <div className={`cards animate__animated animate__flipInX ${WOW}`}>
             <Link to={`/ourcoffee/${page}`}>
                 <div className="cards__item">
                     <img src={AROMISTICOCoffee} alt="coffee" />

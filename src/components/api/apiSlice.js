@@ -9,10 +9,6 @@ export const apiSlice = createApi({
             query: () => '/products',
             providesTags: ['Products']
         }),
-        getfilters: builder.query({
-            query: () => '/filters',
-            invalidatesTags: ['Products']
-        }),
         getProductsId: builder.query({
             query: (id) => `/products/${id}`,
             invalidatesTags: ['Products']
@@ -22,7 +18,7 @@ export const apiSlice = createApi({
 
 
 
-export const { useGetProductsQuery, useGetfiltersQuery, useGetProductsIdQuery } = apiSlice;
+export const { useGetProductsQuery, useGetProductsIdQuery } = apiSlice;
 
 
 

@@ -1,20 +1,23 @@
-// .products-enter {
-//     opacity: 0;
-// }
+.products-enter {
+    opacity: 0;
+    transition: opacity 2000ms ;
+}
 
-// .products-enter-active {
-//     opacity: 1;
-//     transition: opacity 1000ms ;
-// }
+.products-enter-active {
+    opacity: 1;
+    transition: opacity 2000ms ;
+}
 
-// .products-exit {
-//     opacity: 1;
-// }
+.products-exit {
+    opacity: 1;
+    transition: opacity 5000ms;
+}
 
-// .products-exit-active {
-//     opacity: 0;
-//     transition: opacity 1000ms;
-// }
+
+.products-exit-active {
+    opacity: 0;
+    transition: opacity 5000ms;
+}
 
 // <TransitionGroup className="ourcoffee__cards">
 // </TransitionGroup>

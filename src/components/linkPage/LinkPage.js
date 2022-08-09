@@ -5,18 +5,18 @@ import coffeeIcon from './img/coffeeIcon.svg'
 
 const LinkPage = () => {
     return (
-        <div className="linkPage">
+        <nav className="linkPage">
             <img className="linkPage__img" src={coffeeIcon} alt="coffee" />
             <Link to="/" >
-                <div className="fz-12" href='#'>Coffee house</div>
+                <p className="fz-12">Coffee house</p>
             </Link>
             <Link to="/ourcoffee">
-                <div className="fz-12" href='#'>Our coffee</div>
+                <p className="fz-12">Our coffee</p>
             </Link>
             <Link to="/pleasure">
-                <div className="fz-12" href='#'>For your pleasure</div>
+                <p className="fz-12">For your pleasure</p>
             </Link>
-        </div>
+        </nav>
     )
 }
 

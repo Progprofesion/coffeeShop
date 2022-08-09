@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk, createEntityAdapter } from '@reduxjs/toolkit';
 import { useHttp } from '../../hooks/http.hook';
-import Cards from '../cardsListItem/cardsListItem';
 
 const cardsAdapter = createEntityAdapter();
 const initialState = cardsAdapter.getInitialState({
@@ -47,6 +46,7 @@ const cardsSlice = createSlice({
             })
             .addDefaultCase(() => { })
     }
+
 
 });
 

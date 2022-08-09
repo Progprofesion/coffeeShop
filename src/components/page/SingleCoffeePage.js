@@ -6,6 +6,9 @@ import { useGetProductsIdQuery } from '../api/apiSlice';
 
 import { useParams } from 'react-router-dom';
 
+import Page404 from './404';
+import Spinner from '../spinner/Spinner';
+
 import './singleCoffeePage.scss';
 
 const SingleCoffeePage = () => {
@@ -19,6 +22,12 @@ const SingleCoffeePage = () => {
         isError
     } = useGetProductsIdQuery(coffeeId);
 
+
+    if (isLoading) {
+        return <Spinner />
+    } else if (isError) {
+        return <Page404 />
+    }
 
     return (
 
@@ -38,7 +47,6 @@ const SingleCoffeePage = () => {
                         <h4 className="singleCoffeePage__about-wrapper-price">Price: </h4>
                         <h4 className="fz-24">{products.price}</h4>
                     </div>
-
                 </div>
             </div>
             <LinkPageBlack />

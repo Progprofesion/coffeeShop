@@ -41,7 +41,9 @@
             background: #FFFFFF;
             box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
             border-radius: 4px;
-            border: unset;   
+            border: unset;
+            outline: none;
+
         }     
         ::placeholder {
             text-align: center;

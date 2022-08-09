@@ -2,6 +2,8 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 
 import MainPage from '../page/MainPage';
+import Spinner from '../spinner/Spinner';
+
 import './app.scss';
 
 // const MainPage = lazy(() => import('../page/MainPage'));
@@ -11,13 +13,14 @@ const SingleCoffeePage = lazy(() => import('../page/SingleCoffeePage'));
 const PleasurePage = lazy(() => import('../page/PleasurePage'));
 
 
+
 const App = () => {
     return (
         <BrowserRouter>
 
             <main className="app">
                 <div className="content">
-                    <Suspense fallback={<span>Loading...</span>}>
+                    <Suspense fallback={<Spinner />}>
                         <Routes>
                             <Route path="/" element={<MainPage />} />
                             <Route path="/ourCoffee" element={<OurCoffeePage />} />

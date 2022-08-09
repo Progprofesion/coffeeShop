@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import './linkPageBlack.scss';
-import coffeeIconBlack from '../linkPage/coffeeIconBlack.svg';
+import coffeeIconBlack from '../linkPage/img/coffeeIconBlack.svg';
 
 
 

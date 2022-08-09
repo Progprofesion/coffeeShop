@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import './linkPage.scss';
-import coffeeIcon from './coffeeIcon.svg'
+import coffeeIcon from './img/coffeeIcon.svg'
 
 const LinkPage = () => {
     return (

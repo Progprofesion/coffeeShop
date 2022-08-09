@@ -35,16 +35,15 @@ const CardsList = () => {
         };
     }, [activeFilter, searchCoffeeFiltered]);
 
-
     if (isLoading) {
-        return <h5>Loading</h5>
+        return <h5>Loading...</h5>
     } else if (isError) {
         return <h5>Error</h5>
     }
 
     const renderCardsList = (arr) => {
         if (arr.lenght === 0) {
-            return <h5>Not products</h5>
+            return <h5>No products</h5>
         }
 
         return arr.map(({ id, ...props }) => {
@@ -58,9 +57,7 @@ const CardsList = () => {
 
     return (
         elements
-
     )
-
 };
 
 export default CardsList;

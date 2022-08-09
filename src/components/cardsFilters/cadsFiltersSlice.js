@@ -22,17 +22,6 @@ export const fetchFilters = createAsyncThunk(
 
 
 
-// export const fetchSingleCoffee = createAsyncThunk(
-//     'products/fetchSingleCoffee',
-//     async () => {
-//         const { request } = useHttp();
-//         const { page } = Cards;
-//         return await request(`http://localhost:3000/ourcoffee/${page}`)
-//     }
-
-// )
-
-
 const cardsSlice = createSlice({
     name: 'filters',
     initialState,

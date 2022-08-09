@@ -19,7 +19,7 @@ const CardsFilters = () => {
 
 
     if (filtersLoadingStatus === 'loading') {
-        return <h5>Loading</h5>
+        return <h5>Loading...</h5>
     } else if (filtersLoadingStatus === 'error') {
         return <h5>Error</h5>
     }

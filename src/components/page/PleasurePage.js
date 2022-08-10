@@ -17,21 +17,19 @@ const PleasurePage = () => {
             <div className="pleasure__about">
                 <img src={pleasureAbout} alt="" className="pleasure__coffeeImg" />
                 <div className="pleasure__descr fz-24">
-                    <div className="pleasure__subtitle fz-24">About our beans</div>
+                    <h2 className="pleasure__subtitle fz-24">About our beans</h2>
                     <IconLineBlack />
-                    <div className="pleasure__text fz-14">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. <br />
+                    <p className="pleasure__text fz-14">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. <br />
                         <br />
                         Afraid at highly months do things on at. Situation recommend objection do intention <br />
                         so questions.<br />
                         As greatly removed calling pleased improve an. Last ask him cold feel <br />
                         met spot shy want. Children me laughing we prospect answered followed. At it went <br />
-                        is song that held help face.</div>
+                        is song that held help face.</p>
                 </div>
             </div>
             <div className="pleasure__line"></div>
-            <div className="pleasure__cards" >
-                <CardsList />
-            </div>
+            <CardsList />
             <Footer />
         </div>
     )

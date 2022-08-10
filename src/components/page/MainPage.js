@@ -10,7 +10,6 @@ const MainPage = () => {
             <About />
             <Best />
             <Footer />
-
         </>
     )
 }

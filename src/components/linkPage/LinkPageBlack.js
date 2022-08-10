@@ -7,7 +7,7 @@ import coffeeIconBlack from '../linkPage/img/coffeeIconBlack.svg';
 
 const LinkPageBlack = () => {
     return (
-        <div className="linkPageBlack">
+        <nav className="linkPageBlack">
             <img className="linkPageBlack__img" src={coffeeIconBlack} alt="coffee" />
             <Link to='/'>
                 <div className="fz-12Black" href='#'>Coffee house</div>
@@ -18,7 +18,7 @@ const LinkPageBlack = () => {
             <Link to="/pleasure">
                 <div className="fz-12Black" href='#'>For your pleasure</div>
             </Link>
-        </div>
+        </nav>
     )
 }
 

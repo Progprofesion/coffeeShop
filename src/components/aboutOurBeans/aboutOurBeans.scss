@@ -1,7 +1,10 @@
 .aboutBeans {
-    display: flex;
-    width: 700px;
-    margin: 0 auto;
+    &__wrapper {
+        display: flex;
+        width: 700px;
+        margin: 0 auto;
+    }
+
 
     &__descr {
         margin-top: 80px;

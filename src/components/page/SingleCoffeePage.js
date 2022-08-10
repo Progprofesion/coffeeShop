@@ -1,7 +1,7 @@
 import HeadBanner from '../headBanner/HeadBanner';
 import IconLineBlack from '../iconLine/IconLineBlack';
-import LinkPageBlack from '../linkPage/LinkPageBlack';
 import singleCoffee from './img/singleCoffee.svg'
+import Footer from '../footer/Footer';
 import { useGetProductsIdQuery } from '../api/apiSlice';
 
 import { useParams } from 'react-router-dom';
@@ -14,14 +14,13 @@ import './singleCoffeePage.scss';
 const SingleCoffeePage = () => {
     const id = useParams()
 
-    const { coffeeId } = id
+    const { coffeeId } = id;
 
     const {
         data: products = [],
         isLoading,
         isError
     } = useGetProductsIdQuery(coffeeId);
-
 
     if (isLoading) {
         return <Spinner />
@@ -30,8 +29,7 @@ const SingleCoffeePage = () => {
     }
 
     return (
-
-        <div >
+        <article>
             <HeadBanner />
             <div className="singleCoffeePage">
                 <img src={singleCoffee} alt="coffee" className="singleCoffeePage__img" />
@@ -49,9 +47,8 @@ const SingleCoffeePage = () => {
                     </div>
                 </div>
             </div>
-            <LinkPageBlack />
-            <IconLineBlack />
-        </div>
+            <Footer />
+        </article>
     )
 }
 

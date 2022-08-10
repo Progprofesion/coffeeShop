@@ -4,8 +4,8 @@ import './aboutOurBeans.scss';
 
 const AboutOurBeans = () => {
     return (
-        <>
-            <section className="aboutBeans">
+        <section className="aboutBeans">
+            <div className="aboutBeans__wrapper">
                 <img src={girlCoffee} alt="" className="aboutBeans__girl" />
                 <div className="aboutBeans__descr fz-24">
                     <h2 className="aboutBeans__title fz-24">About our beans</h2>
@@ -19,9 +19,9 @@ const AboutOurBeans = () => {
                         met spot shy want. Children me laughing we prospect answered followed. At it went <br />
                         is song that held help face.</p>
                 </div>
-            </section>
+            </div>
             <div className="aboutBeans__line"></div>
-        </>
+        </section>
     )
 };
 

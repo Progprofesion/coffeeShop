@@ -16,7 +16,7 @@ const Cards = ({ page, title, variety, price }) => {
                 </div>
                 <h3 className="cards__subtitle fz-14">{title}</h3>
                 <div className="cards__variety fz-14">{variety}</div>
-                <div className="cards__price fz-14">{price}</div>
+                <p className="cards__price fz-14">{price}</p>
             </Link>
 
         </div>

@@ -13,21 +13,21 @@ const Best = () => {
                         <img src={SolimoCooffeeBeans2kg} alt="coffee" />
                     </div>
                     <h3 className="best__cards-title fz-14">Solimo Coffee Beans 2 kg</h3>
-                    <div className="best__cards-price fz-14">10.73$</div>
+                    <p className="best__cards-price fz-14">10.73$</p>
                 </div>
                 <div className="best__cards">
                     <div className="best__cards-item">
                         <img src={PrestoCoffeeBeans1kg} alt="coffee" />
                     </div>
                     <h3 className="best__cards-title fz-14">Presto Coffee Beans 1 kg</h3>
-                    <div className="best__cards-price fz-14">15.99$</div>
+                    <p className="best__cards-price fz-14">15.99$</p>
                 </div>
                 <div className="best__cards">
                     <div className="best__cards-item">
                         <img className='best__cards-img' src={AROMISTICOCoffee1kg} alt="coffee" />
                     </div>
                     <h3 className="best__cards-title fz-14">AROMISTICO Coffee 1 kg</h3>
-                    <div className="best__cards-price fz-14">6.99$</div>
+                    <p className="best__cards-price fz-14">6.99$</p>
                 </div>
             </div>
 

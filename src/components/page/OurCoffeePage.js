@@ -13,7 +13,6 @@ const OurCoffeePage = () => {
             <CardsList />
             <Footer />
         </>
-
     )
 }
 

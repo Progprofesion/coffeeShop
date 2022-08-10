@@ -1,8 +1,7 @@
 import Header from "../header/Header";
-import About from "../about/About";
+import About from "../aboutUs/About";
 import Best from "../best/best";
 import Footer from "../footer/Footer";
-
 
 const MainPage = () => {
     return (

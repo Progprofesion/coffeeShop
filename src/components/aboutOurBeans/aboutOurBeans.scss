@@ -1,0 +1,23 @@
+.aboutBeans {
+    display: flex;
+    width: 700px;
+    margin: 0 auto;
+
+    &__descr {
+        margin-top: 80px;
+        text-align: center;
+    }
+    &__girl {
+        margin-top: 80px;
+        margin-right: 70px;
+    }
+    &__text {
+        width: 346px;
+    }
+    &__line {
+        margin: 60px auto;
+        width: 240px;
+        height: 0px;
+        border: 1px solid #000000;
+    }
+};

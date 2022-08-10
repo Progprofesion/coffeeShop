@@ -1,8 +1,8 @@
 import LinkPage from '../linkPage/LinkPage';
 import pleasureAbout from './img/pleasureAbout.svg';
 import IconLineBlack from '../iconLine/IconLineBlack';
-import LinkPageBlack from '../linkPage/LinkPageBlack';
 import CardsList from '../cardsList/CardsList';
+import Footer from '../footer/Footer';
 import './pleasure.scss';
 
 const PleasurePage = () => {
@@ -32,15 +32,9 @@ const PleasurePage = () => {
             <div className="pleasure__cards" >
                 <CardsList />
             </div>
-            <div className="ourcoffee__footer">
-                <div className="ourcoffee__footer-link">
-                    <LinkPageBlack />
-                </div>
-                <IconLineBlack />
-            </div>
-
+            <Footer />
         </div>
     )
-}
+};
 
 export default PleasurePage;

@@ -5,10 +5,10 @@ import './headBanner.scss';
 
 const HeadBanner = () => {
     return (
-        <div className="banner">
+        <header className="banner">
             <LinkPage />
             <h2 className="banner__title">Our Coffee</h2>
-        </div>
+        </header>
     )
 };
 

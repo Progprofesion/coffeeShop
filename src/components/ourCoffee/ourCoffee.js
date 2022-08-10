@@ -1,9 +1,10 @@
 import './ourCoffee.scss';
-import girlCoffee from './girlCoffee.svg';
-import IconLineBlack from '../iconLine/IconLineBlack';
-import LinkPageBlack from '../linkPage/LinkPageBlack';
+// import girlCoffee from './girlCoffee.svg';
+// import IconLineBlack from '../iconLine/IconLineBlack';
+import AboutOurBeans from '../aboutOurBeans/AboutOurBeans';
 import CardsFilters from '../cardsFilters/CardsFilters';
 import CardsList from '../cardsList/CardsList';
+import Footer from '../footer/Footer';
 import { useDispatch } from 'react-redux';
 
 import { activeSearchCoffee } from '../cardsFilters/cadsFiltersSlice';
@@ -13,8 +14,9 @@ const OurCoffee = () => {
     const dispatch = useDispatch();
 
     return (
-        <div className="ourcoffee">
-            <div className="ourcoffee__about">
+        <section className="ourcoffee">
+            {/* <AboutOurBeans /> */}
+            {/* <div className="ourcoffee__about">
                 <img src={girlCoffee} alt="" className="ourcoffee__girl" />
                 <div className="ourcoffee__descr fz-24">
                     <h2 className="ourcoffee__title fz-24">About our beans</h2>
@@ -28,8 +30,8 @@ const OurCoffee = () => {
                         met spot shy want. Children me laughing we prospect answered followed. At it went <br />
                         is song that held help face.</p>
                 </div>
-            </div>
-            <div className="ourcoffee__line"></div>
+            </div> */}
+            {/* <div className="ourcoffee__line"></div> */}
             <div className="ourcoffee__lookiing">
                 <div className="ourcoffee__search">
                     <h5 className="ourcoffee__search-title fz-14">Looking foor</h5>
@@ -46,18 +48,13 @@ const OurCoffee = () => {
                 <CardsFilters />
 
             </div>
-            <div className="ourcoffee__cards" >
+            <section className="ourcoffee__cards" >
                 <CardsList />
-            </div>
-            <div className="ourcoffee__footer">
-                <div className="ourcoffee__footer-link">
-                    <LinkPageBlack />
-                </div>
-                <IconLineBlack />
-            </div>
-        </div>
+            </section>
+            <Footer />
+        </section>
     )
 
-}
+};
 
 export default OurCoffee;

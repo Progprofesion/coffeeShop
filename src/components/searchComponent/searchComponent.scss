@@ -1,0 +1,31 @@
+.search {
+    &__lookiing {
+        display: flex;
+        width: 775px;
+        height: 30px;
+        margin: 0 auto;
+    }
+    &__block {
+        display: flex;
+        align-items: baseline;
+        &-title {
+            margin-right: 20px;
+        }
+        &-input {
+            width: 180px;
+            height: 30px;
+            padding-left: 15px;
+            padding-right: 15px;
+            background: #FFFFFF;
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+            border-radius: 4px;
+            border: unset;
+            outline: none;
+
+        }     
+        ::placeholder {
+            text-align: center;
+            font-size: 12px;
+        }      
+    }
+}

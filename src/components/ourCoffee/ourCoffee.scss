@@ -24,14 +24,14 @@
     &__lookiing {
         display: flex;
         width: 775px;
+        height: 30px;
         margin: 0 auto;
     }
     &__search {
         display: flex;
+        align-items: baseline;
         &-title {
             margin-right: 20px;
-            line-height: 30px;
-
         }
         &-input {
             width: 180px;

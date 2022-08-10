@@ -1,3 +1,13 @@
+.productsCards {
+    width: 800px;
+    margin: 60px auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 220px);
+    justify-content: space-between;
+    grid-row-gap: 60px;
+
+}
+
 .products-enter {
     opacity: 0;
     transition: opacity 2000ms ;
@@ -18,6 +28,3 @@
     opacity: 0;
     transition: opacity 5000ms;
 }
-
-// <TransitionGroup className="ourcoffee__cards">
-// </TransitionGroup>

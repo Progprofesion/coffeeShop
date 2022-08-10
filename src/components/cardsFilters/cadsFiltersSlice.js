@@ -8,8 +8,6 @@ const initialState = cardsAdapter.getInitialState({
     searchCoffee: '',
 });
 
-
-
 export const fetchFilters = createAsyncThunk(
     'filters/fetchFilters',
     async () => {
@@ -17,9 +15,6 @@ export const fetchFilters = createAsyncThunk(
         return await request('http://localhost:3001/filters')
     }
 )
-
-
-
 
 const cardsSlice = createSlice({
     name: 'filters',
@@ -46,10 +41,7 @@ const cardsSlice = createSlice({
             })
             .addDefaultCase(() => { })
     }
-
-
 });
-
 
 const { actions, reducer } = cardsSlice;
 

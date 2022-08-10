@@ -56,7 +56,9 @@ const CardsList = () => {
     const elements = renderCardsList(filteredCards);
 
     return (
-        elements
+        <section className="productsCards" >
+            {elements}
+        </section>
     )
 };
 

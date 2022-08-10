@@ -1,9 +1,9 @@
 .filter {
     display: flex;
+    align-items: baseline;
     &__title {
         margin-left: 70px;
         margin-right: 13px;
-        line-height: 30px;
     }
     &__btn {
         width: 75px;

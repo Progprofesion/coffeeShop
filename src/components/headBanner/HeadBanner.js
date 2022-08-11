@@ -2,7 +2,6 @@ import LinkPage from '../linkPage/LinkPage';
 
 import './headBanner.scss';
 
-
 const HeadBanner = () => {
     return (
         <header className="banner">

@@ -18,9 +18,9 @@ const CardsFilters = () => {
 
 
     if (filtersLoadingStatus === 'loading') {
-        return <h5>Loading...</h5>
+        return <h5 className="filter__statusLoading">Loading...</h5>
     } else if (filtersLoadingStatus === 'error') {
-        return <h5>Error</h5>
+        return <h5 className="filter__statusLoading">Error</h5>
     }
 
     const renderFilters = (arr) => {

@@ -1,15 +1,15 @@
-import HeadBanner from '../headBanner/HeadBanner';
-import IconLineBlack from '../iconLine/IconLineBlack';
-import singleCoffee from './img/singleCoffee.svg'
-import Footer from '../footer/Footer';
+import { useParams } from 'react-router-dom';
 import { useGetProductsIdQuery } from '../api/apiSlice';
 
-import { useParams } from 'react-router-dom';
+import HeadBanner from '../headBanner/HeadBanner';
+import SingleCoffeeItem from '../singleCoffee/SingleCoffeeItem';
+import Footer from '../footer/Footer';
 
 import Page404 from './404';
 import Spinner from '../spinner/Spinner';
 
-import './singleCoffeePage.scss';
+import singleCoffee from './img/singleCoffee.svg'
+import './style/singleCoffeePage.scss';
 
 const SingleCoffeePage = () => {
     const id = useParams()
@@ -31,22 +31,7 @@ const SingleCoffeePage = () => {
     return (
         <article>
             <HeadBanner />
-            <div className="singleCoffeePage">
-                <img src={singleCoffee} alt="coffee" className="singleCoffeePage__img" />
-                <div className="singleCoffeePage__about">
-                    <h3 className="singleCoffeePage__about-title fz-24">About it</h3>
-                    <IconLineBlack />
-                    <div className="singleCoffeePage__about-wrapper">
-                        <h4 className="singleCoffeePage__about-subtitle">Country: </h4>
-                        <h4 className="fz-14">{products.variety}</h4>
-                    </div>
-                    <p className="singleCoffeePage__about-descr">Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <div className="singleCoffeePage__about-wrapper">
-                        <h4 className="singleCoffeePage__about-wrapper-price">Price: </h4>
-                        <h4 className="fz-24">{products.price}</h4>
-                    </div>
-                </div>
-            </div>
+            <SingleCoffeeItem img={singleCoffee} country={products.country} price={products.price} />
             <Footer />
         </article>
     )

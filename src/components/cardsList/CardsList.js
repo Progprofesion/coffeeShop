@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 import { useGetProductsQuery } from '../api/apiSlice';
 import { useSelector } from 'react-redux';
+import Spinner from '../spinner/Spinner';
+import Error from '../page/img/Error.gif'
 import CardsListItem from '../cardsListItem/cardsListItem';
 
 import './cardsList.scss';
@@ -31,14 +33,14 @@ const CardsList = () => {
         if (activeFilter === 'all') {
             return filteredCards
         } else {
-            return filteredCards.filter(item => item.variety === activeFilter);
+            return filteredCards.filter(item => item.country === activeFilter);
         };
     }, [activeFilter, searchCoffeeFiltered]);
 
     if (isLoading) {
-        return <h5>Loading...</h5>
+        return <div><Spinner /></div>
     } else if (isError) {
-        return <h5>Error</h5>
+        return <div>{Error}</div>
     }
 
     const renderCardsList = (arr) => {

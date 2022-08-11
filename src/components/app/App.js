@@ -5,7 +5,6 @@ import MainPage from '../page/MainPage';
 import Spinner from '../spinner/Spinner';
 import './app.scss';
 
-// const MainPage = lazy(() => import('../page/MainPage'));
 const Page404 = lazy(() => import('../page/404'));
 const OurCoffeePage = lazy(() => import('../page/OurCoffeePage'));
 const SingleCoffeePage = lazy(() => import('../page/SingleCoffeePage'));

@@ -1,10 +1,9 @@
-import AROMISTICOCoffee from '../../assets/JSONimg/AROMISTICOCoffee.svg';
 import { Link } from 'react-router-dom';
 
+import AROMISTICOCoffee from '../best/img/AROMISTICOCoffee1kg.svg';
+
 import 'animate.css';
-
 import './cardsList.scss';
-
 
 const Cards = ({ page, title, country, price }) => {
 
@@ -18,11 +17,8 @@ const Cards = ({ page, title, country, price }) => {
                 <div className="cards__country fz-14">{country}</div>
                 <p className="cards__price fz-14">{price}</p>
             </Link>
-
         </div>
     )
 };
-
-
 
 export default Cards;

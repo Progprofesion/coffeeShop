@@ -1,7 +1,7 @@
-import './footer.scss';
 import IconLineBlack from '../iconLine/IconLineBlack';
-
 import LinkPageBlack from '../linkPage/LinkPageBlack';
+
+import './footer.scss';
 
 const Footer = () => {
     return (

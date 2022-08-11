@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import HeadBanner from '../headBanner/HeadBanner';
-import Error from './img/Error.gif';
+import Error from '../../assets/Error.gif';
 
 const Page404 = () => {
     return (

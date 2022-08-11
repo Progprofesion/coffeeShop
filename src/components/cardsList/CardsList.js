@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useGetProductsQuery } from '../api/apiSlice';
 import { useSelector } from 'react-redux';
 import Spinner from '../spinner/Spinner';
-import Error from '../page/img/Error.gif'
+import Error from '../../assets/Error.gif';
 import CardsListItem from '../cardsListItem/cardsListItem';
 
 import './cardsList.scss';

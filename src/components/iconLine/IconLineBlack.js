@@ -1,5 +1,5 @@
 import './iconLine.scss';
-import coffeeBeansIconBlack from './img/coffeeBeansIconBlack.svg';
+import coffeeBeansIconBlack from '../../assets/coffeeBeansIconBlack.svg';
 
 const IconLineBlack = () => {
     return (

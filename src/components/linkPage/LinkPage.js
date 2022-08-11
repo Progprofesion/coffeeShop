@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import './linkPage.scss';
-import coffeeIcon from './img/coffeeIcon.svg'
+import coffeeIcon from '../../assets/coffeeIcon.svg';
+
+import './style/linkPage.scss';
 
 const LinkPage = () => {
     return (
@@ -18,6 +19,7 @@ const LinkPage = () => {
             </Link>
         </nav>
     )
+        ;
 }
 
 export default LinkPage;

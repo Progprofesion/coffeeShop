@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import coffeeBeans from './img/coffeeBeansIcon.svg'
+import coffeeBeansIconWhite from '../../assets/coffeeBeansIconWhite.svg'
 import LinkPage from '../linkPage/LinkPage';
 
 import './header.scss';
@@ -12,7 +12,7 @@ const Header = () => {
             <h1 className="header__title">Everything You Love About Coffee</h1>
             <div className="header__item">
                 <div className="header__item-line"></div>
-                <img src={coffeeBeans} alt="coffeeBeans" />
+                <img src={coffeeBeansIconWhite} alt="coffeeBeans" />
                 <div className="header__item-line"></div>
             </div>
             <h2 className="header__subtitle">We makes every day full of energy and taste</h2>

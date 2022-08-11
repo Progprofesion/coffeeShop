@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import './linkPageBlack.scss';
-import coffeeIconBlack from '../linkPage/img/coffeeIconBlack.svg';
+import coffeeIconBlack from '../../assets/coffeeIconBlack.svg';
 
-
+import './style/linkPageBlack.scss';
 
 const LinkPageBlack = () => {
     return (
@@ -20,6 +19,6 @@ const LinkPageBlack = () => {
             </Link>
         </nav>
     )
-}
+};
 
 export default LinkPageBlack;

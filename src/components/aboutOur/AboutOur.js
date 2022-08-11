@@ -1,5 +1,4 @@
 import IconLineBlack from "../iconLine/IconLineBlack";
-// import girlCoffee from './girlCoffee.svg';
 import './aboutOur.scss';
 
 const AboutOur = ({ img, title }) => {

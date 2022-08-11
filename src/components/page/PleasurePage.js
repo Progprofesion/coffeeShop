@@ -1,5 +1,5 @@
 import LinkPage from '../linkPage/LinkPage';
-import pleasureAbout from './img/pleasureAbout.svg';
+import pleasureAbout from '../../assets/pleasureAbout.svg';
 import AboutOur from '../aboutOur/AboutOur';
 import CardsList from '../cardsList/CardsList';
 import Footer from '../footer/Footer';

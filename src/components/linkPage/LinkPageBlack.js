@@ -9,13 +9,13 @@ const LinkPageBlack = () => {
         <nav className="linkPageBlack">
             <img className="linkPageBlack__img" src={coffeeIconBlack} alt="coffee" />
             <Link to='/'>
-                <div className="fz-12Black" href='#'>Coffee house</div>
+                <div className="linkPageBlack__descr fz-12Black">Coffee house</div>
             </Link>
             <Link to='/ourcoffee'>
-                <div className="fz-12Black" href='#'>Our coffee</div>
+                <div className="linkPageBlack__descr fz-12Black">Our coffee</div>
             </Link>
             <Link to="/pleasure">
-                <div className="fz-12Black" href='#'>For your pleasure</div>
+                <div className="linkPageBlack__descr fz-12Black">For your pleasure</div>
             </Link>
         </nav>
     )

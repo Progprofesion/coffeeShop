@@ -10,7 +10,7 @@ const SearchComponent = () => {
     const dispatch = useDispatch();
     return (
         <section className="search">
-            <div className="search__lookiing">
+            <div className="search__looking">
                 <div className="search__block">
                     <p className="search__block-title fz-14">Looking foor</p>
                     <form>

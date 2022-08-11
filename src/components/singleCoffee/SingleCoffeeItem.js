@@ -3,7 +3,7 @@ import './singleCoffeeItem.scss';
 
 const SingleCoffee = ({ img, country, price }) => {
     return (
-        <div className="singleCoffeeItem">
+        <article className="singleCoffeeItem">
             <img src={img} alt="coffee" className="singleCoffeeItem__img" />
             <div className="singleCoffeeItem__about">
                 <h3 className="singleCoffeeItem__about-title fz-24">About it</h3>
@@ -18,7 +18,7 @@ const SingleCoffee = ({ img, country, price }) => {
                     <h4 className="fz-24">{price}</h4>
                 </div>
             </div>
-        </div>
+        </article>
     )
 };
 

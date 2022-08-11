@@ -9,17 +9,16 @@ const LinkPage = () => {
         <nav className="linkPage">
             <img className="linkPage__img" src={coffeeIcon} alt="coffee" />
             <Link to="/" >
-                <p className="fz-12">Coffee house</p>
+                <div className="fz-12">Coffee house</div>
             </Link>
             <Link to="/ourcoffee">
-                <p className="fz-12">Our coffee</p>
+                <div className="fz-12">Our coffee</div>
             </Link>
             <Link to="/pleasure">
-                <p className="fz-12">For your pleasure</p>
+                <div className="fz-12">For your pleasure</div>
             </Link>
         </nav>
     )
-        ;
-}
+};
 
 export default LinkPage;

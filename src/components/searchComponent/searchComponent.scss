@@ -1,5 +1,5 @@
 .search {
-    &__lookiing {
+    &__looking {
         display: flex;
         width: 775px;
         height: 30px;
@@ -29,3 +29,13 @@
         }      
     }
 }
+
+// Media ------------------
+
+// @media (max-width: 767px) {
+//     .search {
+//         &__looking {
+//             width: 705px;
+//         }
+//     }
+// }

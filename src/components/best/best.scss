@@ -1,18 +1,19 @@
 .best {
     margin-top: 110px;
-    height: 495px;
+    min-height: 495px;
     background: url('../../components/best/img/bgBest.png') center / cover no-repeat;
     h2 {
         padding-top: 80px;
         text-align: center;
     }
+
     &__wrapper {
-        width: 800px;
-        margin: 40px auto;
         display: flex;
         justify-content: space-between;
-        
+        width: 800px;
+        margin: 40px auto;    
     }
+
     &__cards {
         width: 220px;
         min-height: 240px;
@@ -22,8 +23,8 @@
         margin: 20px auto;
         width: 151px;
         height: 130px;
-
         }
+
         &-price {
             text-align: right;
             padding: 10px 20px;
@@ -31,6 +32,44 @@
         &-img {
             margin-top: 17px;
         }
+    }
+};
+@media (max-width: 991px) {
+    .best {
+        &__wrapper {
+            width: 700px;
+        }
+        &__cards {
+            width: 200px;
+            &-price {
+                padding: 10px 20px 0;
+            }
+            &-img {
+                margin-left: -8px;
+            }
+        }
+               
+    }
+}
 
+@media (max-width: 767px) {
+    .best {
+        &__wrapper {
+            flex-direction: column;
+            width: 220px;
+            height: 800px;
+            margin: 40px auto 0;
+        }
+        &__cards {
+            width: 220px;
+            height: 240px;
+            margin-bottom: 26px;
+            &-price {
+                padding: 10px 20px 0;
+            }
+            &-img {
+                margin-left: -8px;
+            }
+        }
     }
 }

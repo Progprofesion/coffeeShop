@@ -24,3 +24,11 @@
         border: 1px solid #000000;
     }
 };
+
+@media (max-width: 991px) {
+    .aboutOur {
+        &__text {
+            width: 300px;
+        }
+    }
+}

@@ -16,3 +16,21 @@
         margin-left: -31px;
     }
 }
+
+// Media --------------------
+
+@media (max-width: 575px) {
+    .linkPageBlack {
+        flex-direction: column;
+        width: 180px;
+        padding-left: 0;
+        &__descr {
+            padding: 20px 0;
+            text-align: center;
+        }
+        &__img {
+            top: 50px;
+            margin-left: 25px;  
+        }
+    }
+} 

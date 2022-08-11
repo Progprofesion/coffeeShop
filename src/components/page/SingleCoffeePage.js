@@ -29,12 +29,12 @@ const SingleCoffeePage = () => {
     }
 
     return (
-        <article>
+        <>
             <HeadBanner />
             <SingleCoffeeItem img={singleCoffee} country={products.country} price={products.price} />
             <Footer />
-        </article>
+        </>
     )
-}
+};
 
 export default SingleCoffeePage;

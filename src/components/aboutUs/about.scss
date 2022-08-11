@@ -9,3 +9,35 @@
     }
 }
 
+// Media ----------------
+
+@media (max-width: 767px) {
+    .about {
+        &__descr {
+            width: 500px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .about {
+        &__title {
+            font-size: 24px;
+        }
+        &__descr {
+            width: 260px;
+        }
+    }
+} 
+
+@media (max-width: 320px) {
+    .about {
+        &__title {
+            font-size: 24px;
+        }
+        &__descr {
+            width: 260px;
+        }
+    }
+}
+

@@ -3,18 +3,20 @@ import { lazy, Suspense } from 'react'
 
 import MainPage from '../page/MainPage';
 import Spinner from '../spinner/Spinner';
+
 import './app.scss';
 
-const Page404 = lazy(() => import('../page/404'));
+// import '../media/media.scss';
+
 const OurCoffeePage = lazy(() => import('../page/OurCoffeePage'));
 const SingleCoffeePage = lazy(() => import('../page/SingleCoffeePage'));
 const PleasurePage = lazy(() => import('../page/PleasurePage'));
+const Page404 = lazy(() => import('../page/404'));
 
 
 const App = () => {
     return (
         <BrowserRouter>
-
             <main className="app">
                 <div className="content">
                     <Suspense fallback={<Spinner />}>
@@ -31,6 +33,6 @@ const App = () => {
         </BrowserRouter>
 
     )
-}
+};
 
 export default App;

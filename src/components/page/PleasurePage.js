@@ -7,17 +7,19 @@ import './style/pleasure.scss';
 
 const PleasurePage = () => {
     return (
-        <div className="pleasure">
-            <header className="pleasure__bannerWrapp">
-                <div className="pleasure__header">
-                    <LinkPage />
-                    <h2 className="pleasure__title">For your pleasure</h2>
+        <>
+            <header className="pleasure">
+                <div className="pleasure__bannerWrapp">
+                    <div className="pleasure__header">
+                        <LinkPage />
+                        <h2 className="pleasure__title">For your pleasure</h2>
+                    </div>
                 </div>
             </header>
             <AboutOur img={pleasureAbout} title={'About our goods'} />
             <CardsList />
             <Footer />
-        </div>
+        </>
     )
 };
 

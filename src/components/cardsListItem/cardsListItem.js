@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import AROMISTICOCoffee from '../best/img/AROMISTICOCoffee1kg.svg';
 
 import 'animate.css';
-import './cardsList.scss';
+import './cardsListItem.scss';
 
 const Cards = ({ page, title, country, price }) => {
 

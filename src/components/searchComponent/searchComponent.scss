@@ -1,7 +1,8 @@
 .search {
     &__looking {
         display: flex;
-        width: 775px;
+        justify-content: space-between;
+        max-width: 800px;
         height: 30px;
         margin: 0 auto;
     }
@@ -30,12 +31,24 @@
     }
 }
 
-// Media ------------------
+// Media ----------
 
-// @media (max-width: 767px) {
-//     .search {
-//         &__looking {
-//             width: 705px;
-//         }
-//     }
-// }
+@media (max-width: 991px) {
+    .search {
+        &__block {
+            align-items: center;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .search {
+        &__looking {
+            flex-direction: column;
+            justify-content: center;
+        }
+        &__block {
+            justify-content: center;
+        }
+    }
+}

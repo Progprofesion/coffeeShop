@@ -44,8 +44,12 @@ const CardsFilters = () => {
 
     return (
         <div className="filter">
-            <h5 className="filter__title fz-14">Or filter</h5>
-            {elements}
+            <div className="container">
+                <div className="filter__wrapper">
+                    <div className="filter__title fz-14">Or filter</div>
+                    {elements}
+                </div>
+            </div>
         </div>
     )
 };

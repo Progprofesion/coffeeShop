@@ -6,7 +6,9 @@ const HeadBanner = () => {
     return (
         <header className="banner">
             <LinkPage />
-            <h2 className="banner__title">Our Coffee</h2>
+            <div className="container">
+                <h2 className="banner__title">Our Coffee</h2>
+            </div>
         </header>
     )
 };

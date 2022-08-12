@@ -58,8 +58,13 @@ const CardsList = () => {
     const elements = renderCardsList(filteredCards);
 
     return (
-        <section className="productsCards" >
-            {elements}
+        <section className="cardsList" >
+            <div className="container">
+                <div className="cardsList__wrapper">
+                    {elements}
+                </div>
+            </div>
+
         </section>
     )
 };

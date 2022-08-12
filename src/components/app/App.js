@@ -6,13 +6,10 @@ import Spinner from '../spinner/Spinner';
 
 import './app.scss';
 
-// import '../media/media.scss';
-
 const OurCoffeePage = lazy(() => import('../page/OurCoffeePage'));
 const SingleCoffeePage = lazy(() => import('../page/SingleCoffeePage'));
 const PleasurePage = lazy(() => import('../page/PleasurePage'));
 const Page404 = lazy(() => import('../page/404'));
-
 
 const App = () => {
     return (

@@ -11,3 +11,24 @@
         color: #FFFFFF;
     }
 }
+
+// Media ----------
+
+@media (max-width: 767px) {
+
+    .banner {
+        &__title {
+            font-size: 36px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+
+    .banner {
+        &__title {
+            font-size: 28px;
+        }
+    }
+
+} 

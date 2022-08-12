@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useGetProductsIdQuery } from '../api/apiSlice';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import HeadBanner from '../headBanner/HeadBanner';
 import SingleCoffeeItem from '../singleCoffee/SingleCoffeeItem';
@@ -30,9 +31,17 @@ const SingleCoffeePage = () => {
 
     return (
         <>
-            <HeadBanner />
-            <SingleCoffeeItem img={singleCoffee} country={products.country} price={products.price} />
-            <Footer />
+            <HelmetProvider>
+                <Helmet>
+                    <meta
+                        name="description"
+                        content={`${products.title} coffee page`} />
+                    <title>{products.title}</title>
+                </Helmet>
+                <HeadBanner />
+                <SingleCoffeeItem img={singleCoffee} country={products.country} price={products.price} />
+                <Footer />
+            </HelmetProvider>
         </>
     )
 };

@@ -4,7 +4,7 @@ import './aboutOur.scss';
 const AboutOur = ({ img, title }) => {
     return (
         <section className="aboutOur">
-            <div className="aboutOur__wrapper">
+            <div className="container aboutOur__wrapper">
                 <img src={img} alt="" className="aboutOur__girl" />
                 <div className="aboutOur__descr fz-24">
                     <h2 className="aboutOur__title fz-24">{title}</h2>

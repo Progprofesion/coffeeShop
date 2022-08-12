@@ -10,18 +10,20 @@ const SearchComponent = () => {
     const dispatch = useDispatch();
     return (
         <section className="search">
-            <div className="search__looking">
-                <div className="search__block">
-                    <p className="search__block-title fz-14">Looking foor</p>
-                    <form>
-                        <input
-                            type="text"
-                            placeholder='start typing here...'
-                            className="search__block-input"
-                            onChange={(e) => dispatch(activeSearchCoffee(e.target.value))} />
-                    </form>
+            <div className="container">
+                <div className="search__looking">
+                    <div className="search__block">
+                        <div className="search__block-title fz-14">Looking foor</div>
+                        <form>
+                            <input
+                                type="text"
+                                placeholder='start typing here...'
+                                className="search__block-input"
+                                onChange={(e) => dispatch(activeSearchCoffee(e.target.value))} />
+                        </form>
+                    </div>
+                    <CardsFilters />
                 </div>
-                <CardsFilters />
             </div>
         </section>
     )

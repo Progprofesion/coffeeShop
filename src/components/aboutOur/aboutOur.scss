@@ -1,8 +1,7 @@
 .aboutOur {
     &__wrapper {
         display: flex;
-        width: 700px;
-        margin: 0 auto;
+        justify-content: center;
     }
 
 
@@ -15,7 +14,7 @@
         margin-right: 70px;
     }
     &__text {
-        width: 346px;
+        max-width: 346px;
     }
     &__line {
         margin: 60px auto;
@@ -25,10 +24,32 @@
     }
 };
 
+// Media ---------------------------
+
 @media (max-width: 991px) {
-    .aboutOur {
-        &__text {
-            width: 300px;
-        }
+    .contaier {
+        max-width: 700px;
     }
 }
+
+@media (max-width: 767px) {
+    .aboutOur {
+        &__girl {
+            width: 50%;
+          }
+    }
+}
+
+@media (max-width: 575px) {
+    .aboutOur {
+        &__wrapper {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__girl {
+            width: 55%;
+            margin-top: 80px;
+            margin-right: 0;
+        }
+    }
+} 

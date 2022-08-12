@@ -59,9 +59,16 @@
     }   
 };
 
+.container {
+    max-width: 800px;
+}
+
 // Media ----------
 
 @media (max-width: 991px) {
+    .container {
+        max-width: 90%;
+    }
     .header {
         &__title {
             font-size: 35px;
@@ -71,7 +78,7 @@
 
 @media (max-width: 767px) {
     .header {
-        height: 60vh;
+        height: 50vh;
         &__title {
             font-size: 30px;
         }

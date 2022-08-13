@@ -4,6 +4,7 @@ import Header from "../header/Header";
 import About from "../aboutUs/About";
 import Best from "../best/best";
 import Footer from "../footer/Footer";
+import Burger from "../burger/Burger";
 
 const MainPage = () => {
     return (
@@ -15,6 +16,7 @@ const MainPage = () => {
                         content="Coffee shop app" />
                     <title>Coffee shop</title>
                 </Helmet>
+                <Burger />
                 <Header />
                 <About />
                 <Best />

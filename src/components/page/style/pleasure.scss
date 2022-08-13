@@ -14,3 +14,21 @@
         height: 260px;
     }
 }
+
+// Media ----------------
+
+@media (max-width: 991px) {
+    .pleasure {
+        &__title {
+            font-size: 36px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .pleasure {
+        &__title {
+            font-size: 28px;
+        }
+    }
+}

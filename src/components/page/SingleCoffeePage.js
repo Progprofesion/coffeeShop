@@ -10,7 +10,7 @@ import Page404 from './404';
 import Spinner from '../spinner/Spinner';
 
 import singleCoffee from '../../assets/singleCoffee.svg';
-import './style/singleCoffeePage.scss';
+
 
 const SingleCoffeePage = () => {
     const id = useParams()

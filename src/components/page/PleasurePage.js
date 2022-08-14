@@ -5,6 +5,7 @@ import pleasureAbout from '../../assets/pleasureAbout.svg';
 import AboutOur from '../aboutOur/AboutOur';
 import CardsList from '../cardsList/CardsList';
 import Footer from '../footer/Footer';
+import Hamburger from '../hamburger/Hamburger';
 import './style/pleasure.scss';
 
 const PleasurePage = () => {
@@ -17,6 +18,7 @@ const PleasurePage = () => {
                         content="Page for your pleasure" />
                     <title>For your pleasure</title>
                 </Helmet>
+                <Hamburger />
                 <header className="pleasure">
                     <div className="pleasure__bannerWrapp">
                         <div className="pleasure__header">

@@ -18,12 +18,18 @@
 
 }
 
-@media (max-width: 1199px) {
+// Media --------------------------
+
+@media (max-width: 1440px) {
     .linkPage {
-        margin-left: -20px;
-        padding-left: 70px;
+       margin-left: 30px;
     }
- 
+}
+
+@media (max-width: 991px) {
+    .linkPage {
+        display: table-column;
+    }
 }
 
     

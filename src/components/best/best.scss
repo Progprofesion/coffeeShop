@@ -23,13 +23,18 @@
         width: 151px;
         height: 130px;
         }
+        &-img {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        &-title {
+            padding-top: 10px;
+        }
 
         &-price {
             text-align: right;
             padding: 10px 20px;
-        }
-        &-img {
-            margin-top: 17px;
         }
     }
 };

@@ -56,7 +56,6 @@ const CardsList = () => {
 
     };
 
-
     const elements = renderCardsList(filteredCards);
 
     return (
@@ -66,7 +65,6 @@ const CardsList = () => {
                     {elements}
                 </div>
             </div>
-
         </section>
     )
 };

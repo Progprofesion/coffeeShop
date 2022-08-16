@@ -1,35 +1,48 @@
+import { useGetProductsQuery } from '../api/apiSlice';
+import { Link } from 'react-router-dom';
+
+// eslint-disable-next-line
+import AROMISTICOCoffee1kg from '../../img/AROMISTICOCoffee1kg.svg';
+// eslint-disable-next-line
+import PrestoCoffeeBeans1kg from '../../img/PrestoCoffeeBeans1kg.svg';
+// eslint-disable-next-line
+import SolimoCooffeeBeans2kg from '../../img/SolimoCooffeeBeans2kg.svg';
+
 import './best.scss';
-import SolimoCooffeeBeans2kg from './img/SolimoCooffeeBeans2kg.svg';
-import PrestoCoffeeBeans1kg from './img/PrestoCoffeeBeans1kg.svg';
-import AROMISTICOCoffee1kg from './img/AROMISTICOCoffee1kg.svg';
 
 const Best = () => {
+
+    const {
+        data: products = [],
+    } = useGetProductsQuery();
+
+    const renderCardsList = (arr) => {
+        // eslint-disable-next-line
+        return arr.map(({ id, page, img, title, price }) => {
+            if (id > 3) {
+                return (
+                    <Link key={id} to={`/ourcoffee/${page}`}>
+                        <div className="best__cards">
+                            <div className="best__cards-item">
+                                <img className="best__cards-img" src={img} alt="coffee" />
+                            </div>
+                            <h3 className="best__cards-title fz-14">{title}</h3>
+                            <p className="best__cards-price fz-14">{price}</p>
+                        </div>
+                    </Link>
+                )
+            }
+        });
+    };
+
+    const elements = renderCardsList(products)
+
     return (
         <section className="best">
             <div className="container">
                 <h2 className="best__title fz-24 ">Our best</h2>
                 <div className="best__wrapper">
-                    <div className="best__cards">
-                        <div className="best__cards-item">
-                            <img src={SolimoCooffeeBeans2kg} alt="coffee" />
-                        </div>
-                        <h3 className="best__cards-title fz-14">Solimo Coffee Beans 2 kg</h3>
-                        <p className="best__cards-price fz-14">10.73$</p>
-                    </div>
-                    <div className="best__cards">
-                        <div className="best__cards-item">
-                            <img src={PrestoCoffeeBeans1kg} alt="coffee" />
-                        </div>
-                        <h3 className="best__cards-title fz-14">Presto Coffee Beans 1 kg</h3>
-                        <p className="best__cards-price fz-14">15.99$</p>
-                    </div>
-                    <div className="best__cards">
-                        <div className="best__cards-item">
-                            <img className='best__cards-img' src={AROMISTICOCoffee1kg} alt="coffee" />
-                        </div>
-                        <h3 className="best__cards-title fz-14">AROMISTICO Coffee 1 kg</h3>
-                        <p className="best__cards-price fz-14">6.99$</p>
-                    </div>
+                    {elements}
                 </div>
             </div>
         </section>

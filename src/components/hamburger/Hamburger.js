@@ -5,9 +5,12 @@ import './hamburger.scss';
 const Burger = () => {
     const menuBlock = useRef(null)
 
+
+
     const activeBurgerClass = (e) => {
         e.preventDefault()
         e.currentTarget.classList.toggle('hamburger__active')
+
         menuBlock.current.classList.toggle('menu__active')
         return
     }

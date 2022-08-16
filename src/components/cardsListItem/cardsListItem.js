@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import 'animate.css';
 import './cardsListItem.scss';
 
+
 const Cards = ({ page, img, title, country, price }) => {
     return (
         <div className="cards animate__animated animate__flipInX">

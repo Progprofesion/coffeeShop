@@ -14,7 +14,7 @@ const MainPage = () => {
                     <meta
                         name="description"
                         content="Coffee shop app" />
-                    <title>Coffee shop</title>
+                    <title>Coffee house</title>
                 </Helmet>
                 <Humburger />
                 <Header />

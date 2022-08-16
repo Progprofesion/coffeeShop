@@ -5,9 +5,11 @@ import Spinner from '../spinner/Spinner';
 import Error from '../../assets/Error.gif';
 import CardsListItem from '../cardsListItem/cardsListItem';
 
+
 import './cardsList.scss';
 
 const CardsList = () => {
+
     const {
         data: products = [],
         isLoading,

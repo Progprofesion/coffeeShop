@@ -5,7 +5,7 @@
     }
     &__img {
         margin-top: 70px;
-        max-height: 355px;      
+        min-height: 270px;    
     }
     &__about {
         max-width: 421px;
@@ -41,7 +41,7 @@
 @media (max-width: 991px) {
     .singleCoffeeItem {
         &__img {
-            width: 50%;
+            width: 35%;
         }
     }
 }
@@ -49,7 +49,7 @@
 @media (max-width: 767px) {
     .singleCoffeeItem {
         &__img {
-            width: 80%;
+            width: 55%;
         }
 
     }

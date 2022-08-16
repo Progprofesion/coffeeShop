@@ -3,7 +3,7 @@
 const Spinner = () => {
 
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" style={{ margin: '30vh auto', background: 'none', display: 'block' }} width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+        <svg xmlns="http://www.w3.org/2000/svg" style={{ margin: '15vh auto', background: 'none', display: 'block' }} width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
             <g transform="rotate(0 50 50)">
                 <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#5e6fa3">
                     <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.9166666666666666s" repeatCount="indefinite"></animate>

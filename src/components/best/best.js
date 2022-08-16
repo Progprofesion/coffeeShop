@@ -1,6 +1,9 @@
 import { useGetProductsQuery } from '../api/apiSlice';
 import { Link } from 'react-router-dom';
 
+import Spinner from '../spinner/Spinner';
+import Error from '../../assets/Error.gif';
+
 // eslint-disable-next-line
 import AROMISTICOCoffee1kg from '../../img/AROMISTICOCoffee1kg.svg';
 // eslint-disable-next-line
@@ -14,7 +17,11 @@ const Best = () => {
 
     const {
         data: products = [],
+        isLoading,
+        isError
     } = useGetProductsQuery();
+
+
 
     const renderCardsList = (arr) => {
         // eslint-disable-next-line
@@ -34,6 +41,12 @@ const Best = () => {
             }
         });
     };
+
+    if (isLoading) {
+        return <Spinner />
+    } else if (isError) {
+        return <img src={Error} alt="error" style={{ 'display': 'block', 'margin': '130px auto 0', 'fontWeight': 'bold', 'fontStyle': '24px', 'marginTop': '130px' }} />
+    }
 
     const elements = renderCardsList(products)
 

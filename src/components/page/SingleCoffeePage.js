@@ -3,13 +3,12 @@ import { useGetProductsIdQuery } from '../api/apiSlice';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import HeadBanner from '../headBanner/HeadBanner';
-import SingleCoffeeItem from '../singleCoffee/SingleCoffeeItem';
+import SingleCoffeeItem from '../singleCoffeeItem/SingleCoffeeItem';
 import Footer from '../footer/Footer';
+import Hamburger from '../hamburger/Hamburger';
 
 import Page404 from './404';
 import Spinner from '../spinner/Spinner';
-
-import singleCoffee from '../../assets/singleCoffee.svg';
 
 
 const SingleCoffeePage = () => {
@@ -38,8 +37,9 @@ const SingleCoffeePage = () => {
                         content={`${products.title} coffee page`} />
                     <title>{products.title}</title>
                 </Helmet>
+                <Hamburger />
                 <HeadBanner />
-                <SingleCoffeeItem img={singleCoffee} country={products.country} price={products.price} />
+                <SingleCoffeeItem img={products.img} country={products.country} price={products.price} />
                 <Footer />
             </HelmetProvider>
         </>

@@ -22,7 +22,6 @@ const Best = () => {
     } = useGetProductsQuery();
 
 
-
     const renderCardsList = (arr) => {
         // eslint-disable-next-line
         return arr.map(({ id, page, img, title, price }) => {

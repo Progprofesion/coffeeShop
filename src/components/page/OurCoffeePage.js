@@ -6,6 +6,7 @@ import CardsList from '../cardsList/CardsList';
 import SearchComponent from '../searchComponent/SearchComponent';
 import Footer from '../footer/Footer';
 import Humburger from '../hamburger/Hamburger';
+import Basket from '../basket/Basket';
 import girlCoffee from '../../assets/girlCoffee.svg';
 
 const OurCoffeePage = () => {
@@ -19,6 +20,7 @@ const OurCoffeePage = () => {
                     <title>Our coffee</title>
                 </Helmet>
                 <Humburger />
+                <Basket />
                 <HeadBanner />
                 <AboutOur img={girlCoffee} title={'About our beans'} />
                 <SearchComponent />

@@ -6,6 +6,7 @@ import HeadBanner from '../headBanner/HeadBanner';
 import SingleCoffeeItem from '../singleCoffeeItem/SingleCoffeeItem';
 import Footer from '../footer/Footer';
 import Hamburger from '../hamburger/Hamburger';
+import Basket from '../basket/Basket';
 
 import Page404 from './404';
 import Spinner from '../spinner/Spinner';
@@ -21,6 +22,7 @@ const SingleCoffeePage = () => {
         isLoading,
         isError
     } = useGetProductsIdQuery(coffeeId);
+
 
     if (isLoading) {
         return <Spinner />
@@ -38,6 +40,7 @@ const SingleCoffeePage = () => {
                     <title>{products.title}</title>
                 </Helmet>
                 <Hamburger />
+                <Basket title={products.title} price={products.price} />
                 <HeadBanner />
                 <SingleCoffeeItem img={products.img} country={products.country} price={products.price} />
                 <Footer />

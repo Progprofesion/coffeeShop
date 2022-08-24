@@ -10,12 +10,22 @@
     height: 115px;
     }
     &__price {
-        text-align: right;
+        text-align: left;
         padding: 0 20px;
     }
     &__country {
-        text-align: right;
+        text-align: left;
         padding: 9px 25px;
+    }
+    &__basket {
+        position: absolute;
+        width: 70px;
+        height: 50px;
+        right: 20px;
+        bottom: 20px;
+        border-radius: 10px;
+        border: 2px solid rgba(174, 242, 224, 0.657);
+        // background-color: rgb(174, 242, 224);
     }
     filter: drop-shadow(5px 5px 35px rgba(0, 0, 0, 0.25));
 }

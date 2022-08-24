@@ -1,14 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
 import filters from '../components/cardsFilters/cadsFiltersSlice';
+import basket from '../components/basket/basketSlice';
 
 import { apiSlice } from '../components/api/apiSlice';
 
 const store = configureStore({
     reducer: {
-        filters,
+        filters, basket,
         [apiSlice.reducerPath]: apiSlice.reducer
     },
-    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(apiSlice.middleware),
+    middleware: getDefaultMiddleware => getDefaultMiddleware({
+        serializableCheck: false,
+    }).concat(apiSlice.middleware),
     devtools: process.env.NODE_ENV !== 'production'
 });
 

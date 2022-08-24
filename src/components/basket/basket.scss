@@ -1,0 +1,12 @@
+.basket {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    right: 60px;
+    top: 30px;
+    border-radius: 10px;
+    border: 2px solid rgba(174, 242, 224, 0.657);
+    background-color: rgba(174, 242, 224, 0.657);
+}

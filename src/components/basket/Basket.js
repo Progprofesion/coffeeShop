@@ -8,19 +8,39 @@ import './basket.scss';
 const Basket = () => {
     const state = useSelector(state => state.basket.stateBasket);
 
-    const [counter, setCounter] = useState(-1);
+    const [amount, setAmount] = useState(-1);
+    const [count, setCount] = useState(0);
+    const [total, setTotal] = useState(0);
+
+
 
     useEffect(() => {
-        setCounter(counter + 1)
+        setAmount(amount + 1)
+        if (state.price !== undefined) {
+            let test = state.price.replace(/\$/, '');
+            let number = test * 1;
+            setCount(number);
+        }
+        if (count) {
+            let res = count + count
+            setCount(res);
+            console.log(res)
+        }
         // eslint-disable-next-line
-    }, [state.count])
+    }, [state.count]);
+    // console.log(count)
 
-    // console.log(test)
+
+    // useEffect(() => {
+    //     setCount(number)
+    // }, [amount])
+
+
 
     return (
         <div className="basket">
-            <div className="basket__res">{counter}</div>
-            <div className="basket__price">{state.price}</div>
+            <div className="basket__res">{amount}</div>
+            <div className="basket__price">{`${count}$`}</div>
         </div>
     )
 };

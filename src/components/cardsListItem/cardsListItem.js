@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { activeStateBasket } from '../basket/basketSlice';
 
-
+import { useState } from 'react';
 
 import 'animate.css';
 import './cardsListItem.scss';
@@ -12,20 +12,13 @@ import './cardsListItem.scss';
 const Cards = ({ page, img, title, country, price }) => {
     const dispatch = useDispatch();
 
+    const [count, setCount] = useState(Math.random() * 100);
+
     const update = (e) => {
         e.preventDefault();
-        // if (e.target.classList.contains('cards__basket')) {
-        //     dispatch(activeStateBasket(e))
-        // }
-
-        dispatch(activeStateBasket({ title, country, price }))
-
-        // console.log(title)
-
-    }
-
-
-
+        setCount(count + 1)
+        dispatch(activeStateBasket({ page, price, count }))
+    };
 
     return (
         <div
@@ -42,7 +35,6 @@ const Cards = ({ page, img, title, country, price }) => {
             </Link>
             <button
                 className="cards__basket">+1</button>
-
         </div>
     )
 };

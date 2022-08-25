@@ -13,7 +13,7 @@ const cardsSlice = createSlice({
     reducers: {
         activeStateBasket: (state, action) => {
             state.stateBasket = action.payload
-        }
+        },
     }
 });
 

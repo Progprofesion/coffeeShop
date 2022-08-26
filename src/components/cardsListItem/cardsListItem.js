@@ -17,7 +17,7 @@ const Cards = ({ page, img, title, country, price }) => {
     const update = (e) => {
         e.preventDefault();
         setCount(count + 1)
-        dispatch(activeStateBasket({ page, price, count }))
+        dispatch(activeStateBasket({ page, img, price, country, count }))
     };
 
     return (

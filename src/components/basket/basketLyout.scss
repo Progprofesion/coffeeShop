@@ -1,0 +1,33 @@
+.basketLayont {
+    width: 500px;
+    min-height: 500px;
+    margin: 0 auto; 
+    text-align: center;
+    border: 1px solid rgb(30, 240, 255);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.65);
+    filter: drop-shadow(5px 5px 35px rgba(0, 0, 0, 0.25));
+    &__amount {
+        margin-top: 20px;
+    }
+    &__wrapp {
+        display: flex;
+        // grid-template-columns: repeat(3, 150px);
+    }
+    &__img {
+        margin: 50px 0 0 50px;
+        width: 150px;
+        height: 150px;
+        border: 1px solid rgb(30, 240, 255);
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.65);
+        filter: drop-shadow(5px 5px 35px rgba(0, 0, 0, 0.25));
+    }   
+    &__result {
+        margin-top: 55px;
+        margin-left: 30px;
+    }
+    &__price {
+        margin-top: 55px;
+    }
+}

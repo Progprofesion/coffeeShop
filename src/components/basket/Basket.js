@@ -24,6 +24,7 @@ const Basket = () => {
             // Убирать символ $ преобразовать в число и записать в стейт.
             setTotal((state.price.replace(/\$/, '') * 1) + total);
             dispatch(activeTotals({ total, amount }))
+
         }
         // eslint-disable-next-line
     }, [state.count]);

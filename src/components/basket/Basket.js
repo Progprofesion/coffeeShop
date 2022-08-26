@@ -1,15 +1,17 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { activeStateBasket } from '../basket/basketSlice';
-import BasketLayout from '../basket/BasketLayout';
+import { activeTotals } from '../basket/basketSlice';
 
 import { useState, useEffect } from 'react';
+
+import BasketLayout from '../basket/BasketLayout';
 
 
 import './basket.scss';
 
 const Basket = () => {
     const state = useSelector(state => state.basket.stateBasket);
+
 
     const dispatch = useDispatch();
 
@@ -18,10 +20,10 @@ const Basket = () => {
 
     useEffect(() => {
         setAmount(amount + 1)
-        if (state.price !== undefined) {
+        if (state.price !== undefined && state.country !== undefined) {
             // Убирать символ $ преобразовать в число и записать в стейт.
             setTotal((state.price.replace(/\$/, '') * 1) + total);
-            dispatch(activeStateBasket({ total, amount }))
+            dispatch(activeTotals({ total, amount }))
         }
         // eslint-disable-next-line
     }, [state.count]);

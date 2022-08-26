@@ -3,8 +3,8 @@ import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
 
 const cardsAdapter = createEntityAdapter();
 const initialState = cardsAdapter.getInitialState({
-    stateBasket: [],
-    total: ''
+    stateBasket: 0,
+    total: 0
 });
 
 const cardsSlice = createSlice({
@@ -15,7 +15,7 @@ const cardsSlice = createSlice({
             state.stateBasket = action.payload
         },
         activeTotals: (state, action) => {
-            state.stateBasket = action.payload
+            state.total = action.payload
         }
     }
 });

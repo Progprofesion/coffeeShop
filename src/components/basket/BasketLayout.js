@@ -1,27 +1,27 @@
-import './basketLyout.scss';
-import LinkPageBlack from '../linkPage/LinkPageBlack';
-import { useSelector } from 'react-redux';
 
+import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 
+import LinkPageBlack from '../linkPage/LinkPageBlack';
+
+import './basketLyout.scss';
 const BasketLayout = () => {
 
     const state = useSelector(state => state.basket.stateBasket);
     const stateTotal = useSelector(state => state.basket.total);
 
-    const [total, setTotal] = useState(0);
     const [{ items }, setItems] = useState({ items: [] });
-    const [price, setPrice] = useState();
+    const [price, setPrice] = useState(0);
 
     useEffect(() => {
         if (stateTotal.total !== undefined) {
-            setTotal((state.price.replace(/\$/, '') * 1) + total);
             setPrice(state.price.replace(/\$/, '') * 1)
             addItem(state.count);
         }
         // eslint-disable-next-line
     }, [stateTotal.amount, stateTotal.total])
 
+    let test = stateTotal.total + price;
 
     const addItem = (id) => {
         items.push(<div key={id} className="basketLayont__wrapp">
@@ -34,7 +34,6 @@ const BasketLayout = () => {
         </div>);
         setItems({ items: [...items] });
     };
-    console.log(price)
 
     return (
         <>
@@ -42,7 +41,7 @@ const BasketLayout = () => {
             <section className="basketLayont">
                 <h2 className="basketLayont__title">Shopping cart</h2>
                 <h3 className="basketLayont__amount">Количество товаров: {stateTotal.amount}</h3>
-                <h3 className="basketLayont__amount">Общая сумма: {stateTotal.total + price}</h3>
+                <h3 className="basketLayont__amount">Общая сумма: {stateTotal.total + price ? test.toFixed(2) : 0}</h3>
                 {items}
             </section>
         </>

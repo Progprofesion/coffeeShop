@@ -12,7 +12,7 @@ import './cardsListItem.scss';
 const Cards = ({ page, img, title, country, price }) => {
     const dispatch = useDispatch();
 
-    const [count, setCount] = useState(Math.random() * 100);
+    const [count, setCount] = useState(Math.random() * 1000);
 
     const update = (e) => {
         e.preventDefault();

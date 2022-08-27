@@ -24,15 +24,14 @@ const Basket = () => {
             // Убирать символ $ преобразовать в число и записать в стейт.
             setTotal((state.price.replace(/\$/, '') * 1) + total);
             dispatch(activeTotals({ total, amount }))
-
         }
         // eslint-disable-next-line
     }, [state.count]);
 
     return (
         <Link to="/basket" className="basket">
-            <BasketLayout />
-            <div className="basket__res">{amount}</div>
+            {/* <BasketLayout /> */}
+            <div className="basket__res">{amount - 1}</div>
             <div className="basket__price">{`${total.toFixed(2)}$`}</div>
         </Link>
     )

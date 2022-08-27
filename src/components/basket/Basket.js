@@ -15,7 +15,7 @@ const Basket = () => {
 
     const dispatch = useDispatch();
 
-    const [amount, setAmount] = useState(-1);
+    const [amount, setAmount] = useState(0);
     const [total, setTotal] = useState(0);
 
     useEffect(() => {

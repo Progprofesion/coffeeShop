@@ -11,18 +11,20 @@ const BasketLayout = () => {
 
     const [total, setTotal] = useState(0);
     const [{ items }, setItems] = useState({ items: [] });
+    const [price, setPrice] = useState();
 
     useEffect(() => {
         if (stateTotal.total !== undefined) {
-            setTotal((state.price.replace(/\$/, '') * 1) + total);;
-            addItem()
+            setTotal((state.price.replace(/\$/, '') * 1) + total);
+            setPrice(state.price.replace(/\$/, '') * 1)
+            addItem(state.count);
         }
         // eslint-disable-next-line
     }, [stateTotal.amount, stateTotal.total])
 
 
-    const addItem = () => {
-        items.push(<div className="basketLayont__wrapp">
+    const addItem = (id) => {
+        items.push(<div key={id} className="basketLayont__wrapp">
             <img src={state.img} alt="coffee" className="basketLayont__img" />
             <div className="basketLayont__result">
                 <div className="basketLayont__title">{state.title}</div>
@@ -32,15 +34,15 @@ const BasketLayout = () => {
         </div>);
         setItems({ items: [...items] });
     };
-    console.log(total)
+    console.log(price)
 
     return (
         <>
             <LinkPageBlack />
             <section className="basketLayont">
                 <h2 className="basketLayont__title">Shopping cart</h2>
-                <h3 className="basketLayont__amount">Количество товаров: {stateTotal.amount + 1}</h3>
-                <h3 className="basketLayont__amount">Общая сумма: {total}</h3>
+                <h3 className="basketLayont__amount">Количество товаров: {stateTotal.amount}</h3>
+                <h3 className="basketLayont__amount">Общая сумма: {stateTotal.total + price}</h3>
                 {items}
             </section>
         </>

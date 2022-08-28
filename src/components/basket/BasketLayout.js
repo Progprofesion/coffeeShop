@@ -17,6 +17,7 @@ const BasketLayout = () => {
     useEffect(() => {
         if (stateTotal.total !== undefined) {
             setPrice((state.price.replace(/\$/, '') * 1) + stateTotal.total)
+            setAmount(stateTotal.amount)
             addItem(state.count);
         }
         // eslint-disable-next-line

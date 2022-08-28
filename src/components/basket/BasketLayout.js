@@ -1,4 +1,3 @@
-
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 
@@ -9,19 +8,28 @@ const BasketLayout = () => {
 
     const state = useSelector(state => state.basket.stateBasket);
     const stateTotal = useSelector(state => state.basket.total);
+    const stateDescr = useSelector(state => state.basket.basketDecr);
 
     const [{ items }, setItems] = useState({ items: [] });
     const [price, setPrice] = useState(0);
+    const [amount, setAmount] = useState(0);
 
     useEffect(() => {
         if (stateTotal.total !== undefined) {
-            setPrice(state.price.replace(/\$/, '') * 1)
+            setPrice((state.price.replace(/\$/, '') * 1) + stateTotal.total)
             addItem(state.count);
         }
         // eslint-disable-next-line
     }, [stateTotal.amount, stateTotal.total])
 
-    let test = stateTotal.total + price;
+    useEffect(() => {
+        if (stateDescr.total !== undefined) {
+            setPrice(stateTotal.total - (state.price.replace(/\$/, '') * 1))
+            setAmount(stateTotal.amount - 2)
+            addItem(state.count);
+        }
+        // eslint-disable-next-line
+    }, [stateDescr.total])
 
     const addItem = (id) => {
         items.push(<div key={id} className="basketLayont__wrapp">
@@ -40,8 +48,8 @@ const BasketLayout = () => {
             <LinkPageBlack />
             <section className="basketLayont">
                 <h2 className="basketLayont__title">Shopping cart</h2>
-                <h3 className="basketLayont__amount">Количество товаров: {stateTotal.amount}</h3>
-                <h3 className="basketLayont__amount">Общая сумма: {stateTotal.total + price ? test.toFixed(2) : 0}</h3>
+                <h3 className="basketLayont__amount">Количество товаров: {amount}</h3>
+                <h3 className="basketLayont__amount">Общая сумма: {price ? price.toFixed(2) : 0}</h3>
                 {items}
             </section>
         </>

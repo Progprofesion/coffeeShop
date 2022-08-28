@@ -5,6 +5,7 @@ const cardsAdapter = createEntityAdapter();
 const initialState = cardsAdapter.getInitialState({
     stateBasket: 0,
     total: 0,
+    basketCards: 0
 });
 
 const cardsSlice = createSlice({
@@ -17,6 +18,9 @@ const cardsSlice = createSlice({
         activeTotals: (state, action) => {
             state.total = action.payload
         },
+        activeBasketCards: (state, action) => {
+            state.total += action.payload
+        }
     }
 });
 

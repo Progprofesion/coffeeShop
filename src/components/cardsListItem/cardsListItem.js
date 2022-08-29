@@ -29,6 +29,7 @@ const Cards = ({ page, img, title, country, price }) => {
             setAmount(amount - 1)
         }
         dispatch(activeTotals({ count, amount }))
+
     };
 
     return (

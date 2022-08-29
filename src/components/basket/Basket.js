@@ -28,11 +28,12 @@ const Basket = () => {
         if (amount > 1) {
             setAmount(amount - 1)
         }
-        if (state.price !== undefined && total > 0) {
+        if (state.price !== undefined && total > 0 && stateTotal.amount) {
             // Убирать символ $ преобразовать в число и записать в стейт.
             setTotal(total - (state.price.replace(/\$/, '') * 1));
             dispatch(activeTotals({ total, amount }))
             dispatch(activeBasketDecr({ total, amount }))
+            console.log(stateTotal)
         }
         // eslint-disable-next-line
     }, [stateTotal.count]);

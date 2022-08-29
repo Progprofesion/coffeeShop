@@ -25,8 +25,10 @@ const Basket = () => {
     }, [state.count]);
 
     useEffect(() => {
-        setAmount(amount - 1)
-        if (state.price !== undefined) {
+        if (amount > 1) {
+            setAmount(amount - 1)
+        }
+        if (state.price !== undefined && total > 0) {
             // Убирать символ $ преобразовать в число и записать в стейт.
             setTotal(total - (state.price.replace(/\$/, '') * 1));
             dispatch(activeTotals({ total, amount }))

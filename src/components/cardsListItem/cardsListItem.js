@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
-import { activeStateBasket, activeTotals, activeBasketDecr } from '../basket/basketSlice';
+import { activeStateBasket, activeTotals } from '../basket/basketSlice';
 
 import 'animate.css';
 import './cardsListItem.scss';
@@ -24,8 +24,10 @@ const Cards = ({ page, img, title, country, price }) => {
 
     const basketDecr = (e) => {
         e.preventDefault();
-        setAmount(amount - 1)
         setCount(count + 1)
+        if (amount > 0) {
+            setAmount(amount - 1)
+        }
         dispatch(activeTotals({ count, amount }))
     };
 

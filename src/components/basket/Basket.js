@@ -12,7 +12,7 @@ const Basket = () => {
 
     const dispatch = useDispatch();
 
-    const [amount, setAmount] = useState(2);
+    const [amount, setAmount] = useState(0);
     const [total, setTotal] = useState(0);
     useEffect(() => {
         setAmount(amount + 1)
@@ -25,16 +25,17 @@ const Basket = () => {
     }, [state.count]);
 
     useEffect(() => {
-        if (amount > 1) {
-            setAmount(amount - 1)
-        }
+        // if (amount > 1) {
+        //     setAmount(amount - 1)
+        // }
         if (state.price !== undefined && total > 0 && stateTotal.amount) {
             // Убирать символ $ преобразовать в число и записать в стейт.
             setTotal(total - (state.price.replace(/\$/, '') * 1));
             dispatch(activeTotals({ total, amount }))
             dispatch(activeBasketDecr({ total, amount }))
-            console.log(stateTotal)
+            setAmount(amount - 1)
         }
+
         // eslint-disable-next-line
     }, [stateTotal.count]);
 

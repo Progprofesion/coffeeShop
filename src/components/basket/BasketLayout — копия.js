@@ -18,12 +18,13 @@ const BasketLayout = () => {
 
     const dispatch = useDispatch();
 
+
     useEffect(() => {
         if (stateTotal.total !== undefined) {
             setPrice((state.price.replace(/\$/, '') * 1) + stateTotal.total)
             setAmount(stateTotal.amount)
             addItem(state.count)
-            // dispatch(activeBasketCards({ items }))
+            dispatch(activeBasketCards(items))
         }
         // eslint-disable-next-line
     }, [stateTotal.amount, stateTotal.total])
@@ -33,6 +34,7 @@ const BasketLayout = () => {
             setPrice(stateTotal.total - (state.price.replace(/\$/, '') * 1))
             setAmount(stateTotal.amount - 2)
             addItem(state.count)
+            // dispatch(activeBasketCards(items))
         }
         // eslint-disable-next-line
     }, [stateDescr.total])
@@ -47,18 +49,9 @@ const BasketLayout = () => {
             </div>
         </div>);
         setItems({ items: [...items] });
-        dispatch(activeBasketCards([...items]))
     };
-
-    // const elements = [...items];
-
-    // const test = (elements) => {
-    //     return elements
-    // }
-
-    // let smf = test(stateCards)
-    // console.log(smf)
-
+    console.log(stateCards)
+    console.log(items)
 
     return (
         <>
@@ -67,7 +60,7 @@ const BasketLayout = () => {
                 <h2 className="basketLayont__title">Shopping cart</h2>
                 <h3 className="basketLayont__amount">Количество товаров: {amount}</h3>
                 <h3 className="basketLayont__amount">Общая сумма: {price ? price.toFixed(2) : 0}</h3>
-                {stateCards}
+                {items}
             </section>
         </>
     )

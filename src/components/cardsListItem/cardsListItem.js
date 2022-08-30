@@ -37,16 +37,18 @@ const Cards = ({ page, img, title, country, price }) => {
             name='cards'
 
             className="cards animate__animated animate__flipInX">
-            <Link to={`/ourcoffee/${page}`}>
-                <div className="cards__item" name='cards' type="text">
+
+            <div className="cards__item" name='cards' type="text">
+                <Link to={`/ourcoffee/${page}`}>
                     <img className="cards__img" src={img} alt="coffee" />
-                </div>
-                <h3 className="cards__subtitle fz-14">{title}</h3>
-                <div className="cards__country fz-14">{country}
-                    <div className="cards__amount">{amount}</div>
-                </div>
-                <div className="cards__price fz-14">{price}</div>
-            </Link>
+                </Link>
+            </div>
+            <h3 className="cards__subtitle fz-14">{title}</h3>
+            <div className="cards__country fz-14">{country}
+                <div className="cards__amount">{amount}</div>
+            </div>
+            <div className="cards__price fz-14">{price}</div>
+
             <button
                 onClick={(e) => basketIncr(e)}
                 className="cards__basketIncr">+1</button>

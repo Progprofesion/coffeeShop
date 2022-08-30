@@ -2,6 +2,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { activeTotals, activeBasketDecr } from '../basket/basketSlice';
 
+import BasketLayout from '../basket/BasketLayout';
+
 import { useState, useEffect } from 'react';
 
 import './basket.scss';
@@ -12,7 +14,7 @@ const Basket = () => {
 
     const dispatch = useDispatch();
 
-    const [amount, setAmount] = useState(0);
+    const [amount, setAmount] = useState(2);
     const [total, setTotal] = useState(0);
     useEffect(() => {
         setAmount(amount + 1)
@@ -25,24 +27,23 @@ const Basket = () => {
     }, [state.count]);
 
     useEffect(() => {
-        // if (amount > 1) {
-        //     setAmount(amount - 1)
-        // }
+        if (amount > 1) {
+            setAmount(amount - 1)
+        }
         if (state.price !== undefined && total > 0 && stateTotal.amount) {
             // Убирать символ $ преобразовать в число и записать в стейт.
             setTotal(total - (state.price.replace(/\$/, '') * 1));
             dispatch(activeTotals({ total, amount }))
             dispatch(activeBasketDecr({ total, amount }))
-            setAmount(amount - 1)
+            console.log(stateTotal)
         }
-
         // eslint-disable-next-line
     }, [stateTotal.count]);
 
     return (
         <Link to="/basket" className="basket">
-            {/* <BasketLayout /> */}
-            <div className="basket__res">{amount - 1}</div>
+            <BasketLayout />
+            <div className="basket__amount">{amount - 1}</div>
             <div className="basket__price">{`${total.toFixed(2)}$`}</div>
         </Link>
     )

@@ -1,5 +1,6 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
+
 
 import LinkPageBlack from '../linkPage/LinkPageBlack';
 
@@ -12,10 +13,10 @@ const BasketLayout = () => {
     const stateCards = useSelector(state => state.basket.basketCards)
 
 
+
     const [price, setPrice] = useState(0);
     const [amount, setAmount] = useState(0);
-
-    const dispatch = useDispatch();
+    const [test, setTest] = useState(0);
 
     useEffect(() => {
         if (stateTotal.total !== undefined) {
@@ -29,9 +30,11 @@ const BasketLayout = () => {
         if (stateDescr.total !== undefined) {
             setPrice(stateTotal.total - (state.price.replace(/\$/, '') * 1))
             setAmount(stateTotal.amount - 2)
+
         }
         // eslint-disable-next-line
     }, [stateDescr.total])
+
 
 
     return (

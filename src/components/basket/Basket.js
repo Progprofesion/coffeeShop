@@ -11,6 +11,7 @@ import './basket.scss';
 const Basket = () => {
     const state = useSelector(state => state.basket.stateBasket);
     const stateTotal = useSelector(state => state.basket.total);
+    const stateCards = useSelector(state => state.basket.basketCards)
 
     const dispatch = useDispatch();
 
@@ -37,8 +38,10 @@ const Basket = () => {
             setTotal(total - (state.price.replace(/\$/, '') * 1));
             dispatch(activeTotals({ total, amount }))
             dispatch(activeBasketDecr({ total, amount }))
-            addItem(state.count)
+
         }
+        const test = items.filter(removeSecond);
+        dispatch(activeBasketCards(test))
         // eslint-disable-next-line
     }, [stateTotal.count]);
 
@@ -56,6 +59,11 @@ const Basket = () => {
         dispatch(activeBasketCards([...items]))
     };
 
+    function removeSecond(element, index) {
+        return index !== element
+    }
+
+    console.log(stateCards)
 
     return (
         <Link to="/basket" className="basket">

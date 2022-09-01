@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 
-
 import LinkPageBlack from '../linkPage/LinkPageBlack';
 
 import './basketLyout.scss';
@@ -10,7 +9,8 @@ const BasketLayout = () => {
     const state = useSelector(state => state.basket.stateBasket);
     const stateTotal = useSelector(state => state.basket.total);
     const stateDescr = useSelector(state => state.basket.basketDecr);
-    const stateCards = useSelector(state => state.basket.basketCards)
+    const stateCards = useSelector(state => state.basket.basketCards);
+
 
     const [price, setPrice] = useState(0);
     const [amount, setAmount] = useState(0);

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 
-import { activeStateBasket, activeTotals, activeBasketDecr } from '../basket/basketSlice';
+import { activeStateBasket, activeTotals, activeBasketCards } from '../basket/basketSlice';
 
 import 'animate.css';
 import './cardsListItem.scss';
@@ -10,14 +10,13 @@ import './cardsListItem.scss';
 
 const Cards = ({ page, img, title, country, price }) => {
 
+    const stateCards = useSelector(state => state.basket.basketCards);
     const state = useSelector(state => state.basket.stateBasket);
-    const stateDescr = useSelector(state => state.basket.basketDecr);
+
+    const [count, setCount] = useState(Math.floor(Math.random() * 1000));
+    const [amount, setAmount] = useState(0);
 
     const dispatch = useDispatch();
-
-    const [test, setTest] = useState(0);
-    const [count, setCount] = useState(Math.random() * 1000);
-    const [amount, setAmount] = useState(0);
 
     const basketIncr = (e) => {
         e.preventDefault();
@@ -33,7 +32,13 @@ const Cards = ({ page, img, title, country, price }) => {
             setAmount(amount - 1)
             dispatch(activeStateBasket({ page, img, price, title, country, count, amount }))
         }
-
+        if (amount > 0) {
+            let res = stateCards.filter((element, i) => {
+                return i !== element
+            })
+            activeBasketCards([...res])
+            console.log(stateCards)
+        }
         dispatch(activeTotals({ count, amount }))
     };
 

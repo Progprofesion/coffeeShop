@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 
-import { activeStateBasket, activeTotals } from '../basket/basketSlice';
+import { activeStateBasket, activeTotals, activeBasketDecr } from '../basket/basketSlice';
 
 import 'animate.css';
 import './cardsListItem.scss';
@@ -10,8 +10,12 @@ import './cardsListItem.scss';
 
 const Cards = ({ page, img, title, country, price }) => {
 
+    const state = useSelector(state => state.basket.stateBasket);
+    const stateDescr = useSelector(state => state.basket.basketDecr);
+
     const dispatch = useDispatch();
 
+    const [test, setTest] = useState(0);
     const [count, setCount] = useState(Math.random() * 1000);
     const [amount, setAmount] = useState(0);
 
@@ -27,17 +31,16 @@ const Cards = ({ page, img, title, country, price }) => {
         setCount(count + 1)
         if (amount > 0) {
             setAmount(amount - 1)
+            dispatch(activeStateBasket({ page, img, price, title, country, count, amount }))
         }
-        dispatch(activeTotals({ count, amount }))
 
+        dispatch(activeTotals({ count, amount }))
     };
 
     return (
         <div
             name='cards'
-
             className="cards animate__animated animate__flipInX">
-
             <div className="cards__item" name='cards' type="text">
                 <Link to={`/ourcoffee/${page}`}>
                     <img className="cards__img" src={img} alt="coffee" />

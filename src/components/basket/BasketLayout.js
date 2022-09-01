@@ -12,11 +12,8 @@ const BasketLayout = () => {
     const stateDescr = useSelector(state => state.basket.basketDecr);
     const stateCards = useSelector(state => state.basket.basketCards)
 
-
-
     const [price, setPrice] = useState(0);
     const [amount, setAmount] = useState(0);
-    const [test, setTest] = useState(0);
 
     useEffect(() => {
         if (stateTotal.total !== undefined) {

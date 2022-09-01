@@ -63,12 +63,14 @@ const Basket = () => {
     function removeSecond(element, index) {
         return index !== element
     }
+    console.log(total)
 
     return (
         <Link to="/basket" className="basket">
             {/* <BasketLayout /> */}
             <div className="basket__amount">{amount - 1}</div>
-            <div className="basket__price">{`${total.toFixed(2)}$` ? `${total.toFixed(2)}$` : `0.00$`}</div>
+            <div className="basket__price">{total < 0 ? `0.00$` :
+                `${total.toFixed(2)}$`}</div>
         </Link>
     )
 };

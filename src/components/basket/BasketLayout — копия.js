@@ -1,8 +1,8 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 
-
 import LinkPageBlack from '../linkPage/LinkPageBlack';
+import { activeBasketCards } from '../basket/basketSlice';
 
 import './basketLyout.scss';
 const BasketLayout = () => {
@@ -12,16 +12,19 @@ const BasketLayout = () => {
     const stateDescr = useSelector(state => state.basket.basketDecr);
     const stateCards = useSelector(state => state.basket.basketCards)
 
-
-
+    const [{ items }, setItems] = useState({ items: [] });
     const [price, setPrice] = useState(0);
     const [amount, setAmount] = useState(0);
-    const [test, setTest] = useState(0);
+
+    const dispatch = useDispatch();
+
 
     useEffect(() => {
         if (stateTotal.total !== undefined) {
             setPrice((state.price.replace(/\$/, '') * 1) + stateTotal.total)
             setAmount(stateTotal.amount)
+            addItem(state.count)
+            dispatch(activeBasketCards(items))
         }
         // eslint-disable-next-line
     }, [stateTotal.amount, stateTotal.total])
@@ -30,9 +33,25 @@ const BasketLayout = () => {
         if (stateDescr.total !== undefined) {
             setPrice(stateTotal.total - (state.price.replace(/\$/, '') * 1))
             setAmount(stateTotal.amount - 2)
+            addItem(state.count)
+            // dispatch(activeBasketCards(items))
         }
         // eslint-disable-next-line
     }, [stateDescr.total])
+
+    const addItem = (id) => {
+        items.push(<div key={id} className="basketLayont__wrapp">
+            <img src={state.img} alt="coffee" className="basketLayont__img" />
+            <div className="basketLayont__result">
+                <div className="basketLayont__title">{state.title}</div>
+                <div className="basketLayont__country">{state.country}</div>
+                <div className="basketLayont__price">{state.price}</div>
+            </div>
+        </div>);
+        setItems({ items: [...items] });
+    };
+    console.log(stateCards)
+    console.log(items)
 
     return (
         <>
@@ -41,7 +60,7 @@ const BasketLayout = () => {
                 <h2 className="basketLayont__title">Shopping cart</h2>
                 <h3 className="basketLayont__amount">Количество товаров: {amount}</h3>
                 <h3 className="basketLayont__amount">Общая сумма: {price ? price.toFixed(2) : 0}</h3>
-                {[...stateCards]}
+                {items}
             </section>
         </>
     )

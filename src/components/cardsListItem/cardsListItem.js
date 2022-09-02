@@ -32,13 +32,6 @@ const Cards = ({ page, img, title, country, price }) => {
             setAmount(amount - 1)
             dispatch(activeStateBasket({ page, img, price, title, country, count, amount }))
         }
-        if (amount > 0) {
-            let res = stateCards.filter((element, i) => {
-                return i !== element
-            })
-            activeBasketCards([...res])
-            console.log(stateCards)
-        }
         dispatch(activeTotals({ count, amount }))
     };
 

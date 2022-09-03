@@ -6,6 +6,7 @@ import AboutOur from '../aboutOur/AboutOur';
 import CardsList from '../cardsList/CardsList';
 import Footer from '../footer/Footer';
 import Hamburger from '../hamburger/Hamburger';
+import Basket from '../basket/Basket';
 import './style/pleasure.scss';
 
 const PleasurePage = () => {
@@ -20,6 +21,7 @@ const PleasurePage = () => {
                 </Helmet>
                 <Hamburger />
                 <header className="pleasure">
+                    <Basket />
                     <div className="pleasure__bannerWrapp">
                         <div className="pleasure__header">
                             <LinkPage />

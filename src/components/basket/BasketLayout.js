@@ -8,9 +8,8 @@ const BasketLayout = () => {
 
     const state = useSelector(state => state.basket.stateBasket);
     const stateTotal = useSelector(state => state.basket.total);
-    const stateDescr = useSelector(state => state.basket.basketDecr);
+    const stateDecr = useSelector(state => state.basket.basketDecr);
     const stateCards = useSelector(state => state.basket.basketCards);
-
 
     const [price, setPrice] = useState(0);
     const [amount, setAmount] = useState(0);
@@ -24,12 +23,12 @@ const BasketLayout = () => {
     }, [stateTotal.amount, stateTotal.total])
 
     useEffect(() => {
-        if (stateDescr.total !== undefined) {
+        if (stateDecr.total !== undefined) {
             setPrice(stateTotal.total - (state.price.replace(/\$/, '') * 1))
             setAmount(stateTotal.amount - 2)
         }
         // eslint-disable-next-line
-    }, [stateDescr.total])
+    }, [stateDecr.total])
 
     return (
         <>

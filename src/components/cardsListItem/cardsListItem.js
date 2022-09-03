@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { activeStateBasket, activeTotals, activeBasketCards } from '../basket/basketSlice';
 
@@ -13,8 +13,12 @@ const Cards = ({ page, img, title, country, price }) => {
     const stateCards = useSelector(state => state.basket.basketCards);
     const state = useSelector(state => state.basket.stateBasket);
 
+
+
+    const [{ items }, setItems] = useState({ items: [] });
     const [count, setCount] = useState(Math.floor(Math.random() * 1000));
     const [amount, setAmount] = useState(0);
+    const [key, setKey] = useState(0)
 
     const dispatch = useDispatch();
 
@@ -23,7 +27,17 @@ const Cards = ({ page, img, title, country, price }) => {
         setCount(count + 1)
         setAmount(amount + 1)
         dispatch(activeStateBasket({ page, img, price, title, country, count, amount }))
+        console.log(stateCards.length)
     };
+
+    useEffect(() => {
+        if (state.amount === 0 || stateCards.length > 1) {
+            setKey(key + 1)
+            addItem(key)
+        }
+
+        // eslint-disable-next-line
+    }, [state.count]);
 
     const basketDecr = (e) => {
         e.preventDefault();
@@ -32,7 +46,35 @@ const Cards = ({ page, img, title, country, price }) => {
             setAmount(amount - 1)
             dispatch(activeStateBasket({ page, img, price, title, country, count, amount }))
         }
+        // let res = items.filter(item => item.key > key)
+        // setItems({ items: [...items.slice(1)] })
         dispatch(activeTotals({ count, amount }))
+
+        // Убавляет на 1
+        // dispatch(activeBasketCards([...stateCards.slice(1)]))
+        dispatch(activeBasketCards([...stateCards.filter((item, i) => {
+            console.log(item, i)
+            return item.key === item.i
+        })]))
+        // setItems([...stateCards.slice(1)])
+
+
+    };
+
+    console.log(stateCards)
+    const addItem = async (index) => {
+        items.push(<div key={index} className="basketLayont__wrapp">
+            <img src={state.img} alt="coffee" className="basketLayont__img" />
+            <div className="basketLayont__result">
+                <div className="basketLayont__title">{state.title}</div>
+                <div className="basketLayont__country">{state.country}</div>
+                <div className="basketLayont__price">{state.price}</div>
+            </div>
+        </div>);
+        if (items !== undefined) {
+            // setItems({ items })
+            dispatch(activeBasketCards([...items]))
+        }
     };
 
     return (
@@ -51,10 +93,10 @@ const Cards = ({ page, img, title, country, price }) => {
             <div className="cards__price fz-14">{price}</div>
 
             <button
-                onClick={(e) => basketIncr(e)}
+                onClick={basketIncr}
                 className="cards__basketIncr">+1</button>
             <button
-                onClick={(e) => basketDecr(e)}
+                onClick={basketDecr}
                 className="cards__basketDecr">-1</button>
         </div>
     )

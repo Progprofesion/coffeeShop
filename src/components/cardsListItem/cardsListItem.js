@@ -8,7 +8,7 @@ import 'animate.css';
 import './cardsListItem.scss';
 
 
-const Cards = ({ id, img, title, country, price }) => {
+const Cards = ({ id, page, img, title, country, price }) => {
 
     const stateCards = useSelector(state => state.basket.basketCards);
     const state = useSelector(state => state.basket.stateBasket);
@@ -25,38 +25,45 @@ const Cards = ({ id, img, title, country, price }) => {
         setCount(count + 1)
         setAmount(amount + 1)
         dispatch(activeStateBasket({ id, img, price, title, country, count, amount }))
-        if (stateCards === undefined) {
-            console.log(stateCards.key)
+        if (state.amount === 0) {
+            setKey(key + 1)
+            addItem(key)
         }
     };
 
     useEffect(() => {
         if (state.amount === 0) {
             setKey(key + 1)
-            addItem(key, id)
+            addItem(key)
         }
         // eslint-disable-next-line
     }, [state.count]);
 
     const basketDecr = (e) => {
         e.preventDefault();
-        // setCount(count + 1)
+        setCount(count + 1)
         if (amount > 0) {
             setAmount(amount - 1)
-            dispatch(activeStateBasket({ id, img, price, title, country, amount }))
+            dispatch(activeStateBasket({ id, img, price, title, country, count, amount }))
+            dispatch(activeBasketCards([...stateCards.slice(1)]))
         }
         dispatch(activeTotals({ count, amount }))
+
+        // setItems({ items: [...items.slice(1)] })
+        // dispatch(activeBasketCards([...items]))
+        // dispatch(activeBasketCards([...items.filter(item => item.key !== page)]))
         // Убавляет на 1
-        dispatch(activeBasketCards([...stateCards.slice(1)]))
-        // dispatch(activeBasketCards([...stateCards.filter((item, i) => {
-        //     console.log(item, i)
-        //     return item.key === item.i
-        // })]))
-        // setItems([...stateCards.slice(1)])
+        // dispatch(activeBasketCards([...stateCards.slice(1)]))
     };
 
-    const addItem = async (index, id) => {
-        items.push(<div key={index} id={id} className="basketLayont__wrapp">
+    // setValue(objArr.filter(obj => {
+    //     if (obj.id != '38GlFQnHM10UuRDNVUdiebjTq') {
+    //         return obj;
+    //     }
+    // }));
+
+    const addItem = (index) => {
+        items.push(<div key={index} className="basketLayont__wrapp">
             <img src={state.img} alt="coffee" className="basketLayont__img" />
             <div className="basketLayont__result">
                 <div className="basketLayont__title">{state.title}</div>
@@ -64,8 +71,10 @@ const Cards = ({ id, img, title, country, price }) => {
                 <div className="basketLayont__price">{state.price}</div>
             </div>
         </div>);
-        setItems({ items: [...items] })
-        dispatch(activeBasketCards([...items]))
+        if (items !== undefined) {
+            setItems({ items: [...items] })
+            dispatch(activeBasketCards([...items]))
+        }
     };
 
     return (

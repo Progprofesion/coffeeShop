@@ -35,6 +35,7 @@ const Cards = ({ id, page, img, title, country, price }) => {
         if (state.amount === 0) {
             setKey(key + 1)
             addItem(key)
+            // dispatch(activeBasketCards([...newItem]))
         }
         // eslint-disable-next-line
     }, [state.count]);
@@ -45,25 +46,34 @@ const Cards = ({ id, page, img, title, country, price }) => {
         if (amount > 0) {
             setAmount(amount - 1)
             dispatch(activeStateBasket({ id, img, price, title, country, count, amount }))
-            dispatch(activeBasketCards([...stateCards.slice(1)]))
+            setItems([...items.slice(1)])
+            dispatch(activeBasketCards([...items]))
         }
         dispatch(activeTotals({ count, amount }))
-
-        // setItems({ items: [...items.slice(1)] })
-        // dispatch(activeBasketCards([...items]))
-        // dispatch(activeBasketCards([...items.filter(item => item.key !== page)]))
         // Убавляет на 1
         // dispatch(activeBasketCards([...stateCards.slice(1)]))
     };
 
-    // setValue(objArr.filter(obj => {
-    //     if (obj.id != '38GlFQnHM10UuRDNVUdiebjTq') {
-    //         return obj;
-    //     }
-    // }));
 
-    const addItem = (index) => {
-        items.push(<div key={index} className="basketLayont__wrapp">
+    const element = items.map((element, index) => {
+        // console.log(index)
+        return <div key={index} >
+            <button onClick={() => remove(index)} className="test"> TEST</button>
+            {element}
+        </div>;
+    })
+
+    function remove(index) {
+        // setItems([...items.slice(0, index), ...items.slice(index + 1)]);
+        // setItems([...stateCards.slice(1)])
+        //  РАБОТАЕТ!!!!!!!!!!!!!!!!!
+        dispatch(activeBasketCards([...items.slice(0, index), ...items.slice(index + 1)]));
+        // dispatch(activeBasketCards([...items]))
+        console.log(items)
+    }
+
+    const addItem = (key) => {
+        items.push(<div key={key} className="basketLayont__wrapp">
             <img src={state.img} alt="coffee" className="basketLayont__img" />
             <div className="basketLayont__result">
                 <div className="basketLayont__title">{state.title}</div>
@@ -73,7 +83,7 @@ const Cards = ({ id, page, img, title, country, price }) => {
         </div>);
         if (items !== undefined) {
             setItems({ items: [...items] })
-            dispatch(activeBasketCards([...items]))
+            dispatch(activeBasketCards([...element]))
         }
     };
 

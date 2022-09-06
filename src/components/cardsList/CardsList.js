@@ -50,8 +50,8 @@ const CardsList = () => {
             return <h5>No products</h5>
         }
 
-        return arr.map(({ page, ...props }) => {
-            return <CardsListItem key={page} {...props} />
+        return arr.map(({ id, ...props }) => {
+            return <CardsListItem key={id} {...props} />
         });
 
     };

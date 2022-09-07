@@ -11,8 +11,6 @@ import './basket.scss';
 const Basket = () => {
     const state = useSelector(state => state.basket.stateBasket);
     const stateTotal = useSelector(state => state.basket.total);
-    const stateCards = useSelector(state => state.basket.basketCards)
-    const stateDecr = useSelector(state => state.basket.basketDecr);
 
     const dispatch = useDispatch();
 

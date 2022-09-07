@@ -25,9 +25,9 @@ const Best = () => {
     const renderCardsList = (arr) => {
         // eslint-disable-next-line
         return arr.map(({ id, page, img, title, price }) => {
-            if (id > 3) {
+            if (id > 2) {
                 return (
-                    <Link key={id} to={`/ourcoffee/${page}`}>
+                    <Link key={id} to={`/ourcoffee/${id}`}>
                         <div className="best__cards">
                             <div className="best__cards-item">
                                 <img className="best__cards-img" src={img} alt="coffee" />

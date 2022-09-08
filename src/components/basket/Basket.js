@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { activeTotals, activeBasketDecr, activeBasketCards } from '../basket/basketSlice';
+import { activeTotals, activeBasketDecr } from '../basket/basketSlice';
 
 import { useState, useEffect } from 'react';
 
@@ -30,7 +30,6 @@ const Basket = () => {
 
     useEffect(() => {
         if (state.price !== undefined && total > 0 && stateTotal.amount) {
-            // Убирать символ $ преобразовать в число и записать в стейт.
             if (amount > 1) {
                 setAmount(amount - 1)
             }

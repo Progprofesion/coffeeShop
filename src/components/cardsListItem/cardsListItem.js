@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 
-import { activeStateBasket, activeTotals, activeBasketCards } from '../basket/basketSlice';
+import { activeStateBasket, activeTotals } from '../basket/basketSlice';
 
 import 'animate.css';
 import './cardsListItem.scss';
 
 
-const Cards = ({ id, page, img, title, country, price }) => {
+const Cards = ({ id, img, title, country, price }) => {
 
     const [count, setCount] = useState(Math.floor(Math.random() * 1000));
     const [amount, setAmount] = useState(0);
@@ -19,7 +19,7 @@ const Cards = ({ id, page, img, title, country, price }) => {
         e.preventDefault();
         setCount(count + 1)
         setAmount(amount + 1)
-        dispatch(activeStateBasket({ id, page, img, price, title, country, count, amount }))
+        dispatch(activeStateBasket({ id, img, price, title, country, count, amount }))
 
     };
 
@@ -28,7 +28,7 @@ const Cards = ({ id, page, img, title, country, price }) => {
         setCount(count + 1)
         if (amount > 0) {
             setAmount(amount - 1)
-            dispatch(activeStateBasket({ id, page, img, price, title, country, count, amount }))
+            dispatch(activeStateBasket({ id, img, price, title, country, count, amount }))
         }
         dispatch(activeTotals({ count, amount }))
 

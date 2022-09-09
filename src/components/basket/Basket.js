@@ -24,14 +24,16 @@ const Basket = () => {
             setTotal((state.price.replace(/\$/, '') * 1) + total);
             setAmount(amount + 1)
             dispatch(activeTotals({ total, amount }))
+            localStorage.setItem('amount', amount);
         }
         // eslint-disable-next-line
     }, [state.count]);
 
     useEffect(() => {
         if (state.price !== undefined && total > 0 && stateTotal.amount) {
-            if (amount > 1) {
+            if (amount >= 1) {
                 setAmount(amount - 1)
+                localStorage.setItem('amount', amount);
             }
             setTotal(total - (state.price.replace(/\$/, '') * 1));
             dispatch(activeTotals({ total, amount }))
@@ -40,10 +42,14 @@ const Basket = () => {
         // eslint-disable-next-line
     }, [stateTotal.count]);
 
+    let localAmount = localStorage.getItem('amount')
+    console.log(localAmount);
+
+
     return (
         <Link to="/basket" className="basket">
-            <BasketLayout />
-            <div className="basket__amount">{amount - 1}</div>
+            {/* <BasketLayout /> */}
+            <div className="basket__amount">{localAmount}</div>
             <div className="basket__price">{total < 0 ? `0.00$` :
                 `${total.toFixed(2)}$`}</div>
         </Link>

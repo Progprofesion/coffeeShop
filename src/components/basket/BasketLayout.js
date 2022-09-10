@@ -14,8 +14,7 @@ const BasketLayout = () => {
     const [amount, setAmount] = useState(0);
     const [{ items }, setItems] = useState({ items: [] });
 
-    const dispatch = useDispatch();
-
+    // const dispatch = useDispatch();
 
     useEffect(() => {
         if (stateTotal.total !== undefined) {
@@ -55,7 +54,7 @@ const BasketLayout = () => {
             <LinkPageBlack />
             <section className="basketLayont">
                 <h2 className="basketLayont__title">Shopping cart</h2>
-                <h3 className="basketLayont__amount">Количество товаров: {amount ? amount : 0}</h3>
+                <h3 className="basketLayont__amount">Количество товаров: {stateTotal ? stateTotal.amountStorage : 0}</h3>
                 <h3 className="basketLayont__amount">Общая сумма: {price ? price.toFixed(2) : `0.00$`}</h3>
                 {[...items]}
             </section>

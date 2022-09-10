@@ -18,43 +18,49 @@ const Basket = () => {
 
     const dispatch = useDispatch();
 
-    // const [amount, setAmount] = useState(1);
-    const [total, setTotal] = useState(0);
+    const [totalStorage, setTotalStorage] = useState(0);
     let [amountStorage, setAmountStorage] = useLocalStorage('amount', 0);
 
 
     useEffect(() => {
         if (state.price !== undefined) {
             // Убирать символ $ преобразовать в число и записать в стейт.
-            setTotal((state.price.replace(/\$/, '') * 1) + total);
+            setTotalStorage((state.price.replace(/\$/, '') * 1) + totalStorage);
             setAmountStorage(amountStorage + 1)
-            dispatch(activeTotals({ total, amountStorage }))
-            // localStorage.setItem('amount', test);
         }
+        console.log(stateTotal.amountStorage)
+
+
         // eslint-disable-next-line
     }, [state.count]);
 
+
     useEffect(() => {
-        if (state.price !== undefined && total > 0 && stateTotal.amountStorage) {
+        if (amountStorage, amountStorage) {
+            dispatch(activeTotals({ totalStorage, amountStorage }))
+        }
+    }, [amountStorage, totalStorage, state.count]);
+
+
+    useEffect(() => {
+        if (state.price !== undefined && totalStorage > 0 && stateTotal.amountStorage) {
             if (amountStorage >= 1) {
                 setAmountStorage(amountStorage - 1)
                 // localStorage.setItem('amount', test);
             }
-            setTotal(total - (state.price.replace(/\$/, '') * 1));
-            dispatch(activeTotals({ total, amountStorage }))
-            dispatch(activeBasketDecr({ total, amountStorage }))
+            setTotalStorage(totalStorage - (state.price.replace(/\$/, '') * 1));
+            dispatch(activeTotals({ totalStorage, amountStorage }))
+            dispatch(activeBasketDecr({ totalStorage, amountStorage }))
         }
         // eslint-disable-next-line
     }, [stateTotal.count]);
-
-    let localAmount = localStorage.getItem('amount')
 
     return (
         <Link to="/basket" className="basket">
             {/* <BasketLayout /> */}
             <div className="basket__amount">{amountStorage}</div>
-            <div className="basket__price">{total < 0 ? `0.00$` :
-                `${total.toFixed(2)}$`}</div>
+            <div className="basket__price">{totalStorage < 0 ? `0.00$` :
+                `${totalStorage.toFixed(2)}$`}</div>
         </Link>
     )
 };

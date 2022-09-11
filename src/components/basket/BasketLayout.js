@@ -11,7 +11,6 @@ const BasketLayout = () => {
     const state = useSelector(state => state.basket.stateBasket);
     const stateTotal = useSelector(state => state.basket.total);
     const stateDecr = useSelector(state => state.basket.basketDecr);
-    const stateBasketCards = useSelector(state => state.basket.basketCards);
 
     const [key, setKey] = useState(0)
     const [{ items }, setItems] = useState({ items: [] });

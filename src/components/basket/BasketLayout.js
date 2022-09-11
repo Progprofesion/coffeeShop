@@ -3,39 +3,39 @@ import { useState, useEffect } from 'react';
 
 import LinkPageBlack from '../linkPage/LinkPageBlack';
 
+import { activeBasketCards } from '../basket/basketSlice';
+
 import './basketLyout.scss';
 const BasketLayout = () => {
 
     const state = useSelector(state => state.basket.stateBasket);
     const stateTotal = useSelector(state => state.basket.total);
     const stateDecr = useSelector(state => state.basket.basketDecr);
+    const stateBasketCards = useSelector(state => state.basket.basketCards);
 
-    const [price, setPrice] = useState(0);
-    const [amount, setAmount] = useState(0);
+    const [key, setKey] = useState(0)
     const [{ items }, setItems] = useState({ items: [] });
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        if (stateTotal.total !== undefined) {
-            setPrice((state.price.replace(/\$/, '') * 1) + stateTotal.total)
-            setAmount(stateTotal.amount)
-            if (state.amount === 0) {
-                addItem(state.id)
-            }
+        if (state.amount === 0) {
+            setKey(key + 1)
+            addItem(state.id)
         }
-
         // eslint-disable-next-line
     }, [stateTotal.amount])
 
     useEffect(() => {
-        if (stateDecr.total !== undefined) {
-            setPrice(stateTotal.total - (state.price.replace(/\$/, '') * 1))
-            setAmount(stateTotal.amount - 2)
-        }
         setItems({ items: [...items.filter(item => item.props.id !== state.id)] })
+        dispatch(activeBasketCards([...items]))
         // eslint-disable-next-line
     }, [stateDecr.total])
+
+    const amount = localStorage.getItem('amount')
+    const total = localStorage.getItem('total')
+
+
 
     const addItem = (key) => {
         items.push(<div key={key} id={key} className="basketLayont__wrapp">
@@ -47,6 +47,7 @@ const BasketLayout = () => {
             </div>
         </div>)
         setItems({ items: [...items] })
+        dispatch(activeBasketCards([...items]))
     };
 
     return (
@@ -54,8 +55,8 @@ const BasketLayout = () => {
             <LinkPageBlack />
             <section className="basketLayont">
                 <h2 className="basketLayont__title">Shopping cart</h2>
-                <h3 className="basketLayont__amount">Количество товаров: {stateTotal ? stateTotal.amountStorage : 0}</h3>
-                <h3 className="basketLayont__amount">Общая сумма: {price ? price.toFixed(2) : `0.00$`}</h3>
+                <h3 className="basketLayont__amount">Количество товаров: {amount}</h3>
+                <h3 className="basketLayont__amount">Общая сумма: {total}</h3>
                 {[...items]}
             </section>
         </>

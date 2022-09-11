@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
 import { activeStateBasket, activeTotals } from '../basket/basketSlice';
@@ -9,8 +9,6 @@ import './cardsListItem.scss';
 
 
 const Cards = ({ id, img, title, country, price }) => {
-
-    const state = useSelector(state => state.basket.stateBasket);
 
     const [count, setCount] = useState(Math.floor(Math.random() * 1000));
     const [amount, setAmount] = useState(0);
@@ -22,7 +20,6 @@ const Cards = ({ id, img, title, country, price }) => {
         setCount(count + 1)
         setAmount(amount + 1)
         dispatch(activeStateBasket({ id, img, price, title, country, count, amount }))
-
     };
 
     const basketDecr = (e) => {
@@ -33,7 +30,6 @@ const Cards = ({ id, img, title, country, price }) => {
             dispatch(activeStateBasket({ id, img, price, title, country, count, amount }))
         }
         dispatch(activeTotals({ count, amount }))
-
     };
 
     return (

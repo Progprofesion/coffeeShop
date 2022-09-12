@@ -5,11 +5,13 @@ import LinkPageBlack from '../linkPage/LinkPageBlack';
 
 import { activeBasketCards } from '../basket/basketSlice';
 
+
 import './basketLyout.scss';
+
 const BasketLayout = () => {
 
     const state = useSelector(state => state.basket.stateBasket);
-    const stateTotal = useSelector(state => state.basket.total);
+    const stateIncr = useSelector(state => state.basket.basketincr);
     const stateDecr = useSelector(state => state.basket.basketDecr);
 
     const [key, setKey] = useState(0)
@@ -22,18 +24,18 @@ const BasketLayout = () => {
             setKey(key + 1)
             addItem(state.id)
         }
+        console.log(stateIncr.incr);
         // eslint-disable-next-line
-    }, [stateTotal.amount])
+    }, [stateIncr.incr])
 
     useEffect(() => {
         setItems({ items: [...items.filter(item => item.props.id !== state.id)] })
         dispatch(activeBasketCards([...items]))
         // eslint-disable-next-line
-    }, [stateDecr.total])
+    }, [stateDecr.decr])
 
     const amount = localStorage.getItem('amount')
     const total = localStorage.getItem('total')
-
 
 
     const addItem = (key) => {
@@ -46,7 +48,6 @@ const BasketLayout = () => {
             </div>
         </div>)
         setItems({ items: [...items] })
-        dispatch(activeBasketCards([...items]))
     };
 
     return (

@@ -15,9 +15,8 @@ const Cards = ({ id, img, title, country, price }) => {
     const state = useSelector(state => state.basket.stateBasket);
 
     const [count, setCount] = useState(Math.floor(Math.random() * 1000));
-    // Переписать зависмость на incr для addItem 
-    const [incr, setIncr] = useState(0);
-    const [decr, setDecr] = useState(0);
+    const [incr, setIncr] = useState(Math.floor(Math.random() * 1000));
+    const [decr, setDecr] = useState(Math.floor(Math.random() * 1000));
 
     const [amountCard, setAmountCard] = useState(0);
     const [amount, setAmount] = useLocalStorage('amount', 0);
@@ -61,7 +60,7 @@ const Cards = ({ id, img, title, country, price }) => {
             var rounded = Math.trunc(sum * 100) / 100;
             setTotal(rounded);
         }
-        dispatch(activeTotals({ count, amount }))
+        dispatch(activeBasketDecr({ decr }))
     };
 
     return (

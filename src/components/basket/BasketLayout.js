@@ -3,25 +3,30 @@ import { useState, useEffect } from 'react';
 
 import LinkPageBlack from '../linkPage/LinkPageBlack';
 
+import { useLocalStorage } from '../../hooks/useLocalStorage';
+
 import './basketLyout.scss';
 
 const BasketLayout = () => {
 
+    const [basketAmount, setBasketAmount] = useLocalStorage('amount', 0);
+
     const state = useSelector(state => state.basket.stateBasket);
-    const stateIncr = useSelector(state => state.basket.basketincr);
+    const stateIncr = useSelector(state => state.basket.basketIncr);
     const stateDecr = useSelector(state => state.basket.basketDecr);
 
     const [{ items }, setItems] = useState({ items: [] });
-
+    console.log(stateIncr)
     useEffect(() => {
         if (state.basketAmount === 0) {
             addItem(state.id)
         }
-        console.log(stateIncr.incr);
+        setBasketAmount(basketAmount + 1)
         // eslint-disable-next-line
     }, [stateIncr.incr])
 
     useEffect(() => {
+
         setItems({ items: [...items.filter(item => item.props.id !== state.id)] })
         // eslint-disable-next-line
     }, [stateDecr.decr])

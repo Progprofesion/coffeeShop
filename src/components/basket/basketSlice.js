@@ -5,9 +5,8 @@ const cardsAdapter = createEntityAdapter();
 const initialState = cardsAdapter.getInitialState({
     stateBasket: 0,
     total: 0,
-    basketincr: 0,
-    basketDecr: 0,
-    basketCards: [],
+    basketIncr: 0,
+    basketDecr: 0
 });
 
 const cardsSlice = createSlice({
@@ -20,15 +19,12 @@ const cardsSlice = createSlice({
         activeTotals: (state, action) => {
             state.total = action.payload
         },
-        activeBasketIncr: (state, action) => {
-            state.basketincr = action.payload
-        },
         activeBasketDecr: (state, action) => {
             state.basketDecr = action.payload
         },
-        activeBasketCards: (state, action) => {
-            state.basketCards = action.payload
-        },
+        activeBasketIncr: (state, action) => {
+            state.basketIncr = action.payload
+        }
     }
 });
 
@@ -38,4 +34,4 @@ export default reducer;
 
 export const { selectAll } = cardsAdapter.getSelectors(state => state.basket)
 
-export const { activeStateBasket, activeTotals, activeBasketIncr, activeBasketDecr, activeBasketCards } = actions;
+export const { activeStateBasket, activeTotals, activeBasketDecr, activeBasketIncr } = actions;

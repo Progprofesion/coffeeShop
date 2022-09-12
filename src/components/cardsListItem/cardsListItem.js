@@ -13,7 +13,7 @@ import './cardsListItem.scss';
 const Cards = ({ id, img, title, country, price }) => {
 
     const state = useSelector(state => state.basket.stateBasket);
-    const stateIncr = useSelector(state => state.basket.basketincr);
+    const stateIncr = useSelector(state => state.basket.basketIncr);
     // const stateDecr = useSelector(state => state.basket.basketDecr);
 
     const [count, setCount] = useState(Math.floor(Math.random() * 1000));
@@ -22,7 +22,7 @@ const Cards = ({ id, img, title, country, price }) => {
     const [decr, setDecr] = useState(0);
 
     const [amountCard, setAmountCard] = useState(0);
-    const [basketAmount, setBasketAmount] = useLocalStorage('amount', 0);
+
     const [basketTotal, setBasketTotal] = useLocalStorage('total', 0);
 
 
@@ -33,14 +33,13 @@ const Cards = ({ id, img, title, country, price }) => {
         setCount(count + 1)
         setIncr(incr + 1)
         setAmountCard(amountCard + 1)
-        setBasketAmount(basketAmount + 1)
         if (state.price !== undefined) {
             // Убирать символ $ преобразовать в число и записать в стейт.
             let sum = (price.replace(/\$/, '') * 1) + basketTotal;
             var rounded = Math.trunc(sum * 100) / 100;
             setBasketTotal(rounded);
         }
-        dispatch(activeStateBasket({ id, img, price, title, country, count, basketAmount }))
+        dispatch(activeStateBasket({ id, img, price, title, country, count }))
         dispatch(activeBasketIncr({ incr }))
 
     };
@@ -64,12 +63,12 @@ const Cards = ({ id, img, title, country, price }) => {
         if (amountCard > 0) {
             setAmountCard(amountCard - 1)
         }
-        if (basketAmount > 0) {
-            setBasketAmount(basketAmount - 1)
-            dispatch(activeStateBasket({ id, img, price, title, country, count, basketAmount }))
+        if (amountCard > 0) {
+            // setBasketAmount(basketAmount - 1)
+            dispatch(activeStateBasket({ id, img, price, title, country, count }))
         }
         if (state.price !== undefined) {
-            if (basketAmount > 1) {
+            if (amountCard > 1) {
                 let sum = (basketTotal - (price.replace(/\$/, '') * 1));
                 var rounded = Math.trunc(sum * 100) / 100;
                 setBasketTotal(rounded);

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-import { activeStateBasket, activeTotals, activeBasketIncr, activeBasketDecr } from '../basket/basketSlice';
+import { activeStateBasket, activeBasketIncr, activeBasketDecr } from '../basket/basketSlice';
 
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
@@ -13,33 +13,49 @@ import './cardsListItem.scss';
 const Cards = ({ id, img, title, country, price }) => {
 
     const state = useSelector(state => state.basket.stateBasket);
+    const stateIncr = useSelector(state => state.basket.basketincr);
+    // const stateDecr = useSelector(state => state.basket.basketDecr);
 
     const [count, setCount] = useState(Math.floor(Math.random() * 1000));
-    const [incr, setIncr] = useState(Math.floor(Math.random() * 1000));
-    const [decr, setDecr] = useState(Math.floor(Math.random() * 1000));
+
+    const [incr, setIncr] = useState(0);
+    const [decr, setDecr] = useState(0);
 
     const [amountCard, setAmountCard] = useState(0);
-    const [amount, setAmount] = useLocalStorage('amount', 0);
-    const [total, setTotal] = useLocalStorage('total', 0);
+    const [basketAmount, setBasketAmount] = useLocalStorage('amount', 0);
+    const [basketTotal, setBasketTotal] = useLocalStorage('total', 0);
+
 
     const dispatch = useDispatch();
 
     const basketIncr = (e) => {
         e.preventDefault();
         setCount(count + 1)
-        setAmount(amount + 1)
         setIncr(incr + 1)
         setAmountCard(amountCard + 1)
+        setBasketAmount(basketAmount + 1)
         if (state.price !== undefined) {
             // Убирать символ $ преобразовать в число и записать в стейт.
-            let sum = (price.replace(/\$/, '') * 1) + total;
+            let sum = (price.replace(/\$/, '') * 1) + basketTotal;
             var rounded = Math.trunc(sum * 100) / 100;
-            setTotal(rounded);
-            setAmount(amount + 1)
+            setBasketTotal(rounded);
         }
-        dispatch(activeStateBasket({ id, img, price, title, country, count, amount }))
+        dispatch(activeStateBasket({ id, img, price, title, country, count, basketAmount }))
         dispatch(activeBasketIncr({ incr }))
+
     };
+
+    // useEffect(() => {
+    //     setBasketAmount(basketAmount + 1)
+    //     // eslint-disable-next-line
+    // }, [stateIncr.incr])
+
+    // useEffect(() => {
+    //     if (basketAmount > 0) {
+    //         setBasketAmount(basketAmount - 1)
+    //     }
+    //     // eslint-disable-next-line
+    // }, [stateDecr.decr])
 
     const basketDecr = (e) => {
         e.preventDefault();
@@ -48,17 +64,16 @@ const Cards = ({ id, img, title, country, price }) => {
         if (amountCard > 0) {
             setAmountCard(amountCard - 1)
         }
-        if (amount > 0) {
-            setAmount(amount - 1)
-            dispatch(activeStateBasket({ id, img, price, title, country, count, amount }))
+        if (basketAmount > 0) {
+            setBasketAmount(basketAmount - 1)
+            dispatch(activeStateBasket({ id, img, price, title, country, count, basketAmount }))
         }
         if (state.price !== undefined) {
-            if (amount > 1) {
-                setAmount(amount - 1)
+            if (basketAmount > 1) {
+                let sum = (basketTotal - (price.replace(/\$/, '') * 1));
+                var rounded = Math.trunc(sum * 100) / 100;
+                setBasketTotal(rounded);
             }
-            let sum = (total - (price.replace(/\$/, '') * 1));
-            var rounded = Math.trunc(sum * 100) / 100;
-            setTotal(rounded);
         }
         dispatch(activeBasketDecr({ decr }))
     };

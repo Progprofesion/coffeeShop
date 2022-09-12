@@ -1,10 +1,7 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 
 import LinkPageBlack from '../linkPage/LinkPageBlack';
-
-import { activeBasketCards } from '../basket/basketSlice';
-
 
 import './basketLyout.scss';
 
@@ -14,14 +11,10 @@ const BasketLayout = () => {
     const stateIncr = useSelector(state => state.basket.basketincr);
     const stateDecr = useSelector(state => state.basket.basketDecr);
 
-    const [key, setKey] = useState(0)
     const [{ items }, setItems] = useState({ items: [] });
 
-    const dispatch = useDispatch();
-
     useEffect(() => {
-        if (state.amount === 0) {
-            setKey(key + 1)
+        if (state.basketAmount === 0) {
             addItem(state.id)
         }
         console.log(stateIncr.incr);
@@ -30,7 +23,6 @@ const BasketLayout = () => {
 
     useEffect(() => {
         setItems({ items: [...items.filter(item => item.props.id !== state.id)] })
-        dispatch(activeBasketCards([...items]))
         // eslint-disable-next-line
     }, [stateDecr.decr])
 

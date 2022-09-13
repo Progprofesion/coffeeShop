@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 
-import { activeStateBasket, activeBasketIncr, activeBasketDecr } from '../basket/basketSlice';
+import { activeStateBasket, activeBasketIncr, activeBasketDecr, addProduct } from '../basket/basketSlice';
 
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
@@ -15,6 +15,7 @@ const Cards = ({ id, img, title, country, price }) => {
     const state = useSelector(state => state.basket.stateBasket);
     const stateIncr = useSelector(state => state.basket.basketIncr);
     // const stateDecr = useSelector(state => state.basket.basketDecr);
+    const addProductTest = useSelector(state => state.basket.items);
 
     const [count, setCount] = useState(Math.floor(Math.random() * 1000));
 
@@ -22,6 +23,7 @@ const Cards = ({ id, img, title, country, price }) => {
     const [decr, setDecr] = useState(0);
 
     const [amountCard, setAmountCard] = useState(0);
+
 
     const [basketTotal, setBasketTotal] = useLocalStorage('total', 0);
 
@@ -33,6 +35,8 @@ const Cards = ({ id, img, title, country, price }) => {
         setCount(count + 1)
         setIncr(incr + 1)
         setAmountCard(amountCard + 1)
+        // setBasketAmount(addProductTest.length)
+        addItem()
         if (state.price !== undefined) {
             // Убирать символ $ преобразовать в число и записать в стейт.
             let sum = (price.replace(/\$/, '') * 1) + basketTotal;
@@ -41,20 +45,17 @@ const Cards = ({ id, img, title, country, price }) => {
         }
         dispatch(activeStateBasket({ id, img, price, title, country, count }))
         dispatch(activeBasketIncr({ incr }))
-
     };
 
-    // useEffect(() => {
-    //     setBasketAmount(basketAmount + 1)
-    //     // eslint-disable-next-line
-    // }, [stateIncr.incr])
-
-    // useEffect(() => {
-    //     if (basketAmount > 0) {
-    //         setBasketAmount(basketAmount - 1)
-    //     }
-    //     // eslint-disable-next-line
-    // }, [stateDecr.decr])
+    const addItem = () => {
+        const item = {
+            id,
+            img,
+            price,
+            title,
+        }
+        dispatch(addProduct(item))
+    };
 
     const basketDecr = (e) => {
         e.preventDefault();

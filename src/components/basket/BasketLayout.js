@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 
-import { useLocalStorage } from '../../hooks/useLocalStorage';
+
 
 import LinkPageBlack from '../linkPage/LinkPageBlack';
 
@@ -14,10 +14,10 @@ const BasketLayout = () => {
     const addProductTest = useSelector(state => state.basket.items);
 
     const state = useSelector(state => state.basket.stateBasket);
-    const stateIncr = useSelector(state => state.basket.basketIncr);
+
     const stateDecr = useSelector(state => state.basket.basketDecr);
 
-    const [basketAmount, setBasketAmount] = useLocalStorage('amount', 0);
+
     const [{ items }, setItems] = useState({ items: [] });
 
     useEffect(() => {
@@ -29,11 +29,6 @@ const BasketLayout = () => {
     const amount = localStorage.getItem('amount')
     const total = localStorage.getItem('total')
 
-    useEffect(() => {
-        setBasketAmount(addProductTest.length)
-    }, [stateIncr.incr])
-
-    // console.log(addProductTest.length)
 
     return (
         <>

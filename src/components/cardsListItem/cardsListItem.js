@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { activeStateBasket, activeBasketIncr, activeBasketDecr, addProduct } from '../basket/basketSlice';
 
@@ -26,7 +26,6 @@ const Cards = ({ id, img, title, country, price }) => {
 
 
     const [basketTotal, setBasketTotal] = useLocalStorage('total', 0);
-
 
     const dispatch = useDispatch();
 

@@ -24,8 +24,9 @@ const Cards = ({ id, img, title, country, price }) => {
 
     const [amountCard, setAmountCard] = useState(0);
 
+    const [basketAmount, setBasketAmount] = useLocalStorage('amount', 0);
 
-    const [basketTotal, setBasketTotal] = useLocalStorage('total', 0);
+    const [cart, setCart] = useLocalStorage('cart', 0);
 
     const dispatch = useDispatch();
 
@@ -36,12 +37,6 @@ const Cards = ({ id, img, title, country, price }) => {
         setAmountCard(amountCard + 1)
         // setBasketAmount(addProductTest.length)
         addItem()
-        if (state.price !== undefined) {
-            // Убирать символ $ преобразовать в число и записать в стейт.
-            let sum = (price.replace(/\$/, '') * 1) + basketTotal;
-            var rounded = Math.trunc(sum * 100) / 100;
-            setBasketTotal(rounded);
-        }
         dispatch(activeStateBasket({ id, img, price, title, country, count }))
         dispatch(activeBasketIncr({ incr }))
     };
@@ -54,27 +49,33 @@ const Cards = ({ id, img, title, country, price }) => {
             title,
         }
         dispatch(addProduct(item))
+        const json = JSON.stringify(addProductTest)
+        setBasketAmount(json)
+        const obj = JSON.parse(basketAmount);
+        dispatch(activeBasketIncr({ obj }))
+        setCart(stateIncr.incr)
+        console.log(cart)
     };
 
     const basketDecr = (e) => {
         e.preventDefault();
-        setCount(count + 1)
-        setDecr(decr + 1)
-        if (amountCard > 0) {
-            setAmountCard(amountCard - 1)
-        }
-        if (amountCard > 0) {
-            // setBasketAmount(basketAmount - 1)
-            dispatch(activeStateBasket({ id, img, price, title, country, count }))
-        }
-        if (state.price !== undefined) {
-            if (amountCard > 1) {
-                let sum = (basketTotal - (price.replace(/\$/, '') * 1));
-                var rounded = Math.trunc(sum * 100) / 100;
-                setBasketTotal(rounded);
-            }
-        }
-        dispatch(activeBasketDecr({ decr }))
+        // setCount(count + 1)
+        // setDecr(decr + 1)
+        // if (amountCard > 0) {
+        //     setAmountCard(amountCard - 1)
+        // }
+        // if (amountCard > 0) {
+        //     // setBasketAmount(basketAmount - 1)
+        //     dispatch(activeStateBasket({ id, img, price, title, country, count }))
+        // }
+        // if (state.price !== undefined) {
+        //     if (amountCard > 1) {
+        //         let sum = (basketTotal - (price.replace(/\$/, '') * 1));
+        //         var rounded = Math.trunc(sum * 100) / 100;
+        //         setBasketTotal(rounded);
+        //     }
+        // }
+        // dispatch(activeBasketDecr({ decr }))
     };
 
     return (

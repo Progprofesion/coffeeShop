@@ -7,12 +7,7 @@ import LinkPageBlack from '../linkPage/LinkPageBlack';
 
 import './basketLyout.scss';
 
-
-
 const BasketLayout = () => {
-
-    const addProductTest = useSelector(state => state.basket.items);
-
     const state = useSelector(state => state.basket.stateBasket);
 
     const stateDecr = useSelector(state => state.basket.basketDecr);
@@ -26,7 +21,7 @@ const BasketLayout = () => {
 
     }, [stateDecr.decr])
 
-    const amount = localStorage.getItem('amount')
+    const amount = localStorage.getItem('cart')
     const total = localStorage.getItem('total')
 
 

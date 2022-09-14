@@ -28,9 +28,9 @@ const cardsSlice = createSlice({
         },
         addProduct: (state, action) => {
             state.items.push(action.payload);
-            state.total = state.items.reduce((sum, obj) => {
-                return obj.price + sum
-            }, 0)
+            // state.total = state.items.reduce((sum, obj) => {
+            //     return obj.price + sum
+            // }, 0)
         },
     }
 });

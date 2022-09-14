@@ -24,9 +24,6 @@ const Cards = ({ id, img, title, country, price }) => {
 
     const [amountCard, setAmountCard] = useState(0);
 
-    const [basketAmount, setBasketAmount] = useLocalStorage('amount', 0);
-
-    const [cart, setCart] = useLocalStorage('cart', 0);
 
     const dispatch = useDispatch();
 
@@ -39,6 +36,7 @@ const Cards = ({ id, img, title, country, price }) => {
         addItem()
         dispatch(activeStateBasket({ id, img, price, title, country, count }))
         dispatch(activeBasketIncr({ incr }))
+
     };
 
     const addItem = () => {
@@ -49,12 +47,6 @@ const Cards = ({ id, img, title, country, price }) => {
             title,
         }
         dispatch(addProduct(item))
-        const json = JSON.stringify(addProductTest)
-        setBasketAmount(json)
-        const obj = JSON.parse(basketAmount);
-        dispatch(activeBasketIncr({ obj }))
-        setCart(stateIncr.incr)
-        console.log(cart)
     };
 
     const basketDecr = (e) => {

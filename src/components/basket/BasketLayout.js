@@ -21,7 +21,7 @@ const BasketLayout = () => {
 
     }, [stateDecr.decr])
 
-    const amount = localStorage.getItem('cart')
+    const amount = localStorage.getItem('amount')
     const total = localStorage.getItem('total')
 
 

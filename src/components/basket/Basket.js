@@ -44,7 +44,6 @@ const Basket = () => {
 
         }
 
-        // dispatch(activeBasketIncr({ obj }))
     }, [stateIncr.incr, stateIncr])
 
     const [todos, setTodos] = useState(

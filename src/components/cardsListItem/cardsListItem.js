@@ -39,6 +39,8 @@ const Cards = ({ id, img, title, country, price }) => {
 
     };
 
+
+
     const addItem = () => {
         const item = {
             id,

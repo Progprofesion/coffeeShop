@@ -29,8 +29,7 @@ const Basket = () => {
 
     useEffect(() => {
         if (state.price !== undefined) {
-            // Убирать символ $ преобразовать в число и записать в стейт.
-            let sum = (state.price.replace(/\$/, '') * 1) + basketTotal;
+            let sum = state.price + basketTotal;
             var rounded = Math.trunc(sum * 100) / 100;
             setBasketTotal(rounded);
         }

@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 // eslint-disable-next-line
 import BasketLayout from '../basket/BasketLayout';
@@ -28,38 +28,33 @@ const Basket = () => {
 
 
     useEffect(() => {
-        if (state.price !== undefined) {
-            let sum = state.price + basketTotal;
-            var rounded = Math.trunc(sum * 100) / 100;
-            setBasketTotal(rounded);
-        }
         ////////////////////////////////
         // const json = JSON.stringify(addProductTest)
         // setBasketObject(json)       
         if (addProductTest.length && addProductTest) {
-            let amount = addProductTest
-            setTodos(addProductTest)
-            setBasketAmount(amount.length)
-
+            setBasketAmount(addProductTest.length)
         }
+    }, [stateIncr])
 
-    }, [stateIncr.incr, stateIncr])
+    const isMounted = useRef(false);
+    console.log(isMounted)
 
-    const [todos, setTodos] = useState(
-        () =>
-            JSON.parse(localStorage.getItem("object")) || [
-                { id: 123, text: "object 1 demo" }
-            ]
-    );
     useEffect(() => {
-        localStorage.setItem("object", JSON.stringify(todos));
-    }, [todos]);
+        if (isMounted) {
+            if (state.price !== undefined) {
+                let sum = state.price + basketTotal;
+                let rounded = Math.trunc(sum * 100) / 100;
+                setBasketTotal(rounded)
+            }
+        }
+        isMounted.current = true
+    }, [amount])
 
     return (
         <Link to="/basket" className="basket">
             {/* <BasketLayout /> */}
             <div className="basket__amount">{basketAmount}</div>
-            <div className="basket__price">{total ? total : `0.00$`}</div>
+            <div className="basket__price">{basketTotal ? basketTotal : `0.00$`}</div>
         </Link>
     )
 };

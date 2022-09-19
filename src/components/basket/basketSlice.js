@@ -1,4 +1,8 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
+
 
 
 const cardsAdapter = createEntityAdapter();
@@ -8,6 +12,7 @@ const initialState = cardsAdapter.getInitialState({
     basketIncr: 0,
     basketDecr: 0,
     items: []
+
 });
 
 const cardsSlice = createSlice({

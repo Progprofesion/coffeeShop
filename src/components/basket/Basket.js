@@ -37,7 +37,6 @@ const Basket = () => {
     }, [stateIncr])
 
     const isMounted = useRef(false);
-    console.log(isMounted)
 
     useEffect(() => {
         if (isMounted) {

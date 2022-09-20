@@ -42,8 +42,8 @@ const Cards = ({ id, img, title, country, price }) => {
     const addItem = () => {
         const item = {
             id,
-            img,
-            price,
+
+
             title,
         }
         dispatch(addProduct(item))

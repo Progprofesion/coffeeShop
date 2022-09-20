@@ -18,9 +18,11 @@ const Basket = () => {
 
     const dispatch = useDispatch();
 
-    const [basketObject, setBasketObject] = useLocalStorage('object', 0);
+    // const [basketObj, setBasketObject] = useLocalStorage('object', 0);
     const [basketAmount, setBasketAmount] = useLocalStorage('amount', 0);
     const [basketTotal, setBasketTotal] = useLocalStorage('total', 0);
+
+    const [test, setTest] = useState('');
 
     const amount = localStorage.getItem('amount')
     const total = localStorage.getItem('total')
@@ -29,17 +31,34 @@ const Basket = () => {
 
     useEffect(() => {
         ////////////////////////////////
-        // const json = JSON.stringify(addProductTest)
+        const json = JSON.stringify(addProductTest)
+
         // setBasketObject(json)       
-        if (addProductTest.length && addProductTest) {
+        if (addProductTest.length) {
             if (basketAmount) {
                 setBasketAmount(basketAmount + 1)
             } else {
                 setBasketAmount(addProductTest.length)
             }
-
+            if (getObj) {
+                setTest(getObj + json)
+                localStorage.setItem('object', [json.concat(getObj)])
+                // setBasketObject(addProductTest)
+            } else {
+                localStorage.setItem('object', json)
+                // setBasketObject(addProductTest)
+            }
         }
+        // const test = [{ a: 1 }, { b: 2 }]
+        // const res = JSON.stringify(test);
+        // console.log(res)
+        // console.log(JSON.parse(test))
+        console.log(test)
+        // console.log(getObj)
+        // console.log(getObj.length)
     }, [stateIncr])
+
+
 
     return (
         <Link to="/basket" className="basket">

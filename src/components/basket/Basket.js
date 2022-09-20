@@ -32,28 +32,20 @@ const Basket = () => {
         // const json = JSON.stringify(addProductTest)
         // setBasketObject(json)       
         if (addProductTest.length && addProductTest) {
-            setBasketAmount(addProductTest.length)
+            if (basketAmount) {
+                setBasketAmount(basketAmount + 1)
+            } else {
+                setBasketAmount(addProductTest.length)
+            }
+
         }
     }, [stateIncr])
-
-    const isMounted = useRef(false);
-
-    useEffect(() => {
-        if (isMounted) {
-            if (state.price !== undefined) {
-                let sum = state.price + basketTotal;
-                let rounded = Math.trunc(sum * 100) / 100;
-                setBasketTotal(rounded)
-            }
-        }
-        isMounted.current = true
-    }, [amount])
 
     return (
         <Link to="/basket" className="basket">
             {/* <BasketLayout /> */}
-            <div className="basket__amount">{basketAmount}</div>
-            <div className="basket__price">{basketTotal ? basketTotal : `0.00$`}</div>
+            <div className="basket__amount">{amount ? amount : 0}</div>
+            <div className="basket__price">{0 ? 0 : `0.00$`}</div>
         </Link>
     )
 };

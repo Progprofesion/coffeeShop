@@ -18,45 +18,46 @@ const Basket = () => {
 
     const dispatch = useDispatch();
 
-    // const [basketObj, setBasketObject] = useLocalStorage('object', 0);
+
+    const [basketObj, setBasketObject] = useLocalStorage('object', 0);
     const [basketAmount, setBasketAmount] = useLocalStorage('amount', 0);
-    const [basketTotal, setBasketTotal] = useLocalStorage('total', 0);
 
-    const [test, setTest] = useState('');
 
+    const getObj = localStorage.getItem('object');
     const amount = localStorage.getItem('amount')
     const total = localStorage.getItem('total')
-    const getObj = localStorage.getItem('object')
+
+    // const getObj = JSON.parse(localStorage.getItem('object')) || [];
+
 
 
     useEffect(() => {
-        ////////////////////////////////
-        const json = JSON.stringify(addProductTest)
+        ///////////////////////////////
 
-        // setBasketObject(json)       
+        const jsonAddproduct = JSON.stringify(basketObj)
+
         if (addProductTest.length) {
             if (basketAmount) {
                 setBasketAmount(basketAmount + 1)
             } else {
                 setBasketAmount(addProductTest.length)
             }
-            if (getObj) {
-                setTest(getObj + json)
-                localStorage.setItem('object', [json.concat(getObj)])
-                // setBasketObject(addProductTest)
+
+            if (basketObj) {
+                localStorage.setItem('object', getObj + JSON.stringify(addProductTest))
+                // setBasketObject(basketObj + addProductTest)
             } else {
-                localStorage.setItem('object', json)
-                // setBasketObject(addProductTest)
+                setBasketObject(addProductTest)
             }
+            // console.log(JSON.parse(getObj))
+            console.log(getObj)
         }
-        // const test = [{ a: 1 }, { b: 2 }]
-        // const res = JSON.stringify(test);
-        // console.log(res)
-        // console.log(JSON.parse(test))
-        console.log(test)
-        // console.log(getObj)
-        // console.log(getObj.length)
     }, [stateIncr])
+
+
+    // oldItems.push(newItem);
+
+
 
 
 
@@ -64,7 +65,7 @@ const Basket = () => {
         <Link to="/basket" className="basket">
             {/* <BasketLayout /> */}
             <div className="basket__amount">{amount ? amount : 0}</div>
-            <div className="basket__price">{0 ? 0 : `0.00$`}</div>
+            <div className="basket__price">{total ? total : `0.00$`}</div>
         </Link>
     )
 };

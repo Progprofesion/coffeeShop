@@ -1,8 +1,4 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-
-
 
 
 const cardsAdapter = createEntityAdapter();
@@ -12,7 +8,6 @@ const initialState = cardsAdapter.getInitialState({
     basketIncr: 0,
     basketDecr: 0,
     items: []
-
 });
 
 const cardsSlice = createSlice({
@@ -32,10 +27,12 @@ const cardsSlice = createSlice({
             state.basketIncr = action.payload
         },
         addProduct: (state, action) => {
-            state.items.push(action.payload);
-            // state.total = state.items.reduce((sum, obj) => {
-            //     return obj.price + sum
-            // }, 0)
+            const itemInCart = state.items.find((item) => item.id === action.payload.id);
+            if (itemInCart) {
+                itemInCart.quantity++;
+            } else {
+                state.items.push({ ...action.payload, quantity: 1 });
+            }
         },
     }
 });

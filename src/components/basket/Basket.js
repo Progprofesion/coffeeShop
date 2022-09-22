@@ -20,9 +20,6 @@ const Basket = () => {
 
     const dispatch = useDispatch();
 
-    const [test, setTest] = useState(0);
-
-
     const [basketObj, setBasketObject] = useLocalStorage('object', 0);
     const [basketAmount, setBasketAmount] = useLocalStorage('amount', 0);
 
@@ -31,10 +28,10 @@ const Basket = () => {
 
     useEffect(() => {
         if (addProductTest.length) {
-            localStorage.setItem('amount', stateBasketAmount)
+            if (typeof stateBasketAmount !== 'string') {
+                setBasketAmount(stateBasketAmount)
+            }
             setBasketObject(addProductTest)
-            // setBasketAmount(stateBasketAmount)
-            console.log(stateBasketAmount)
         }
         // eslint-disable-next-line
     }, [stateIncr])

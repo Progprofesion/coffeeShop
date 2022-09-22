@@ -19,7 +19,13 @@ const cardsSlice = createSlice({
             state.stateBasket = action.payload
         },
         activeTotals: (state, action) => {
-            state.total = action.payload
+            if (state.stateBasket.price) {
+                let sum = state.total + action.payload
+                // console.log(state.stateBasket.price)
+                let rounded = Math.trunc(sum * 100) / 100;
+                state.total = rounded
+                console.log(sum)
+            }
         },
         activeBasketDecr: (state, action) => {
             state.basketDecr = action.payload;

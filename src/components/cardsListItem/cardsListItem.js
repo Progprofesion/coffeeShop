@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 
-import { activeStateBasket, activeBasketIncr, activeBasketDecr, addProduct, activeBasketAmount } from '../basket/basketSlice';
+import { activeStateBasket, activeBasketIncr, activeBasketDecr, addProduct, activeBasketAmount, activeTotals } from '../basket/basketSlice';
 
 import 'animate.css';
 import './cardsListItem.scss';
@@ -16,6 +16,7 @@ const Cards = ({ id, img, title, country, price }) => {
     const [amountCard, setAmountCard] = useState(0);
 
     const addProductTest = useSelector(state => state.basket.items);
+    const state = useSelector(state => state.basket.stateBasket);
 
     const dispatch = useDispatch();
 
@@ -39,6 +40,7 @@ const Cards = ({ id, img, title, country, price }) => {
         }
         dispatch(addProduct(item))
         dispatch(activeBasketAmount(addProductTest))
+        dispatch(activeTotals(state.price))
     };
 
     const basketDecr = (e) => {

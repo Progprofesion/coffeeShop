@@ -43,12 +43,11 @@ const Basket = () => {
                 setBasketAmount(addProductTest.length)
             }
 
-            if (basketObj) {
-                localStorage.setItem('object', getObj + JSON.stringify(addProductTest))
-                // setBasketObject(basketObj + addProductTest)
-            } else {
-                setBasketObject(addProductTest)
-            }
+            // if (basketObj) {
+            setBasketObject(addProductTest)
+            // } else {
+            // setBasketObject(addProductTest)
+            // }
             // console.log(JSON.parse(getObj))
             console.log(getObj)
         }

@@ -7,7 +7,7 @@ const initialState = cardsAdapter.getInitialState({
     total: 0,
     basketIncr: 0,
     basketDecr: 0,
-    items: []
+    items: JSON.parse(localStorage.getItem('object')) || [],
 });
 
 const cardsSlice = createSlice({
@@ -27,12 +27,13 @@ const cardsSlice = createSlice({
             state.basketIncr = action.payload
         },
         addProduct: (state, action) => {
-            const itemInCart = state.items.find((item) => item.id === action.payload.id);
-            if (itemInCart) {
-                itemInCart.quantity++;
-            } else {
-                state.items.push({ ...action.payload, quantity: 1 });
-            }
+            // const itemInCart = state.items.find((item) => item.id === action.payload.id);
+            // if (itemInCart) {
+            //     itemInCart.quantity++;
+            // } else {
+            //     state.items.push({ ...action.payload, quantity: 1 });
+            // }
+            state.items.push(action.payload);
         },
     }
 });

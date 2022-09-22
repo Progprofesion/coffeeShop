@@ -4,7 +4,7 @@ import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
 const cardsAdapter = createEntityAdapter();
 const initialState = cardsAdapter.getInitialState({
     stateBasket: 0,
-    total: 0,
+    total: localStorage.getItem('total') || 0,
     basketIncr: 0,
     basketDecr: 0,
     amount: localStorage.getItem('amount') || 0,

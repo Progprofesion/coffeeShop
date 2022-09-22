@@ -1,25 +1,21 @@
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { activeStateBasket, activeBasketIncr, activeBasketDecr, addProduct, activeBasketAmount } from '../basket/basketSlice';
-
-import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 import 'animate.css';
 import './cardsListItem.scss';
 
 
 const Cards = ({ id, img, title, country, price }) => {
-
-    const stateBasketAmount = useSelector(state => state.basket.amount);
-
     const [count, setCount] = useState(Math.floor(Math.random() * 1000));
 
     const [incr, setIncr] = useState(0);
 
     const [amountCard, setAmountCard] = useState(0);
 
+    const addProductTest = useSelector(state => state.basket.items);
 
     const dispatch = useDispatch();
 
@@ -42,6 +38,7 @@ const Cards = ({ id, img, title, country, price }) => {
             price
         }
         dispatch(addProduct(item))
+        dispatch(activeBasketAmount(addProductTest))
     };
 
     const basketDecr = (e) => {

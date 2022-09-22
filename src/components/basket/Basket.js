@@ -31,24 +31,11 @@ const Basket = () => {
 
     useEffect(() => {
         if (addProductTest.length) {
-            activeBasketAmount(basketAmount)
-            // if (basketAmount) {
-            //     setBasketAmount(basketAmount + 1)
-            // } else {
-            //     setBasketAmount(addProductTest.length)
-            // }
+            localStorage.setItem('amount', stateBasketAmount)
             setBasketObject(addProductTest)
+            // setBasketAmount(stateBasketAmount)
+            console.log(stateBasketAmount)
         }
-        // const sum = addProductTest
-        // dispatch(activeBasketAmount(+2))
-        const initialValue = 0;
-        const sumWithInitial = addProductTest.reduce(
-            (previousValue, currentValue) => previousValue + currentValue.quantity,
-            0
-        );
-        console.log(sumWithInitial)
-        setBasketAmount(sumWithInitial)
-        // console.log(addProductTest[0].quantity)
         // eslint-disable-next-line
     }, [stateIncr])
 

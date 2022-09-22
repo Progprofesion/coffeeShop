@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 
-import { activeStateBasket, activeBasketIncr, activeBasketDecr, addProduct } from '../basket/basketSlice';
+import { activeStateBasket, activeBasketIncr, activeBasketDecr, addProduct, activeBasketAmount } from '../basket/basketSlice';
 
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
@@ -12,19 +12,15 @@ import './cardsListItem.scss';
 
 const Cards = ({ id, img, title, country, price }) => {
 
-    const state = useSelector(state => state.basket.stateBasket);
-    const stateIncr = useSelector(state => state.basket.basketIncr);
-    // const stateDecr = useSelector(state => state.basket.basketDecr);
-    const addProductTest = useSelector(state => state.basket.items);
+    const stateBasketAmount = useSelector(state => state.basket.amount);
 
     const [count, setCount] = useState(Math.floor(Math.random() * 1000));
 
     const [incr, setIncr] = useState(0);
-    const [test, setTest] = useState([]);
 
     const [amountCard, setAmountCard] = useState(0);
 
-    // const [basketTotal, setBasketTotal] = useLocalStorage('total', 0);
+
     const dispatch = useDispatch();
 
     const basketIncr = (e) => {
@@ -32,36 +28,18 @@ const Cards = ({ id, img, title, country, price }) => {
         setCount(count + 1)
         setIncr(incr + 1)
         setAmountCard(amountCard + 1)
-        // setBasketAmount(addProductTest.length)
         addItem()
-        // test()
         dispatch(activeStateBasket({ id, img, price, title, country, count }))
         dispatch(activeBasketIncr({ incr }))
-
     };
-
-    // useEffect(() => {
-    //     setBasketTotal(test.round)
-    // }, [incr])
-
-    // const test = () => {
-    //     if (addProductTest.length && state.price) {
-    //         let sum = state.price + basketTotal;
-    //         let round = Math.round(sum * 100) / 100
-
-    //         console.log(basketTotal)
-    //         return round
-    //     }
-
-    // }
 
 
     const addItem = () => {
         const item = {
             id,
-
-
             title,
+            img,
+            price
         }
         dispatch(addProduct(item))
     };

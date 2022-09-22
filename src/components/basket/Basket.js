@@ -5,7 +5,7 @@ import { useLocalStorage } from '../../hooks/useLocalStorage';
 // eslint-disable-next-line
 import BasketLayout from '../basket/BasketLayout';
 
-import { activeTotals, activeBasketIncr } from '../basket/basketSlice';
+import { activeTotals, activeBasketIncr, activeBasketAmount } from '../basket/basketSlice';
 
 import './basket.scss';
 
@@ -16,49 +16,41 @@ const Basket = () => {
     const stateIncr = useSelector(state => state.basket.basketIncr);
     const totalTest = useSelector(state => state.basket.total);
 
+    const stateBasketAmount = useSelector(state => state.basket.amount);
+
     const dispatch = useDispatch();
+
+    const [test, setTest] = useState(0);
 
 
     const [basketObj, setBasketObject] = useLocalStorage('object', 0);
     const [basketAmount, setBasketAmount] = useLocalStorage('amount', 0);
 
-
-    const getObj = localStorage.getItem('object');
     const amount = localStorage.getItem('amount')
     const total = localStorage.getItem('total')
 
-    // const getObj = JSON.parse(localStorage.getItem('object')) || [];
-
-
-
     useEffect(() => {
-        ///////////////////////////////
-
-        const jsonAddproduct = JSON.stringify(basketObj)
-
         if (addProductTest.length) {
-            if (basketAmount) {
-                setBasketAmount(basketAmount + 1)
-            } else {
-                setBasketAmount(addProductTest.length)
-            }
-
-            // if (basketObj) {
-            setBasketObject(addProductTest)
+            activeBasketAmount(basketAmount)
+            // if (basketAmount) {
+            //     setBasketAmount(basketAmount + 1)
             // } else {
-            // setBasketObject(addProductTest)
+            //     setBasketAmount(addProductTest.length)
             // }
-            // console.log(JSON.parse(getObj))
-            console.log(getObj)
+            setBasketObject(addProductTest)
         }
+        // const sum = addProductTest
+        // dispatch(activeBasketAmount(+2))
+        const initialValue = 0;
+        const sumWithInitial = addProductTest.reduce(
+            (previousValue, currentValue) => previousValue + currentValue.quantity,
+            0
+        );
+        console.log(sumWithInitial)
+        setBasketAmount(sumWithInitial)
+        // console.log(addProductTest[0].quantity)
+        // eslint-disable-next-line
     }, [stateIncr])
-
-
-    // oldItems.push(newItem);
-
-
-
-
 
     return (
         <Link to="/basket" className="basket">

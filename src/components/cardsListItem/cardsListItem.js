@@ -2,7 +2,18 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 
-import { activeStateBasket, activeBasketIncr, activeBasketDecr, addProduct, activeBasketAmount, activeTotals } from '../basket/basketSlice';
+import {
+    activeStateBasket,
+    activeBasketIncr,
+    activeBasketDecr,
+    addProduct,
+    removeProduct,
+    activeIncrBasketAmount,
+    activeDecrBasketAmount,
+    activeIncrTotals,
+    activeDecrTotals,
+
+} from '../basket/basketSlice';
 
 import 'animate.css';
 import './cardsListItem.scss';
@@ -12,7 +23,7 @@ const Cards = ({ id, img, title, country, price }) => {
     const [count, setCount] = useState(Math.floor(Math.random() * 1000));
 
     const [incr, setIncr] = useState(0);
-
+    const [decr, setDecr] = useState(0);
     const [amountCard, setAmountCard] = useState(0);
 
     const addProductTest = useSelector(state => state.basket.items);
@@ -28,8 +39,8 @@ const Cards = ({ id, img, title, country, price }) => {
         addItem()
         dispatch(activeStateBasket({ id, img, price, title, country, count }))
         dispatch(activeBasketIncr({ incr }))
-        dispatch(activeBasketAmount(addProductTest))
-        dispatch(activeTotals(price))
+        dispatch(activeIncrBasketAmount(addProductTest))
+        dispatch(activeIncrTotals(price))
     };
 
 
@@ -41,28 +52,30 @@ const Cards = ({ id, img, title, country, price }) => {
             price
         }
         dispatch(addProduct(item))
-
     };
 
     const basketDecr = (e) => {
         e.preventDefault();
-        // setCount(count + 1)
-        // setDecr(decr + 1)
-        // if (amountCard > 0) {
-        //     setAmountCard(amountCard - 1)
-        // }
-        // if (amountCard > 0) {
-        //     // setBasketAmount(basketAmount - 1)
-        //     dispatch(activeStateBasket({ id, img, price, title, country, count }))
-        // }
-        // if (state.price !== undefined) {
-        //     if (amountCard > 1) {
-        //         let sum = (basketTotal - (price.replace(/\$/, '') * 1));
-        //         var rounded = Math.trunc(sum * 100) / 100;
-        //         setBasketTotal(rounded);
-        //     }
-        // }
-        // dispatch(activeBasketDecr({ decr }))
+        setCount(count + 1)
+        setDecr(decr + 1)
+        if (amountCard > 0) {
+            setAmountCard(amountCard - 1)
+        }
+        if (amountCard > 0) {
+            dispatch(activeStateBasket({ id, img, price, title, country, count }))
+        }
+        dispatch(activeBasketDecr({ decr }))
+
+        dispatch(removeProduct(addProductTest))
+
+        addProductTest.filter(item => {
+            return item.id !== state.id
+        })
+
+        if (amountCard > 0) {
+            dispatch(activeDecrTotals(price))
+        }
+
     };
 
     return (

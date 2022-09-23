@@ -14,6 +14,7 @@ const Basket = () => {
     const state = useSelector(state => state.basket.stateBasket);
     const addProductTest = useSelector(state => state.basket.items);
     const stateIncr = useSelector(state => state.basket.basketIncr);
+    const stateDecr = useSelector(state => state.basket.basketDecr);
     const totalTest = useSelector(state => state.basket.total);
 
     const stateBasketAmount = useSelector(state => state.basket.amount);
@@ -36,6 +37,15 @@ const Basket = () => {
         }
         // eslint-disable-next-line
     }, [stateIncr])
+
+    useEffect(() => {
+        if (addProductTest.length) {
+            localStorage.setItem('amount', stateBasketAmount)
+            setBasketObject(addProductTest)
+            localStorage.setItem('total', totalTest)
+        }
+        // eslint-disable-next-line
+    }, [stateDecr])
 
     return (
         <Link to="/basket" className="basket">

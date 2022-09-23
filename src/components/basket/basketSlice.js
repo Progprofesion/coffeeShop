@@ -18,9 +18,16 @@ const cardsSlice = createSlice({
         activeStateBasket: (state, action) => {
             state.stateBasket = action.payload
         },
-        activeTotals: (state, action) => {
+        activeIncrTotals: (state, action) => {
             if (state.stateBasket.price) {
                 let sum = Number(state.total) + action.payload
+                let rounded = Math.trunc(sum * 100) / 100;
+                state.total = rounded
+            }
+        },
+        activeDecrTotals: (state, action) => {
+            if (state.stateBasket.price) {
+                let sum = Number(state.total) - action.payload
                 let rounded = Math.trunc(sum * 100) / 100;
                 state.total = rounded
             }
@@ -31,12 +38,20 @@ const cardsSlice = createSlice({
         activeBasketIncr: (state, action) => {
             state.basketIncr = action.payload;
         },
-        activeBasketAmount: (state) => {
+        activeIncrBasketAmount: (state) => {
             const sumAmount = state.items.reduce(
                 (prev, current) => prev + current.quantity,
                 0
             );
             state.amount = sumAmount
+        },
+        activeDecrBasketAmount: (state) => {
+            // // state.amount = state.amount - 1
+            // const sumAmount = state.items.reduce(
+            //     (prev, current) => prev - current.quantity,
+            //     0
+            // );
+            // state.amount = sumAmount
         },
         addProduct: (state, action) => {
             const itemInCart = state.items.find((item) => item.id === action.payload.id);
@@ -46,7 +61,7 @@ const cardsSlice = createSlice({
                 state.items.push({ ...action.payload, quantity: 1 });
             }
         },
-        removeItem: (state, action) => {
+        removeProduct: (state, action) => {
             const removeItem = state.items.filter((item) => item.id !== action.payload);
             state.items = removeItem;
         },
@@ -60,9 +75,11 @@ export default reducer;
 export const { selectAll } = cardsAdapter.getSelectors(state => state.basket)
 
 export const { activeStateBasket,
-    activeTotals,
+    activeIncrTotals,
+    activeDecrTotals,
     activeBasketDecr,
     activeBasketIncr,
-    activeBasketAmount,
+    activeIncrBasketAmount,
+    activeDecrBasketAmount,
     addProduct,
-    activeRemoveItem } = actions;
+    removeProduct } = actions;

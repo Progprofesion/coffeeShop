@@ -28,6 +28,8 @@ const Cards = ({ id, img, title, country, price }) => {
         addItem()
         dispatch(activeStateBasket({ id, img, price, title, country, count }))
         dispatch(activeBasketIncr({ incr }))
+        dispatch(activeBasketAmount(addProductTest))
+        dispatch(activeTotals(price))
     };
 
 
@@ -39,8 +41,7 @@ const Cards = ({ id, img, title, country, price }) => {
             price
         }
         dispatch(addProduct(item))
-        dispatch(activeBasketAmount(addProductTest))
-        dispatch(activeTotals(state.price))
+
     };
 
     const basketDecr = (e) => {

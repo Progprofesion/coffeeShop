@@ -21,8 +21,9 @@ const Basket = () => {
     const dispatch = useDispatch();
 
     const [basketObj, setBasketObject] = useLocalStorage('object', 0);
-    const [basketAmount, setBasketAmount] = useLocalStorage('amount', 0);
-    const [basketTotal, setBasketTotal] = useLocalStorage('total', 0);
+    // const [basketAmount, setBasketAmount] = useLocalStorage('amount', 0);
+    // const [basketTotal, setBasketTotal] = useLocalStorage('total', 0);
+
 
     const amount = localStorage.getItem('amount')
     const total = localStorage.getItem('total')
@@ -30,14 +31,8 @@ const Basket = () => {
     useEffect(() => {
         if (addProductTest.length) {
             localStorage.setItem('amount', stateBasketAmount)
-            // if (typeof stateBasketAmount !== 'string' && typeof totalTest !== 'string') {
-            // }
             setBasketObject(addProductTest)
-            //  useLocalStorage багает число в строку 
-            // setBasketAmount(stateBasketAmount)
-            //  total, срабатывает со второго нажатия
-            setBasketTotal(totalTest)
-
+            localStorage.setItem('total', totalTest)
         }
         // eslint-disable-next-line
     }, [stateIncr])

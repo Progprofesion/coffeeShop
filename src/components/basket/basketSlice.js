@@ -20,11 +20,9 @@ const cardsSlice = createSlice({
         },
         activeTotals: (state, action) => {
             if (state.stateBasket.price) {
-                let sum = state.total + action.payload
-                // console.log(state.stateBasket.price)
+                let sum = Number(state.total) + action.payload
                 let rounded = Math.trunc(sum * 100) / 100;
                 state.total = rounded
-                console.log(sum)
             }
         },
         activeBasketDecr: (state, action) => {
@@ -35,7 +33,7 @@ const cardsSlice = createSlice({
         },
         activeBasketAmount: (state) => {
             const sumAmount = state.items.reduce(
-                (previousValue, currentValue) => previousValue + currentValue.quantity,
+                (prev, current) => prev + current.quantity,
                 0
             );
             state.amount = sumAmount

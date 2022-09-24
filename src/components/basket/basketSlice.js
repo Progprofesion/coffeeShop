@@ -62,14 +62,20 @@ const cardsSlice = createSlice({
         decrementQuantity: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);
             if (item.quantity === 1) {
-                item.quantity = 1
+                item.quantity = 0
             } else {
                 item.quantity--;
             }
         },
         removeProduct: (state, action) => {
-            const removeItem = state.items.filter((item) => item.id !== action.payload);
-            state.items = removeItem;
+            const item = state.items.find((item) => item.id === action.payload);
+            if (item.quantity === 1) {
+                const removeItem = state.items.filter((item) => item.id !== action.payload);
+                state.items = removeItem;
+            }
+            // if (state.items.length === 1) {
+            //     state.items.push(state.items);
+            // }
         },
     }
 });

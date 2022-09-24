@@ -1,11 +1,9 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect } from 'react';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 // eslint-disable-next-line
 import BasketLayout from '../basket/BasketLayout';
-
-import { activeTotals, activeBasketIncr, activeBasketAmount, activeDecrBasketAmount } from '../basket/basketSlice';
 
 import './basket.scss';
 
@@ -19,12 +17,9 @@ const Basket = () => {
 
     const stateBasketAmount = useSelector(state => state.basket.amount);
 
-    const dispatch = useDispatch();
 
+    // eslint-disable-next-line
     const [basketObj, setBasketObject] = useLocalStorage('object', 0);
-    // const [basketAmount, setBasketAmount] = useLocalStorage('amount', 0);
-    // const [basketTotal, setBasketTotal] = useLocalStorage('total', 0);
-
 
     const amount = localStorage.getItem('amount')
     const total = localStorage.getItem('total')
@@ -44,8 +39,6 @@ const Basket = () => {
             setBasketObject(addProductTest)
             localStorage.setItem('total', totalTest)
         }
-        // const test = addProductTest.forEach(item => item.id === state.id ? item.quantity : item.quantity === item.quantity)
-        // console.log(test)
         // eslint-disable-next-line
     }, [stateDecr])
 

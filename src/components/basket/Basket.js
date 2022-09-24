@@ -5,7 +5,7 @@ import { useLocalStorage } from '../../hooks/useLocalStorage';
 // eslint-disable-next-line
 import BasketLayout from '../basket/BasketLayout';
 
-import { activeTotals, activeBasketIncr, activeBasketAmount } from '../basket/basketSlice';
+import { activeTotals, activeBasketIncr, activeBasketAmount, activeDecrBasketAmount } from '../basket/basketSlice';
 
 import './basket.scss';
 
@@ -39,11 +39,13 @@ const Basket = () => {
     }, [stateIncr])
 
     useEffect(() => {
-        if (addProductTest.length) {
+        if (addProductTest.length && addProductTest) {
             localStorage.setItem('amount', stateBasketAmount)
             setBasketObject(addProductTest)
             localStorage.setItem('total', totalTest)
         }
+        // const test = addProductTest.forEach(item => item.id === state.id ? item.quantity : item.quantity === item.quantity)
+        // console.log(test)
         // eslint-disable-next-line
     }, [stateDecr])
 

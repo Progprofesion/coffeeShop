@@ -7,11 +7,12 @@ import {
     activeBasketIncr,
     activeBasketDecr,
     addProduct,
+    incrementQuantity,
+    decrementQuantity,
     removeProduct,
-    activeIncrBasketAmount,
-    activeDecrBasketAmount,
     activeIncrTotals,
     activeDecrTotals,
+    basketAmount,
 
 } from '../basket/basketSlice';
 
@@ -28,6 +29,7 @@ const Cards = ({ id, img, title, country, price }) => {
 
     const addProductTest = useSelector(state => state.basket.items);
     const state = useSelector(state => state.basket.stateBasket);
+    const stateBasketAmount = useSelector(state => state.basket.amount);
 
     const dispatch = useDispatch();
 
@@ -39,8 +41,10 @@ const Cards = ({ id, img, title, country, price }) => {
         addItem()
         dispatch(activeStateBasket({ id, img, price, title, country, count }))
         dispatch(activeBasketIncr({ incr }))
-        dispatch(activeIncrBasketAmount(addProductTest))
         dispatch(activeIncrTotals(price))
+        dispatch(basketAmount(addProductTest))
+
+        // dispatch(incrementQuantity(state.id))
     };
 
 
@@ -66,14 +70,14 @@ const Cards = ({ id, img, title, country, price }) => {
         }
         dispatch(activeBasketDecr({ decr }))
 
-        dispatch(removeProduct(addProductTest))
 
-        addProductTest.filter(item => {
-            return item.id !== state.id
-        })
+        dispatch(decrementQuantity(state.id))
+
+        dispatch(removeProduct(addProductTest))
 
         if (amountCard > 0) {
             dispatch(activeDecrTotals(price))
+            dispatch(basketAmount(addProductTest))
         }
 
     };

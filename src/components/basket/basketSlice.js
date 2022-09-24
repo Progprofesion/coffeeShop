@@ -38,20 +38,12 @@ const cardsSlice = createSlice({
         activeBasketIncr: (state, action) => {
             state.basketIncr = action.payload;
         },
-        activeIncrBasketAmount: (state) => {
+        basketAmount: (state) => {
             const sumAmount = state.items.reduce(
                 (prev, current) => prev + current.quantity,
                 0
             );
             state.amount = sumAmount
-        },
-        activeDecrBasketAmount: (state) => {
-            // // state.amount = state.amount - 1
-            // const sumAmount = state.items.reduce(
-            //     (prev, current) => prev - current.quantity,
-            //     0
-            // );
-            // state.amount = sumAmount
         },
         addProduct: (state, action) => {
             const itemInCart = state.items.find((item) => item.id === action.payload.id);
@@ -59,6 +51,20 @@ const cardsSlice = createSlice({
                 itemInCart.quantity++;
             } else {
                 state.items.push({ ...action.payload, quantity: 1 });
+            }
+        },
+        // метод для увеличения количества товара, находящегося в корзине
+        // incrementQuantity: (state, action) => {
+        //     const item = state.items.find((item) => item.id === action.payload);
+        //     item.quantity++;
+        // },
+        // метод для уменьшения количества товара, находящегося в корзине
+        decrementQuantity: (state, action) => {
+            const item = state.items.find((item) => item.id === action.payload);
+            if (item.quantity === 1) {
+                item.quantity = 1
+            } else {
+                item.quantity--;
             }
         },
         removeProduct: (state, action) => {
@@ -79,7 +85,8 @@ export const { activeStateBasket,
     activeDecrTotals,
     activeBasketDecr,
     activeBasketIncr,
-    activeIncrBasketAmount,
-    activeDecrBasketAmount,
     addProduct,
+    incrementQuantity,
+    decrementQuantity,
+    basketAmount,
     removeProduct } = actions;

@@ -43,6 +43,9 @@ const Cards = ({ id, img, title, country, price }) => {
         dispatch(activeBasketIncr({ incr }))
         dispatch(activeIncrTotals(price))
         dispatch(basketAmount(addProductTest))
+        if (state.id) {
+            console.log(state.id)
+        }
 
         // dispatch(incrementQuantity(state.id))
     };
@@ -51,9 +54,9 @@ const Cards = ({ id, img, title, country, price }) => {
     const addItem = () => {
         const item = {
             id,
-            title,
-            img,
-            price
+            // title,
+            // img,
+            // price
         }
         dispatch(addProduct(item))
     };
@@ -71,7 +74,11 @@ const Cards = ({ id, img, title, country, price }) => {
         dispatch(activeBasketDecr({ decr }))
 
 
-        dispatch(decrementQuantity(state.id))
+        if (addProductTest) {
+            dispatch(decrementQuantity(id))
+        }
+
+        console.log(state.id)
 
         dispatch(removeProduct(addProductTest))
 

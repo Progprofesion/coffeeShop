@@ -22,7 +22,7 @@ import './cardsListItem.scss';
 
 const Cards = ({ id, img, title, country, price }) => {
     const [count, setCount] = useState(Math.floor(Math.random() * 1000));
-
+    console.log(country)
     const [incr, setIncr] = useState(0);
     const [decr, setDecr] = useState(0);
     const [amountCard, setAmountCard] = useState(0);
@@ -51,9 +51,10 @@ const Cards = ({ id, img, title, country, price }) => {
     const addItem = () => {
         const item = {
             id,
-            // title,
-            // img,
-            // price
+            img,
+            title,
+            country,
+            price
         }
         dispatch(addProduct(item))
     };

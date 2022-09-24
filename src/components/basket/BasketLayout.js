@@ -9,20 +9,39 @@ import './basketLyout.scss';
 
 const BasketLayout = () => {
     const state = useSelector(state => state.basket.stateBasket);
+    const addProductTest = useSelector(state => state.basket.items);
 
     const stateDecr = useSelector(state => state.basket.basketDecr);
 
 
-    const [{ items }, setItems] = useState({ items: [] });
+    // const [{ items }, setItems] = useState({ items: [] });
 
-    useEffect(() => {
-        setItems({ items: [...items.filter(item => item.props.id !== state.id)] })
-        // eslint-disable-next-line
+    // useEffect(() => {
+    //     setItems({ items: [...items.filter(item => item.props.id !== state.id)] })
+    //     // eslint-disable-next-line
 
-    }, [stateDecr.decr])
+    // }, [stateDecr.decr])
 
     const amount = localStorage.getItem('amount')
     const total = localStorage.getItem('total')
+
+
+    const test = (arr) => {
+        return arr.map(({ id, img, title, country, price, quantity }) => {
+            console.log(country)
+            return <div key={id} className="basketLayont__wrapp">
+                <img src={img} alt="coffee" className="basketLayont__img" />
+                <div className="basketLayont__quantity">{quantity}</div>
+                <div className="basketLayont__result">
+                    <div className="basketLayont__title">{title}</div>
+                    <div className="basketLayont__country">{country}</div>
+                    <div className="basketLayont__price">{price}</div>
+                </div>
+            </div>
+        })
+    }
+
+    const elements = test(addProductTest)
 
 
     return (
@@ -32,7 +51,7 @@ const BasketLayout = () => {
                 <h2 className="basketLayont__title">Shopping cart</h2>
                 <h3 className="basketLayont__amount">Количество товаров: {amount}</h3>
                 <h3 className="basketLayont__amount">Общая сумма: {total}</h3>
-                {[...items]}
+                {elements}
             </section>
         </>
     )

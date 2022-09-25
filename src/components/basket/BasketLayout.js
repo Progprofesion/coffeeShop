@@ -23,25 +23,22 @@ const BasketLayout = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(basketAmount(addProductTest));
-        localStorage.setItem('amount', stateBasketAmount)
-        setBasketObject(addProductTest)
-        localStorage.setItem('total', totalTest)
-    }, [addProductTest])
+        localStorage.setItem('amount', stateBasketAmount);
+        setBasketObject(addProductTest);
+        localStorage.setItem('total', totalTest);
+    }, [addProductTest, total, amount]);
 
     const incr = (id, price) => {
+        dispatch(basketAmount(addProductTest));
         dispatch(incrementQuantity(id));
-        dispatch(activeIncrTotals(price))
-        // dispatch(basketAmount(addProductTest));
-        // localStorage.setItem('amount', stateBasketAmount)
+        dispatch(activeIncrTotals(price));
     };
 
     const decr = (id, price) => {
-        dispatch(decrementQuantity(id))
-        dispatch(removeProduct(id))
-        dispatch(activeDecrTotals(price))
-        // dispatch(basketAmount(addProductTest));
-        // localStorage.setItem('amount', stateBasketAmount)
+        dispatch(basketAmount(addProductTest));
+        dispatch(decrementQuantity(id));
+        dispatch(removeProduct(id));
+        dispatch(activeDecrTotals(price));
     };
 
     const test = (arr) => {
@@ -61,7 +58,7 @@ const BasketLayout = () => {
                 </div>
             </div>
         })
-    }
+    };
 
     const elements = test(addProductTest)
 

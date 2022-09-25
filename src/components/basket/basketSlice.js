@@ -21,14 +21,14 @@ const cardsSlice = createSlice({
         activeIncrTotals: (state, action) => {
             if (state.stateBasket.price) {
                 let sum = Number(state.total) + action.payload
-                let rounded = Math.trunc(sum * 100) / 100;
+                let rounded = Math.round(sum * 100) / 100;
                 state.total = rounded
             }
         },
         activeDecrTotals: (state, action) => {
             if (state.stateBasket.price) {
                 let sum = Number(state.total) - action.payload
-                let rounded = Math.trunc(sum * 100) / 100;
+                let rounded = Math.round(sum * 100) / 100;
                 state.total = rounded
             }
         },
@@ -60,14 +60,14 @@ const cardsSlice = createSlice({
         decrementQuantity: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);
             if (item.quantity === 1) {
-                item.quantity = 1
+                item.quantity = 0
             } else {
                 item.quantity--;
             }
         },
         removeProduct: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);
-            if (item.quantity === 1) {
+            if (item.quantity === 0) {
                 const removeItem = state.items.filter((item) => item.id !== action.payload);
                 state.items = removeItem;
             }

@@ -41,17 +41,16 @@ const Cards = ({ id, img, title, country, price }) => {
         dispatch(activeStateBasket({ id, img, price, title, country, count }))
         dispatch(activeBasketIncr({ incr }))
         dispatch(activeIncrTotals(price))
-        // dispatch(basketAmount(addProductTest))
     };
 
 
     const addItem = () => {
         const item = {
             id,
-            // img,
-            // title,
-            // country,
-            // price
+            img,
+            title,
+            country,
+            price
         }
         dispatch(addProduct(item))
     };
@@ -70,7 +69,9 @@ const Cards = ({ id, img, title, country, price }) => {
         // if (addProductTest[0]) {
         dispatch(decrementQuantity(id))
         // }
-        localStorage.setItem('amount', stateBasketAmount)
+        // if (addProductTest === []) {
+        //     localStorage.setItem('object', [])
+        // }
     };
 
     return (

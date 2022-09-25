@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { incrementQuantity, decrementQuantity, basketAmount } from '../basket/basketSlice';
+import { incrementQuantity, decrementQuantity, basketAmount, removeProduct, activeIncrTotals, activeDecrTotals } from '../basket/basketSlice';
 
 import { useEffect } from 'react';
 
-
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 import LinkPageBlack from '../linkPage/LinkPageBlack';
 
@@ -13,25 +13,35 @@ const BasketLayout = () => {
     const state = useSelector(state => state.basket.stateBasket);
     const addProductTest = useSelector(state => state.basket.items);
     const stateBasketAmount = useSelector(state => state.basket.amount);
+    const totalTest = useSelector(state => state.basket.total);
 
     const amount = localStorage.getItem('amount')
     const total = localStorage.getItem('total')
 
+    const [basketObj, setBasketObject] = useLocalStorage('object', 0);
+
     const dispatch = useDispatch();
 
-    // useEffect(() => {
-    //     dispatch(basketAmount(addProductTest));
-    // }, [addProductTest])
-    const incr = (id) => {
-        dispatch(incrementQuantity(id));
+    useEffect(() => {
         dispatch(basketAmount(addProductTest));
         localStorage.setItem('amount', stateBasketAmount)
+        setBasketObject(addProductTest)
+        localStorage.setItem('total', totalTest)
+    }, [addProductTest])
+
+    const incr = (id, price) => {
+        dispatch(incrementQuantity(id));
+        dispatch(activeIncrTotals(price))
+        // dispatch(basketAmount(addProductTest));
+        // localStorage.setItem('amount', stateBasketAmount)
     };
 
-    const decr = (id) => {
+    const decr = (id, price) => {
         dispatch(decrementQuantity(id))
-        dispatch(basketAmount(addProductTest));
-        localStorage.setItem('amount', stateBasketAmount)
+        dispatch(removeProduct(id))
+        dispatch(activeDecrTotals(price))
+        // dispatch(basketAmount(addProductTest));
+        // localStorage.setItem('amount', stateBasketAmount)
     };
 
     const test = (arr) => {
@@ -44,8 +54,8 @@ const BasketLayout = () => {
                     <div className="basketLayont__country">{country}</div>
                     <div className="basketLayont__price">{price}</div>
                     <div className="basketLayont__btnWrapp">
-                        <button onClick={() => incr(id)} className="basketLayont__btnWrapp-btn">+</button>
-                        <button onClick={() => decr(id)} className="basketLayont__btnWrapp-btn">-</button>
+                        <button onClick={() => incr(id, price)} className="basketLayont__btnWrapp-btn">+</button>
+                        <button onClick={() => decr(id, price)} className="basketLayont__btnWrapp-btn">-</button>
                     </div>
 
                 </div>
@@ -54,7 +64,6 @@ const BasketLayout = () => {
     }
 
     const elements = test(addProductTest)
-
 
     return (
         <>

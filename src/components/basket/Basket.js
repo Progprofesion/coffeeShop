@@ -34,9 +34,13 @@ const Basket = () => {
             setBasketObject(addProductTest)
             localStorage.setItem('total', totalTest)
             dispatch(basketAmount(addProductTest))
+
+            // if (totalTest < 11.00) {
+            // localStorage.setItem('amount', 0)
+            // }
         }
         // eslint-disable-next-line
-    }, [stateIncr, stateDecr, stateBasketAmount])
+    }, [stateIncr, stateDecr, stateBasketAmount, addProductTest])
 
 
     return (

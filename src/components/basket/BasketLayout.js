@@ -1,5 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useState, useEffect } from 'react';
+import { incrementQuantity, decrementQuantity, basketAmount } from '../basket/basketSlice';
+
+import { useEffect } from 'react';
 
 
 
@@ -10,25 +12,30 @@ import './basketLyout.scss';
 const BasketLayout = () => {
     const state = useSelector(state => state.basket.stateBasket);
     const addProductTest = useSelector(state => state.basket.items);
-
-    const stateDecr = useSelector(state => state.basket.basketDecr);
-
-
-    // const [{ items }, setItems] = useState({ items: [] });
-
-    // useEffect(() => {
-    //     setItems({ items: [...items.filter(item => item.props.id !== state.id)] })
-    //     // eslint-disable-next-line
-
-    // }, [stateDecr.decr])
+    const stateBasketAmount = useSelector(state => state.basket.amount);
 
     const amount = localStorage.getItem('amount')
     const total = localStorage.getItem('total')
 
+    const dispatch = useDispatch();
+
+    // useEffect(() => {
+    //     dispatch(basketAmount(addProductTest));
+    // }, [addProductTest])
+    const incr = (id) => {
+        dispatch(incrementQuantity(id));
+        dispatch(basketAmount(addProductTest));
+        localStorage.setItem('amount', stateBasketAmount)
+    };
+
+    const decr = (id) => {
+        dispatch(decrementQuantity(id))
+        dispatch(basketAmount(addProductTest));
+        localStorage.setItem('amount', stateBasketAmount)
+    };
 
     const test = (arr) => {
         return arr.map(({ id, img, title, country, price, quantity }) => {
-            console.log(country)
             return <div key={id} className="basketLayont__wrapp">
                 <img src={img} alt="coffee" className="basketLayont__img" />
                 <div className="basketLayont__quantity">{quantity}</div>
@@ -36,6 +43,11 @@ const BasketLayout = () => {
                     <div className="basketLayont__title">{title}</div>
                     <div className="basketLayont__country">{country}</div>
                     <div className="basketLayont__price">{price}</div>
+                    <div className="basketLayont__btnWrapp">
+                        <button onClick={() => incr(id)} className="basketLayont__btnWrapp-btn">+</button>
+                        <button onClick={() => decr(id)} className="basketLayont__btnWrapp-btn">-</button>
+                    </div>
+
                 </div>
             </div>
         })

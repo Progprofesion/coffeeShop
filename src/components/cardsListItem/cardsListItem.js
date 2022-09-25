@@ -22,7 +22,6 @@ import './cardsListItem.scss';
 
 const Cards = ({ id, img, title, country, price }) => {
     const [count, setCount] = useState(Math.floor(Math.random() * 1000));
-    console.log(country)
     const [incr, setIncr] = useState(0);
     const [decr, setDecr] = useState(0);
     const [amountCard, setAmountCard] = useState(0);
@@ -42,19 +41,17 @@ const Cards = ({ id, img, title, country, price }) => {
         dispatch(activeStateBasket({ id, img, price, title, country, count }))
         dispatch(activeBasketIncr({ incr }))
         dispatch(activeIncrTotals(price))
-        dispatch(basketAmount(addProductTest))
-        console.log(addProductTest)
-        // dispatch(incrementQuantity(state.id))
+        // dispatch(basketAmount(addProductTest))
     };
 
 
     const addItem = () => {
         const item = {
             id,
-            img,
-            title,
-            country,
-            price
+            // img,
+            // title,
+            // country,
+            // price
         }
         dispatch(addProduct(item))
     };
@@ -67,15 +64,13 @@ const Cards = ({ id, img, title, country, price }) => {
             setAmountCard(amountCard - 1)
             dispatch(activeStateBasket({ id, img, price, title, country, count }))
             dispatch(activeDecrTotals(price))
-            dispatch(basketAmount(addProductTest))
         }
         dispatch(activeBasketDecr({ decr }))
         dispatch(removeProduct(id))
         // if (addProductTest[0]) {
         dispatch(decrementQuantity(id))
         // }
-
-        console.log(addProductTest.length)
+        localStorage.setItem('amount', stateBasketAmount)
     };
 
     return (
@@ -92,7 +87,6 @@ const Cards = ({ id, img, title, country, price }) => {
                 <div className="cards__amount">{amountCard}</div>
             </div>
             <div className="cards__price fz-14">{price}</div>
-
             <button
                 onClick={basketIncr}
                 className="cards__basketIncr">+1</button>

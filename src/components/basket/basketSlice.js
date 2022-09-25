@@ -39,11 +39,11 @@ const cardsSlice = createSlice({
             state.basketIncr = action.payload;
         },
         basketAmount: (state) => {
-            const sumAmount = state.items.reduce(
+            state.amount = state.items.reduce(
                 (prev, current) => prev + current.quantity,
                 0
             );
-            state.amount = sumAmount
+            // state.amount = sumAmount
         },
         addProduct: (state, action) => {
             const itemInCart = state.items.find((item) => item.id === action.payload.id);
@@ -53,12 +53,10 @@ const cardsSlice = createSlice({
                 state.items.push({ ...action.payload, quantity: 1 });
             }
         },
-        // метод для увеличения количества товара, находящегося в корзине
-        // incrementQuantity: (state, action) => {
-        //     const item = state.items.find((item) => item.id === action.payload);
-        //     item.quantity++;
-        // },
-        // метод для уменьшения количества товара, находящегося в корзине
+        incrementQuantity: (state, action) => {
+            const item = state.items.find((item) => item.id === action.payload);
+            item.quantity++;
+        },
         decrementQuantity: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);
             if (item.quantity === 1) {
@@ -73,9 +71,6 @@ const cardsSlice = createSlice({
                 const removeItem = state.items.filter((item) => item.id !== action.payload);
                 state.items = removeItem;
             }
-            // if (state.items.length === 1) {
-            //     state.items.push(state.items);
-            // }
         },
     }
 });

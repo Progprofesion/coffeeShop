@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { incrementQuantity, decrementQuantity, basketAmount, removeProduct, activeIncrTotals, activeDecrTotals } from '../basket/basketSlice';
+import { incrementQuantity, decrementQuantity, basketAmount, removeProduct, activeIncrTotals, activeDecrTotals, activeStateBasket } from '../basket/basketSlice';
 
 import { useEffect } from 'react';
 
@@ -26,15 +26,18 @@ const BasketLayout = () => {
         localStorage.setItem('amount', stateBasketAmount);
         setBasketObject(addProductTest);
         localStorage.setItem('total', totalTest);
-    }, [addProductTest, total, amount]);
+
+    }, [stateBasketAmount, addProductTest]);
 
     const incr = (id, price) => {
+        dispatch(activeStateBasket({ price }));
         dispatch(basketAmount(addProductTest));
         dispatch(incrementQuantity(id));
         dispatch(activeIncrTotals(price));
     };
 
     const decr = (id, price) => {
+        dispatch(activeStateBasket({ price }));
         dispatch(basketAmount(addProductTest));
         dispatch(decrementQuantity(id));
         dispatch(removeProduct(id));

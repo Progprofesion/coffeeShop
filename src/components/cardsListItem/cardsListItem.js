@@ -61,7 +61,7 @@ const Cards = ({ id, img, title, country, price }) => {
         setDecr(decr + 1)
         if (amountCard > 0) {
             setAmountCard(amountCard - 1)
-            dispatch(activeStateBasket({ id, img, price, title, country, count }))
+            // dispatch(activeStateBasket({ id, img, price, title, country, count }))
             dispatch(activeDecrTotals(price))
         }
         dispatch(activeBasketDecr({ decr }))

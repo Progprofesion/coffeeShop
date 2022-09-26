@@ -26,22 +26,20 @@ const BasketLayout = () => {
         localStorage.setItem('amount', stateBasketAmount);
         setBasketObject(addProductTest);
         localStorage.setItem('total', totalTest);
-
-    }, [stateBasketAmount, addProductTest]);
+        dispatch(basketAmount(addProductTest));
+    }, [stateBasketAmount, addProductTest, totalTest]);
 
     const incr = (id, price) => {
         dispatch(activeStateBasket({ price }));
-        dispatch(basketAmount(addProductTest));
-        dispatch(incrementQuantity(id));
         dispatch(activeIncrTotals(price));
+        dispatch(incrementQuantity(id));
     };
 
     const decr = (id, price) => {
         dispatch(activeStateBasket({ price }));
-        dispatch(basketAmount(addProductTest));
+        dispatch(activeDecrTotals(price));
         dispatch(decrementQuantity(id));
         dispatch(removeProduct(id));
-        dispatch(activeDecrTotals(price));
     };
 
     const test = (arr) => {

@@ -1,5 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { incrementQuantity, decrementQuantity, basketAmount, removeProduct, activeIncrTotals, activeDecrTotals, activeStateBasket } from '../basket/basketSlice';
+import {
+    incrementQuantity,
+    decrementQuantity,
+    basketAmount,
+    removeProduct,
+    activeIncrTotals,
+    activeDecrTotals,
+    activeStateBasket
+} from '../basket/basketSlice';
 
 import { useEffect } from 'react';
 
@@ -42,7 +50,7 @@ const BasketLayout = () => {
         dispatch(removeProduct(id));
     };
 
-    const test = (arr) => {
+    const view = (arr) => {
         return arr.map(({ id, img, title, country, price, quantity }) => {
             return <div key={id} className="basketLayont__wrapp">
                 <img src={img} alt="coffee" className="basketLayont__img" />
@@ -61,7 +69,7 @@ const BasketLayout = () => {
         })
     };
 
-    const elements = test(addProductTest)
+    const elements = view(addProductTest)
 
     return (
         <>

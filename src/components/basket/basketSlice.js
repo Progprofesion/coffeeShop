@@ -3,7 +3,7 @@ import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
 
 const cardsAdapter = createEntityAdapter();
 const initialState = cardsAdapter.getInitialState({
-    stateBasket: 0,
+    stateBasket: {},
     total: localStorage.getItem('total') || 0,
     basketIncr: 0,
     basketDecr: 0,
@@ -43,7 +43,6 @@ const cardsSlice = createSlice({
                 (prev, current) => prev + current.quantity,
                 0
             );
-            // state.amount = sumAmount
         },
         addProduct: (state, action) => {
             const itemInCart = state.items.find((item) => item.id === action.payload.id);
@@ -61,13 +60,13 @@ const cardsSlice = createSlice({
             const item = state.items.find((item) => item.id === action.payload);
             if (item.quantity === 1) {
                 item.quantity = 0
-            } else {
+            } else if (item && item.quantity > 0) {
                 item.quantity--;
             }
         },
         removeProduct: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);
-            if (item.quantity === 0) {
+            if (item && item.quantity < 1) {
                 const removeItem = state.items.filter((item) => item.id !== action.payload);
                 state.items = removeItem;
             }

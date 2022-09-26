@@ -29,6 +29,7 @@ const Cards = ({ id, img, title, country, price }) => {
     const addProductTest = useSelector(state => state.basket.items);
     const state = useSelector(state => state.basket.stateBasket);
     const stateBasketAmount = useSelector(state => state.basket.amount);
+    const totalTest = useSelector(state => state.basket.total);
 
     const dispatch = useDispatch();
 
@@ -41,38 +42,47 @@ const Cards = ({ id, img, title, country, price }) => {
         dispatch(activeStateBasket({ id, img, price, title, country, count }))
         dispatch(activeBasketIncr({ incr }))
         dispatch(activeIncrTotals(price))
+        viewQantity(addProductTest)
     };
 
 
     const addItem = () => {
         const item = {
             id,
-            img,
-            title,
-            country,
-            price
+            // img,
+            // title,
+            // country,
+            // price
         }
         dispatch(addProduct(item))
     };
+
 
     const basketDecr = (e) => {
         e.preventDefault();
         setCount(count + 1)
         setDecr(decr + 1)
+
         if (amountCard > 0) {
             setAmountCard(amountCard - 1)
             // dispatch(activeStateBasket({ id, img, price, title, country, count }))
             dispatch(activeDecrTotals(price))
         }
-        dispatch(activeBasketDecr({ decr }))
         dispatch(removeProduct(id))
-        // if (addProductTest[0]) {
+        dispatch(activeBasketDecr({ decr }))
         dispatch(decrementQuantity(id))
-        // }
-        // if (addProductTest === []) {
-        //     localStorage.setItem('object', [])
-        // }
     };
+
+    const viewQantity = (arr) => {
+        // return arr.map(({ id, quantity }) => {
+        //     return <div key={id}>{quantity}</div>
+        // })
+        const itemInCart = arr.find((item) => item.id === id);
+        console.log(itemInCart)
+    };
+
+    // const element = viewQantity(addProductTest)
+    // console.log(element)
 
     return (
         <div
@@ -85,7 +95,8 @@ const Cards = ({ id, img, title, country, price }) => {
             </div>
             <h3 className="cards__subtitle fz-14">{title}</h3>
             <div className="cards__country fz-14">{country}
-                <div className="cards__amount">{amountCard}</div>
+                {/* {element} */}
+
             </div>
             <div className="cards__price fz-14">{price}</div>
             <button

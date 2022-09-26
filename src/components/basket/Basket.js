@@ -2,15 +2,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
-// eslint-disable-next-line
-import BasketLayout from '../basket/BasketLayout';
 
-import { basketAmount } from '../basket/basketSlice';
+import { basketAmount, removeProduct } from '../basket/basketSlice';
 
 import './basket.scss';
 
 const Basket = () => {
-    // eslint-disable-next-line
     const state = useSelector(state => state.basket.stateBasket);
     const addProductTest = useSelector(state => state.basket.items);
     const stateIncr = useSelector(state => state.basket.basketIncr);
@@ -29,23 +26,15 @@ const Basket = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (addProductTest.length) {
-            localStorage.setItem('amount', stateBasketAmount)
-            setBasketObject(addProductTest)
-            localStorage.setItem('total', totalTest)
-            dispatch(basketAmount(addProductTest))
-
-            // if (totalTest < 11.00) {
-            // localStorage.setItem('amount', 0)
-            // }
-        }
-        // eslint-disable-next-line
-    }, [stateIncr, stateDecr, stateBasketAmount, addProductTest])
+        localStorage.setItem('amount', stateBasketAmount);
+        setBasketObject(addProductTest);
+        localStorage.setItem('total', totalTest);
+        dispatch(basketAmount(addProductTest));
+    }, [stateBasketAmount, addProductTest, totalTest]);
 
 
     return (
         <Link to="/basket" className="basket">
-            {/* <BasketLayout /> */}
             <div className="basket__amount">{amount ? amount : 0}</div>
             <div className="basket__price">{total ? total : `0.00$`}</div>
         </Link>

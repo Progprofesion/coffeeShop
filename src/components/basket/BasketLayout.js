@@ -48,6 +48,8 @@ const BasketLayout = () => {
         dispatch(activeDecrTotals(price));
         dispatch(decrementQuantity(id));
         dispatch(removeProduct(id));
+
+
     };
 
     const view = (arr) => {

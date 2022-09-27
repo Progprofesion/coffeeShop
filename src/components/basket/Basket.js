@@ -30,6 +30,7 @@ const Basket = () => {
         setBasketObject(addProductTest);
         localStorage.setItem('total', totalTest);
         dispatch(basketAmount(addProductTest));
+
     }, [stateBasketAmount, addProductTest, totalTest]);
 
 

@@ -62,15 +62,15 @@ const Cards = ({ id, img, title, country, price }) => {
         e.preventDefault();
         setCount(count + 1)
         setDecr(decr + 1)
-
         if (amountCard > 0) {
             setAmountCard(amountCard - 1)
             // dispatch(activeStateBasket({ id, img, price, title, country, count }))
             dispatch(activeDecrTotals(price))
         }
-        dispatch(removeProduct(id))
+
         dispatch(activeBasketDecr({ decr }))
         dispatch(decrementQuantity(id))
+        dispatch(removeProduct(id))
     };
 
     const viewQantity = (arr) => {
@@ -79,6 +79,7 @@ const Cards = ({ id, img, title, country, price }) => {
         // })
         const itemInCart = arr.find((item) => item.id === id);
         console.log(itemInCart)
+        return
     };
 
     // const element = viewQantity(addProductTest)

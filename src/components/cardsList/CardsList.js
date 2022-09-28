@@ -1,9 +1,11 @@
-import { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 import { useGetProductsQuery } from '../api/apiSlice';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Spinner from '../spinner/Spinner';
 import Error from '../../assets/Error.gif';
 import CardsListItem from '../cardsListItem/cardsListItem';
+
+import { activeStateBasket, addProduct, stateArr } from '../basket/basketSlice';
 
 
 import './cardsList.scss';
@@ -16,8 +18,23 @@ const CardsList = () => {
         isError
     } = useGetProductsQuery();
 
+    const dispatch = useDispatch();
+
+
+
+
+    useEffect(() => {
+        dispatch(stateArr(products))
+        console.log(stateArrF)
+    }, [isLoading])
+
+
     const activeFilter = useSelector(state => state.filters.activeFilter);
     const searchCoffee = useSelector(state => state.filters.searchCoffee);
+    const state = useSelector(state => state.basket.stateBasket);
+    const addProductTest = useSelector(state => state.basket.items);
+    const stateArrF = useSelector(state => state.basket.stateArr);
+    console.log(stateArrF)
 
     const searchCoffeeFiltered = useMemo(() => {
         const searchCoffeeFiltered = products.slice();
@@ -37,13 +54,17 @@ const CardsList = () => {
         } else {
             return filteredCards.filter(item => item.country === activeFilter);
         };
+
     }, [activeFilter, searchCoffeeFiltered]);
+
+
 
     if (isLoading) {
         return <div><Spinner /></div>
     } else if (isError) {
-        return <div>{Error}</div>
+        return <div><Error /></div>
     }
+
 
     const renderCardsList = (arr) => {
         if (arr.lenght === 0) {
@@ -56,7 +77,8 @@ const CardsList = () => {
 
     };
 
-    const elements = renderCardsList(filteredCards);
+    const elements = renderCardsList(stateArrF);
+
 
     return (
         <section className="cardsList" >

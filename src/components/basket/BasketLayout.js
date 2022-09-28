@@ -35,6 +35,7 @@ const BasketLayout = () => {
         setBasketObject(addProductTest);
         localStorage.setItem('total', totalTest);
         dispatch(basketAmount(addProductTest));
+        // eslint-disable-next-line
     }, [stateBasketAmount, addProductTest, totalTest]);
 
     const incr = (id, price) => {
@@ -48,8 +49,6 @@ const BasketLayout = () => {
         dispatch(activeDecrTotals(price));
         dispatch(decrementQuantity(id));
         dispatch(removeProduct(id));
-
-
     };
 
     const view = (arr) => {

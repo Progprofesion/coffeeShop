@@ -7,31 +7,25 @@ import {
     activeBasketIncr,
     activeBasketDecr,
     addProduct,
-    incrementQuantity,
     decrementQuantity,
     removeProduct,
     activeIncrTotals,
     activeDecrTotals,
-    basketAmount,
-
 } from '../basket/basketSlice';
 
 import 'animate.css';
 import './cardsListItem.scss';
 
 
-const Cards = ({ id, img, title, country, price }) => {
+const Cards = ({ id, img, title, country, price, quantity }) => {
     const [count, setCount] = useState(Math.floor(Math.random() * 1000));
     const [incr, setIncr] = useState(0);
     const [decr, setDecr] = useState(0);
     const [amountCard, setAmountCard] = useState(0);
 
-    const addProductTest = useSelector(state => state.basket.items);
-    const state = useSelector(state => state.basket.stateBasket);
-    const stateBasketAmount = useSelector(state => state.basket.amount);
-    const totalTest = useSelector(state => state.basket.total);
-
     const dispatch = useDispatch();
+
+    const addProductTest = useSelector(state => state.basket.items);
 
     const basketIncr = (e) => {
         e.preventDefault();
@@ -42,19 +36,19 @@ const Cards = ({ id, img, title, country, price }) => {
         dispatch(activeStateBasket({ id, img, price, title, country, count }))
         dispatch(activeBasketIncr({ incr }))
         dispatch(activeIncrTotals(price))
-        viewQantity(addProductTest)
     };
 
 
     const addItem = () => {
         const item = {
             id,
-            // img,
-            // title,
-            // country,
-            // price
+            img,
+            title,
+            country,
+            price,
         }
         dispatch(addProduct(item))
+        console.log(quantity)
     };
 
 
@@ -64,26 +58,13 @@ const Cards = ({ id, img, title, country, price }) => {
         setDecr(decr + 1)
         if (amountCard > 0) {
             setAmountCard(amountCard - 1)
-            // dispatch(activeStateBasket({ id, img, price, title, country, count }))
             dispatch(activeDecrTotals(price))
         }
-
         dispatch(activeBasketDecr({ decr }))
         dispatch(decrementQuantity(id))
         dispatch(removeProduct(id))
     };
 
-    const viewQantity = (arr) => {
-        // return arr.map(({ id, quantity }) => {
-        //     return <div key={id}>{quantity}</div>
-        // })
-        const itemInCart = arr.find((item) => item.id === id);
-        console.log(itemInCart)
-        return
-    };
-
-    // const element = viewQantity(addProductTest)
-    // console.log(element)
 
     return (
         <div
@@ -96,8 +77,7 @@ const Cards = ({ id, img, title, country, price }) => {
             </div>
             <h3 className="cards__subtitle fz-14">{title}</h3>
             <div className="cards__country fz-14">{country}
-                {/* {element} */}
-
+                <div className="cards__amount">{quantity}</div>
             </div>
             <div className="cards__price fz-14">{price}</div>
             <button

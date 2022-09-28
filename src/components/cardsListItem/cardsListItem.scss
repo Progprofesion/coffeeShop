@@ -36,8 +36,9 @@
         border: 2px solid rgba(174, 242, 224, 0.657);
     }
     &__amount {
-        margin-left: 70px;
         margin-top: -13px;
+        position: absolute;
+        right: 73px;
     }
     &__img {
         width: 100%;

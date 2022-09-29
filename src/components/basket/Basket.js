@@ -13,6 +13,7 @@ const Basket = () => {
     const addProductTest = useSelector(state => state.basket.items);
     const totalTest = useSelector(state => state.basket.total);
 
+    const stateArrRender = useSelector(state => state.basket.stateArr);
     const stateBasketAmount = useSelector(state => state.basket.amount);
     // eslint-disable-next-line
     const [basketObj, setBasketObject] = useLocalStorage('object', 0);
@@ -27,6 +28,7 @@ const Basket = () => {
         setBasketObject(addProductTest);
         localStorage.setItem('total', totalTest);
         dispatch(basketAmount(addProductTest));
+        localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
         // eslint-disable-next-line
     }, [stateBasketAmount, addProductTest, totalTest]);
 

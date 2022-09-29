@@ -5,7 +5,7 @@ import Spinner from '../spinner/Spinner';
 import Error from '../../assets/Error.gif';
 import CardsListItem from '../cardsListItem/cardsListItem';
 
-import { activeStateBasket, addProduct, stateArr } from '../basket/basketSlice';
+import { activeStateBasket, addProduct, stateArr, stateArrTest } from '../basket/basketSlice';
 
 
 import './cardsList.scss';
@@ -14,35 +14,37 @@ const CardsList = () => {
 
     const {
         data: products = [],
+        isFetching,
         isLoading,
-        isError
+        isError,
+        isSuccess
     } = useGetProductsQuery();
 
     const dispatch = useDispatch();
-
 
 
     const activeFilter = useSelector(state => state.filters.activeFilter);
     const searchCoffee = useSelector(state => state.filters.searchCoffee);
     const state = useSelector(state => state.basket.stateBasket);
     const addProductTest = useSelector(state => state.basket.items);
-    const stateArrF = useSelector(state => state.basket.stateArr);
-
-    localStorage.setItem('stateArr', JSON.stringify(products))
+    const stateArrRender = useSelector(state => state.basket.stateArr);
+    const stateArrRenderTest = useSelector(state => state.basket.stateArrTest);
 
     useEffect(() => {
-        if (localStorage.getItem('stateArr')) {
-            dispatch(stateArr(JSON.parse(localStorage.getItem('stateArr'))))
+        localStorage.setItem('stateArr', JSON.stringify(products));
+        if (stateArrRender) {
+            dispatch(stateArr(stateArrRender))
         } else {
-            dispatch(stateArr(products))
-            localStorage.setItem('stateArr', JSON.stringify(stateArrF))
+            dispatch(stateArr(products));
         }
 
+    }, [isSuccess])
 
-    }, [isLoading])
+
+    // localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
 
 
-    console.log(stateArrF)
+
     const searchCoffeeFiltered = useMemo(() => {
         const searchCoffeeFiltered = products.slice();
         if (searchCoffee === '') {
@@ -84,9 +86,7 @@ const CardsList = () => {
 
     };
 
-    const elements = renderCardsList(stateArrF);
-
-
+    const elements = renderCardsList(stateArrRender);
     return (
         <section className="cardsList" >
             <div className="container">
@@ -96,6 +96,7 @@ const CardsList = () => {
             </div>
         </section>
     )
+
 };
 
 export default CardsList;

@@ -22,20 +22,27 @@ const CardsList = () => {
 
 
 
-
-    useEffect(() => {
-        dispatch(stateArr(products))
-        console.log(stateArrF)
-    }, [isLoading])
-
-
     const activeFilter = useSelector(state => state.filters.activeFilter);
     const searchCoffee = useSelector(state => state.filters.searchCoffee);
     const state = useSelector(state => state.basket.stateBasket);
     const addProductTest = useSelector(state => state.basket.items);
     const stateArrF = useSelector(state => state.basket.stateArr);
-    console.log(stateArrF)
 
+    localStorage.setItem('stateArr', JSON.stringify(products))
+
+    useEffect(() => {
+        if (localStorage.getItem('stateArr')) {
+            dispatch(stateArr(JSON.parse(localStorage.getItem('stateArr'))))
+        } else {
+            dispatch(stateArr(products))
+            localStorage.setItem('stateArr', JSON.stringify(stateArrF))
+        }
+
+
+    }, [isLoading])
+
+
+    console.log(stateArrF)
     const searchCoffeeFiltered = useMemo(() => {
         const searchCoffeeFiltered = products.slice();
         if (searchCoffee === '') {

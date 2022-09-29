@@ -48,7 +48,6 @@ const Cards = ({ id, img, title, country, price, quantity }) => {
             price,
         }
         dispatch(addProduct(item))
-        console.log(quantity)
     };
 
 
@@ -87,6 +86,7 @@ const Cards = ({ id, img, title, country, price, quantity }) => {
                 onClick={basketDecr}
                 className="cards__basketDecr">-1</button>
         </div>
+
     )
 };
 

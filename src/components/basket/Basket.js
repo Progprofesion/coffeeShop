@@ -3,13 +3,11 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
-import { basketAmount, stateArr } from '../basket/basketSlice';
+import { basketAmount } from '../basket/basketSlice';
 
 import './basket.scss';
 
 const Basket = () => {
-
-    const state = useSelector(state => state.basket.stateBasket);
     const addProductTest = useSelector(state => state.basket.items);
     const totalTest = useSelector(state => state.basket.total);
 

@@ -5,9 +5,7 @@ import Spinner from '../spinner/Spinner';
 import Error from '../../assets/Error.gif';
 import CardsListItem from '../cardsListItem/cardsListItem';
 
-import { activeStateBasket, addProduct, stateArr, stateArrTest } from '../basket/basketSlice';
-
-import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { stateArr } from '../basket/basketSlice';
 
 
 import './cardsList.scss';
@@ -16,7 +14,6 @@ const CardsList = () => {
 
     const {
         data: products = [],
-        isFetching,
         isLoading,
         isError,
         isSuccess
@@ -24,15 +21,9 @@ const CardsList = () => {
 
     const dispatch = useDispatch();
 
-
     const activeFilter = useSelector(state => state.filters.activeFilter);
     const searchCoffee = useSelector(state => state.filters.searchCoffee);
-    const state = useSelector(state => state.basket.stateBasket);
-    const addProductTest = useSelector(state => state.basket.items);
     const stateArrRender = useSelector(state => state.basket.stateArr);
-    const stateArrRenderTest = useSelector(state => state.basket.stateArrTest);
-
-    const [test, setTest] = useLocalStorage('stateArr', 0);
 
     useEffect(() => {
         localStorage.setItem('stateArr', JSON.stringify(products));
@@ -41,15 +32,11 @@ const CardsList = () => {
         } else {
             dispatch(stateArr(stateArrRender))
         }
+        // eslint-disable-next-line
     }, [isSuccess])
 
-    console.log(stateArrRender.length)
-    // localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
-
-
-
     const searchCoffeeFiltered = useMemo(() => {
-        const searchCoffeeFiltered = products.slice();
+        const searchCoffeeFiltered = stateArrRender.slice();
         if (searchCoffee === '') {
             return searchCoffeeFiltered;
         } else {
@@ -57,7 +44,7 @@ const CardsList = () => {
                 return item.title.toLowerCase().indexOf(searchCoffee.toLowerCase()) > -1
             })
         }
-    }, [products, searchCoffee]);
+    }, [searchCoffee, stateArrRender]);
 
     const filteredCards = useMemo(() => {
         const filteredCards = searchCoffeeFiltered.slice();
@@ -89,7 +76,7 @@ const CardsList = () => {
 
     };
 
-    const elements = renderCardsList(stateArrRender);
+    const elements = renderCardsList(filteredCards);
     return (
         <section className="cardsList" >
             <div className="container">

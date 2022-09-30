@@ -18,14 +18,14 @@ import LinkPageBlack from '../linkPage/LinkPageBlack';
 import './basketLyout.scss';
 
 const BasketLayout = () => {
-    const state = useSelector(state => state.basket.stateBasket);
+
     const addProductTest = useSelector(state => state.basket.items);
     const stateBasketAmount = useSelector(state => state.basket.amount);
     const totalTest = useSelector(state => state.basket.total);
 
     const amount = localStorage.getItem('amount')
     const total = localStorage.getItem('total')
-
+    // eslint-disable-next-line
     const [basketObj, setBasketObject] = useLocalStorage('object', 0);
 
     const dispatch = useDispatch();

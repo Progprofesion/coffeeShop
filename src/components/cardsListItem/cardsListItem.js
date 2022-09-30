@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
 import {
@@ -24,8 +24,6 @@ const Cards = ({ id, img, title, country, price, quantity }) => {
     const [amountCard, setAmountCard] = useState(0);
 
     const dispatch = useDispatch();
-
-    const addProductTest = useSelector(state => state.basket.items);
 
     const basketIncr = (e) => {
         e.preventDefault();

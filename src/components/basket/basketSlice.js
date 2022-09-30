@@ -11,16 +11,12 @@ const initialState = cardsAdapter.getInitialState({
     amount: localStorage.getItem('amount') || 0,
     items: JSON.parse(localStorage.getItem('object')) || [],
     stateArr: JSON.parse(localStorage.getItem('stateArr')) || [],
-    stateArrTest: []
 });
 
 const cardsSlice = createSlice({
     name: 'basket',
     initialState,
     reducers: {
-        stateArrTest: (state, action) => {
-            state.stateArrTest = action.payload
-        },
         stateArr: (state, action) => {
             state.stateArr = action.payload
         },
@@ -62,7 +58,6 @@ const cardsSlice = createSlice({
             }
             const stateCartAmount = state.stateArr.find((item) => item.id === action.payload.id);
             stateCartAmount.quantity++;
-
         },
         incrementQuantity: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);
@@ -72,6 +67,8 @@ const cardsSlice = createSlice({
             const item = state.items.find((item) => item.id === action.payload);
             if (item && item.quantity > 0) {
                 item.quantity--;
+                const stateCartAmount = state.stateArr.find((item) => item.id === action.payload);
+                stateCartAmount.quantity--;
             }
         },
         removeProduct: (state, action) => {
@@ -93,12 +90,12 @@ export const { selectAll } = cardsAdapter.getSelectors(state => state.basket)
 export const { activeStateBasket,
     activeIncrTotals,
     activeDecrTotals,
-    activeBasketDecr,
     activeBasketIncr,
+    activeBasketDecr,
     addProduct,
     incrementQuantity,
     decrementQuantity,
     basketAmount,
     removeProduct,
     stateArr,
-    stateArrTest } = actions;
+} = actions;

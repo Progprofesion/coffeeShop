@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
-import { basketAmount } from '../basket/basketSlice';
+import { basketAmount, stateArr } from '../basket/basketSlice';
 
 import './basket.scss';
 

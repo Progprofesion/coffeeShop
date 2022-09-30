@@ -7,6 +7,8 @@ import CardsListItem from '../cardsListItem/cardsListItem';
 
 import { activeStateBasket, addProduct, stateArr, stateArrTest } from '../basket/basketSlice';
 
+import { useLocalStorage } from '../../hooks/useLocalStorage';
+
 
 import './cardsList.scss';
 
@@ -30,17 +32,18 @@ const CardsList = () => {
     const stateArrRender = useSelector(state => state.basket.stateArr);
     const stateArrRenderTest = useSelector(state => state.basket.stateArrTest);
 
+    const [test, setTest] = useLocalStorage('stateArr', 0);
+
     useEffect(() => {
         localStorage.setItem('stateArr', JSON.stringify(products));
-        if (stateArrRender) {
-            dispatch(stateArr(stateArrRender))
+        if (stateArrRender.length < 6) {
+            dispatch(stateArr(products))
         } else {
-            dispatch(stateArr(products));
+            dispatch(stateArr(stateArrRender))
         }
-
     }, [isSuccess])
 
-
+    console.log(stateArrRender.length)
     // localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
 
 

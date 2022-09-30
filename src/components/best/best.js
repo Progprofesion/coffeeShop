@@ -10,10 +10,17 @@ import AROMISTICOCoffee1kg from '../../img/AROMISTICOCoffee1kg.svg';
 import PrestoCoffeeBeans1kg from '../../img/PrestoCoffeeBeans1kg.svg';
 // eslint-disable-next-line
 import SolimoCooffeeBeans2kg from '../../img/SolimoCooffeeBeans2kg.svg';
+// eslint-disable-next-line
+import LORCremaAbsoluClassique from '../../img/LORCremaAbsoluClassique.webp';
+// eslint-disable-next-line
+import LavazzaTierra1KG from '../../img/LavazzaTierra1KG.jpg';
+// eslint-disable-next-line
+import EvaDiaKenyaGrinders from '../../img/EvaDiaKenyaGrinders.jpg';
 
 import './best.scss';
 
 const Best = () => {
+    console.log(EvaDiaKenyaGrinders)
 
     const {
         data: products = [],
@@ -24,8 +31,8 @@ const Best = () => {
 
     const renderCardsList = (arr) => {
         // eslint-disable-next-line
-        return arr.map(({ id, page, img, title, price }) => {
-            if (id > 2) {
+        return arr.map(({ id, img, title, price }) => {
+            if (id < 3) {
                 return (
                     <Link key={id} to={`/ourcoffee/${id}`}>
                         <div className="best__cards">

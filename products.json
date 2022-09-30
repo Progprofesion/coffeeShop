@@ -30,28 +30,28 @@
         {
             "id": 3,
             "page": 4,
-            "img": "/static/media/SolimoCooffeeBeans2kg.54bf00220b02339f5c39c645f58b8fb6.svg",
-            "title": "Solimo Coffee Beans 2 kg",
+            "img": "/static/media/LavazzaTierra1KG.2953db4c97274d7be0f3.jpg",
+            "title": "Lavazza Tierra 1 kg",
             "country": "Brazil",
-            "price": 10.73,
+            "price": 12.53,
             "quantity": 0
         },
         {
             "id": 4,
             "page": 5,
-            "img": "/static/media/PrestoCoffeeBeans1kg.64e083ada70fb7bfb9d8c18b253cbb72.svg",
-            "title": "Presto Coffee Beans 1 kg",
+            "img": "/static/media/EvaDiaKenyaGrinders.76d4d12a78bf263da39a.jpg",
+            "title": "EvaDia Kenya Grinders 1 kg",
             "country": "Kenya",
-            "price": 15.99,
+            "price": 9.99,
             "quantity": 0
         },
         {
             "id": 5,
             "page": 6,
-            "img": "/static/media/AROMISTICOCoffee1kg.f570b11568e712c75c491a4f849202c3.svg",
-            "title": "AROMISTICO Coffee 1 kg",
+            "img": "/static/media/LORCremaAbsoluClassique.77c8d2ef80e4d561756f.webp",
+            "title": "LOR Crema Classique 1 kg",
             "country": "Columbias",
-            "price": 6.99,
+            "price": 7.56,
             "quantity": 0
         }
     ],

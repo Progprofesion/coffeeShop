@@ -62,6 +62,8 @@ const cardsSlice = createSlice({
         incrementQuantity: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);
             item.quantity++;
+            const stateCartAmount = state.stateArr.find((item) => item.id === action.payload);
+            stateCartAmount.quantity++;
         },
         decrementQuantity: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);

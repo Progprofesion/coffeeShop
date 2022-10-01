@@ -9,7 +9,8 @@ import {
     removeProduct,
     activeIncrTotals,
     activeDecrTotals,
-    activeStateBasket
+    activeStateBasket,
+    stateArr
 } from '../basket/basketSlice';
 
 import { useEffect, useState } from 'react';
@@ -27,6 +28,7 @@ const BasketLayout = () => {
     const addProductTest = useSelector(state => state.basket.items);
     const stateBasketAmount = useSelector(state => state.basket.amount);
     const totalTest = useSelector(state => state.basket.total);
+    const stateArrRender = useSelector(state => state.basket.stateArr);
 
     const amount = localStorage.getItem('amount')
     const total = localStorage.getItem('total')
@@ -83,7 +85,7 @@ const BasketLayout = () => {
                 <input type='text' />
                 <input type='text' />
                 <input type='text' />
-                <button className="basketLayout__btnBuy" ></button>
+                <button className="basketLayout__btnBuy">Купить</button>
             </form>
         </Modal>
 

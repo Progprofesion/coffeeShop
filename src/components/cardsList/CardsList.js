@@ -26,7 +26,7 @@ const CardsList = () => {
     const stateArrRender = useSelector(state => state.basket.stateArr);
 
     useEffect(() => {
-        localStorage.setItem('stateArr', JSON.stringify(products));
+        // localStorage.setItem('stateArr', JSON.stringify(products));
         if (stateArrRender.length < 6) {
             dispatch(stateArr(products))
         } else {

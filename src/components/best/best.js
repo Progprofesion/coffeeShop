@@ -20,7 +20,6 @@ import EvaDiaKenyaGrinders from '../../img/EvaDiaKenyaGrinders.jpg';
 import './best.scss';
 
 const Best = () => {
-    console.log(EvaDiaKenyaGrinders)
 
     const {
         data: products = [],

@@ -1,4 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
+
+import Modal from '../modal/Modal';
+
 import {
     incrementQuantity,
     decrementQuantity,
@@ -9,7 +12,7 @@ import {
     activeStateBasket
 } from '../basket/basketSlice';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
@@ -18,6 +21,8 @@ import LinkPageBlack from '../linkPage/LinkPageBlack';
 import './basketLyout.scss';
 
 const BasketLayout = () => {
+
+    const [modalActive, setModalActive] = useState(false);
 
     const addProductTest = useSelector(state => state.basket.items);
     const stateBasketAmount = useSelector(state => state.basket.amount);
@@ -53,16 +58,16 @@ const BasketLayout = () => {
 
     const view = (arr) => {
         return arr.map(({ id, img, title, country, price, quantity }) => {
-            return <div key={id} className="basketLayont__wrapp">
-                <img src={img} alt="coffee" className="basketLayont__img" />
-                <div className="basketLayont__quantity">{quantity}</div>
-                <div className="basketLayont__result">
-                    <div className="basketLayont__title">{title}</div>
-                    <div className="basketLayont__country">{country}</div>
-                    <div className="basketLayont__price">{price}</div>
-                    <div className="basketLayont__btnWrapp">
-                        <button onClick={() => incr(id, price)} className="basketLayont__btnWrapp-btn">+</button>
-                        <button onClick={() => decr(id, price)} className="basketLayont__btnWrapp-btn">-</button>
+            return <div key={id} className="basketLayout__wrapp">
+                <img src={img} alt="coffee" className="basketLayout__img" />
+                <div className="basketLayout__quantity">{quantity}</div>
+                <div className="basketLayout__result">
+                    <div className="basketLayout__title">{title}</div>
+                    <div className="basketLayout__country">{country}</div>
+                    <div className="basketLayout__price">{price}</div>
+                    <div className="basketLayout__btnWrapp">
+                        <button onClick={() => incr(id, price)} className="basketLayout__btnWrapp-btn">+</button>
+                        <button onClick={() => decr(id, price)} className="basketLayout__btnWrapp-btn">-</button>
                     </div>
 
                 </div>
@@ -73,13 +78,23 @@ const BasketLayout = () => {
     const elements = view(addProductTest)
 
     return (
-        <>
+        <>    <Modal active={modalActive} setActive={setModalActive} >
+            <form action="">
+                <input type='text' />
+                <input type='text' />
+                <input type='text' />
+                <button className="basketLayout__btnBuy" ></button>
+            </form>
+        </Modal>
+
             <LinkPageBlack />
-            <section className="basketLayont">
-                <h2 className="basketLayont__title">Shopping cart</h2>
-                <h3 className="basketLayont__amount">Количество товаров: {amount}</h3>
-                <h3 className="basketLayont__amount">Общая сумма: {total}</h3>
+            <section className="basketLayout">
+                <h2 className="basketLayout__title">Shopping cart</h2>
+                <h3 className="basketLayout__amount">Количество товаров: {amount}</h3>
+                <h3 className="basketLayout__amount">Общая сумма: {total}</h3>
                 {elements}
+                <button onClick={() => setModalActive(true)} className="basketLayout__btnBuy">Купить</button>
+
             </section>
         </>
     )

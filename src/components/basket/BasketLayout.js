@@ -10,7 +10,6 @@ import {
     activeIncrTotals,
     activeDecrTotals,
     activeStateBasket,
-    stateArr
 } from '../basket/basketSlice';
 
 import { useEffect, useState } from 'react';
@@ -28,7 +27,6 @@ const BasketLayout = () => {
     const addProductTest = useSelector(state => state.basket.items);
     const stateBasketAmount = useSelector(state => state.basket.amount);
     const totalTest = useSelector(state => state.basket.total);
-    const stateArrRender = useSelector(state => state.basket.stateArr);
 
     const amount = localStorage.getItem('amount')
     const total = localStorage.getItem('total')
@@ -80,17 +78,24 @@ const BasketLayout = () => {
     const elements = view(addProductTest)
 
     return (
-        <>    <Modal active={modalActive} setActive={setModalActive} >
-            <form action="">
-                <input type='text' />
-                <input type='text' />
-                <input type='text' />
-                <button className="basketLayout__btnBuy">Купить</button>
-            </form>
-        </Modal>
+        <>
 
             <LinkPageBlack />
             <section className="basketLayout">
+                <Modal active={modalActive} setActive={setModalActive} >
+                    <form action="">
+                        <h4 className="basketLayout__title">Оформить заказ</h4>
+                        <div className="basketLayout__form">
+                            <p className="basketLayout__title">Введите Имя</p>
+                            <p className="basketLayout__title">Почта</p>
+                            <p className="basketLayout__title">Номер телефона</p>
+                        </div>
+                        <input placeholder="Имя" type='text' />
+                        <input placeholder="Почта" type='text' />
+                        <input placeholder="Телефон" type='text' />
+                        <button className="basketLayout__btnBuyY">Купить</button>
+                    </form>
+                </Modal>
                 <h2 className="basketLayout__title">Shopping cart</h2>
                 <h3 className="basketLayout__amount">Количество товаров: {amount}</h3>
                 <h3 className="basketLayout__amount">Общая сумма: {total}</h3>

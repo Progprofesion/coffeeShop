@@ -79,23 +79,24 @@ const BasketLayout = () => {
 
     return (
         <>
+            <Modal active={modalActive} setActive={setModalActive} >
+                <form action="">
+                    <h4 className="basketLayout__title">Оформить заказ</h4>
+                    {/* <div className="basketLayout__form">
+                        <p className="basketLayout__title">Введите Имя</p>
+                        <p className="basketLayout__title">Почта</p>
+                        <p className="basketLayout__title">Номер телефона</p>
+                    </div> */}
+                    <input placeholder="Имя" type='text' />
+                    <input placeholder="Почта" type='text' />
+                    <input placeholder="Телефон" type='text' />
+                    <button className="basketLayout__btnBuyY">Купить</button>
+                </form>
+            </Modal>
 
             <LinkPageBlack />
             <section className="basketLayout">
-                <Modal active={modalActive} setActive={setModalActive} >
-                    <form action="">
-                        <h4 className="basketLayout__title">Оформить заказ</h4>
-                        <div className="basketLayout__form">
-                            <p className="basketLayout__title">Введите Имя</p>
-                            <p className="basketLayout__title">Почта</p>
-                            <p className="basketLayout__title">Номер телефона</p>
-                        </div>
-                        <input placeholder="Имя" type='text' />
-                        <input placeholder="Почта" type='text' />
-                        <input placeholder="Телефон" type='text' />
-                        <button className="basketLayout__btnBuyY">Купить</button>
-                    </form>
-                </Modal>
+
                 <h2 className="basketLayout__title">Shopping cart</h2>
                 <h3 className="basketLayout__amount">Количество товаров: {amount}</h3>
                 <h3 className="basketLayout__amount">Общая сумма: {total}</h3>

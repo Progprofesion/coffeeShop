@@ -13,6 +13,8 @@ const Basket = () => {
 
     const stateArrRender = useSelector(state => state.basket.stateArr);
     const stateBasketAmount = useSelector(state => state.basket.amount);
+
+    const basketDecr = useSelector(state => state.basket.basketDecr);
     // eslint-disable-next-line
     const [basketObj, setBasketObject] = useLocalStorage('object', 0);
 
@@ -28,7 +30,7 @@ const Basket = () => {
         dispatch(basketAmount(addProductTest));
         localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
         // eslint-disable-next-line
-    }, [stateBasketAmount, addProductTest, totalTest]);
+    }, [stateBasketAmount, addProductTest, totalTest, basketDecr]);
 
 
     return (

@@ -34,6 +34,7 @@ const Cards = ({ id, img, title, country, price, quantity }) => {
         dispatch(activeStateBasket({ id, img, price, title, country, count }))
         dispatch(activeBasketIncr({ incr }))
         dispatch(activeIncrTotals(price))
+        console.log(price)
     };
 
 
@@ -51,12 +52,16 @@ const Cards = ({ id, img, title, country, price, quantity }) => {
 
     const basketDecr = (e) => {
         e.preventDefault();
+
         setCount(count + 1)
         setDecr(decr + 1)
+        dispatch(activeStateBasket({ id, img, price, title, country, count }))
         if (amountCard > 0) {
             setAmountCard(amountCard - 1)
             dispatch(activeDecrTotals(price))
         }
+
+        console.log(price)
         dispatch(activeBasketDecr({ decr }))
         dispatch(decrementQuantity(id))
         dispatch(removeProduct(id))

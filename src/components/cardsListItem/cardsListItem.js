@@ -56,12 +56,10 @@ const Cards = ({ id, img, title, country, price, quantity }) => {
         setCount(count + 1)
         setDecr(decr + 1)
         dispatch(activeStateBasket({ id, img, price, title, country, count }))
-        if (amountCard > 0) {
+        if (quantity > 0) {
             setAmountCard(amountCard - 1)
             dispatch(activeDecrTotals(price))
         }
-
-        console.log(price)
         dispatch(activeBasketDecr({ decr }))
         dispatch(decrementQuantity(id))
         dispatch(removeProduct(id))

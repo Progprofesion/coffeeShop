@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { useForm } from 'react-hook-form';
 
 import Modal from '../modal/Modal';
 
@@ -21,6 +22,15 @@ import LinkPageBlack from '../linkPage/LinkPageBlack';
 import './basketLyout.scss';
 
 const BasketLayout = () => {
+
+    const {
+        register,
+        formState: { errors },
+        handleSubmit,
+        reset,
+    } = useForm({
+        mode: "onBlur"
+    });
 
     const [modalActive, setModalActive] = useState(false);
 
@@ -56,6 +66,11 @@ const BasketLayout = () => {
         dispatch(removeProduct(id));
     };
 
+    const onSubmit = (data) => {
+        console.log(JSON.stringify(data));
+        reset();
+    };
+
     const view = (arr) => {
         return arr.map(({ id, img, title, country, price, quantity }) => {
             return <div key={id} className="basketLayout__wrapp">
@@ -80,17 +95,45 @@ const BasketLayout = () => {
     return (
         <>
             <Modal active={modalActive} setActive={setModalActive} >
-                <form action="">
+                <form onSubmit={handleSubmit(onSubmit)} className="basketLayout__form" action="">
                     <h4 className="basketLayout__title">Оформить заказ</h4>
-                    {/* <div className="basketLayout__form">
-                        <p className="basketLayout__title">Введите Имя</p>
-                        <p className="basketLayout__title">Почта</p>
-                        <p className="basketLayout__title">Номер телефона</p>
-                    </div> */}
-                    <input placeholder="Имя" type='text' />
-                    <input placeholder="Почта" type='text' />
-                    <input placeholder="Телефон" type='text' />
-                    <button className="basketLayout__btnBuyY">Купить</button>
+                    <div className="basketLayout__modalWrapp">
+                        <input
+                            {...register('name', {
+                                required: 'Поле обязательно к заполнению',
+                                minLength: {
+                                    value: 3,
+                                    message: 'Минимум 3 символа'
+                                }
+                            })}
+                            className="basketLayout__input" placeholder="Имя" type='text' />
+                        {errors.name ? <p>{errors.name.message}</p> : null}
+                        <input
+                            {...register('email', {
+                                required: 'Поле обязательно к заполнению',
+                                minLength: {
+                                    value: 3,
+                                    message: 'Минимум 3 символа'
+                                }
+                            })}
+                            className="basketLayout__input" placeholder="Почта" type='text' />
+                        {errors.email ? <p>{errors.email.message}</p> : null}
+                        <input
+                            {...register('phone', {
+                                // required: 'Поле обязательно к заполнению',
+                                // minLength: {
+                                //     value: 8,
+                                //     message: 'Минимум 8 символов',
+                                // },
+                                valueAsNumber: {
+                                    value: true,
+                                    message: 'Только цифры'
+                                }
+                            })}
+                            className="basketLayout__input" placeholder="Телефон" type='number' />
+                        {errors.phone ? <p>{errors.phone.message}</p> : null}
+                    </div>
+                    <button type='submit' className="basketLayout__btnBuy">Купить</button>
                 </form>
             </Modal>
 

@@ -52,7 +52,6 @@ const Cards = ({ id, img, title, country, price, quantity }) => {
 
     const basketDecr = (e) => {
         e.preventDefault();
-
         setCount(count + 1)
         setDecr(decr + 1)
         dispatch(activeStateBasket({ id, img, price, title, country, count }))

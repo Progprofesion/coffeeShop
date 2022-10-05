@@ -9,6 +9,7 @@
     filter: drop-shadow(5px 5px 35px rgba(0, 0, 0, 0.25));
     &__title {
         margin-top: 15px;
+        text-align: center;
     }
     &__amount {
         margin-top: 20px;
@@ -68,19 +69,15 @@
         border: 2px solid rgba(33, 154, 121, 0.657);
         filter: drop-shadow(5px 5px 35px rgba(74, 131, 172, 0.25));
     }
-    &__btnBuyY {
-        position: relative;
-        margin: 20px auto 35px;
-        width: 120px;
-        height: 40px;
-        border-radius: 10px;
-        border: 2px solid rgba(33, 154, 121, 0.657);
-        z-index: 1;
-        filter: drop-shadow(5px 5px 35px rgba(74, 131, 172, 0.25));
-    }
     &__form {
+        text-align: center;
+    }
+    &__modalWrapp {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+    }
+    &__input {
+        margin-right: 20px;
     }
 
 }

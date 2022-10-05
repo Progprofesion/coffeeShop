@@ -67,7 +67,7 @@ const BasketLayout = () => {
     };
 
     const onSubmit = (data) => {
-        console.log(JSON.stringify(data));
+        alert(JSON.stringify(data));
         reset();
     };
 
@@ -111,26 +111,27 @@ const BasketLayout = () => {
                         <input
                             {...register('email', {
                                 required: 'Поле обязательно к заполнению',
-                                minLength: {
-                                    value: 3,
-                                    message: 'Минимум 3 символа'
+                                pattern: {
+                                    // eslint-disable-next-line
+                                    value: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
+                                    message: 'Не правильный адрес почты'
                                 }
                             })}
                             className="basketLayout__input" placeholder="Почта" type='text' />
                         {errors.email ? <p>{errors.email.message}</p> : null}
                         <input
                             {...register('phone', {
-                                // required: 'Поле обязательно к заполнению',
-                                // minLength: {
-                                //     value: 8,
-                                //     message: 'Минимум 8 символов',
-                                // },
-                                valueAsNumber: {
-                                    value: true,
+                                required: 'Поле обязательно к заполнению',
+                                minLength: {
+                                    value: 8,
+                                    message: 'Минимум 8 символов',
+                                },
+                                pattern: {
+                                    value: /^(0|[1-9]\d*)(\.\d+)?$/,
                                     message: 'Только цифры'
-                                }
+                                },
                             })}
-                            className="basketLayout__input" placeholder="Телефон" type='number' />
+                            className="basketLayout__input" placeholder="Телефон" type='text' />
                         {errors.phone ? <p>{errors.phone.message}</p> : null}
                     </div>
                     <button type='submit' className="basketLayout__btnBuy">Купить</button>
@@ -139,7 +140,6 @@ const BasketLayout = () => {
 
             <LinkPageBlack />
             <section className="basketLayout">
-
                 <h2 className="basketLayout__title">Shopping cart</h2>
                 <h3 className="basketLayout__amount">Количество товаров: {amount}</h3>
                 <h3 className="basketLayout__amount">Общая сумма: {total}</h3>

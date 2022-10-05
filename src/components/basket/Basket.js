@@ -8,13 +8,12 @@ import { basketAmount } from '../basket/basketSlice';
 import './basket.scss';
 
 const Basket = () => {
-    const addProductTest = useSelector(state => state.basket.items);
+    const addProduct = useSelector(state => state.basket.items);
     const totalTest = useSelector(state => state.basket.total);
 
     const stateArrRender = useSelector(state => state.basket.stateArr);
     const stateBasketAmount = useSelector(state => state.basket.amount);
 
-    const basketDecr = useSelector(state => state.basket.basketDecr);
     // eslint-disable-next-line
     const [basketObj, setBasketObject] = useLocalStorage('object', 0);
 
@@ -25,12 +24,12 @@ const Basket = () => {
 
     useEffect(() => {
         localStorage.setItem('amount', stateBasketAmount);
-        setBasketObject(addProductTest);
+        setBasketObject(addProduct);
         localStorage.setItem('total', totalTest);
-        dispatch(basketAmount(addProductTest));
+        dispatch(basketAmount(addProduct));
         localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
         // eslint-disable-next-line
-    }, [stateBasketAmount, addProductTest, totalTest, basketDecr]);
+    }, [addProduct]);
 
 
     return (

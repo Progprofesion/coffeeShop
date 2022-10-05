@@ -1,12 +1,12 @@
 import { useMemo, useEffect } from 'react';
 import { useGetProductsQuery } from '../api/apiSlice';
 import { useSelector, useDispatch } from 'react-redux';
+
 import Spinner from '../spinner/Spinner';
 import Error from '../../assets/Error.gif';
 import CardsListItem from '../cardsListItem/cardsListItem';
 
 import { stateArr } from '../basket/basketSlice';
-
 
 import './cardsList.scss';
 
@@ -26,7 +26,6 @@ const CardsList = () => {
     const stateArrRender = useSelector(state => state.basket.stateArr);
 
     useEffect(() => {
-        // localStorage.setItem('stateArr', JSON.stringify(products));
         if (stateArrRender.length < 6) {
             dispatch(stateArr(products))
         } else {

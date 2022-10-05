@@ -34,7 +34,7 @@ const BasketLayout = () => {
 
     const [modalActive, setModalActive] = useState(false);
 
-    const addProductTest = useSelector(state => state.basket.items);
+    const addProduct = useSelector(state => state.basket.items);
     const stateBasketAmount = useSelector(state => state.basket.amount);
     const totalTest = useSelector(state => state.basket.total);
 
@@ -47,11 +47,11 @@ const BasketLayout = () => {
 
     useEffect(() => {
         localStorage.setItem('amount', stateBasketAmount);
-        setBasketObject(addProductTest);
+        setBasketObject(addProduct);
         localStorage.setItem('total', totalTest);
-        dispatch(basketAmount(addProductTest));
+        dispatch(basketAmount(addProduct));
         // eslint-disable-next-line
-    }, [stateBasketAmount, addProductTest, totalTest]);
+    }, [addProduct]);
 
     const incr = (id, price) => {
         dispatch(activeStateBasket({ price }));
@@ -90,7 +90,7 @@ const BasketLayout = () => {
         })
     };
 
-    const elements = view(addProductTest)
+    const elements = view(addProduct)
 
     return (
         <>

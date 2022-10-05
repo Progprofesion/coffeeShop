@@ -5,8 +5,6 @@ const cardsAdapter = createEntityAdapter();
 const initialState = cardsAdapter.getInitialState({
     stateBasket: {},
     total: localStorage.getItem('total') || 0,
-    basketIncr: 0,
-    basketDecr: 0,
     amountCart: 0,
     amount: localStorage.getItem('amount') || 0,
     items: JSON.parse(localStorage.getItem('object')) || [],
@@ -36,12 +34,6 @@ const cardsSlice = createSlice({
                 let rounded = Math.round(sum * 100) / 100;
                 state.total = rounded
             }
-        },
-        activeBasketDecr: (state, action) => {
-            state.basketDecr = action.payload;
-        },
-        activeBasketIncr: (state, action) => {
-            state.basketIncr = action.payload;
         },
         basketAmount: (state) => {
             state.amount = state.items.reduce(
@@ -92,8 +84,6 @@ export const { selectAll } = cardsAdapter.getSelectors(state => state.basket)
 export const { activeStateBasket,
     activeIncrTotals,
     activeDecrTotals,
-    activeBasketIncr,
-    activeBasketDecr,
     addProduct,
     incrementQuantity,
     decrementQuantity,

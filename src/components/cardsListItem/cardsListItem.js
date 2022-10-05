@@ -4,8 +4,6 @@ import { useState } from 'react';
 
 import {
     activeStateBasket,
-    activeBasketIncr,
-    activeBasketDecr,
     addProduct,
     decrementQuantity,
     removeProduct,
@@ -19,20 +17,13 @@ import './cardsListItem.scss';
 
 const Cards = ({ id, img, title, country, price, quantity }) => {
     const [count, setCount] = useState(Math.floor(Math.random() * 1000));
-    const [incr, setIncr] = useState(0);
-    const [decr, setDecr] = useState(0);
-    const [amountCard, setAmountCard] = useState(0);
 
     const dispatch = useDispatch();
 
     const basketIncr = (e) => {
         e.preventDefault();
-        setCount(count + 1)
-        setIncr(incr + 1)
-        setAmountCard(amountCard + 1)
         addItem()
         dispatch(activeStateBasket({ id, img, price, title, country, count }))
-        dispatch(activeBasketIncr({ incr }))
         dispatch(activeIncrTotals(price))
         console.log(price)
     };
@@ -52,14 +43,10 @@ const Cards = ({ id, img, title, country, price, quantity }) => {
 
     const basketDecr = (e) => {
         e.preventDefault();
-        setCount(count + 1)
-        setDecr(decr + 1)
         dispatch(activeStateBasket({ id, img, price, title, country, count }))
         if (quantity > 0) {
-            setAmountCard(amountCard - 1)
             dispatch(activeDecrTotals(price))
         }
-        dispatch(activeBasketDecr({ decr }))
         dispatch(decrementQuantity(id))
         dispatch(removeProduct(id))
     };

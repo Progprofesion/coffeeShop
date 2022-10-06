@@ -24,7 +24,7 @@ const OurCoffeePage = () => {
                 <HeadBanner />
                 <AboutOur img={girlCoffee} title={'About our beans'} />
                 <SearchComponent />
-                <CardsList />
+                <CardsList cardsView={0} />
                 <Footer />
             </HelmetProvider>
         </>

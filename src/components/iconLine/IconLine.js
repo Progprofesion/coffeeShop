@@ -1,14 +1,13 @@
 import './iconLine.scss';
-import coffeeBeansIconBlack from './img/coffeeBeansIconBlack.svg';
 
-const IconLine = () => {
+const IconLineBlack = ({ img, style }) => {
     return (
-        <div className="iconLine__item">
-            <div className="iconLine__item-line"></div>
-            <img src={coffeeBeansIconBlack} alt="coffeeBeans" />
-            <div className="iconLine__item-line"></div>
+        <div className="iconLine">
+            <div style={style} className="iconLine__item"></div>
+            <img src={img} alt="coffeeBeans" />
+            <div style={style} className="iconLine__item"></div>
         </div>
     )
 }
 
-export default IconLine;
+export default IconLineBlack;

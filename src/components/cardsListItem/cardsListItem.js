@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
 
 import {
     activeStateBasket,
@@ -16,8 +15,7 @@ import './cardsListItem.scss';
 
 const Cards = ({ id, img, title, country, price, quantity }) => {
 
-    // eslint-disable-next-line
-    const [count, setCount] = useState(Math.floor(Math.random() * 1000));
+    let count = Math.floor(Math.random() * 1000);
 
     const dispatch = useDispatch();
 
@@ -26,7 +24,6 @@ const Cards = ({ id, img, title, country, price, quantity }) => {
         addItem()
         dispatch(activeStateBasket({ id, img, price, title, country, count }))
         dispatch(activeIncrTotals(price))
-        console.log(price)
     };
 
     const addItem = () => {
@@ -71,7 +68,6 @@ const Cards = ({ id, img, title, country, price, quantity }) => {
                 onClick={basketDecr}
                 className="cards__basketDecr">-1</button>
         </div>
-
     )
 };
 

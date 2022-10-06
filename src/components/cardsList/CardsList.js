@@ -6,11 +6,11 @@ import Spinner from '../spinner/Spinner';
 import Error from '../../assets/Error.gif';
 import CardsListItem from '../cardsListItem/cardsListItem';
 
-import { stateArr } from '../basket/basketSlice';
+import { startState } from '../basket/basketSlice';
 
 import './cardsList.scss';
 
-const CardsList = () => {
+const CardsList = ({ cardsView }) => {
 
     const {
         data: products = [],
@@ -23,13 +23,13 @@ const CardsList = () => {
 
     const activeFilter = useSelector(state => state.filters.activeFilter);
     const searchCoffee = useSelector(state => state.filters.searchCoffee);
-    const stateArrRender = useSelector(state => state.basket.stateArr);
+    const stateArrRender = useSelector(state => state.basket.stateStartArr);
 
     useEffect(() => {
         if (stateArrRender.length < 6) {
-            dispatch(stateArr(products))
+            dispatch(startState(products))
         } else {
-            dispatch(stateArr(stateArrRender))
+            dispatch(startState(stateArrRender))
         }
         // eslint-disable-next-line
     }, [isSuccess])
@@ -55,22 +55,22 @@ const CardsList = () => {
 
     }, [activeFilter, searchCoffeeFiltered]);
 
-
-
     if (isLoading) {
         return <div><Spinner /></div>
     } else if (isError) {
         return <div><Error /></div>
     }
 
-
     const renderCardsList = (arr) => {
         if (arr.lenght === 0) {
             return <h5>No products</h5>
         }
-
+        // eslint-disable-next-line
         return arr.map(({ page, ...props }) => {
-            return <CardsListItem key={page} {...props} />
+            if (page > cardsView) {
+                return <CardsListItem key={page} {...props} />
+            }
+
         });
 
     };

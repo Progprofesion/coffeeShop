@@ -11,31 +11,29 @@ const Basket = () => {
     const addProduct = useSelector(state => state.basket.items);
     const totalTest = useSelector(state => state.basket.total);
 
-    const stateArrRender = useSelector(state => state.basket.stateArr);
+    const stateArrRender = useSelector(state => state.basket.stateStartArr);
     const stateBasketAmount = useSelector(state => state.basket.amount);
 
     // eslint-disable-next-line
-    const [basketObj, setBasketObject] = useLocalStorage('object', 0);
-
-    const amount = localStorage.getItem('amount')
-    const total = localStorage.getItem('total')
+    const [localbasketObj, setLocalbasketObj] = useLocalStorage('object', 0);
+    const [localBasketAmount, setLocalBasketAmount] = useLocalStorage('amount', 0);
+    const [localBasketTotal, setLocalBasketTotal] = useLocalStorage('total', 0);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        localStorage.setItem('amount', stateBasketAmount);
-        setBasketObject(addProduct);
-        localStorage.setItem('total', totalTest);
+        setLocalBasketAmount(stateBasketAmount);
+        setLocalbasketObj(addProduct);
+        setLocalBasketTotal(Number(totalTest));
         dispatch(basketAmount(addProduct));
         localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
         // eslint-disable-next-line
     }, [addProduct, stateBasketAmount]);
 
-
     return (
         <Link to="/basket" className="basket">
-            <div className="basket__amount">{amount ? amount : 0}</div>
-            <div className="basket__price">{total > 0 ? total : `0.00$`}</div>
+            <div className="basket__amount">{localBasketAmount ? localBasketAmount : 0}</div>
+            <div className="basket__price">{localBasketTotal > 0 ? localBasketTotal : `0.00$`}</div>
         </Link>
     )
 };

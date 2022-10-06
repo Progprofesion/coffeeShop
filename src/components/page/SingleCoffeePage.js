@@ -11,7 +11,6 @@ import Basket from '../basket/Basket';
 import Page404 from './404';
 import Spinner from '../spinner/Spinner';
 
-
 const SingleCoffeePage = () => {
     const id = useParams()
 
@@ -22,7 +21,6 @@ const SingleCoffeePage = () => {
         isLoading,
         isError
     } = useGetProductsIdQuery(coffeeId);
-
 
     if (isLoading) {
         return <Spinner />

@@ -1,4 +1,6 @@
-import IconLineBlack from "../iconLine/IconLineBlack";
+import IconLine from "../iconLine/IconLine";
+import coffeeBeansIconBlack from "../../assets/coffeeBeansIconBlack.svg";
+
 import './singleCoffeeItem.scss';
 
 const SingleCoffee = ({ img, country, price }) => {
@@ -9,7 +11,7 @@ const SingleCoffee = ({ img, country, price }) => {
                     <img src={img} alt="coffee" className="singleCoffeeItem__img" />
                     <div className="singleCoffeeItem__about">
                         <h3 className="singleCoffeeItem__about-title fz-24">About it</h3>
-                        <IconLineBlack />
+                        <IconLine img={coffeeBeansIconBlack} />
                         <div className="singleCoffeeItem__about-wrapper">
                             <h4 className="singleCoffeeItem__about-subtitle">Country: </h4>
                             <h4 className="fz-14">{country}</h4>

@@ -30,7 +30,6 @@ const App = () => {
                 </div>
             </main>
         </BrowserRouter>
-
     )
 };
 

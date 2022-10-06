@@ -1,5 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
+
+import LinkPage from '../linkPage/LinkPage';
 
 import Modal from '../modal/Modal';
 
@@ -17,7 +20,7 @@ import { useEffect, useState } from 'react';
 
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
-import LinkPageBlack from '../linkPage/LinkPageBlack';
+import coffeeIconBlack from '../../assets/coffeeIconBlack.svg';
 
 import './basketLyout.scss';
 
@@ -38,21 +41,20 @@ const BasketLayout = () => {
     const stateBasketAmount = useSelector(state => state.basket.amount);
     const totalTest = useSelector(state => state.basket.total);
 
-    const amount = localStorage.getItem('amount')
-    const total = localStorage.getItem('total')
-
     // eslint-disable-next-line
-    const [basketObj, setBasketObject] = useLocalStorage('object', 0);
+    const [localbasketObj, setLocalbasketObj] = useLocalStorage('object', 0);
+    const [localBasketAmount, setLocalBasketAmount] = useLocalStorage('amount', 0);
+    const [localBasketTotal, setLocalBasketTotal] = useLocalStorage('total', 0);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        localStorage.setItem('amount', stateBasketAmount);
-        setBasketObject(addProduct);
-        localStorage.setItem('total', totalTest);
+        setLocalBasketAmount(stateBasketAmount);
+        setLocalbasketObj(addProduct);
+        setLocalBasketTotal(Number(totalTest));
         dispatch(basketAmount(addProduct));
         // eslint-disable-next-line
-    }, [addProduct]);
+    }, [addProduct, stateBasketAmount]);
 
     const incr = (id, price) => {
         dispatch(activeStateBasket({ price }));
@@ -75,7 +77,9 @@ const BasketLayout = () => {
     const view = (arr) => {
         return arr.map(({ id, img, title, country, price, quantity }) => {
             return <div key={id} className="basketLayout__wrapp">
-                <img src={img} alt="coffee" className="basketLayout__img" />
+                <Link to={`/ourcoffee/${id}`}>
+                    <img src={img} alt="coffee" className="basketLayout__img" />
+                </Link>
                 <div className="basketLayout__quantity">{quantity}</div>
                 <div className="basketLayout__result">
                     <div className="basketLayout__title">{title}</div>
@@ -138,11 +142,21 @@ const BasketLayout = () => {
                 </form>
             </Modal>
 
-            <LinkPageBlack />
+            <LinkPage img={coffeeIconBlack} style={{ margin: '0 auto' }}>
+                <Link to='/'>
+                    <div className="linkPageBlack__descr fz-12Black">Coffee house</div>
+                </Link>
+                <Link to='/ourcoffee'>
+                    <div className="linkPageBlack__descr fz-12Black">Our coffee</div>
+                </Link>
+                <Link to="/pleasure">
+                    <div className="linkPageBlack__descr fz-12Black">For your pleasure</div>
+                </Link>
+            </LinkPage>
             <section className="basketLayout">
                 <h2 className="basketLayout__title">Shopping cart</h2>
-                <h3 className="basketLayout__amount">Количество товаров: {amount}</h3>
-                <h3 className="basketLayout__amount">Общая сумма: {total}</h3>
+                <h3 className="basketLayout__amount">Количество товаров: {localBasketAmount}</h3>
+                <h3 className="basketLayout__amount">Общая сумма: {localBasketTotal}</h3>
                 {elements}
                 <button onClick={() => setModalActive(true)} className="basketLayout__btnBuy">Купить</button>
             </section>

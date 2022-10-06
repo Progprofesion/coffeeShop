@@ -1,4 +1,5 @@
-import IconLineBlack from "../iconLine/IconLineBlack";
+import IconLine from "../iconLine/IconLine";
+import coffeeBeansIconBlack from "../../assets/coffeeBeansIconBlack.svg";
 import './aboutOur.scss';
 
 const AboutOur = ({ img, title }) => {
@@ -8,7 +9,7 @@ const AboutOur = ({ img, title }) => {
                 <img src={img} alt="" className="aboutOur__girl" />
                 <div className="aboutOur__descr fz-24">
                     <h2 className="aboutOur__title fz-24">{title}</h2>
-                    <IconLineBlack />
+                    <IconLine img={coffeeBeansIconBlack} />
                     <p className="aboutOur__text fz-14">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. <br />
                         <br />
                         Afraid at highly months do things on at. Situation recommend objection do intention <br />

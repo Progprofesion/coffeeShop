@@ -5,18 +5,17 @@ const cardsAdapter = createEntityAdapter();
 const initialState = cardsAdapter.getInitialState({
     stateBasket: {},
     total: localStorage.getItem('total') || 0,
-    amountCart: 0,
     amount: localStorage.getItem('amount') || 0,
     items: JSON.parse(localStorage.getItem('object')) || [],
-    stateArr: JSON.parse(localStorage.getItem('stateArr')) || [],
+    stateStartArr: JSON.parse(localStorage.getItem('stateArr')) || [],
 });
 
 const cardsSlice = createSlice({
     name: 'basket',
     initialState,
     reducers: {
-        stateArr: (state, action) => {
-            state.stateArr = action.payload
+        startState: (state, action) => {
+            state.stateStartArr = action.payload
         },
         activeStateBasket: (state, action) => {
             state.stateBasket = action.payload
@@ -48,20 +47,20 @@ const cardsSlice = createSlice({
             } else {
                 state.items.push({ ...action.payload, quantity: 1 });
             }
-            const stateCartAmount = state.stateArr.find((item) => item.id === action.payload.id);
+            const stateCartAmount = state.stateStartArr.find((item) => item.id === action.payload.id);
             stateCartAmount.quantity++;
         },
         incrementQuantity: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);
             item.quantity++;
-            const stateCartAmount = state.stateArr.find((item) => item.id === action.payload);
+            const stateCartAmount = state.stateStartArr.find((item) => item.id === action.payload);
             stateCartAmount.quantity++;
         },
         decrementQuantity: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);
             if (item && item.quantity > 0) {
                 item.quantity--;
-                const stateCartAmount = state.stateArr.find((item) => item.id === action.payload);
+                const stateCartAmount = state.stateStartArr.find((item) => item.id === action.payload);
                 stateCartAmount.quantity--;
             }
         },
@@ -89,5 +88,5 @@ export const { activeStateBasket,
     decrementQuantity,
     basketAmount,
     removeProduct,
-    stateArr,
+    startState,
 } = actions;

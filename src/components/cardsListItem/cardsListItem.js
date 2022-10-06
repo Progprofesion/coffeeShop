@@ -14,8 +14,9 @@ import {
 import 'animate.css';
 import './cardsListItem.scss';
 
-
 const Cards = ({ id, img, title, country, price, quantity }) => {
+
+    // eslint-disable-next-line
     const [count, setCount] = useState(Math.floor(Math.random() * 1000));
 
     const dispatch = useDispatch();
@@ -28,7 +29,6 @@ const Cards = ({ id, img, title, country, price, quantity }) => {
         console.log(price)
     };
 
-
     const addItem = () => {
         const item = {
             id,
@@ -40,7 +40,6 @@ const Cards = ({ id, img, title, country, price, quantity }) => {
         dispatch(addProduct(item))
     };
 
-
     const basketDecr = (e) => {
         e.preventDefault();
         dispatch(activeStateBasket({ id, img, price, title, country, count }))
@@ -50,7 +49,6 @@ const Cards = ({ id, img, title, country, price, quantity }) => {
         dispatch(decrementQuantity(id))
         dispatch(removeProduct(id))
     };
-
 
     return (
         <div

@@ -40,6 +40,7 @@ const BasketLayout = () => {
 
     const amount = localStorage.getItem('amount')
     const total = localStorage.getItem('total')
+
     // eslint-disable-next-line
     const [basketObj, setBasketObject] = useLocalStorage('object', 0);
 
@@ -84,7 +85,6 @@ const BasketLayout = () => {
                         <button onClick={() => incr(id, price)} className="basketLayout__btnWrapp-btn">+</button>
                         <button onClick={() => decr(id, price)} className="basketLayout__btnWrapp-btn">-</button>
                     </div>
-
                 </div>
             </div>
         })
@@ -145,7 +145,6 @@ const BasketLayout = () => {
                 <h3 className="basketLayout__amount">Общая сумма: {total}</h3>
                 {elements}
                 <button onClick={() => setModalActive(true)} className="basketLayout__btnBuy">Купить</button>
-
             </section>
         </>
     )

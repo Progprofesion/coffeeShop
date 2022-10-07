@@ -11,3 +11,21 @@
     background-color: rgba(174, 242, 224, 0.657);
     align-items: center;
 }
+
+// Media ------------------
+
+@media (max-width: 991px) {
+    .basket {
+       min-width: 110px;
+       min-height: 45px;
+       right: unset;
+       left: 50px;
+    }
+}
+
+@media (max-width: 575px) {
+    .basket {
+        left: 20px;
+        top: 10px;
+    }
+} 

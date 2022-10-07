@@ -155,10 +155,10 @@ const BasketLayout = () => {
             </LinkPage>
             <section className="basketLayout">
                 <h2 className="basketLayout__title">Shopping cart</h2>
-                <h3 className="basketLayout__amount">Количество товаров: {localBasketAmount}</h3>
-                <h3 className="basketLayout__amount">Общая сумма: {localBasketTotal}</h3>
+                <h3 className="basketLayout__amount">Amount of products: {localBasketAmount}</h3>
+                <h3 className="basketLayout__amount">Total price: {localBasketTotal}</h3>
                 {elements}
-                <button onClick={() => setModalActive(true)} className="basketLayout__btnBuy">Купить</button>
+                <button onClick={() => setModalActive(true)} className="basketLayout__btnBuy">Place an order</button>
             </section>
         </>
     )

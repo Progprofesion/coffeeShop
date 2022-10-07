@@ -32,6 +32,9 @@ const Burger = () => {
                 <Link to="/pleasure">
                     <div className="menu__link">For your pleasure</div>
                 </Link>
+                <Link to="/basket">
+                    <div className="menu__link">Basket</div>
+                </Link>
             </div>
         </>
     )

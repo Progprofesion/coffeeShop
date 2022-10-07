@@ -1,6 +1,6 @@
 .header {
     background: url('../../assets/bgMain.png') center / cover no-repeat;
-    height: 25vw;
+    height: 80vh;
     &__title {
         margin-top: 180px;
         margin-left: auto;
@@ -78,7 +78,7 @@
 
 @media (max-width: 767px) {
     .header {
-        height: 50vh;
+        height: 65vh;
         &__title {
             font-size: 30px;
         }
@@ -108,9 +108,8 @@
 @media (max-width: 320px) {
     .header {
         &__title {
-            margin: 80px auto 0px;
+            margin: 110px auto 0px;
             font-size: 24px;
-            width: 315px;
         }
         &__subtitle {
             font-size: 16px;

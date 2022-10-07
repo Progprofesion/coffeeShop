@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import {
-    activeStateBasket,
+    statePrice,
     addProduct,
     decrementQuantity,
     removeProduct,
@@ -15,14 +15,12 @@ import './cardsListItem.scss';
 
 const Cards = ({ id, img, title, country, price, quantity }) => {
 
-    let count = Math.floor(Math.random() * 1000);
-
     const dispatch = useDispatch();
 
     const basketIncr = (e) => {
         e.preventDefault();
         addItem()
-        dispatch(activeStateBasket({ id, img, price, title, country, count }))
+        dispatch(statePrice({ price }))
         dispatch(activeIncrTotals(price))
     };
 
@@ -39,7 +37,7 @@ const Cards = ({ id, img, title, country, price, quantity }) => {
 
     const basketDecr = (e) => {
         e.preventDefault();
-        dispatch(activeStateBasket({ id, img, price, title, country, count }))
+        dispatch(statePrice({ price }))
         if (quantity > 0) {
             dispatch(activeDecrTotals(price))
         }

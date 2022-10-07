@@ -14,7 +14,7 @@ export const fetchFilters = createAsyncThunk(
         const { request } = useHttp();
         return await request('http://localhost:3001/filters')
     }
-)
+);
 
 const cardsSlice = createSlice({
     name: 'filters',
@@ -47,6 +47,6 @@ const { actions, reducer } = cardsSlice;
 
 export default reducer;
 
-export const { selectAll } = cardsAdapter.getSelectors(state => state.filters)
+export const { selectAll } = cardsAdapter.getSelectors(state => state.filters);
 
 export const { activeFilterChanged, activeSearchCoffee } = actions;

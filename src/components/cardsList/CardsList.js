@@ -70,9 +70,7 @@ const CardsList = ({ cardsView }) => {
             if (page > cardsView) {
                 return <CardsListItem key={page} {...props} />
             }
-
         });
-
     };
 
     const elements = renderCardsList(filteredCards);

@@ -3,7 +3,7 @@ import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
 
 const cardsAdapter = createEntityAdapter();
 const initialState = cardsAdapter.getInitialState({
-    stateBasket: {},
+    statePrice: {},
     total: localStorage.getItem('total') || 0,
     amount: localStorage.getItem('amount') || 0,
     items: JSON.parse(localStorage.getItem('object')) || [],
@@ -17,18 +17,18 @@ const cardsSlice = createSlice({
         startState: (state, action) => {
             state.stateStartArr = action.payload
         },
-        activeStateBasket: (state, action) => {
-            state.stateBasket = action.payload
+        statePrice: (state, action) => {
+            state.statePrice = action.payload
         },
         activeIncrTotals: (state, action) => {
-            if (state.stateBasket.price) {
+            if (state.statePrice.price) {
                 let sum = Number(state.total) + action.payload
                 let rounded = Math.round(sum * 100) / 100;
                 state.total = rounded
             }
         },
         activeDecrTotals: (state, action) => {
-            if (state.stateBasket.price) {
+            if (state.statePrice.price) {
                 let sum = Number(state.total) - action.payload
                 let rounded = Math.round(sum * 100) / 100;
                 state.total = rounded
@@ -80,7 +80,7 @@ export default reducer;
 
 export const { selectAll } = cardsAdapter.getSelectors(state => state.basket)
 
-export const { activeStateBasket,
+export const { statePrice,
     activeIncrTotals,
     activeDecrTotals,
     addProduct,

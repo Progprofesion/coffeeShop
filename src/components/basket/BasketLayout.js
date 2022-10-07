@@ -13,7 +13,7 @@ import {
     removeProduct,
     activeIncrTotals,
     activeDecrTotals,
-    activeStateBasket,
+    statePrice,
 } from '../basket/basketSlice';
 
 import { useEffect, useState } from 'react';
@@ -57,13 +57,13 @@ const BasketLayout = () => {
     }, [addProduct, stateBasketAmount]);
 
     const incr = (id, price) => {
-        dispatch(activeStateBasket({ price }));
+        dispatch(statePrice({ price }));
         dispatch(activeIncrTotals(price));
         dispatch(incrementQuantity(id));
     };
 
     const decr = (id, price) => {
-        dispatch(activeStateBasket({ price }));
+        dispatch(statePrice({ price }));
         dispatch(activeDecrTotals(price));
         dispatch(decrementQuantity(id));
         dispatch(removeProduct(id));

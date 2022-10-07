@@ -5,7 +5,6 @@ import IconLine from "../iconLine/IconLine";
 import coffeeBeansIconBlack from "../../assets/coffeeBeansIconBlack.svg";
 
 const About = () => {
-
     return (
         <section className="about">
             <h2 className="about__title fz-24">About Us</h2>

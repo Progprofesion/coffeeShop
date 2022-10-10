@@ -42,7 +42,7 @@ const BasketLayout = () => {
     const totalTest = useSelector(state => state.basket.total);
 
     // eslint-disable-next-line
-    const [localbasketObj, setLocalbasketObj] = useLocalStorage('object', 0);
+    const [localbasketObj, setLocalbasketArr] = useLocalStorage('object', 0);
     const [localBasketAmount, setLocalBasketAmount] = useLocalStorage('amount', 0);
     const [localBasketTotal, setLocalBasketTotal] = useLocalStorage('total', 0);
 
@@ -50,7 +50,7 @@ const BasketLayout = () => {
 
     useEffect(() => {
         setLocalBasketAmount(stateBasketAmount);
-        setLocalbasketObj(addProduct);
+        setLocalbasketArr(addProduct);
         setLocalBasketTotal(Number(totalTest));
         dispatch(basketAmount(addProduct));
         // eslint-disable-next-line
@@ -102,41 +102,52 @@ const BasketLayout = () => {
                 <form onSubmit={handleSubmit(onSubmit)} className="basketLayout__form" action="">
                     <h4 className="basketLayout__title">Оформить заказ</h4>
                     <div className="basketLayout__modalWrapp">
-                        <input
-                            {...register('name', {
-                                required: 'Поле обязательно к заполнению',
-                                minLength: {
-                                    value: 3,
-                                    message: 'Минимум 3 символа'
-                                }
-                            })}
-                            className="basketLayout__input" placeholder="Имя" type='text' />
-                        {errors.name ? <p>{errors.name.message}</p> : null}
-                        <input
-                            {...register('email', {
-                                required: 'Поле обязательно к заполнению',
-                                pattern: {
-                                    // eslint-disable-next-line
-                                    value: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
-                                    message: 'Не правильный адрес почты'
-                                }
-                            })}
-                            className="basketLayout__input" placeholder="Почта" type='text' />
-                        {errors.email ? <p>{errors.email.message}</p> : null}
-                        <input
-                            {...register('phone', {
-                                required: 'Поле обязательно к заполнению',
-                                minLength: {
-                                    value: 8,
-                                    message: 'Минимум 8 символов',
-                                },
-                                pattern: {
-                                    value: /^(0|[1-9]\d*)(\.\d+)?$/,
-                                    message: 'Только цифры'
-                                },
-                            })}
-                            className="basketLayout__input" placeholder="Телефон" type='text' />
-                        {errors.phone ? <p>{errors.phone.message}</p> : null}
+                        <div className="basketLayout__item">
+                            <input
+                                {...register('name', {
+                                    required: 'Поле обязательно к заполнению',
+                                    minLength: {
+                                        value: 3,
+                                        message: 'Минимум 3 символа'
+                                    }
+                                })}
+                                className="basketLayout__input" placeholder="Имя" type='text' />
+                            {errors.name ? <p className="basketLayout__errorMessage" >{errors.name.message}</p> : null}
+
+                        </div>
+
+                        <div className="basketLayout__item">
+                            <input
+                                {...register('email', {
+                                    required: 'Поле обязательно к заполнению',
+                                    pattern: {
+                                        // eslint-disable-next-line
+                                        value: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
+                                        message: 'Не правильный адрес почты'
+                                    }
+                                })}
+                                className="basketLayout__input" placeholder="Почта" type='text' />
+
+                            {errors.email ? <p className="basketLayout__errorMessage" >{errors.email.message}</p> : null}
+                        </div>
+
+                        <div className="basketLayout__item">
+                            <input
+                                {...register('phone', {
+                                    required: 'Поле обязательно к заполнению',
+                                    minLength: {
+                                        value: 8,
+                                        message: 'Минимум 8 символов',
+                                    },
+                                    pattern: {
+                                        value: /^(0|[1-9]\d*)(\.\d+)?$/,
+                                        message: 'Только цифры'
+                                    },
+                                })}
+                                className="basketLayout__input" placeholder="Телефон" type='text' />
+                            {errors.phone ? <p className="basketLayout__errorMessage" >{errors.phone.message}</p> : null}
+                        </div>
+
                     </div>
                     <button type='submit' className="basketLayout__btnBuy">Купить</button>
                 </form>

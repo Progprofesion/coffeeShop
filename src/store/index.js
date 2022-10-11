@@ -1,12 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import filters from '../components/cardsFilters/cadsFiltersSlice';
 import basket from '../components/basket/basketSlice';
+import userReducer from '../store/slices/userSlice';
 
 import { apiSlice } from '../components/api/apiSlice';
 
 const store = configureStore({
     reducer: {
-        filters, basket,
+        filters, basket, user: userReducer,
         [apiSlice.reducerPath]: apiSlice.reducer
     },
     middleware: getDefaultMiddleware => getDefaultMiddleware({

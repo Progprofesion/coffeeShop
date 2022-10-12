@@ -17,7 +17,7 @@ const Form = ({ title, handleClick }) => {
                 onChange={(e) => setPass(e.target.value)}
                 placeholder="password" />
             <button
-                onClick={() => handleClick(email, password)}
+                onClick={() => handleClick(email, pass)}
             >
                 {title}
             </button>
@@ -25,4 +25,4 @@ const Form = ({ title, handleClick }) => {
     )
 }
 
-export default { Form }
+export default Form 

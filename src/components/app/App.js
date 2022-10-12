@@ -1,5 +1,9 @@
 import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+import { useDispatch } from 'react-redux';
+import { removeUser } from '../../store/slices/userSlice';
+
+import { useAuth } from '../../hooks/use-auth';
 
 import MainPage from '../page/MainPage';
 import Spinner from '../spinner/Spinner';
@@ -15,13 +19,16 @@ const LoginPage = lazy(() => import('../page/LoginPage'));
 const RegisterPage = lazy(() => import('../page/RegisterPage'));
 
 const App = () => {
-    return (
+    const dispatch = useDispatch();
+
+    const { isAuth, email } = useAuth();
+
+    return isAuth ? (
         <BrowserRouter>
             <main className="app">
                 <div className="content">
                     <Suspense fallback={<Spinner />}>
                         <Routes>
-                            <Route path="/" element={<Navigate to="/login" />} />
                             <Route path="/" element={<MainPage />} />
                             <Route path="/ourCoffee" element={<OurCoffeePage />} />
                             <Route path="/ourCoffee/:coffeeId" element={<SingleCoffeePage />} />
@@ -30,6 +37,20 @@ const App = () => {
                             <Route path="/login" element={<LoginPage />} />
                             <Route path="/register" element={<RegisterPage />} />
                             <Route path="*" element={<Page404 />} />
+                        </Routes>
+                    </Suspense>
+                </div>
+            </main>
+        </BrowserRouter>
+    ) : (
+        <BrowserRouter>
+            <main className="app">
+                <div className="content">
+                    <Suspense fallback={<Spinner />}>
+                        <Routes>
+                            <Route path="*" element={<Navigate to="/login" />} />
+                            <Route path="/login" element={<LoginPage />} />
+                            <Route path="/register" element={<RegisterPage />} />
                         </Routes>
                     </Suspense>
                 </div>

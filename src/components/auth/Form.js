@@ -8,21 +8,20 @@ const Form = ({ title, handleClick }) => {
         <div>
             <input
                 type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="email" />
+                placeholder="email"
+                valuse={email}
+                onChange={(e) => setEmail(e.target.value)} />
             <input
-                value={pass}
                 type="password"
-                onChange={(e) => setPass(e.target.value)}
-                placeholder="password" />
+                placeholder="password"
+                value={pass}
+                onChange={(e) => setPass(e.target.value)} />
             <button
-                onClick={() => handleClick(email, pass)}
-            >
+                onClick={() => handleClick(email, pass)}>
                 {title}
             </button>
         </div>
     )
 }
 
-export default Form 
+export default Form

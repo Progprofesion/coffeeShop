@@ -1,12 +1,12 @@
-import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
-import { useDispatch } from 'react-redux';
-import { removeUser } from '../../store/slices/userSlice';
+import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom'
+import { lazy, Suspense } from 'react'
 
-import { useAuth } from '../../hooks/use-auth';
+import useAuth from '../../hooks/use-auth';
 
 import MainPage from '../page/MainPage';
 import Spinner from '../spinner/Spinner';
+import LoginPage from '../page/LoginPage';
+import RegisterPage from '../page/RegisterPage';
 
 import './app.scss';
 
@@ -15,14 +15,9 @@ const SingleCoffeePage = lazy(() => import('../page/SingleCoffeePage'));
 const PleasurePage = lazy(() => import('../page/PleasurePage'));
 const BasketLayout = lazy(() => import('../basket/BasketLayout'));
 const Page404 = lazy(() => import('../page/404'));
-const LoginPage = lazy(() => import('../page/LoginPage'));
-const RegisterPage = lazy(() => import('../page/RegisterPage'));
 
 const App = () => {
-    const dispatch = useDispatch();
-
-    const { isAuth, email } = useAuth();
-
+    const { isAuth } = useAuth();
     return isAuth ? (
         <BrowserRouter>
             <main className="app">
@@ -48,7 +43,7 @@ const App = () => {
                 <div className="content">
                     <Suspense fallback={<Spinner />}>
                         <Routes>
-                            <Route path="*" element={<Navigate to="/login" />} />
+                            <Route path="*" element={<Navigate to='/login' />} />
                             <Route path="/login" element={<LoginPage />} />
                             <Route path="/register" element={<RegisterPage />} />
                         </Routes>

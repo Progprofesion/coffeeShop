@@ -5,6 +5,7 @@ import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 import { basketAmount } from '../basket/basketSlice';
 
+
 import './basket.scss';
 
 const Basket = () => {

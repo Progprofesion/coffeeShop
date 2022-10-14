@@ -1,6 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import InputMask from "react-input-mask";
+
 
 import LinkPage from '../linkPage/LinkPage';
 
@@ -132,7 +134,7 @@ const BasketLayout = () => {
                         </div>
 
                         <div className="basketLayout__item">
-                            <input
+                            <InputMask mask="+7\ 999 999 99 99"
                                 {...register('phone', {
                                     required: 'Поле обязательно к заполнению',
                                     minLength: {

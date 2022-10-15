@@ -76,6 +76,33 @@ const BasketLayout = () => {
         reset();
     };
 
+    const firstNumberPhone = () => {
+        if (["7", "8", "9"].indexOf(InputMask[0]) > -1) {
+            // Russian phone number
+            console.log('ru')
+        } else {
+            // Not Russian number
+            console.log('Not ru')
+        }
+    }
+
+    function beforeMaskedStateChange({ nextState, previousState }) {
+        let { value, selection } = nextState;
+        if (["7", "8", "9"].indexOf(value[4]) > -1) {
+            console.log('ru');
+
+        } else {
+            console.log('Not ru')
+            console.log(value[4])
+        }
+
+        return {
+            ...nextState,
+            value
+        };
+    }
+
+
     const view = (arr) => {
         return arr.map(({ id, img, title, country, price, quantity }) => {
             return <div key={id} className="basketLayout__wrapp">
@@ -134,19 +161,21 @@ const BasketLayout = () => {
                         </div>
 
                         <div className="basketLayout__item">
-                            <InputMask mask="+7\ 999 999 99 99"
+                            <InputMask mask="+7 (999) 999 99 99"
                                 {...register('phone', {
                                     required: 'Поле обязательно к заполнению',
                                     minLength: {
                                         value: 8,
                                         message: 'Минимум 8 символов',
                                     },
-                                    pattern: {
-                                        value: /^(0|[1-9]\d*)(\.\d+)?$/,
-                                        message: 'Только цифры'
-                                    },
+                                    // pattern: {
+                                    //     value: /^(0|[1-9]\d*)(\.\d+)?$/,
+                                    //     message: 'Только цифры'
+                                    // },
                                 })}
-                                className="basketLayout__input" placeholder="Телефон" type='text' />
+                                className="basketLayout__input" placeholder="Телефон" type='text'
+                                beforeMaskedStateChange={beforeMaskedStateChange}
+                                maskPlaceholder={null} />
                             {errors.phone ? <p className="basketLayout__errorMessage" >{errors.phone.message}</p> : null}
                         </div>
 

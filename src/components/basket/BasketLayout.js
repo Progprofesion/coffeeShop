@@ -28,8 +28,6 @@ import './basketLyout.scss';
 
 const BasketLayout = () => {
 
-    const inputRef = useRef();
-
     const {
         register,
         formState: { errors },
@@ -38,6 +36,9 @@ const BasketLayout = () => {
     } = useForm({
         mode: "onBlur"
     });
+
+    const inputRef = useRef(null);
+    const { ref, ...rest } = register('phone');
 
     const [modalActive, setModalActive] = useState(false);
 
@@ -196,7 +197,7 @@ const BasketLayout = () => {
                                         message: 'Не правильный адрес почты'
                                     }
                                 })}
-                                className="basketLayout__input" placeholder="Почта" type='text' />
+                                className="basketLayout__input" placeholder="Почта" type='email' />
 
                             {errors.email ? <p className="basketLayout__errorMessage" >{errors.email.message}</p> : null}
                         </div>
@@ -204,7 +205,7 @@ const BasketLayout = () => {
                         <div className="basketLayout__item">
                             <input
                                 {...register('phone', {
-                                    required: 'Поле обязательно к заполнению',
+                                    // required: 'Поле обязательно к заполнению',
                                     minLength: {
                                         value: 8,
                                         message: 'Минимум 8 символов',
@@ -215,11 +216,15 @@ const BasketLayout = () => {
                                     // },
                                 })}
                                 className="basketLayout__input" placeholder="Телефон" type='tel'
-                                ref={inputRef}
+                                {...rest} name="phone" ref={(e) => {
+                                    ref(e)
+                                    inputRef.current = e
+                                }}
                                 onChange={(e) => onPhoneinput(e)}
-                                maxLength="18"
                                 onKeyDown={onPhoneKeyDown}
-                                onPaste={onPhonePaste} />
+                                onPaste={onPhonePaste}
+                                maxLength="18"
+                            />
                             {errors.phone ? <p className="basketLayout__errorMessage" >{errors.phone.message}</p> : null}
                         </div>
 

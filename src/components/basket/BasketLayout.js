@@ -1,7 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import InputMask from "react-input-mask";
 import { useRef } from 'react';
 
 import LinkPage from '../linkPage/LinkPage';
@@ -198,22 +197,17 @@ const BasketLayout = () => {
                                     }
                                 })}
                                 className="basketLayout__input" placeholder="Почта" type='email' />
-
                             {errors.email ? <p className="basketLayout__errorMessage" >{errors.email.message}</p> : null}
                         </div>
 
                         <div className="basketLayout__item">
                             <input
                                 {...register('phone', {
-                                    // required: 'Поле обязательно к заполнению',
+                                    required: 'Поле обязательно к заполнению',
                                     minLength: {
                                         value: 8,
                                         message: 'Минимум 8 символов',
                                     },
-                                    // pattern: {
-                                    //     value: /^(0|[1-9]\d*)(\.\d+)?$/,
-                                    //     message: 'Только цифры'
-                                    // },
                                 })}
                                 className="basketLayout__input" placeholder="Телефон" type='tel'
                                 {...rest} name="phone" ref={(e) => {

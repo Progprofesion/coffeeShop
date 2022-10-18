@@ -6,6 +6,8 @@ import Best from "../best/best";
 import Footer from "../footer/Footer";
 import Humburger from "../hamburger/Hamburger";
 import Basket from "../basket/Basket";
+import LoginView from '../auth/LoginView';
+
 
 const MainPage = () => {
     return (
@@ -18,6 +20,7 @@ const MainPage = () => {
                     <title>Coffee house</title>
                 </Helmet>
                 <Basket />
+                <LoginView />
                 <Humburger />
                 <Header />
                 <About />

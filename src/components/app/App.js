@@ -18,7 +18,7 @@ const Page404 = lazy(() => import('../page/404'));
 
 const App = () => {
     const { isAuth } = useAuth();
-    return !isAuth ? (
+    return isAuth ? (
         <BrowserRouter>
             <main className="app">
                 <div className="content">

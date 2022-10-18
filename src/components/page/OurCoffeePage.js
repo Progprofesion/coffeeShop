@@ -7,6 +7,8 @@ import SearchComponent from '../searchComponent/SearchComponent';
 import Footer from '../footer/Footer';
 import Humburger from '../hamburger/Hamburger';
 import Basket from '../basket/Basket';
+import LoginView from '../auth/LoginView';
+
 import girlCoffee from '../../assets/girlCoffee.svg';
 
 const OurCoffeePage = () => {
@@ -21,6 +23,7 @@ const OurCoffeePage = () => {
                 </Helmet>
                 <Humburger />
                 <Basket />
+                <LoginView />
                 <HeadBanner />
                 <AboutOur img={girlCoffee} title={'About our beans'} />
                 <SearchComponent />

@@ -8,6 +8,8 @@ import CardsList from '../cardsList/CardsList';
 import Footer from '../footer/Footer';
 import Hamburger from '../hamburger/Hamburger';
 import Basket from '../basket/Basket';
+import LoginView from '../auth/LoginView';
+
 
 import coffeeIcon from '../../assets/coffeeIcon.svg';
 import './style/pleasure.scss';
@@ -25,6 +27,7 @@ const PleasurePage = () => {
                 <Hamburger />
                 <header className="pleasure">
                     <Basket />
+                    <LoginView />
                     <div className="pleasure__bannerWrapp">
                         <div className="pleasure__header">
                             <LinkPage img={coffeeIcon}>

@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import InputMask from "react-input-mask";
-
+import { useRef } from 'react';
 
 import LinkPage from '../linkPage/LinkPage';
 
@@ -27,6 +27,8 @@ import coffeeIconBlack from '../../assets/coffeeIconBlack.svg';
 import './basketLyout.scss';
 
 const BasketLayout = () => {
+
+    const inputRef = useRef();
 
     const {
         register,
@@ -76,21 +78,16 @@ const BasketLayout = () => {
         reset();
     };
 
+    let getInputNumbersValue = (input) => {
+        return input.value.replace(/\D/g, "");
+    }
 
-    function beforeMaskedStateChange({ nextState }) {
-        let { value } = nextState;
-        if (["7", "8", "9"].indexOf(value[0]) > -1) {
-            console.log('ru')
-            if (value[3] === 8) value = value.replace(8, 9)
-        } else {
-            console.log('Not ru')
-            console.log(value[3])
+    let onPhoneinput = (e) => {
+        let input = inputRef.current,
+            inputNumbersValue = getInputNumbersValue(input)
+        if (!inputNumbersValue) {
+            return input.value = "";
         }
-
-        return {
-            ...nextState,
-            value
-        };
     }
 
 
@@ -152,7 +149,7 @@ const BasketLayout = () => {
                         </div>
 
                         <div className="basketLayout__item">
-                            <InputMask mask="+7 999 999 99 99"
+                            <input
                                 {...register('phone', {
                                     required: 'Поле обязательно к заполнению',
                                     minLength: {
@@ -165,8 +162,8 @@ const BasketLayout = () => {
                                     // },
                                 })}
                                 className="basketLayout__input" placeholder="Телефон" type='tel'
-                                beforeMaskedStateChange={beforeMaskedStateChange}
-                                maskPlaceholder={null} />
+                                ref={inputRef}
+                                onChange={(e) => onPhoneinput(e)} />
                             {errors.phone ? <p className="basketLayout__errorMessage" >{errors.phone.message}</p> : null}
                         </div>
 

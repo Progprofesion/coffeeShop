@@ -29,6 +29,7 @@ const SignUp = () => {
                 }))
                 navigate('/');
             })
+            .catch(() => alert('Invalid user!'));
     }
     return (
         <div>

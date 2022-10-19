@@ -2,6 +2,20 @@
     position: absolute;
     right: 50px;
     &__title {
-         border-top: 10px solid  rgba(32, 217, 204, 0.657);
+        display: flex;
+         border-top: 10px solid  rgba(32, 217, 204, 0.333);
+         &-email{
+            padding-left: 25px;
+            color: rgba(177, 55, 55, 1);
+         }
+    }
+    &__btn {
+        position: relative;
+        margin: 10px auto;
+        width: 140px;
+        height: 40px;
+        border-radius: 10px;
+        border: 2px solid rgba(33, 154, 121, 0.657);
+        filter: drop-shadow(5px 5px 35px rgba(74, 131, 172, 0.25));
     }
 }

@@ -1,6 +1,7 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
+import HeadBanner from '../headBanner/HeadBanner';
 import LinkPage from '../linkPage/LinkPage';
 import pleasureAbout from '../../assets/pleasureAbout.svg';
 import AboutOur from '../aboutOur/AboutOur';
@@ -10,9 +11,7 @@ import Hamburger from '../hamburger/Hamburger';
 import Basket from '../basket/Basket';
 import LoginView from '../auth/LoginView';
 
-
-import coffeeIcon from '../../assets/coffeeIcon.svg';
-import './style/pleasure.scss';
+import bgPleasurePage from '../../assets/bgPleasurePage.png';
 
 const PleasurePage = () => {
     return (
@@ -24,28 +23,14 @@ const PleasurePage = () => {
                         content="Page for your pleasure" />
                     <title>For your pleasure</title>
                 </Helmet>
+
                 <Hamburger />
+                <Basket />
+                <LoginView />
                 <header className="pleasure">
-                    <Basket />
-                    <LoginView />
-                    <div className="pleasure__bannerWrapp">
-                        <div className="pleasure__header">
-                            <LinkPage img={coffeeIcon}>
-                                <Link to="/" >
-                                    <div className="fz-12">Coffee house</div>
-                                </Link>
-                                <Link to="/ourcoffee">
-                                    <div className="fz-12">Our coffee</div>
-                                </Link>
-                                <Link to="/pleasure">
-                                    <div className="fz-12">For your pleasure</div>
-                                </Link>
-                            </LinkPage>
-                            <h2 className="pleasure__title">For your pleasure</h2>
-                        </div>
-                    </div>
+                    <HeadBanner bg={bgPleasurePage} title="For your pleasure" />
                 </header>
-                <AboutOur img={pleasureAbout} title={'About our goods'} />
+                <AboutOur img={pleasureAbout} title='About our goods' />
                 <CardsList cardsView={0} />
                 <Footer />
             </HelmetProvider>

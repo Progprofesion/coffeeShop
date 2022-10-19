@@ -9,7 +9,9 @@ import Humburger from '../hamburger/Hamburger';
 import Basket from '../basket/Basket';
 import LoginView from '../auth/LoginView';
 
+import bgOurCoffeePage from '../../assets/bgOurCoffeePage.png'
 import girlCoffee from '../../assets/girlCoffee.svg';
+
 
 const OurCoffeePage = () => {
     return (
@@ -24,7 +26,7 @@ const OurCoffeePage = () => {
                 <Humburger />
                 <Basket />
                 <LoginView />
-                <HeadBanner />
+                <HeadBanner bg={bgOurCoffeePage} title='Our Coffee' />
                 <AboutOur img={girlCoffee} title={'About our beans'} />
                 <SearchComponent />
                 <CardsList cardsView={0} />

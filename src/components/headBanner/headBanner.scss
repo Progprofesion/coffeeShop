@@ -1,8 +1,11 @@
 .banner {
-    background: url('../../assets/headBG.png') center / cover no-repeat;
     height: 260px;
+    &__bg {
+        height: 260px;
+    }
     &__title {
-        margin-top: 60px;
+        position: relative;
+        top: -210px;
         text-align: center;
         font-style: normal;
         font-weight: 700;

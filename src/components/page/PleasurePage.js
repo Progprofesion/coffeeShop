@@ -1,8 +1,6 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
 
 import HeadBanner from '../headBanner/HeadBanner';
-import LinkPage from '../linkPage/LinkPage';
 import pleasureAbout from '../../assets/pleasureAbout.svg';
 import AboutOur from '../aboutOur/AboutOur';
 import CardsList from '../cardsList/CardsList';

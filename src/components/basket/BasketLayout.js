@@ -1,11 +1,8 @@
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { useRef } from 'react';
-
-import LinkPage from '../linkPage/LinkPage';
-
-import Modal from '../modal/Modal';
 
 import {
     incrementQuantity,
@@ -17,9 +14,10 @@ import {
     statePrice,
 } from '../basket/basketSlice';
 
-import { useEffect, useState } from 'react';
-
 import { useLocalStorage } from '../../hooks/useLocalStorage';
+
+import LinkPage from '../linkPage/LinkPage';
+import Modal from '../modal/Modal';
 
 import coffeeIconBlack from '../../assets/coffeeIconBlack.svg';
 

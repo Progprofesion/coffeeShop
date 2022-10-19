@@ -1,4 +1,4 @@
-import './style/linkPage.scss';
+import './linkPage.scss';
 
 const LinkPage = ({ img, children, style }) => {
     return (

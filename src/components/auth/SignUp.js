@@ -2,10 +2,10 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 
-import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { useLocalStorage } from 'src/hooks/useLocalStorage';
 
 import Form from '../auth/Form';
-import { setUser } from '../../store/slices/userSlice';
+import { setUser } from 'src/store/slices/userSlice';
 
 const SignUp = () => {
     const dispatch = useDispatch();

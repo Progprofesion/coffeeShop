@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import IconLine from '../iconLine/IconLine';
 import LinkPage from '../linkPage/LinkPage';
-import coffeeIconBlack from '../../assets/coffeeIconBlack.svg';
+import coffeeIconBlack from 'src/assets/coffeeIconBlack.svg';
 
-import coffeeBeansIconBlack from '../../assets/coffeeBeansIconBlack.svg';
+import coffeeBeansIconBlack from 'src/assets/coffeeBeansIconBlack.svg';
 
 import './footer.scss';
 

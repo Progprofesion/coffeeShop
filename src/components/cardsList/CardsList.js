@@ -3,10 +3,10 @@ import { useGetProductsQuery } from '../api/apiSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Spinner from '../spinner/Spinner';
-import Error from '../../assets/Error.gif';
+import Error from 'src/assets/Error.gif';
 import CardsListItem from '../cardsListItem/cardsListItem';
 
-import { startState } from '../basket/basketSlice';
+import { startState } from 'src/store/slices/basketSlice';
 
 import './cardsList.scss';
 

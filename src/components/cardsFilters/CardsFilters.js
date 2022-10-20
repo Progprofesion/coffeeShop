@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './cardsFilters.scss';
-import { activeFilterChanged, selectAll, fetchFilters } from './cadsFiltersSlice';
-import store from '../../store';
+import { activeFilterChanged, selectAll, fetchFilters } from 'src/store/slices/cadsFiltersSlice';
+import store from 'src/store';
 import classNames from 'classnames';
 
 const CardsFilters = () => {

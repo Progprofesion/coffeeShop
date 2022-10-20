@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 
-import { removeUser } from '../../store/slices/userSlice';
+import { removeUser } from 'src/store/slices/userSlice';
 
 import './loginView.scss';
 

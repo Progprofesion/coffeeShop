@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import LinkPage from '../linkPage/LinkPage';
-import coffeeIcon from '../../assets/coffeeIcon.svg';
+import coffeeIcon from 'src/assets/coffeeIcon.svg';
 
 import './headBanner.scss';
 

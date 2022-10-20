@@ -12,16 +12,19 @@ import {
     activeIncrTotals,
     activeDecrTotals,
     statePrice,
-} from '../basket/basketSlice';
+} from 'src/store/slices/basketSlice';
 
-import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { useLocalStorage } from 'src/hooks/useLocalStorage';
 
 import LinkPage from '../linkPage/LinkPage';
 import Modal from '../modal/Modal';
 
-import coffeeIconBlack from '../../assets/coffeeIconBlack.svg';
+import coffeeIconBlack from 'src/assets/coffeeIconBlack.svg';
 
 import './basketLyout.scss';
+
+import 'animate.css';
+
 
 const BasketLayout = () => {
 
@@ -144,7 +147,7 @@ const BasketLayout = () => {
 
     const view = (arr) => {
         return arr.map(({ id, img, title, country, price, quantity }) => {
-            return <div key={id} className="basketLayout__wrapp">
+            return <div key={id} className="basketLayout__wrapp animate__animated animate__flipInX">
                 <Link to={`/ourcoffee/${id}`}>
                     <img src={img} alt="coffee" className="basketLayout__img" />
                 </Link>

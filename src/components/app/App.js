@@ -1,7 +1,7 @@
 import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 
-import useAuth from '../../hooks/use-auth';
+import useAuth from 'src/hooks/use-auth';
 
 import MainPage from '../page/MainPage';
 import Spinner from '../spinner/Spinner';

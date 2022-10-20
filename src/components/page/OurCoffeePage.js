@@ -9,8 +9,8 @@ import Humburger from '../hamburger/Hamburger';
 import Basket from '../basket/Basket';
 import LoginView from '../auth/LoginView';
 
-import bgOurCoffeePage from '../../assets/bgOurCoffeePage.png'
-import girlCoffee from '../../assets/girlCoffee.svg';
+import bgOurCoffeePage from 'src/assets/bgOurCoffeePage.png'
+import girlCoffee from 'src/assets/girlCoffee.svg';
 
 
 const OurCoffeePage = () => {

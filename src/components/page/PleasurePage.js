@@ -1,7 +1,7 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import HeadBanner from '../headBanner/HeadBanner';
-import pleasureAbout from '../../assets/pleasureAbout.svg';
+import pleasureAbout from 'src/assets/pleasureAbout.svg';
 import AboutOur from '../aboutOur/AboutOur';
 import CardsList from '../cardsList/CardsList';
 import Footer from '../footer/Footer';
@@ -9,7 +9,7 @@ import Hamburger from '../hamburger/Hamburger';
 import Basket from '../basket/Basket';
 import LoginView from '../auth/LoginView';
 
-import bgPleasurePage from '../../assets/bgPleasurePage.png';
+import bgPleasurePage from 'src/assets/bgPleasurePage.png';
 
 const PleasurePage = () => {
     return (

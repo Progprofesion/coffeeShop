@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { useLocalStorage } from 'src/hooks/useLocalStorage';
 
-import { basketAmount } from '../basket/basketSlice';
+import { basketAmount } from 'src/store/slices/basketSlice';
 
 
 import './basket.scss';

@@ -1,5 +1,5 @@
 import IconLine from "../iconLine/IconLine";
-import coffeeBeansIconBlack from "../../assets/coffeeBeansIconBlack.svg";
+import coffeeBeansIconBlack from "src/assets/coffeeBeansIconBlack.svg";
 
 import './singleCoffeeItem.scss';
 

@@ -8,7 +8,7 @@ import {
     removeProduct,
     activeIncrTotals,
     activeDecrTotals,
-} from '../basket/basketSlice';
+} from 'src/store/slices/basketSlice';
 
 import 'animate.css';
 import './cardsListItem.scss';
@@ -48,7 +48,7 @@ const Cards = ({ id, img, title, country, price, quantity }) => {
     return (
         <div
             name='cards'
-            className="cards">
+            className="cards  animate__animated animate__flipInX ">
             <div className="cards__item" name='cards' type="text">
                 <Link to={`/ourcoffee/${id}`}>
                     <img className="cards__img" src={img} alt="coffee" />

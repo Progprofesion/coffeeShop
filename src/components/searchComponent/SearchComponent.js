@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 
-import { activeSearchCoffee } from '../cardsFilters/cadsFiltersSlice';
+import { activeSearchCoffee } from 'src/store/slices/cadsFiltersSlice';
 
 import CardsFilters from '../cardsFilters/CardsFilters';
 

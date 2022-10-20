@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import HeadBanner from '../headBanner/HeadBanner';
-import Error from '../../assets/Error.gif';
+import Error from 'src/assets/Error.gif';
 
 const Page404 = () => {
     return (

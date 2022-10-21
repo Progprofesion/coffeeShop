@@ -1,49 +1,9 @@
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-
-import {
-    statePrice,
-    addProduct,
-    decrementQuantity,
-    removeProduct,
-    activeIncrTotals,
-    activeDecrTotals,
-} from 'src/store/slices/basketSlice';
 
 import 'animate.css';
 import './cardsListItem.scss';
 
-const Cards = ({ id, img, title, country, price, quantity }) => {
-
-    const dispatch = useDispatch();
-
-    const basketIncr = (e) => {
-        e.preventDefault();
-        addItem()
-        dispatch(statePrice({ price }))
-        dispatch(activeIncrTotals(price))
-    };
-
-    const addItem = () => {
-        const item = {
-            id,
-            img,
-            title,
-            country,
-            price,
-        }
-        dispatch(addProduct(item))
-    };
-
-    const basketDecr = (e) => {
-        e.preventDefault();
-        dispatch(statePrice({ price }))
-        if (quantity > 0) {
-            dispatch(activeDecrTotals(price))
-        }
-        dispatch(decrementQuantity(id))
-        dispatch(removeProduct(id))
-    };
+const Cards = ({ id, img, title, country, price, quantity, basketIncr, basketDecr }) => {
 
     return (
         <div

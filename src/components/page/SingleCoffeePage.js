@@ -6,7 +6,7 @@ import HeadBanner from '../headBanner/HeadBanner';
 import SingleCoffeeItem from '../singleCoffeeItem/SingleCoffeeItem';
 import Footer from '../footer/Footer';
 import Hamburger from '../hamburger/Hamburger';
-import Basket from '../basket/Basket';
+import Basket from '../basket/BasketView';
 
 import Page404 from './404';
 import Spinner from '../spinner/Spinner';

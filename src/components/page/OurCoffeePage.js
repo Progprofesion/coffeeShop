@@ -6,7 +6,7 @@ import CardsList from '../cardsList/CardsList';
 import SearchComponent from '../searchComponent/SearchComponent';
 import Footer from '../footer/Footer';
 import Humburger from '../hamburger/Hamburger';
-import Basket from '../basket/Basket';
+import Basket from '../basket/BasketView';
 import LoginView from '../auth/LoginView';
 
 import bgOurCoffeePage from 'src/assets/bgOurCoffeePage.png'

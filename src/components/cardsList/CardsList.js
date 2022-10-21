@@ -6,7 +6,16 @@ import Spinner from '../spinner/Spinner';
 import Error from 'src/assets/Error.gif';
 import CardsListItem from '../cardsListItem/cardsListItem';
 
-import { startState } from 'src/store/slices/basketSlice';
+
+import {
+    statePrice,
+    addProduct,
+    decrementQuantity,
+    removeProduct,
+    activeIncrTotals,
+    activeDecrTotals,
+    startState
+} from 'src/store/slices/basketSlice';
 
 import './cardsList.scss';
 
@@ -66,9 +75,45 @@ const CardsList = ({ cardsView }) => {
             return <h5>No products</h5>
         }
         // eslint-disable-next-line
-        return arr.map(({ page, ...props }) => {
+        return arr.map(({ page, price, id, img, title, country, quantity }) => {
+            const basketIncr = (e) => {
+                e.preventDefault();
+                addItem()
+                dispatch(statePrice({ price }))
+                dispatch(activeIncrTotals(price))
+            };
+
+            const addItem = () => {
+                const item = {
+                    id,
+                    img,
+                    title,
+                    country,
+                    price,
+                }
+                dispatch(addProduct(item))
+            };
+
+            const basketDecr = (e) => {
+                e.preventDefault();
+                dispatch(statePrice({ price }))
+                if (quantity > 0) {
+                    dispatch(activeDecrTotals(price))
+                }
+                dispatch(decrementQuantity(id))
+                dispatch(removeProduct(id))
+            };
             if (page > cardsView) {
-                return <CardsListItem key={page} {...props} />
+                return <CardsListItem
+                    key={page}
+                    price={price}
+                    id={id}
+                    img={img}
+                    title={title}
+                    country={country}
+                    quantity={quantity}
+                    basketIncr={basketIncr}
+                    basketDecr={basketDecr} />
             }
         });
     };

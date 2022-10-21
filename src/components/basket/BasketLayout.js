@@ -39,7 +39,6 @@ const BasketLayout = () => {
     });
 
 
-
     const inputRef = useRef(null);
     const { ref, ...rest } = register('phone');
 
@@ -83,8 +82,6 @@ const BasketLayout = () => {
         alert(JSON.stringify(data));
         reset();
     };
-
-
 
 
     const view = (arr) => {

@@ -3,13 +3,13 @@ import Login from '../auth/Login';
 const LoginPage = () => {
 
     return (
-        <div>
-            <h1>Login</h1>
+        <section >
+            <h1 className='enter__title'>Login</h1>
             <Login />
-            <p>
+            <p className='enter__link'>
                 or <Link to='/register'>SignUp</Link>
             </p>
-        </div>
+        </section>
     )
 }
 

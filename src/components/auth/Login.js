@@ -5,6 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import Form from './Form';
 import { setUser } from 'src/store/slices/userSlice';
 
+import './enter.scss';
+
+
 const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -16,9 +19,6 @@ const Login = () => {
                 localStorage.setItem('userEmail', user.email)
                 localStorage.setItem('accessToken', user.accessToken)
                 localStorage.setItem('id', user.uid)
-                // setlocalAuthEmail(user.email)
-                // setlocalAccessToken(user.accessToken)
-                // setlocalId(user.uid)
             })
             .then(() => {
                 dispatch(setUser({
@@ -32,7 +32,7 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className="enter">
             <Form
                 title="Login"
                 handleClick={handleLogin}

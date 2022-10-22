@@ -123,7 +123,6 @@ const BasketLayout = () => {
                                 })}
                                 className="basketLayout__input" placeholder="Имя" type='text' />
                             {errors.name ? <p className="basketLayout__errorMessage" >{errors.name.message}</p> : null}
-
                         </div>
 
                         <div className="basketLayout__item">

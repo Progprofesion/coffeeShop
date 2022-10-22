@@ -5,18 +5,18 @@ const Form = ({ title, handleClick }) => {
     const [pass, setPass] = useState('');
 
     return (
-        <div>
-            <input
+        <div >
+            <input className="enter__input"
                 type="email"
                 placeholder="email"
                 valuse={email}
                 onChange={(e) => setEmail(e.target.value)} />
-            <input
+            <input className="enter__input"
                 type="password"
                 placeholder="password"
                 value={pass}
                 onChange={(e) => setPass(e.target.value)} />
-            <button
+            <button className="loginView__btn"
                 onClick={() => handleClick(email, pass)}>
                 {title}
             </button>

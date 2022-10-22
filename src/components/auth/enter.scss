@@ -1,0 +1,26 @@
+.enter {
+    // display: flex;
+    // justify-content: center;
+    max-width: 500px;
+    min-height: 150px;
+    margin: 35px auto 0; 
+    text-align: center;
+    border: 1px solid rgb(30, 240, 255);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.65);
+    filter: drop-shadow(5px 5px 35px rgba(0, 0, 0, 0.25));
+    &__input {
+        margin: 25px 20px 15px 20px;
+        border: 1px solid #bd00854d;
+        border-radius: 5px;
+        padding: 0px 3px;
+    }
+    &__link {
+        margin-top: 20px;
+        text-align: center;
+    }
+    &__title {
+        margin-top: 30px;
+        text-align: center;
+    }
+}

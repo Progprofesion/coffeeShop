@@ -11,9 +11,10 @@ const LoginView = () => {
 
     return (
         <div className="loginView">
-            <h3 className="loginView__title" >Вы вошли как:
-                <div className="loginView__title-email">{userEmail.replace(/['"]+/g, '')}</div>
-            </h3>
+            <div className="loginView__wrapp" >
+                <p className="loginView__wrapp-title" > Вы вошли как:</p>
+                <p className="loginView__wrapp-email">{userEmail.replace(/['"]+/g, '')}</p>
+            </div>
             <button className="loginView__btn" onClick={() => dispatch(removeUser())}>Выйти</button>
         </div>
     )

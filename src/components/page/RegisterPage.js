@@ -4,9 +4,9 @@ import SignUp from '../auth/SignUp';
 const RegisterPage = () => {
     return (
         <>
-            <h1>Register</h1>
+            <h2 className='enter__title' >Register</h2>
             <SignUp />
-            <p>
+            <p className='enter__link'>
                 or <Link to='/login'>Login</Link>
             </p>
         </>

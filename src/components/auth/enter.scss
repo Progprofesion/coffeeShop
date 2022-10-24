@@ -1,6 +1,4 @@
 .enter {
-    // display: flex;
-    // justify-content: center;
     max-width: 500px;
     min-height: 150px;
     margin: 35px auto 0; 
@@ -20,7 +18,22 @@
         text-align: center;
     }
     &__title {
-        margin-top: 30px;
+        margin-top: 100px;
         text-align: center;
+    }
+} 
+
+// Media --------------------
+
+@media (max-width: 576px) {
+    .enter {
+        &__input {
+            display: flex;
+            flex-direction: column;
+            margin: 30px auto 10px;
+        }
+    }
+    .content {
+        width: 90%;
     }
 }

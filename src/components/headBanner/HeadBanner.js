@@ -6,7 +6,7 @@ import coffeeIcon from 'src/assets/coffeeIcon.svg';
 
 import './headBanner.scss';
 
-const HeadBanner = ({ bg, title }) => {
+const HeadBanner = ({ title }) => {
     return (
         <HelmetProvider>
             <Helmet>
@@ -15,7 +15,6 @@ const HeadBanner = ({ bg, title }) => {
                     content="Page our Coffee" />
             </Helmet>
             <header className="banner">
-                <img className='banner__bg' src={bg} alt="headBg" />
                 <LinkPage img={coffeeIcon} style={{ top: '-250px' }} >
                     <Link to="/" >
                         <div className="fz-12">Coffee house</div>

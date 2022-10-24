@@ -1,27 +1,27 @@
 import { Link } from 'react-router-dom';
 import IconLine from '../iconLine/IconLine';
 import LinkPage from '../linkPage/LinkPage';
-import coffeeIconBlack from 'src/assets/coffeeIconBlack.svg';
+import coffeeBeansIconWhite from 'src/assets/coffeeBeansIconWhite.svg'
 
-import coffeeBeansIconBlack from 'src/assets/coffeeBeansIconBlack.svg';
+import coffeeIcon from 'src/assets/coffeeIcon.svg';
 
 import './footer.scss';
 
 const Footer = () => {
     return (
         <footer className="footer">
-            <LinkPage img={coffeeIconBlack} style={{ margin: '0 auto' }}>
+            <LinkPage img={coffeeIcon} style={{ margin: '0 auto' }}>
                 <Link to='/'>
-                    <div className="linkPageBlack__descr fz-12Black">Coffee house</div>
+                    <div className="linkPageBlack__descr fz-12">Coffee house</div>
                 </Link>
                 <Link to='/ourcoffee'>
-                    <div className="linkPageBlack__descr fz-12Black">Our coffee</div>
+                    <div className="linkPageBlack__descr fz-12">Our coffee</div>
                 </Link>
                 <Link to="/pleasure">
-                    <div className="linkPageBlack__descr fz-12Black">For your pleasure</div>
+                    <div className="linkPageBlack__descr fz-12">For your pleasure</div>
                 </Link>
             </LinkPage>
-            <IconLine img={coffeeBeansIconBlack} />
+            <IconLine img={coffeeBeansIconWhite} style={{ border: '1px solid white' }} />
         </footer>
     )
 };

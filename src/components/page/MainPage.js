@@ -23,9 +23,9 @@ const MainPage = () => {
                 <LoginView />
                 <Humburger />
                 <Header />
-                <About />
-                <Best />
-                <Footer />
+                {/* <About /> */}
+                {/* <Best /> */}
+                {/* <Footer /> */}
             </HelmetProvider>
         </>
     )

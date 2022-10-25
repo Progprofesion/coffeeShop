@@ -3,13 +3,13 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import AboutOur from '../aboutOur/AboutOur';
 import CardsList from '../cardsList/CardsList';
-import SearchComponent from '../searchComponent/SearchComponent';
 import Footer from '../footer/Footer';
 import Humburger from '../hamburger/Hamburger';
 import Basket from '../basket/BasketView';
 import LoginView from '../auth/LoginView';
 
 import girlCoffee from 'src/assets/girlCoffee.svg';
+import bgBest from '../../assets/bgBest.png';
 
 
 const OurCoffeePage = () => {
@@ -27,7 +27,6 @@ const OurCoffeePage = () => {
                 <LoginView />
                 {/* <HeadBanner bg={bgOurCoffeePage} title='Our Coffee' /> */}
                 <AboutOur img={girlCoffee} title={'About our beans'} />
-                <SearchComponent />
                 <CardsList cardsView={0} />
                 <Footer />
             </HelmetProvider>

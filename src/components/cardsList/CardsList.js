@@ -2,6 +2,7 @@ import { useMemo, useEffect } from 'react';
 import { useGetProductsQuery } from '../api/apiSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
+import SearchComponent from '../searchComponent/SearchComponent';
 import Spinner from '../spinner/Spinner';
 import Error from 'src/assets/Error.gif';
 import CardsListItem from '../cardsListItem/cardsListItem';
@@ -19,7 +20,7 @@ import {
 
 import './cardsList.scss';
 
-const CardsList = ({ cardsView }) => {
+const CardsList = ({ cardsView, style }) => {
 
     const {
         data: products = [],
@@ -120,8 +121,9 @@ const CardsList = ({ cardsView }) => {
 
     const elements = renderCardsList(filteredCards);
     return (
-        <section className="cardsList" >
+        <section className="cardsList" style={style} >
             <div className="container">
+                <SearchComponent />
                 <div className="cardsList__wrapper">
                     {elements}
                 </div>

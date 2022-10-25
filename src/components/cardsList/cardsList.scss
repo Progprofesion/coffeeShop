@@ -1,4 +1,6 @@
 .cardsList {
+    padding: 100px 0 100px;
+    border-radius: 50px;
     &__wrapper {
         max-width: 800px;
         margin: 60px auto 0;
@@ -8,27 +10,6 @@
         grid-row-gap: 60px;
     }
 
-}
-
-.products-enter {
-    opacity: 0;
-    transition: opacity 2000ms ;
-}
-
-.products-enter-active {
-    opacity: 1;
-    transition: opacity 2000ms ;
-}
-
-.products-exit {
-    opacity: 1;
-    transition: opacity 5000ms;
-}
-
-
-.products-exit-active {
-    opacity: 0;
-    transition: opacity 5000ms;
 }
 
 // Media ----------------------

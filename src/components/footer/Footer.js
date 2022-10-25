@@ -20,6 +20,9 @@ const Footer = () => {
                 <Link to="/pleasure">
                     <div className="linkPageBlack__descr fz-12">For your pleasure</div>
                 </Link>
+                <Link to="/basket">
+                    <div className="fz-12">Basket</div>
+                </Link>
             </LinkPage>
             <IconLine img={coffeeBeansIconWhite} style={{ border: '1px solid white' }} />
         </footer>

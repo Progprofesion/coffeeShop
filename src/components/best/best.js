@@ -13,14 +13,17 @@ import LavazzaTierra1KG from '../../img/LavazzaTierra1KG.jpg';
 // eslint-disable-next-line
 import EvaDiaKenyaGrinders from '../../img/EvaDiaKenyaGrinders.jpg';
 
+import bgCardsList from '../../assets/bgCardsList.jpg';
+
 import './best.scss';
 
 const Best = () => {
+    console.log(bgCardsList)
     return (
         <section className="best">
             <div className="container">
                 <h2 className="best__title fz-24 ">Our best</h2>
-                <CardsList cardsView={3} />
+                <CardsList cardsView={3} style={{ background: "url(/static/media/bgCardsList.22c60f5d290c3d585c1c.jpg) center / cover no-repeat" }} />
             </div>
         </section>
     )

@@ -1,10 +1,9 @@
 .best {
-    // margin-top: 110px;
-    min-height: 495px;
+    min-height: 750px;
     background: url('../../assets/bgBest.png') center / cover no-repeat;
-    border-radius: 50px;
-    h2 {
-        padding-top: 70px;
+    &__title {
+        padding-top: 45px;
+        margin-bottom: 45px;
         text-align: center;
     }
 

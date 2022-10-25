@@ -1,10 +1,9 @@
 .aboutOur {
+    background: url('../../assets/bgOurCoffeePage.png') center / cover no-repeat;
     &__wrapper {
         display: flex;
         justify-content: center;
     }
-
-
     &__descr {
         margin-top: 80px;
         text-align: center;
@@ -17,10 +16,10 @@
         border-radius: 10px;
     }
     &__text {
-        max-width: 346px;
+        max-width: 345px;
     }
     &__line {
-        margin: 60px auto;
+        margin: 60px auto 0;
         width: 240px;
         height: 0px;
         border: 1px solid #d952ff96;

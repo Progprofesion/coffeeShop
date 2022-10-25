@@ -21,6 +21,9 @@ const Header = () => {
                 <Link to="/pleasure">
                     <div className="fz-12">For your pleasure</div>
                 </Link>
+                <Link to="/basket">
+                    <div className="fz-12">Basket</div>
+                </Link>
             </LinkPage>
             <div className="container">
                 <h1 className="header__title">Everything You Love About Coffee</h1>

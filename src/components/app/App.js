@@ -21,20 +21,20 @@ const App = () => {
     return isAuth ? (
         <BrowserRouter>
             <main className="app">
-                <div className="content">
-                    <Suspense fallback={<Spinner />}>
-                        <Routes>
-                            <Route path="/" element={<MainPage />} />
-                            <Route path="/ourCoffee" element={<OurCoffeePage />} />
-                            <Route path="/ourCoffee/:coffeeId" element={<SingleCoffeePage />} />
-                            <Route path="/pleasure" element={<PleasurePage />} />
-                            <Route path="/basket" element={<BasketLayout />} />
-                            <Route path="/login" element={<LoginPage />} />
-                            <Route path="/register" element={<RegisterPage />} />
-                            <Route path="*" element={<Page404 />} />
-                        </Routes>
-                    </Suspense>
-                </div>
+                {/* <div className="content"> */}
+                <Suspense fallback={<Spinner />}>
+                    <Routes>
+                        <Route path="/" element={<MainPage />} />
+                        <Route path="/ourCoffee" element={<OurCoffeePage />} />
+                        <Route path="/ourCoffee/:coffeeId" element={<SingleCoffeePage />} />
+                        <Route path="/pleasure" element={<PleasurePage />} />
+                        <Route path="/basket" element={<BasketLayout />} />
+                        <Route path="/login" element={<LoginPage />} />
+                        <Route path="/register" element={<RegisterPage />} />
+                        <Route path="*" element={<Page404 />} />
+                    </Routes>
+                </Suspense>
+                {/* </div> */}
             </main>
         </BrowserRouter>
     ) : (

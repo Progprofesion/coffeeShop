@@ -20,7 +20,7 @@ import { useMask } from 'src/hooks/useMask';
 import LinkPage from '../linkPage/LinkPage';
 import Modal from '../modal/Modal';
 
-import coffeeIconBlack from 'src/assets/coffeeIconBlack.svg';
+import coffeeIcon from 'src/assets/coffeeIcon.svg';
 
 import './basketLyout.scss';
 
@@ -166,15 +166,15 @@ const BasketLayout = () => {
                 </form>
             </Modal>
 
-            <LinkPage img={coffeeIconBlack} style={{ margin: '0 auto' }}>
+            <LinkPage img={coffeeIcon} style={{ margin: '0 auto' }}>
                 <Link to='/'>
-                    <div className="linkPageBlack__descr fz-12Black">Coffee house</div>
+                    <div className="linkPageBlack__descr fz-12">Coffee house</div>
                 </Link>
                 <Link to='/ourcoffee'>
-                    <div className="linkPageBlack__descr fz-12Black">Our coffee</div>
+                    <div className="linkPageBlack__descr fz-12">Our coffee</div>
                 </Link>
                 <Link to="/pleasure">
-                    <div className="linkPageBlack__descr fz-12Black">For your pleasure</div>
+                    <div className="linkPageBlack__descr fz-12">For your pleasure</div>
                 </Link>
             </LinkPage>
             <section className="basketLayout">

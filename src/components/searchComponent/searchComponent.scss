@@ -10,8 +10,11 @@
         display: flex;
         align-items: baseline;
         &-title {
+            min-width: 110px;
             margin-right: 20px;
-            color: coral;
+            color: rgb(242, 159, 159);
+            background-color: aliceblue;
+            border-radius: 10px;
         }
         &-input {
             width: 180px;

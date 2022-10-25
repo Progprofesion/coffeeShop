@@ -24,9 +24,6 @@ const PleasurePage = () => {
                 <Hamburger />
                 <Basket />
                 <LoginView />
-                <header className="pleasure">
-                    <HeadBanner bg={bgPleasurePage} title="For your pleasure" />
-                </header>
                 <AboutOur img={pleasureAbout} title='About our goods' />
                 <CardsList cardsView={0} />
                 <Footer />

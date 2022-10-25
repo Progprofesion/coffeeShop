@@ -7,7 +7,10 @@
         min-width: 65px;
         margin-left: 70px;
         margin-right: 13px;
-        color: coral;
+        color: rgb(242, 159, 159);
+        background-color: aliceblue;
+        border-radius: 10px;
+        min-width: 80px;
     }
     &__btn {
         width: 75px;
@@ -25,7 +28,7 @@
 }
 
 .active {
-    color: blue;
+    color: rgba(242, 159, 159, 1);
     opacity: 0.8;
 }
 

@@ -2,7 +2,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import Header from "../header/Header";
 import About from "../aboutUs/About";
-import Best from "../best/best";
+import Best from "../best/Best";
 import Footer from "../footer/Footer";
 import Humburger from "../hamburger/Hamburger";
 import Basket from "../basket/BasketView";
@@ -24,8 +24,8 @@ const MainPage = () => {
                 <Humburger />
                 <Header />
                 {/* <About /> */}
-                {/* <Best /> */}
-                {/* <Footer /> */}
+                <Best />
+                <Footer />
             </HelmetProvider>
         </>
     )

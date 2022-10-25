@@ -20,20 +20,20 @@
     &__basketIncr {
         position: absolute;
         width: 50px;
-        height: 40px;
+        height: 33px;
         right: 20px;
         bottom: 15px;
         border-radius: 10px;
-        border: 2px solid rgba(174, 242, 224, 0.657);
+        border:2px solid rgba(33, 154, 121, 0.657);
     }
     &__basketDecr {
         position: absolute;
         width: 50px;
-        height: 40px;
+        height: 33px;
         right: 85px;
         bottom: 15px;
         border-radius: 10px;
-        border: 2px solid rgba(174, 242, 224, 0.657);
+        border: 2px solid rgba(33, 154, 121, 0.657);
     }
     &__amount {
         width: 25px;

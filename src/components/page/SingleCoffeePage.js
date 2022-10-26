@@ -39,7 +39,6 @@ const SingleCoffeePage = () => {
                 </Helmet>
                 <Hamburger />
                 <Basket title={products.title} price={products.price} />
-                <HeadBanner />
                 <SingleCoffeeItem img={products.img} country={products.country} price={products.price} />
                 <Footer />
             </HelmetProvider>

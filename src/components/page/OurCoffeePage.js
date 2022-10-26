@@ -27,7 +27,10 @@ const OurCoffeePage = () => {
                 <LoginView />
                 {/* <HeadBanner bg={bgOurCoffeePage} title='Our Coffee' /> */}
                 <AboutOur img={girlCoffee} title={'About our beans'} />
-                <CardsList cardsView={0} />
+                <CardsList cardsView={0} style={{
+                    background: "url(/static/media/bgBest.d188eb7d5a4a40d545af.png) center / cover no-repeat"
+
+                }} />
                 <Footer />
             </HelmetProvider>
         </>

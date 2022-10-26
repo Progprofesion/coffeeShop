@@ -24,7 +24,8 @@ const AboutOur = ({ img, title }) => {
                     <div className="fz-12">Basket</div>
                 </Link>
             </LinkPage>
-            <div className="container aboutOur__wrapper">
+            <h2 className="aboutOur__title" >Our Coffee</h2>
+            {/* <div className="container aboutOur__wrapper">
                 <img src={img} alt="" className="aboutOur__girl" />
                 <div className="aboutOur__descr fz-24">
                     <h2 className="aboutOur__title fz-24">{title}</h2>
@@ -37,8 +38,8 @@ const AboutOur = ({ img, title }) => {
                         met spot shy want. Children me laughing we prospect answered followed. At it went <br />
                         is song that held help face.</p>
                 </div>
-            </div>
-            <div className="aboutOur__line"></div>
+            </div> */}
+            {/* <div className="aboutOur__line"></div> */}
         </section>
     )
 };

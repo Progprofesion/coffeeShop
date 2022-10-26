@@ -1,5 +1,12 @@
 .aboutOur {
     background: url('../../assets/bgOurCoffeePage.png') center / cover no-repeat;
+    min-height: 500px;
+    &__title {
+        margin-top: 150px;
+        text-align: center;
+        font-size: 76px;
+        color: antiquewhite;
+    }
     &__wrapper {
         display: flex;
         justify-content: center;

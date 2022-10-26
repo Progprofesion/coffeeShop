@@ -7,9 +7,9 @@ import coffeeBeansIconBlack from "src/assets/coffeeBeansIconBlack.svg";
 
 import './aboutOur.scss';
 
-const AboutOur = ({ img, title }) => {
+const AboutOur = ({ style, title }) => {
     return (
-        <section className="aboutOur">
+        <section className="aboutOur" style={style}>
             <LinkPage img={coffeeIcon}>
                 <Link to="/" >
                     <div className="fz-12">Coffee house</div>
@@ -24,7 +24,7 @@ const AboutOur = ({ img, title }) => {
                     <div className="fz-12">Basket</div>
                 </Link>
             </LinkPage>
-            <h2 className="aboutOur__title" >Our Coffee</h2>
+            <h2 className="aboutOur__title" >{title}</h2>
             {/* <div className="container aboutOur__wrapper">
                 <img src={img} alt="" className="aboutOur__girl" />
                 <div className="aboutOur__descr fz-24">

@@ -12,13 +12,12 @@ import LORCremaAbsoluClassique from '../../img/LORCremaAbsoluClassique.webp';
 import LavazzaTierra1KG from '../../img/LavazzaTierra1KG.jpg';
 // eslint-disable-next-line
 import EvaDiaKenyaGrinders from '../../img/EvaDiaKenyaGrinders.jpg';
-
+// eslint-disable-next-line
 import bgCardsList from '../../assets/bgCardsList.jpg';
 
 import './best.scss';
 
 const Best = () => {
-    console.log(bgCardsList)
     return (
         <section className="best">
             <div className="container">

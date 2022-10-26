@@ -107,7 +107,7 @@ const BasketLayout = () => {
     const elements = view(addProduct)
 
     return (
-        <>
+        <section className="bg">
             <Modal active={modalActive} setActive={setModalActive} >
                 <form onSubmit={handleSubmit(onSubmit)} className="basketLayout__form" action="">
                     <h4 className="basketLayout__title">Оформить заказ</h4>
@@ -184,7 +184,7 @@ const BasketLayout = () => {
                 {elements}
                 <button onClick={() => setModalActive(true)} className="basketLayout__btnBuy">Place an order</button>
             </section>
-        </>
+        </section>
     )
 };
 

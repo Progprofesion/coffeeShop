@@ -20,7 +20,7 @@ import {
 
 import './cardsList.scss';
 
-const CardsList = ({ cardsView, style }) => {
+const CardsList = ({ cardsView, style, bg }) => {
 
     const {
         data: products = [],
@@ -122,10 +122,12 @@ const CardsList = ({ cardsView, style }) => {
     const elements = renderCardsList(filteredCards);
     return (
         <section className="cardsList" style={style} >
-            <div className="container">
-                <SearchComponent />
-                <div className="cardsList__wrapper">
-                    {elements}
+            <div className="cardsList__bg" style={bg}>
+                <div className="container">
+                    <SearchComponent />
+                    <div className="cardsList__wrapper">
+                        {elements}
+                    </div>
                 </div>
             </div>
         </section>

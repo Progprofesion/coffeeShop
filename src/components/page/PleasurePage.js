@@ -9,9 +9,8 @@ import Hamburger from '../hamburger/Hamburger';
 import Basket from '../basket/BasketView';
 import LoginView from '../auth/LoginView';
 
-import bgPleasurePage from 'src/assets/bgPleasurePage.png';
-
 const PleasurePage = () => {
+
     return (
         <>
             <HelmetProvider>
@@ -24,8 +23,12 @@ const PleasurePage = () => {
                 <Hamburger />
                 <Basket />
                 <LoginView />
-                <AboutOur img={pleasureAbout} title='About our goods' />
-                <CardsList cardsView={0} />
+                <AboutOur style={{
+                    background: "url(/static/media/bgMain.da85beacab1f2d9b3284.png) center / cover no-repeat"
+                }} title={'For your pleasure'} />
+                <CardsList cardsView={0} style={{
+                    background: "url(/static/media/bgBest.d188eb7d5a4a40d545af.png) center / cover no-repeat"
+                }} />
                 <Footer />
             </HelmetProvider>
         </>

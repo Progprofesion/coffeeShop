@@ -54,6 +54,19 @@
     }
 }
 
+@media (max-width: 400px) {
+    .filter {
+        &__wrapper {
+            align-items: center;
+            margin-top: 30px;
+        }
+        &__title {
+            margin-left: 0;
+            display: none;
+        }
+    }
+}
+
 @media (max-width: 320px) {
     .filter {
         &__title {

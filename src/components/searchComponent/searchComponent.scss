@@ -57,6 +57,17 @@
     }
 }
 
+
+@media (max-width: 400px) {
+    .search {
+        &__block {
+            &-title {
+                display: none;
+            }
+        }
+    }
+}
+
 @media (max-width: 320px) {
     .search {
         &__block {

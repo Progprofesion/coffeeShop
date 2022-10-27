@@ -10,10 +10,12 @@ import LoginView from '../auth/LoginView';
 
 import girlCoffee from 'src/assets/girlCoffee.svg';
 import bgCardsList from '../../assets/bgCardsList.jpg';
+import bgOurCoffeePage from '../../assets/bgOurCoffeePage.png';
+import bgPleasurePage from '../../assets/bgPleasurePage.png';
 
 
 const OurCoffeePage = () => {
-    console.log(bgCardsList)
+    console.log(bgPleasurePage)
     return (
         <>
             <HelmetProvider>
@@ -32,14 +34,13 @@ const OurCoffeePage = () => {
                 }}
                     title={'Our coffee'} />
                 <CardsList cardsView={0}
-                    style={{
-                        background: "url(/static/media/bgBest.d188eb7d5a4a40d545af.png) center / cover no-repeat"
-                    }}
+                    // style={{
+                    //     background: "url(/static/media/bgBest.d188eb7d5a4a40d545af.png) center / cover no-repeat"
+                    // }}
                     bg={{ background: "url( /static/media/bgCardsList.22c60f5d290c3d585c1c.jpg) center / cover no-repeat" }} />
                 <Footer />
             </HelmetProvider>
         </>
-
     )
 }
 

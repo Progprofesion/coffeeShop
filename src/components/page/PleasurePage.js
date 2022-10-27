@@ -24,7 +24,7 @@ const PleasurePage = () => {
                 <Basket />
                 <LoginView />
                 <AboutOur style={{
-                    background: "url(/static/media/bgMain.da85beacab1f2d9b3284.png) center / cover no-repeat"
+                    background: "url(/static/media/bgPleasurePage.fe6ab9436eeb459ce2ab.png) center / cover no-repeat"
                 }} title={'For your pleasure'} />
                 <CardsList cardsView={0} style={{
                     background: "url(/static/media/bgBest.d188eb7d5a4a40d545af.png) center / cover no-repeat"

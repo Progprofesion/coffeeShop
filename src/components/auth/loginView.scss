@@ -34,3 +34,34 @@
         margin-right: 25px;
     }
 }
+
+// Media --------------------
+@media (max-width: 991px) {
+    .loginView {
+        &__wrapp {
+            font-size: 20px;
+        }
+        &__btn {
+            width: 110px;
+            height: 45px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .loginView {
+        left: 20px;
+        right: unset;
+        &__btn {
+            width: 110px;
+            height: 45px;
+            left: 213px;
+        }
+    }
+ }
+
+@media (max-width: 320px) {
+   .loginView {
+        display: none;
+   }
+}

@@ -1,7 +1,7 @@
 .basket {
     display: flex;
     justify-content: space-around;
-    position: absolute;
+    position: fixed;
     min-width: 150px;
     min-height: 50px;
     right: 60px;
@@ -19,14 +19,12 @@
     .basket {
        min-width: 110px;
        min-height: 45px;
-       right: unset;
-       left: 50px;
     }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 767px) {
     .basket {
+        right: unset;
         left: 20px;
-        top: 10px;
     }
 } 

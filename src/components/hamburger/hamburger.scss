@@ -44,10 +44,11 @@
     text-align: center;
     background-color: rgb(141, 192, 191) ;
     margin-bottom: 4px;
+    z-index: 10;
     transition: 0.5s all;    
     transform: translateX(-191%);
    &__active {
-    opacity: 0.6;
+    opacity: 0.95;
     transform: translateX(0%);
    }
    &__link {
@@ -58,13 +59,7 @@
 
 // Media -------------------
 
-@media (max-width: 1200px) {
-    .menu {
-        display: none;
-    }
-}
-
-@media (max-width: 991px) {
+@media (max-width: 767px) {
     .menu {
         display: block;
     }

@@ -21,7 +21,7 @@ const Best = () => {
     return (
         <section className="best">
             <div className="container">
-                <h2 className="best__title fz-24 ">Our best</h2>
+                <h2 className="best__title">Our best</h2>
                 <CardsList cardsView={3} style={{ background: "url(/static/media/bgCardsList.22c60f5d290c3d585c1c.jpg) center / cover no-repeat" }} />
             </div>
         </section>

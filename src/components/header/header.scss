@@ -75,6 +75,7 @@
         height: 65vh;
         &__title {
             font-size: 30px;
+            padding-top: 25vh;
         }
         &__subtitle {
             font-size: 20px;
@@ -102,7 +103,7 @@
 @media (max-width: 320px) {
     .header {
         &__title {
-            margin: 110px auto 0px;
+            margin:0px;
             font-size: 24px;
         }
         &__subtitle {

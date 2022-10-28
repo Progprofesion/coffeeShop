@@ -1,9 +1,14 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+import { removeUser } from 'src/store/slices/userSlice';
+
 import './hamburger.scss';
 
 const Burger = () => {
     const menuBlock = useRef(null)
+    const dispatch = useDispatch();
 
     const activeBurgerClass = (e) => {
         e.preventDefault()
@@ -22,7 +27,7 @@ const Burger = () => {
                     <span></span>
                 </div>
             </div>
-            <div className="menu" ref={menuBlock}>
+            <nav className="menu" ref={menuBlock}>
                 <Link to="/">
                     <div className="menu__link">Coffee house</div>
                 </Link>
@@ -35,7 +40,8 @@ const Burger = () => {
                 <Link to="/basket">
                     <div className="menu__link">Basket</div>
                 </Link>
-            </div>
+                <button className="loginView__btn" style={{ left: '0px', width: '50%' }} onClick={() => dispatch(removeUser())}>Выйти</button>
+            </nav>
         </>
     )
 };

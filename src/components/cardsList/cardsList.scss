@@ -1,5 +1,13 @@
 .cardsList {
+    position: relative;
     padding: 100px 0 100px;
+    &__title {
+        position: absolute;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 30px;
+    }
     &__wrapper {
         max-width: 800px;
         margin: 60px auto 0;

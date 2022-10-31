@@ -36,9 +36,17 @@
 
 @media (max-width: 991px) {
     .filter {
-         &__wrapper {
+        &__wrapper {
+            align-items: center;
+            margin-top: 30px;
             justify-content: center;
-         }
+        }
+        &__title {
+            margin-left: 0;
+        }
+        &__all {
+            min-width: 40px;
+        }
     }
 }
 

@@ -10,7 +10,7 @@ import './footer.scss';
 const Footer = () => {
     return (
         <footer className="footer">
-            <LinkPage img={coffeeIcon} style={{ margin: '0 auto', display: 'flex' }}>
+            <LinkPage img={coffeeIcon} style={{ margin: '0 auto' }}>
                 <Link to='/'>
                     <div className="linkPageBlack__descr fz-12">Coffee house</div>
                 </Link>

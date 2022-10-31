@@ -28,11 +28,7 @@ const MainPage = () => {
                 {/* <Best /> */}
                 <CardsList
                     cardsView={3}
-                    title={'Our best'}
-                    style={{
-                        background: "url(/static/media/bgBest.d188eb7d5a4a40d545af.png) center / cover no-repeat"
-                    }}
-                    bg={{ background: "url( /static/media/bgCardsList.22c60f5d290c3d585c1c.jpg) center / cover no-repeat" }} />
+                    title={'Our best'} />
                 <Footer />
             </HelmetProvider>
         </>

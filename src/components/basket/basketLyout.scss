@@ -1,5 +1,5 @@
 .basketLayout {
-    width: 500px;
+    max-width: 500px;
     min-height: 500px;
     margin: 35px auto 0; 
     text-align: center;
@@ -26,6 +26,7 @@
         border-radius: 30px;
         background: rgba(255, 255, 255, 0.65);
         filter: drop-shadow(5px 5px 35px rgba(0, 0, 0, 0.25));
+        border-block-color: coral;
     }
     &__country {
         margin-top: 10px;
@@ -45,6 +46,7 @@
         border-radius: 50px;
         margin-top: 35px;
         color: coral;
+        border-block-color: antiquewhite;
     }
     &__btnWrapp {
         position: absolute;
@@ -58,6 +60,7 @@
             height: 35px;
             border-radius: 10px;
             border: 2px solid rgba(174, 242, 224, 0.657);
+            border-block-color: coral;
         }
     }
     &__btnBuy {
@@ -67,7 +70,7 @@
         height: 40px;
         border-radius: 10px;
         border: 2px solid rgba(33, 154, 121, 0.657);
-        background-color: rgba(230, 114, 114, 0.66);
+        background-color: antiquewhite;
         filter: drop-shadow(5px 5px 35px rgba(74, 131, 172, 0.25));
     }
     &__form {

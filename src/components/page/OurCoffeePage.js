@@ -33,11 +33,7 @@ const OurCoffeePage = () => {
                     background: "url(/static/media/bgOurCoffeePage.9928212fb1eb01de6816.png) center / cover no-repeat"
                 }}
                     title={'Our coffee'} />
-                <CardsList cardsView={0}
-                    style={{
-                        background: "url(/static/media/bgBest.d188eb7d5a4a40d545af.png) center / cover no-repeat"
-                    }}
-                    bg={{ background: "url( /static/media/bgCardsList.22c60f5d290c3d585c1c.jpg) center / cover no-repeat" }} />
+                <CardsList cardsView={0} />
                 <Footer />
             </HelmetProvider>
         </>

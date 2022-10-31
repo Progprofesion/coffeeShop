@@ -42,8 +42,8 @@
             font-size: 20px;
         }
         &__btn {
-            width: 110px;
-            height: 45px;
+            width: 50%;
+            height: 3%;
         }
     }
 }
@@ -75,6 +75,10 @@
    .loginView {
         &__wrapp {
             font-size: 16px;
+        }
+        &__btn {
+            width: 60%;
+            height: 3%;
         }
    }
 }

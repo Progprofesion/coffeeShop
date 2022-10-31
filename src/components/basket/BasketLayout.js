@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 
+import Footer from '../footer/Footer';
+
 import {
     incrementQuantity,
     decrementQuantity,
@@ -166,7 +168,7 @@ const BasketLayout = () => {
                 </form>
             </Modal>
 
-            <LinkPage img={coffeeIcon} style={{ margin: '0 auto' }}>
+            <LinkPage img={coffeeIcon} style={{ margin: '0 auto', display: 'flex' }}>
                 <Link to='/'>
                     <div className="linkPageBlack__descr fz-12">Coffee house</div>
                 </Link>
@@ -184,6 +186,7 @@ const BasketLayout = () => {
                 {elements}
                 <button onClick={() => setModalActive(true)} className="basketLayout__btnBuy">Place an order</button>
             </section>
+            <Footer />
         </section>
     )
 };

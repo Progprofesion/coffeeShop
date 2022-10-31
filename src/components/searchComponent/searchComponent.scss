@@ -39,8 +39,12 @@
 
 @media (max-width: 991px) {
     .search {
+        &__looking {
+            flex-direction: column;
+            justify-content: center;
+        }
         &__block {
-            align-items: center;
+            justify-content: center;
         }
     }
 }

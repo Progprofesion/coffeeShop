@@ -40,7 +40,7 @@ const Burger = () => {
                 <Link to="/basket">
                     <div className="menu__link">Basket</div>
                 </Link>
-                <button className="loginView__btn" style={{ left: '0px', width: '50%' }} onClick={() => dispatch(removeUser())}>Выйти</button>
+                <button className="loginView__btn" style={{ left: '0px' }} onClick={() => dispatch(removeUser())}>Выйти</button>
             </nav>
         </>
     )

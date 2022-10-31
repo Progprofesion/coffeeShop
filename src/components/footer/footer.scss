@@ -10,4 +10,13 @@
         top: 30px;
         margin-left: -31px;
     }
+    
+}
+
+// Media ----------
+
+@media (max-width: 756px) {
+    .footer {
+        padding-top: 50px;
+    }
 }

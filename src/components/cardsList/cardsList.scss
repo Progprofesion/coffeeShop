@@ -1,4 +1,5 @@
 .cardsList {
+    background: url(../../assets/bgBest.png);
     position: relative;
     padding: 100px 0 100px;
     &__title {
@@ -17,30 +18,28 @@
         grid-row-gap: 60px;
     }
     &__bg {
-        padding: 35px;
+        background: url(../../assets/bgCardsList.jpg) center center no-repeat;
+        padding: 50px;
         max-width: 1000px;
         border-radius: 50px;
         margin: 0 auto;
+        width: 85%;
     }
 }
 
 // Media ----------------------
 
-@media (max-width: 1280px) {
-    .cardsList {
-        margin: 0 auto;
-        width: 90%;
-    }
-}
-
 @media (max-width: 991px) {
     .cardsList {
         &__wrapper {
             justify-content: space-evenly;
+            padding-bottom: 10px;
+        }
+        &__bg {
+            background-size: cover;
         }
     }
 }
 
 @media (max-width: 767px) {
-
 }

@@ -60,6 +60,12 @@
 
 // Media -------------------
 
+@media (max-width: 2560px) {
+    .menu {
+        display: none;
+    }
+}
+
 @media (max-width: 767px) {
     .menu {
         display: block;

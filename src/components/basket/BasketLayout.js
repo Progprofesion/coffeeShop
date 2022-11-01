@@ -194,6 +194,7 @@ const BasketLayout = () => {
                 </div>
                 <Footer />
             </section>
+
         </>
     )
 };

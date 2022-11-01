@@ -94,6 +94,7 @@
 
 .basketView {
     background: url('../../assets/524da229af587856fb0c03e41d5ef300.jpg') center / cover ;
+    height: 100%;
 }
 
 // Media ----------------
@@ -120,6 +121,7 @@
         padding-top: 50px;
         margin-top: -50px;
         margin-bottom: -100px;
+        height: unset;
     }
 }
 
@@ -128,20 +130,11 @@
         &__wrapp {
             max-width: 250px;
             flex-direction: column;
+            border-block-end: 1px solid antiquewhite;
+            padding-bottom: 5px;
         }
         &__subtitle {
             margin-top: 5px;
-        }
-        
-    }
-}
-
-
-@media (max-width: 576px) {
-    .basketLayout {
-        &__wrapp {
-            border-block-end: 1px solid antiquewhite;
-            padding-bottom: 5px;
         }
         &__quantity {
             left: 165px;

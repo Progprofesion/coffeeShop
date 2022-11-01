@@ -192,8 +192,8 @@ const BasketLayout = () => {
                         <button onClick={() => setModalActive(true)} className="basketLayout__btnBuy">Place an order</button>
                     </section>
                 </div>
+                <Footer />
             </section>
-            <Footer />
         </>
     )
 };

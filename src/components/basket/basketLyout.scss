@@ -34,6 +34,7 @@
         margin-top: 10px;
     }   
     &__result {
+        min-width: 205px;
         text-align: left;
         margin-left: 15px;
     }
@@ -45,7 +46,7 @@
         width: 25px;
         height: 28px;
         top: -15px;
-        left: 148px;
+        left: 142px;
         border: 1px solid #f7bb7a;
         border-radius: 50px;
         color: coral;
@@ -128,6 +129,9 @@
             max-width: 250px;
             flex-direction: column;
         }
+        &__subtitle {
+            margin-top: 5px;
+        }
         
     }
 }
@@ -135,14 +139,18 @@
 
 @media (max-width: 576px) {
     .basketLayout {
-       &__quantity {
-        left: 165px;
+        &__wrapp {
+            border-block-end: 1px solid antiquewhite;
+            padding-bottom: 5px;
+        }
+        &__quantity {
+            left: 165px;
        }
-       &__img {
-        margin-right: 0;
+        &__img {
+            margin-right: 0;
        }
-       &__btnBuy {
-        width: 120px;
+        &__btnBuy {
+            width: 120px;
        }  
     }
 }

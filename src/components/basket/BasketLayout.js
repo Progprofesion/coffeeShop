@@ -95,7 +95,7 @@ const BasketLayout = () => {
                 </Link>
                 <div className="basketLayout__quantity">{quantity}</div>
                 <div className="basketLayout__result">
-                    <div className="basketLayout__title">{title}</div>
+                    <div className="basketLayout__subtitle">{title}</div>
                     <div className="basketLayout__country">{country}</div>
                     <div className="basketLayout__price">{price}</div>
                     <div className="basketLayout__btnWrapp">

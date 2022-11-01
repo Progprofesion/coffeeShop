@@ -3,7 +3,7 @@
     right: 50px;
     top: 18px;
     color: white;
-    &__wrapp {
+    &__wrapper {
         display: flex;
         border-top: 10px solid  rgba(32, 217, 204, 0.37);
         border-bottom: 10px solid  rgba(32, 217, 204, 0.37);
@@ -38,7 +38,7 @@
 // Media --------------------
 @media (max-width: 991px) {
     .loginView {
-        &__wrapp {
+        &__wrapper {
             font-size: 20px;
         }
     }
@@ -50,13 +50,15 @@
         right: unset;
         &__btn {
             left: -1000%;
+            width: 95px;
+            height: 30px;
         }
     }
 }
 
 @media (max-width: 576px) {
     .loginView {
-        &__wrapp {
+        &__wrapper {
             &-title {
                 display: none;
             }
@@ -69,7 +71,7 @@
 
 @media (max-width: 400px) {
    .loginView {
-        &__wrapp {
+        &__wrapper {
             font-size: 16px;
         }
         &__btn {

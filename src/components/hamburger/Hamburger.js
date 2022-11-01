@@ -21,7 +21,7 @@ const Burger = () => {
         <>
             <div className="hamburger"
                 onClick={activeBurgerClass}>
-                <div className="hamburger__wrapp">
+                <div className="hamburger__wrapper">
                     <span></span>
                     <span></span>
                     <span></span>

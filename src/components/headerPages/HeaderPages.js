@@ -1,15 +1,13 @@
-import IconLine from "../iconLine/IconLine";
 import { Link } from 'react-router-dom';
 import LinkPage from '../linkPage/LinkPage';
 
 import coffeeIcon from 'src/assets/coffeeIcon.svg';
-import coffeeBeansIconBlack from "src/assets/coffeeBeansIconBlack.svg";
 
-import './aboutOur.scss';
+import './headerPages.scss';
 
-const AboutOur = ({ style, title }) => {
+const HeaderPages = ({ style, title }) => {
     return (
-        <section className="aboutOur" style={style}>
+        <section className="headerPages" style={style}>
             <LinkPage img={coffeeIcon}>
                 <Link to="/" >
                     <div className="fz-12">Coffee house</div>
@@ -24,7 +22,7 @@ const AboutOur = ({ style, title }) => {
                     <div className="fz-12">Basket</div>
                 </Link>
             </LinkPage>
-            <h2 className="aboutOur__title" >{title}</h2>
+            <h2 className="headerPages__title" >{title}</h2>
             {/* <div className="container aboutOur__wrapper">
                 <img src={img} alt="" className="aboutOur__girl" />
                 <div className="aboutOur__descr fz-24">
@@ -44,4 +42,4 @@ const AboutOur = ({ style, title }) => {
     )
 };
 
-export default AboutOur;
+export default HeaderPages;

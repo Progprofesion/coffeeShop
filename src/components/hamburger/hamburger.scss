@@ -5,7 +5,7 @@
     top: 30px;
     transform: translateY(-50%);
     z-index: 10;
-    &__wrapp {
+    &__wrapper {
         padding: 20px;
     }
     span {
@@ -43,17 +43,20 @@
     width: 30%;
     height: 100vh;
     text-align: center;
-    background-color: rgb(141, 192, 191) ;
     margin-bottom: 4px;
     z-index: 10;
     transition: 0.5s all;    
     transform: translateX(-191%);
+    // background: url(../../assets/bgMenu2.jpg);
+    background: url(../../assets/bgMenu1.jpg) center / cover no-repeat;
+    // background: url(../../assets/bgMenu3.jpg) center / cover no-repeat;
    &__active {
     opacity: 0.95;
     transform: translateX(0%);
    }
    &__link {
     margin-top: 30px;
+    color: antiquewhite;
     cursor: pointer;
    }
 }

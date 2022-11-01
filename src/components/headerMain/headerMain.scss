@@ -1,4 +1,4 @@
-.header {
+.headerMain {
     background: url('../../assets/524da229af587856fb0c03e41d5ef300.jpg') center / cover ;
     height: 100vh;
     &__title {
@@ -63,7 +63,7 @@
     .container {
         max-width: 90%;
     }
-    .header {
+    .headerMain {
         &__title {
             font-size: 35px;
         }
@@ -71,7 +71,7 @@
 }
 
 @media (max-width: 767px) {
-    .header {
+    .headerMain {
         height: 65vh;
         &__title {
             font-size: 30px;
@@ -87,7 +87,7 @@
 }
 
 @media (max-width: 575px) {
-    .header {
+    .headerMain {
         &__title {
             font-size: 24px;
         }
@@ -101,7 +101,7 @@
 } 
 
 @media (max-width: 320px) {
-    .header {
+    .headerMain {
         &__title {
             margin:0px;
             font-size: 24px;

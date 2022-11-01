@@ -14,7 +14,7 @@
     &__amount {
         margin-top: 20px;
     }
-    &__wrapp {
+    &__wrapper {
         margin: 50px auto;
         width: 450px;
         display: flex;
@@ -52,7 +52,7 @@
         color: coral;
         border-block-color: antiquewhite;
     }
-    &__btnWrapp {
+    &__btnWrapper {
         position: absolute;
         margin-top: -35px;
         right: 50px;
@@ -80,7 +80,7 @@
     &__form {
         text-align: center;
     }
-    &__modalWrapp {
+    &__modalWrapper {
         display: flex;
         justify-content: center;
     }
@@ -101,7 +101,7 @@
 
 @media (max-width: 1280px) {
     .basketLayout {
-        &__modalWrapp {
+        &__modalWrapper {
             flex-direction: column;
         }
         &__input {
@@ -127,7 +127,7 @@
 
 @media (max-width: 576px) {
     .basketLayout {
-        &__wrapp {
+        &__wrapper {
             max-width: 250px;
             flex-direction: column;
             border-block-end: 1px solid antiquewhite;

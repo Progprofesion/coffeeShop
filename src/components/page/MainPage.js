@@ -1,6 +1,6 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-import Header from "../header/Header";
+import Header from "../headerMain/HeaderMain";
 import About from "../aboutUs/About";
 import Best from "../best/Best";
 import Footer from "../footer/Footer";

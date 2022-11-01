@@ -6,11 +6,11 @@ import coffeeBeansIconWhite from 'src/assets/coffeeBeansIconWhite.svg'
 import LinkPage from '../linkPage/LinkPage';
 import coffeeIcon from 'src/assets/coffeeIcon.svg';
 
-import './header.scss';
+import './headerMain.scss';
 
-const Header = () => {
+const HeaderMain = () => {
     return (
-        <header className="header">
+        <header className="headerMain">
             <LinkPage img={coffeeIcon}>
                 <Link to="/" >
                     <div className="fz-12">Coffee house</div>
@@ -26,16 +26,16 @@ const Header = () => {
                 </Link>
             </LinkPage>
             <div className="container">
-                <h1 className="header__title">Everything You Love About Coffee</h1>
+                <h1 className="headerMain__title">Everything You Love About Coffee</h1>
                 <IconLine img={coffeeBeansIconWhite} style={{ border: '1px solid white' }} />
-                <h2 className="header__subtitle">We makes every day full of energy and taste</h2>
-                <h2 className="header__subtitleShadow">Want to try our beans?</h2>
+                <h2 className="headerMain__subtitle">We makes every day full of energy and taste</h2>
+                <h2 className="headerMain__subtitleShadow">Want to try our beans?</h2>
                 <Link to="/ourcoffee">
-                    <button className="header__main">More</button>
+                    <button className="headerMain__main">More</button>
                 </Link>
             </div>
         </header>
     )
 }
 
-export default Header;
+export default HeaderMain;

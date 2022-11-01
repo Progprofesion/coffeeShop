@@ -12,11 +12,18 @@
     align-items: center;
     z-index: 1;
     &__amount {
-        min-width: 25px;
+        width: 25px;
         height: 29px;
         padding: 0 5px 0 5px;
         border: 2px solid antiquewhite;
         border-radius: 30%;
+    }
+    &__price {
+        width: 65px;
+        height: 29px;
+        padding: 0 5px 0 5px;
+        border: 2px solid antiquewhite;
+        border-radius: 8px;
     }
 }
 

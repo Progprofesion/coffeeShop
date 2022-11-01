@@ -13,7 +13,7 @@ import './app.scss';
 const OurCoffeePage = lazy(() => import('../page/OurCoffeePage'));
 const SingleCoffeePage = lazy(() => import('../page/SingleCoffeePage'));
 const PleasurePage = lazy(() => import('../page/PleasurePage'));
-const BasketLayout = lazy(() => import('../basket/BasketLayout'));
+const BasketPage = lazy(() => import('../page/BasketPage'));
 const Page404 = lazy(() => import('../page/404'));
 
 const App = () => {
@@ -28,7 +28,7 @@ const App = () => {
                         <Route path="/ourCoffee" element={<OurCoffeePage />} />
                         <Route path="/ourCoffee/:coffeeId" element={<SingleCoffeePage />} />
                         <Route path="/pleasure" element={<PleasurePage />} />
-                        <Route path="/basket" element={<BasketLayout />} />
+                        <Route path="/basket" element={<BasketPage />} />
                         <Route path="/login" element={<LoginPage />} />
                         <Route path="/register" element={<RegisterPage />} />
                         <Route path="*" element={<Page404 />} />

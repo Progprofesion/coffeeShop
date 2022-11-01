@@ -6,7 +6,7 @@ import { useLocalStorage } from 'src/hooks/useLocalStorage';
 import { basketAmount } from 'src/store/slices/basketSlice';
 
 
-import './basket.scss';
+import './basketSticky.scss';
 
 const Basket = () => {
     const addProduct = useSelector(state => state.basket.items);
@@ -32,9 +32,9 @@ const Basket = () => {
     }, [addProduct, stateBasketAmount]);
 
     return (
-        <Link to="/basket" className="basket">
-            <div className="basket__amount">{localBasketAmount ? localBasketAmount : 0}</div>
-            <div className="basket__price">{localBasketTotal > 0 ? localBasketTotal : `0.00$`}</div>
+        <Link to="/basket" className="basketSticky">
+            <div className="basketSticky__amount">{localBasketAmount ? localBasketAmount : 0}</div>
+            <div className="basketSticky__price">{localBasketTotal > 0 ? localBasketTotal + `$` : `0.00$`}</div>
         </Link>
     )
 };

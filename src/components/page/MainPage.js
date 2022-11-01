@@ -5,7 +5,7 @@ import About from "../aboutUs/About";
 import Best from "../best/Best";
 import Footer from "../footer/Footer";
 import Humburger from "../hamburger/Hamburger";
-import Basket from "../basket/BasketView";
+import BasketSticky from "../basket/BasketSticky";
 import LoginView from '../auth/LoginView';
 import CardsList from '../cardsList/CardsList';
 
@@ -20,7 +20,7 @@ const MainPage = () => {
                         content="Coffee shop app" />
                     <title>Coffee house</title>
                 </Helmet>
-                <Basket />
+                <BasketSticky />
                 <LoginView />
                 <Humburger />
                 <Header />

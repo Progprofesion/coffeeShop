@@ -6,7 +6,7 @@ import HeadBanner from '../headBanner/HeadBanner';
 import SingleCoffeeItem from '../singleCoffeeItem/SingleCoffeeItem';
 import Footer from '../footer/Footer';
 import Hamburger from '../hamburger/Hamburger';
-import Basket from '../basket/BasketView';
+import BasketSticky from '../basket/BasketSticky';
 
 import Page404 from './404';
 import Spinner from '../spinner/Spinner';
@@ -38,7 +38,7 @@ const SingleCoffeePage = () => {
                     <title>{products.title}</title>
                 </Helmet>
                 <Hamburger />
-                <Basket title={products.title} price={products.price} />
+                <BasketSticky title={products.title} price={products.price} />
                 <SingleCoffeeItem img={products.img} country={products.country} price={products.price} />
                 <Footer />
             </HelmetProvider>

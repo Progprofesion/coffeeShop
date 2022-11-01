@@ -1,9 +1,10 @@
 .hamburger {
     display: none;
-    position: absolute;
+    position: fixed;
     right: 10px;
     top: 30px;
     transform: translateY(-50%);
+    z-index: 10;
     &__wrapp {
         padding: 20px;
     }
@@ -38,7 +39,7 @@
 .menu {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     width: 30%;
     height: 100vh;
     text-align: center;

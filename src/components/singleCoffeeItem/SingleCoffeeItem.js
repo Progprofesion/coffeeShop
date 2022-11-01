@@ -1,4 +1,8 @@
+import { Link } from 'react-router-dom';
+
 import IconLine from "../iconLine/IconLine";
+import LinkPage from "../linkPage/LinkPage";
+import coffeeIcon from 'src/assets/coffeeIcon.svg';
 import coffeeBeansIconBlack from "src/assets/coffeeBeansIconBlack.svg";
 
 import './singleCoffeeItem.scss';
@@ -6,6 +10,20 @@ import './singleCoffeeItem.scss';
 const SingleCoffee = ({ img, country, price }) => {
     return (
         <article className="singleCoffeeItem">
+            <LinkPage img={coffeeIcon} >
+                <Link to="/" >
+                    <div className="fz-12">Coffee house</div>
+                </Link>
+                <Link to="/ourcoffee">
+                    <div className="fz-12">Our coffee</div>
+                </Link>
+                <Link to="/pleasure">
+                    <div className="fz-12">For your pleasure</div>
+                </Link>
+                <Link to="/basket">
+                    <div className="fz-12">Basket</div>
+                </Link>
+            </LinkPage>
             <div className="container">
                 <div className="singleCoffeeItem__wrapper">
                     <img src={img} alt="coffee" className="singleCoffeeItem__img" />

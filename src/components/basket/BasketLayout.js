@@ -21,6 +21,7 @@ import { useMask } from 'src/hooks/useMask';
 
 import LinkPage from '../linkPage/LinkPage';
 import Modal from '../modal/Modal';
+import Hamburger from '../hamburger/Hamburger';
 
 import coffeeIcon from 'src/assets/coffeeIcon.svg';
 
@@ -109,85 +110,91 @@ const BasketLayout = () => {
     const elements = view(addProduct)
 
     return (
-        <section className="bg">
-            <Modal active={modalActive} setActive={setModalActive} >
-                <form onSubmit={handleSubmit(onSubmit)} className="basketLayout__form" action="">
-                    <h4 className="basketLayout__title">Оформить заказ</h4>
-                    <div className="basketLayout__modalWrapp">
-                        <div className="basketLayout__item">
-                            <input
-                                {...register('name', {
-                                    required: 'Поле обязательно к заполнению',
-                                    minLength: {
-                                        value: 3,
-                                        message: 'Минимум 3 символа'
-                                    }
-                                })}
-                                className="basketLayout__input" placeholder="Имя" type='text' />
-                            {errors.name ? <p className="basketLayout__errorMessage" >{errors.name.message}</p> : null}
+        <>
+            <section className="basketView">
+                <Hamburger />
+                <Modal active={modalActive} setActive={setModalActive} >
+                    <form onSubmit={handleSubmit(onSubmit)} className="basketLayout__form" action="">
+                        <h4 className="basketLayout__title">Оформить заказ</h4>
+                        <div className="basketLayout__modalWrapp">
+                            <div className="basketLayout__item">
+                                <input
+                                    {...register('name', {
+                                        required: 'Поле обязательно к заполнению',
+                                        minLength: {
+                                            value: 3,
+                                            message: 'Минимум 3 буквы'
+                                        }
+                                    })}
+                                    className="basketLayout__input" placeholder="Имя" type='text' />
+                                {errors.name ? <p className="basketLayout__errorMessage" >{errors.name.message}</p> : null}
+                            </div>
+
+                            <div className="basketLayout__item">
+                                <input
+                                    {...register('email', {
+                                        required: 'Поле обязательно к заполнению',
+                                        pattern: {
+                                            // eslint-disable-next-line
+                                            value: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
+                                            message: 'Не правильный адрес почты'
+                                        }
+                                    })}
+                                    className="basketLayout__input" placeholder="Почта" type='email' />
+                                {errors.email ? <p className="basketLayout__errorMessage" >{errors.email.message}</p> : null}
+                            </div>
+
+                            <div className="basketLayout__item">
+                                <input
+                                    {...register('phone', {
+                                        required: 'Поле обязательно к заполнению',
+                                        minLength: {
+                                            value: 8,
+                                            message: 'Минимум 8 символов',
+                                        },
+                                    })}
+                                    className="basketLayout__input" placeholder="Телефон" type='tel'
+                                    {...rest} name="phone" ref={(e) => {
+                                        ref(e)
+                                        inputRef.current = e
+                                    }}
+                                    onChange={(e) => onPhoneinput(e)}
+                                    onKeyDown={onPhoneKeyDown}
+                                    onPaste={onPhonePaste}
+                                    maxLength="18"
+                                />
+                                {errors.phone ? <p className="basketLayout__errorMessage" >{errors.phone.message}</p> : null}
+                            </div>
+
                         </div>
+                        <button type='submit' className="basketLayout__btnBuy">Купить</button>
+                    </form>
+                </Modal>
 
-                        <div className="basketLayout__item">
-                            <input
-                                {...register('email', {
-                                    required: 'Поле обязательно к заполнению',
-                                    pattern: {
-                                        // eslint-disable-next-line
-                                        value: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
-                                        message: 'Не правильный адрес почты'
-                                    }
-                                })}
-                                className="basketLayout__input" placeholder="Почта" type='email' />
-                            {errors.email ? <p className="basketLayout__errorMessage" >{errors.email.message}</p> : null}
-                        </div>
+                <LinkPage img={coffeeIcon} style={{ margin: '0 auto' }}>
+                    <Link to='/'>
+                        <div className="linkPageBlack__descr fz-12">Coffee house</div>
+                    </Link>
+                    <Link to='/ourcoffee'>
+                        <div className="linkPageBlack__descr fz-12">Our coffee</div>
+                    </Link>
+                    <Link to="/pleasure">
+                        <div className="linkPageBlack__descr fz-12">For your pleasure</div>
+                    </Link>
+                </LinkPage>
 
-                        <div className="basketLayout__item">
-                            <input
-                                {...register('phone', {
-                                    required: 'Поле обязательно к заполнению',
-                                    minLength: {
-                                        value: 8,
-                                        message: 'Минимум 8 символов',
-                                    },
-                                })}
-                                className="basketLayout__input" placeholder="Телефон" type='tel'
-                                {...rest} name="phone" ref={(e) => {
-                                    ref(e)
-                                    inputRef.current = e
-                                }}
-                                onChange={(e) => onPhoneinput(e)}
-                                onKeyDown={onPhoneKeyDown}
-                                onPaste={onPhonePaste}
-                                maxLength="18"
-                            />
-                            {errors.phone ? <p className="basketLayout__errorMessage" >{errors.phone.message}</p> : null}
-                        </div>
-
-                    </div>
-                    <button type='submit' className="basketLayout__btnBuy">Купить</button>
-                </form>
-            </Modal>
-
-            <LinkPage img={coffeeIcon} style={{ margin: '0 auto', display: 'flex' }}>
-                <Link to='/'>
-                    <div className="linkPageBlack__descr fz-12">Coffee house</div>
-                </Link>
-                <Link to='/ourcoffee'>
-                    <div className="linkPageBlack__descr fz-12">Our coffee</div>
-                </Link>
-                <Link to="/pleasure">
-                    <div className="linkPageBlack__descr fz-12">For your pleasure</div>
-                </Link>
-            </LinkPage>
-            <section className="basketLayout">
-                <h2 className="basketLayout__title">Shopping cart</h2>
-                <h3 className="basketLayout__amount">Amount of products: {localBasketAmount}</h3>
-                <h3 className="basketLayout__amount">Total price: {localBasketTotal}</h3>
-                {elements}
-                <button onClick={() => setModalActive(true)} className="basketLayout__btnBuy">Place an order</button>
+                <div className="container">
+                    <section className="basketLayout">
+                        <h2 className="basketLayout__title">Shopping cart</h2>
+                        <h3 className="basketLayout__amount">Amount of products: {localBasketAmount}</h3>
+                        <h3 className="basketLayout__amount">Total price: {localBasketTotal}</h3>
+                        {elements}
+                        <button onClick={() => setModalActive(true)} className="basketLayout__btnBuy">Place an order</button>
+                    </section>
+                </div>
             </section>
             <Footer />
-        </section>
+        </>
     )
 };
 

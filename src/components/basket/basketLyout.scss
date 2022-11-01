@@ -60,7 +60,7 @@
             height: 35px;
             border-radius: 10px;
             border: 2px solid rgba(174, 242, 224, 0.657);
-            border-block-color: coral;
+            border-block-color: lightYellow;
         }
     }
     &__btnBuy {
@@ -85,9 +85,22 @@
     }
 } 
 
-.bg {
+.basketView {
     background: url('../../assets/524da229af587856fb0c03e41d5ef300.jpg') center / cover ;
     height: 100vh;
+}
+
+// Media ----------------
+
+@media (max-width: 767px) {
+    .basketLayout {
+        margin: 75px auto 0;
+    }
+    .basketView {
+        padding-top: 50px;
+        margin-top: -50px;
+        margin-bottom: -100px;
+    }
 }
 
 

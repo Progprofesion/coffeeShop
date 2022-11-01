@@ -8,7 +8,8 @@
     &__img {
         margin-top: 70px;
         min-height: 270px;
-        width: 50%;    
+        width: 50%;  
+        border-radius: 50px;  
     }
     &__about {
         max-width: 421px;
@@ -28,6 +29,7 @@
        &-descr{
         padding: 15px 0;
         max-width: 410px;
+        text-align: center;
        }
        &-wrapper {
         display: flex;

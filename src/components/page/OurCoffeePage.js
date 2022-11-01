@@ -5,17 +5,15 @@ import AboutOur from '../aboutOur/AboutOur';
 import CardsList from '../cardsList/CardsList';
 import Footer from '../footer/Footer';
 import Humburger from '../hamburger/Hamburger';
-import Basket from '../basket/BasketView';
+import BasketSticky from '../basket/BasketSticky';
 import LoginView from '../auth/LoginView';
 
-import girlCoffee from 'src/assets/girlCoffee.svg';
 import bgCardsList from '../../assets/bgCardsList.jpg';
 import bgOurCoffeePage from '../../assets/bgOurCoffeePage.png';
 import bgPleasurePage from '../../assets/bgPleasurePage.png';
 
 
 const OurCoffeePage = () => {
-    console.log(bgPleasurePage)
     return (
         <>
             <HelmetProvider>
@@ -26,9 +24,8 @@ const OurCoffeePage = () => {
                     <title>Our coffee</title>
                 </Helmet>
                 <Humburger />
-                <Basket />
+                <BasketSticky />
                 <LoginView />
-                {/* <HeadBanner bg={bgOurCoffeePage} title='Our Coffee' /> */}
                 <AboutOur style={{
                     background: "url(/static/media/bgOurCoffeePage.9928212fb1eb01de6816.png) center / cover no-repeat"
                 }}

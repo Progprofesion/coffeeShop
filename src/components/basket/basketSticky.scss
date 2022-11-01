@@ -1,29 +1,35 @@
-.basket {
+.basketSticky {
     display: flex;
     justify-content: space-around;
     position: fixed;
-    min-width: 150px;
+    min-width: 140px;
     min-height: 50px;
-    right: 60px;
-    top: 95px;;
+    right: 50px;
+    top: 94px;;
     border-radius: 10px;
     border: 2px solid rgba(174, 242, 224, 0.657);
     background-color: rgba(174, 242, 224, 0.657);
     align-items: center;
     z-index: 1;
+    &__amount {
+        width: 24px;
+        height: 29px;
+        border: 2px solid antiquewhite;
+        border-radius: 30%;
+    }
 }
 
 // Media ------------------
 
 @media (max-width: 991px) {
-    .basket {
-       min-width: 110px;
-       min-height: 45px;
+    .basketSticky {
+        min-width: 120px;
+        min-height: 40px;
     }
 }
 
 @media (max-width: 767px) {
-    .basket {
+    .basketSticky {
         top: 60px;
         right: 20px;
         left: unset;

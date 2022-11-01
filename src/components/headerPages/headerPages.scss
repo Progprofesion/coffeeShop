@@ -1,5 +1,4 @@
 .headerPages {
-    // background: url('../../assets/bgOurCoffeePage.png') center / cover no-repeat;
     min-height: 500px;
     &__title {
         padding-top: 150px;
@@ -39,7 +38,7 @@
     .contaier {
         max-width: 700px;
     }
-   .aboutOur {
+   .headerPages {
     &__title {
         font-size: 56px;
     }
@@ -47,10 +46,7 @@
 }
 
 @media (max-width: 767px) {
-    .aboutOur {
-        &__girl {
-            width: 50%;
-          }
+    .headerPages {
           &__title {
             padding-top: 220px;
           }
@@ -58,7 +54,7 @@
 }
 
 @media (max-width: 575px) {
-    .aboutOur {
+    .headerPages {
         &__title {
             font-size: 45px;
         }

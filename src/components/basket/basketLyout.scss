@@ -80,7 +80,7 @@
     &__form {
         text-align: center;
     }
-    &__modalWrapper {
+    &__modal {
         display: flex;
         justify-content: center;
     }
@@ -101,7 +101,7 @@
 
 @media (max-width: 1280px) {
     .basketLayout {
-        &__modalWrapper {
+        &__modal {
             flex-direction: column;
         }
         &__input {
@@ -145,6 +145,11 @@
         &__btnBuy {
             width: 120px;
        }  
+    }
+    .modal {
+        &__content {
+            width: 70vw;
+        }
     }
 }
 

@@ -9,6 +9,7 @@ import { useMask } from 'src/hooks/useMask';
 
 import BasketLayout from '../basket/BasketLayout';
 
+
 const BasketPage = () => {
     const {
         register,
@@ -56,7 +57,6 @@ const BasketPage = () => {
                                 className="basketLayout__input" placeholder="Имя" type='text' />
                             {errors.name ? <p className="basketLayout__errorMessage" >{errors.name.message}</p> : null}
                         </div>
-
                         <div className="basketLayout__item">
                             <input
                                 {...register('email', {
@@ -70,7 +70,6 @@ const BasketPage = () => {
                                 className="basketLayout__input" placeholder="Почта" type='email' />
                             {errors.email ? <p className="basketLayout__errorMessage" >{errors.email.message}</p> : null}
                         </div>
-
                         <div className="basketLayout__item">
                             <input
                                 {...register('phone', {
@@ -97,7 +96,7 @@ const BasketPage = () => {
                 </form>
             </Modal>
             <Hamburger />
-            <BasketLayout />
+            <BasketLayout setModalActive={setModalActive} />
         </HelmetProvider>
     )
 }

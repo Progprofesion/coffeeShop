@@ -24,7 +24,7 @@ import './basketLyout.scss';
 import 'animate.css';
 
 
-const BasketLayout = () => {
+const BasketLayout = ({ setModalActive }) => {
 
     const addProduct = useSelector(state => state.basket.items);
     const stateBasketAmount = useSelector(state => state.basket.amount);
@@ -36,8 +36,6 @@ const BasketLayout = () => {
     const [localBasketTotal, setLocalBasketTotal] = useLocalStorage('total', 0);
 
     const dispatch = useDispatch();
-
-    const [modalActive, setModalActive] = useState(false);
 
     useEffect(() => {
         setLocalBasketAmount(stateBasketAmount);

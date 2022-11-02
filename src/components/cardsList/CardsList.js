@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import SearchComponent from '../searchComponent/SearchComponent';
 import Spinner from '../spinner/Spinner';
 import Error from 'src/assets/Error.gif';
-import CardsListItem from '../cardsListItem/cardsListItem';
+import CardsListItem from '../cardsListItem/CardsListItem';
 
 
 import {

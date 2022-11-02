@@ -1,6 +1,7 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
 import { useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import Hamburger from '../hamburger/Hamburger';
 import Modal from '../modal/Modal';
@@ -8,9 +9,14 @@ import Modal from '../modal/Modal';
 import { useMask } from 'src/hooks/useMask';
 
 import BasketLayout from '../basket/BasketLayout';
+import Footer from '../footer/Footer';
 
 
 const BasketPage = () => {
+
+    const addProduct = useSelector(state => state.basket.items);
+    const total = useSelector(state => state.basket.total);
+
     const {
         register,
         formState: { errors },
@@ -29,9 +35,25 @@ const BasketPage = () => {
     const [modalActive, setModalActive] = useState(false);
 
     const onSubmit = (data) => {
-        alert(JSON.stringify(data));
+        alert(`Данные пользователя: 
+        Телефон: ${data.phone}
+        Имя: ${data.name}
+        Почта: ${data.email}`)
+        alert(`ЗАКАЗ: ${normalData}, 
+            Общая сумма: ${JSON.stringify(total)})`);
         reset();
     };
+
+    const normalize = (arr) => {
+        return arr.map(({ title, quantity, price, }) => {
+            const data = `
+            ${title},
+            Количество: ${quantity}, Цена: ${price}`;
+            return data
+        })
+    };
+
+    const normalData = normalize(addProduct)
 
     return (
         <HelmetProvider>
@@ -97,6 +119,7 @@ const BasketPage = () => {
             </Modal>
             <Hamburger />
             <BasketLayout setModalActive={setModalActive} />
+            <Footer />
         </HelmetProvider>
     )
 }

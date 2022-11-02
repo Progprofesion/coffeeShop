@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import LinkPage from '../linkPage/LinkPage';
-import Footer from '../footer/Footer';
 
 import coffeeIcon from 'src/assets/coffeeIcon.svg';
 
@@ -28,7 +27,7 @@ const BasketLayout = ({ setModalActive }) => {
 
     const addProduct = useSelector(state => state.basket.items);
     const stateBasketAmount = useSelector(state => state.basket.amount);
-    const totalTest = useSelector(state => state.basket.total);
+    const total = useSelector(state => state.basket.total);
 
     // eslint-disable-next-line
     const [localbasketObj, setLocalbasketArr] = useLocalStorage('object', 0);
@@ -40,7 +39,7 @@ const BasketLayout = ({ setModalActive }) => {
     useEffect(() => {
         setLocalBasketAmount(stateBasketAmount);
         setLocalbasketArr(addProduct);
-        setLocalBasketTotal(Number(totalTest));
+        setLocalBasketTotal(Number(total));
         dispatch(basketAmount(addProduct));
         // eslint-disable-next-line
     }, [addProduct, stateBasketAmount]);
@@ -104,7 +103,6 @@ const BasketLayout = ({ setModalActive }) => {
                         <button onClick={() => setModalActive(true)} className="basketLayout__btnBuy">Place an order</button>
                     </section>
                 </div>
-                <Footer />
             </section>
 
         </>

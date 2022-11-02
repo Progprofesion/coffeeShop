@@ -2,7 +2,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import HeadBanner from '../headBanner/HeadBanner';
 import pleasureAbout from 'src/assets/pleasureAbout.svg';
-import AboutOur from '../headerPages/HeaderPages';
+import HeaderPages from '../headerPages/HeaderPages';
 import CardsList from '../cardsList/CardsList';
 import Footer from '../footer/Footer';
 import Hamburger from '../hamburger/Hamburger';
@@ -23,7 +23,7 @@ const PleasurePage = () => {
                 <Hamburger />
                 <BasketSticky />
                 <LoginView />
-                <AboutOur style={{
+                <HeaderPages style={{
                     background: "url(/static/media/bgPleasurePage.fe6ab9436eeb459ce2ab.png) center / cover no-repeat"
                 }} title={'For your pleasure'} />
                 <CardsList cardsView={0} />

@@ -8,10 +8,10 @@ import BasketSticky from '../basket/BasketSticky';
 import LoginView from '../auth/LoginView';
 
 import bgPleasurePage from '../../assets/bgPleasurePage.jpg';
-import bgPleasurePage1 from '../../assets/bgPleasurePage1.jpg';
+import bgBest from '../../assets/bgBest.png';
 
 const PleasurePage = () => {
-    console.log(bgPleasurePage1)
+    console.log(bgBest)
     return (
         <>
             <HelmetProvider>
@@ -24,14 +24,16 @@ const PleasurePage = () => {
                 <Hamburger />
                 <BasketSticky />
                 <LoginView />
-                <HeaderPages style={{
-                    background: "url(/static/media/bgPleasurePage.fe6ab9436eeb459ce2ab.png) center / cover no-repeat"
-                }}
-                    title={'For your pleasure'} />
-                <CardsList cardsView={0}
+                <HeaderPages
                     style={{
-                        background: "url(/static/media/bgPleasurePage.100b9e59949549f00cc0.jpg) center / cover no-repeat"
-                    }} />
+                        background: "url(/static/media/bgPleasurePage.fe6ab9436eeb459ce2ab.png) center / cover no-repeat"
+                    }}
+                    title={'For your pleasure'} />
+                <CardsList
+                    cardsView={0}
+                    style={{ background: 'url(/static/media/bgBest.d188eb7d5a4a40d545af.png) center / cover no-repeat' }}
+                    height={{ 'minHeight': '624px' }}
+                />
                 <Footer />
             </HelmetProvider>
         </>

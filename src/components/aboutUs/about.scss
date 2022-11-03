@@ -1,11 +1,14 @@
 .about {
+    padding-top: 80px;  
+    // background-color: antiquewhite;
+    background: url(../../assets/bgAboutUs.png) center / cover no-repeat;
     &__title {      
-            margin-top: 80px;  
             text-align: center;   
     }
     &__descr {
         width: 590px;
-        margin: 40px auto;
+        margin: 0 auto;
+        padding-bottom: 65px;
     }
 }
 

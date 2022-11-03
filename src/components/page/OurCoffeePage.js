@@ -2,6 +2,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 
 import HeaderPages from '../headerPages/HeaderPages';
+import AboutUs from '../aboutUs/About';
 import CardsList from '../cardsList/CardsList';
 import Footer from '../footer/Footer';
 import Humburger from '../hamburger/Hamburger';
@@ -12,6 +13,7 @@ import bgCardsList from '../../assets/bgCardsList.jpg';
 import bgOurCoffeePage from '../../assets/bgOurCoffeePage.png';
 import bgPleasurePage from '../../assets/bgPleasurePage.png';
 import bgOurCoffee from '../../assets/bgOurCoffee.jpg';
+
 
 
 const OurCoffeePage = () => {
@@ -27,14 +29,16 @@ const OurCoffeePage = () => {
                 <Humburger />
                 <BasketSticky />
                 <LoginView />
-                <HeaderPages style={{
-                    background: "url(/static/media/bgOurCoffeePage.9928212fb1eb01de6816.png) center / cover no-repeat"
-                }}
-                    title={'Our coffee'} />
-                <CardsList cardsView={0}
+                <HeaderPages
                     style={{
-                        background: "url(/static/media/bgOurCoffee.fdb721550e539681092e.jpg) center / cover no-repeat"
-                    }} />
+                        background: "url(/static/media/bgOurCoffeePage.9928212fb1eb01de6816.png) center / cover no-repeat"
+                    }}
+                    title={'Our coffee'} />
+                <AboutUs />
+                <CardsList
+                    cardsView={0}
+                    height={{ 'minHeight': '624px' }}
+                />
                 <Footer />
             </HelmetProvider>
         </>

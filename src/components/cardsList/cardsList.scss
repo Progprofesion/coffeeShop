@@ -1,13 +1,15 @@
 .cardsList {
-    background: url(../../assets/bgBest.png);
+    background: url(../../assets/bgOurCoffee.jpg) center / cover no-repeat;
     position: relative;
-    padding: 100px 0 100px;
+    padding: 150px 0 150px;
     &__title {
         position: absolute;
         text-align: center;
         left: 50%;
         transform: translateX(-50%);
-        top: 30px;
+        top: 40px;
+        color: gold;
+        font-size: 56px;
     }
     &__wrapper {
         max-width: 800px;
@@ -21,6 +23,7 @@
         background: url(../../assets/bgCardsList.jpg) center center no-repeat;
         padding: 50px;
         max-width: 1000px;
+        // min-height: 815px;
         border-radius: 50px;
         margin: 0 auto;
         width: 85%;

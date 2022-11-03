@@ -7,11 +7,7 @@ import Hamburger from '../hamburger/Hamburger';
 import BasketSticky from '../basket/BasketSticky';
 import LoginView from '../auth/LoginView';
 
-import bgPleasurePage from '../../assets/bgPleasurePage.jpg';
-import bgBest from '../../assets/bgBest.png';
-
 const PleasurePage = () => {
-    console.log(bgBest)
     return (
         <>
             <HelmetProvider>

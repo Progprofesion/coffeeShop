@@ -5,12 +5,10 @@ import { useSelector } from 'react-redux';
 
 import Hamburger from '../hamburger/Hamburger';
 import Modal from '../modal/Modal';
-
-import { useMask } from 'src/hooks/useMask';
-
-import BasketLayout from '../basket/BasketLayout';
+import BasketView from '../basket/BasketView';
 import Footer from '../footer/Footer';
 
+import { useMask } from 'src/hooks/useMask';
 
 const BasketPage = () => {
 
@@ -118,7 +116,7 @@ const BasketPage = () => {
                 </form>
             </Modal>
             <Hamburger />
-            <BasketLayout setModalActive={setModalActive} />
+            <BasketView setModalActive={setModalActive} />
             <Footer />
         </HelmetProvider>
     )

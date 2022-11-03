@@ -1,14 +1,11 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import Header from "../headerMain/HeaderMain";
-import About from "../aboutUs/About";
-import Best from "../best/best";
 import Footer from "../footer/Footer";
 import Humburger from "../hamburger/Hamburger";
 import BasketSticky from "../basket/BasketSticky";
 import LoginView from '../auth/LoginView';
 import CardsList from '../cardsList/CardsList';
-
 
 const MainPage = () => {
     return (

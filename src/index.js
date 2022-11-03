@@ -7,6 +7,7 @@ import store from './store';
 
 import './firebase';
 import './styles/index.scss';
+import "src/styles/fontSize.scss";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

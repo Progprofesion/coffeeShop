@@ -7,6 +7,7 @@ import MainPage from '../page/MainPage';
 import Spinner from '../spinner/Spinner';
 import LoginPage from '../page/LoginPage';
 import RegisterPage from '../page/RegisterPage';
+import technicalFile from '../../technicalFile';
 
 import './app.scss';
 

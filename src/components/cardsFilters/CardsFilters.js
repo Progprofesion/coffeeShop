@@ -28,7 +28,7 @@ const CardsFilters = () => {
             return <h5>No filters</h5>
         }
         return arr.map(({ name, label, className }) => {
-            const btnClass = classNames('filter__btn', className, {
+            const btnClass = classNames('cardsFilters__btn', className, {
                 'active': name === activeFilter
             });
             return <button
@@ -43,10 +43,10 @@ const CardsFilters = () => {
     const elements = renderFilters(filters)
 
     return (
-        <div className="filter">
+        <div className="cardsFilters">
             <div className="container">
-                <div className="filter__wrapper">
-                    <div className="filter__title fz-14">Or filter</div>
+                <div className="cardsFilters__wrapper">
+                    <div className="cardsFilters__title fz-14">Or filter</div>
                     {elements}
                 </div>
             </div>

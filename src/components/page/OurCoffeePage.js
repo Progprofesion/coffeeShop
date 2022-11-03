@@ -2,7 +2,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 
 import HeaderPages from '../headerPages/HeaderPages';
-import AboutUs from '../aboutUs/About';
+import AboutUs from '../aboutUs/AboutUs';
 import CardsList from '../cardsList/CardsList';
 import Footer from '../footer/Footer';
 import Humburger from '../hamburger/Hamburger';

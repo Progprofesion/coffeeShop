@@ -9,13 +9,6 @@ import Humburger from '../hamburger/Hamburger';
 import BasketSticky from '../basket/BasketSticky';
 import LoginView from '../auth/LoginView';
 
-import bgCardsList from '../../assets/bgCardsList.jpg';
-import bgOurCoffeePage from '../../assets/bgOurCoffeePage.png';
-import bgPleasurePage from '../../assets/bgPleasurePage.png';
-import bgOurCoffee from '../../assets/bgOurCoffee.jpg';
-
-
-
 const OurCoffeePage = () => {
     return (
         <>

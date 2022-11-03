@@ -31,7 +31,7 @@ const HeaderMain = () => {
                 <h2 className="headerMain__subtitle">We makes every day full of energy and taste</h2>
                 <h2 className="headerMain__subtitleShadow">Want to try our beans?</h2>
                 <Link to="/ourcoffee">
-                    <button className="headerMain__main">More</button>
+                    <button className="headerMain__mainBtn">More</button>
                 </Link>
             </div>
         </header>

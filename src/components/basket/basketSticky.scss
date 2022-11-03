@@ -8,7 +8,8 @@
     top: 94px;;
     border-radius: 10px;
     border: 2px solid rgba(174, 242, 224, 0.657);
-    background-color: rgba(174, 242, 224, 0.657);
+    background: url(../../assets/bgMenu.jpg) center / cover no-repeat;
+    color: gold;
     align-items: center;
     z-index: 1;
     &__amount {

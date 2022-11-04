@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, createEntityAdapter } from '@reduxjs/toolkit';
-import { useHttp } from '../../hooks/http.hook';
+import { useHttp } from 'src/hooks/http.hook';
 
 const cardsAdapter = createEntityAdapter();
 const initialState = cardsAdapter.getInitialState({

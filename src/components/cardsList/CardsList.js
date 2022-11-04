@@ -122,12 +122,14 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
     const elements = renderCardsList(filteredCards);
     return (
         <section className="cardsList" style={style} >
-            <h2 className="cardsList__title">{title}</h2>
-            <div className="cardsList__bg" style={bg} >
-                <div className="container">
-                    <SearchComponent />
-                    <div className="cardsList__wrapper" style={height}>
-                        {elements}
+            <div className="container">
+                <h2 className="cardsList__title">{title}</h2>
+                <div className="cardsList__bg" style={bg} >
+                    <div className="container">
+                        <SearchComponent />
+                        <div className="cardsList__wrapper" style={height}>
+                            {elements}
+                        </div>
                     </div>
                 </div>
             </div>

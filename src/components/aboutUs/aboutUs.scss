@@ -4,7 +4,7 @@
     background: url(../../assets/bgAboutUs.png) center / cover no-repeat;
     text-align: center;
     &__descr {
-        width: 590px;
+        max-width: 590px;
         margin: 0 auto;
         padding-bottom: 65px;
     }

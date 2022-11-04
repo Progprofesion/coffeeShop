@@ -1,4 +1,4 @@
-// Локальные картинки для работы с инлайн стилями
+// Локальные картинки
 // eslint-disable-next-line
 import bgCardsList from './assets/bgCardsList.jpg';
 // eslint-disable-next-line

@@ -7,7 +7,8 @@ import MainPage from '../page/MainPage';
 import Spinner from '../spinner/Spinner';
 import LoginPage from '../page/LoginPage';
 import RegisterPage from '../page/RegisterPage';
-import technicalFile from '../../technicalFile';
+// eslint-disable-next-line
+import technicalFile from 'src/technicalFile';
 
 import './app.scss';
 
@@ -22,7 +23,6 @@ const App = () => {
     return isAuth ? (
         <BrowserRouter>
             <main className="app">
-                {/* <div className="content"> */}
                 <Suspense fallback={<Spinner />}>
                     <Routes>
                         <Route path="/" element={<MainPage />} />
@@ -35,21 +35,18 @@ const App = () => {
                         <Route path="*" element={<Page404 />} />
                     </Routes>
                 </Suspense>
-                {/* </div> */}
             </main>
         </BrowserRouter>
     ) : (
         <BrowserRouter>
             <main className="app">
-                <div className="content">
-                    <Suspense fallback={<Spinner />}>
-                        <Routes>
-                            <Route path="*" element={<Navigate to='/login' />} />
-                            <Route path="/login" element={<LoginPage />} />
-                            <Route path="/register" element={<RegisterPage />} />
-                        </Routes>
-                    </Suspense>
-                </div>
+                <Suspense fallback={<Spinner />}>
+                    <Routes>
+                        <Route path="*" element={<Navigate to='/login' />} />
+                        <Route path="/login" element={<LoginPage />} />
+                        <Route path="/register" element={<RegisterPage />} />
+                    </Routes>
+                </Suspense>
             </main>
         </BrowserRouter>
     )

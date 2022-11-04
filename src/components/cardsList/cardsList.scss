@@ -21,12 +21,10 @@
     }
     &__bg {
         background: url(../../assets/bgCardsList.jpg) center center no-repeat;
-        padding: 50px;
+        padding: 50px 0 50px 0;
         max-width: 1000px;
-        // min-height: 815px;
         border-radius: 50px;
         margin: 0 auto;
-        width: 85%;
     }
 }
 
@@ -42,7 +40,4 @@
             background-size: cover;
         }
     }
-}
-
-@media (max-width: 767px) {
 }

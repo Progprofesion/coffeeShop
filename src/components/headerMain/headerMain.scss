@@ -54,16 +54,10 @@
     }   
 };
 
-.container {
-    max-width: 1200px;
-}
 
 // Media ----------
 
 @media (max-width: 991px) {
-    .container {
-        max-width: 90%;
-    }
     .headerMain {
         &__title {
             font-size: 35px;

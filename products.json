@@ -60,25 +60,25 @@
             "id": "all",
             "name": "all",
             "label": "all",
-            "className": "filter__all"
+            "className": "cardsFilters__all"
         },
         {
             "id": "Brazil",
             "name": "Brazil",
             "label": "Brazil",
-            "className": "filter__brazil"
+            "className": "cardsFilters__brazil"
         },
         {
             "id": "Kenya",
             "name": "Kenya",
             "label": "Kenya",
-            "className": "filter__Kenya"
+            "className": "cardsFilters__Kenya"
         },
         {
             "id": "Columbias",
             "name": "Columbias",
             "label": "Columbias",
-            "className": "filter__Columbias"
+            "className": "cardsFilters__Columbias"
         }
     ]
 }

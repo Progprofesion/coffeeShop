@@ -62,10 +62,10 @@ const BasketPage = () => {
                 <title>Basket</title>
             </Helmet>
             <Modal active={modalActive} setActive={setModalActive} >
-                <form onSubmit={handleSubmit(onSubmit)} className="basketLayout__form" action="">
-                    <h4 className="basketLayout__title">Оформить заказ</h4>
-                    <div className="basketLayout__modal">
-                        <div className="basketLayout__item">
+                <form onSubmit={handleSubmit(onSubmit)} className="basketView__form" action="">
+                    <h4 className="basketView__title">Оформить заказ</h4>
+                    <div className="basketView__modal">
+                        <div className="basketView__item">
                             <input
                                 {...register('name', {
                                     required: 'Поле обязательно к заполнению',
@@ -74,10 +74,10 @@ const BasketPage = () => {
                                         message: 'Минимум 3 буквы'
                                     }
                                 })}
-                                className="basketLayout__input" placeholder="Имя" type='text' />
-                            {errors.name ? <p className="basketLayout__errorMessage" >{errors.name.message}</p> : null}
+                                className="basketView__input" placeholder="Имя" type='text' />
+                            {errors.name ? <p className="basketView__errorMessage" >{errors.name.message}</p> : null}
                         </div>
-                        <div className="basketLayout__item">
+                        <div className="basketView__item">
                             <input
                                 {...register('email', {
                                     required: 'Поле обязательно к заполнению',
@@ -87,10 +87,10 @@ const BasketPage = () => {
                                         message: 'Не правильный адрес почты'
                                     }
                                 })}
-                                className="basketLayout__input" placeholder="Почта" type='email' />
-                            {errors.email ? <p className="basketLayout__errorMessage" >{errors.email.message}</p> : null}
+                                className="basketView__input" placeholder="Почта" type='email' />
+                            {errors.email ? <p className="basketView__errorMessage" >{errors.email.message}</p> : null}
                         </div>
-                        <div className="basketLayout__item">
+                        <div className="basketView__item">
                             <input
                                 {...register('phone', {
                                     required: 'Поле обязательно к заполнению',
@@ -99,7 +99,7 @@ const BasketPage = () => {
                                         message: 'Минимум 8 символов',
                                     },
                                 })}
-                                className="basketLayout__input" placeholder="Телефон" type='tel'
+                                className="basketView__input" placeholder="Телефон" type='tel'
                                 {...rest} name="phone" ref={(e) => {
                                     ref(e)
                                     inputRef.current = e
@@ -109,10 +109,10 @@ const BasketPage = () => {
                                 onPaste={onPhonePaste}
                                 maxLength="18"
                             />
-                            {errors.phone ? <p className="basketLayout__errorMessage" >{errors.phone.message}</p> : null}
+                            {errors.phone ? <p className="basketView__errorMessage" >{errors.phone.message}</p> : null}
                         </div>
                     </div>
-                    <button type='submit' className="basketLayout__btnBuy">Купить</button>
+                    <button type='submit' className="basketView__btnBuy">Купить</button>
                 </form>
             </Modal>
             <Hamburger />

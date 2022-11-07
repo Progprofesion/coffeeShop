@@ -6,6 +6,7 @@ import SearchComponent from '../searchComponent/SearchComponent';
 import Spinner from '../spinner/Spinner';
 import Error from 'src/assets/Error.gif';
 import CardsListItem from '../cardsListItem/CardsListItem';
+import Skeleton from '../skeleton/Skeleton';
 
 
 import {
@@ -65,10 +66,8 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
 
     }, [activeFilter, searchCoffeeFiltered]);
 
-    if (isLoading) {
-        return <div><Spinner /></div>
-    } else if (isError) {
-        return <div><Error /></div>
+    if (isError) {
+        return <Error />
     }
 
     const renderCardsList = (arr) => {
@@ -105,16 +104,17 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
                 dispatch(removeProduct(id))
             };
             if (page > cardsView) {
-                return <CardsListItem
-                    key={page}
-                    price={price}
-                    id={id}
-                    img={img}
-                    title={title}
-                    country={country}
-                    quantity={quantity}
-                    basketIncr={basketIncr}
-                    basketDecr={basketDecr} />
+                return isLoading ? [...new Array(1)].map((_, index) => <Skeleton key={index} />)
+                    : <CardsListItem
+                        key={page}
+                        price={price}
+                        id={id}
+                        img={img}
+                        title={title}
+                        country={country}
+                        quantity={quantity}
+                        basketIncr={basketIncr}
+                        basketDecr={basketDecr} />
             }
         });
     };

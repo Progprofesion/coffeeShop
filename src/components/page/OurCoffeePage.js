@@ -8,6 +8,7 @@ import Footer from '../footer/Footer';
 import Humburger from '../hamburger/Hamburger';
 import BasketSticky from '../basket/BasketSticky';
 import LoginView from '../auth/LoginView';
+import Sekeleton from '../skeleton/Skeleton';
 
 const OurCoffeePage = () => {
     return (

@@ -6,7 +6,7 @@ import SearchComponent from '../searchComponent/SearchComponent';
 import Spinner from '../spinner/Spinner';
 import Error from 'src/assets/Error.gif';
 import CardsListItem from '../cardsListItem/CardsListItem';
-import Skeleton from '../skeleton/Skeleton';
+import SkeletonCardsList from '../skeleton/SkeletonCardsList';
 
 
 import {
@@ -104,7 +104,7 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
                 dispatch(removeProduct(id))
             };
             if (page > cardsView) {
-                return isLoading ? [...new Array(1)].map((_, index) => <Skeleton key={index} />)
+                return isLoading ? [...new Array(1)].map((_, index) => <SkeletonCardsList key={index} />)
                     : <CardsListItem
                         key={page}
                         price={price}

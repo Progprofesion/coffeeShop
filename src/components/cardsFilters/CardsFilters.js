@@ -5,6 +5,9 @@ import { activeFilterChanged, selectAll, fetchFilters } from 'src/store/slices/c
 import store from 'src/store';
 import classNames from 'classnames';
 
+import Spinner from '../spinner/Spinner';
+import SkeletonFilters from '../skeleton/SkeletonFilters';
+
 const CardsFilters = () => {
     const { filtersLoadingStatus, activeFilter } = useSelector(state => state.filters);
     const filters = selectAll(store.getState());
@@ -18,7 +21,7 @@ const CardsFilters = () => {
 
 
     if (filtersLoadingStatus === 'loading') {
-        return <h5 className="cardsFilters__statusLoading">Loading...</h5>
+        return <SkeletonFilters />
     } else if (filtersLoadingStatus === 'error') {
         return <h5 className="cardsFilters__statusLoading">Error</h5>
     }

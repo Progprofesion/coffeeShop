@@ -1,6 +1,10 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import {
+    CSSTransition,
+    TransitionGroup,
+} from 'react-transition-group';
 
 import LinkPage from '../linkPage/LinkPage';
 
@@ -58,23 +62,27 @@ const BasketLayout = ({ setModalActive }) => {
     };
 
 
+
     const view = (arr) => {
         return arr.map(({ id, img, title, country, price, quantity }) => {
-            return <div key={id} className="basketView__wrapper animate__animated animate__flipInX">
-                <Link to={`/ourcoffee/${id}`}>
-                    <img src={img} alt="coffee" className="basketView__img" />
-                </Link>
-                <div className="basketView__quantity">{quantity}</div>
-                <div className="basketView__result">
-                    <div className="basketView__subtitle">{title}</div>
-                    <div className="basketView__country">{country}</div>
-                    <div className="basketView__price">{price}</div>
-                    <div className="basketView__btnWrapper">
-                        <button onClick={() => incr(id, price)} className="basketView__btnWrapper-btn">+</button>
-                        <button onClick={() => decr(id, price)} className="basketView__btnWrapper-btn">-</button>
+            return <CSSTransition key={id} timeout={500} classNames="basketView__wrapper" >
+                <div key={id}
+                    className="basketView__wrapper">
+                    <Link to={`/ourcoffee/${id}`}>
+                        <img src={img} alt="coffee" className="basketView__img" />
+                    </Link>
+                    <div className="basketView__quantity">{quantity}</div>
+                    <div className="basketView__result">
+                        <div className="basketView__subtitle">{title}</div>
+                        <div className="basketView__country">{country}</div>
+                        <div className="basketView__price">{price}</div>
+                        <div className="basketView__btnWrapper">
+                            <button onClick={() => incr(id, price)} className="basketView__btnWrapper-btn">+</button>
+                            <button onClick={() => decr(id, price)} className="basketView__btnWrapper-btn">-</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </CSSTransition>
         })
     };
 
@@ -99,7 +107,9 @@ const BasketLayout = ({ setModalActive }) => {
                         <h2 className="basketView__title">Shopping cart</h2>
                         <h3 className="basketView__amount">Amount of products: {localBasketAmount}</h3>
                         <h3 className="basketView__amount">Total price: {localBasketTotal}</h3>
-                        {elements}
+                        <TransitionGroup component={null}>
+                            {elements}
+                        </TransitionGroup>
                         <button onClick={() => setModalActive(true)} className="basketView__btnBuy">Place an order</button>
                     </div>
                 </div>

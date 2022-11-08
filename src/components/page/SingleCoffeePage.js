@@ -2,11 +2,9 @@ import { useParams } from 'react-router-dom';
 import { useGetProductsIdQuery } from '../api/apiSlice';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-import HeadBanner from '../headBanner/HeadBanner';
 import SingleCoffeeItem from '../singleCoffeeItem/SingleCoffeeItem';
 import Footer from '../footer/Footer';
 import Hamburger from '../hamburger/Hamburger';
-import BasketSticky from '../basket/BasketSticky';
 
 import Page404 from './404';
 import Spinner from '../spinner/Spinner';

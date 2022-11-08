@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import './cardsFilters.scss';
-import { activeFilterChanged, selectAll, fetchFilters } from 'src/store/slices/cadsFiltersSlice';
-import store from 'src/store';
 import classNames from 'classnames';
 
-import Spinner from '../spinner/Spinner';
+import { activeFilterChanged, selectAll, fetchFilters } from 'src/store/slices/cadsFiltersSlice';
+import store from 'src/store';
 import SkeletonFilters from '../skeleton/SkeletonFilters';
+import './cardsFilters.scss';
 
 const CardsFilters = () => {
     const { filtersLoadingStatus, activeFilter } = useSelector(state => state.filters);

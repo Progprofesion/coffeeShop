@@ -3,7 +3,6 @@ import { useGetProductsQuery } from '../api/apiSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 import SearchComponent from '../searchComponent/SearchComponent';
-import Spinner from '../spinner/Spinner';
 import Error from 'src/assets/Error.gif';
 import CardsListItem from '../cardsListItem/CardsListItem';
 import SkeletonCardsList from '../skeleton/SkeletonCardsList';

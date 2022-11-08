@@ -4,7 +4,6 @@ import 'animate.css';
 import './cardsListItem.scss';
 
 const CardsListItem = ({ id, img, title, country, price, quantity, basketIncr, basketDecr }) => {
-
     return (
         <div
             name='cards'

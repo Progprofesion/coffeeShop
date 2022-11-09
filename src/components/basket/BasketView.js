@@ -1,122 +1,32 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useRef } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
-import {
-    CSSTransition,
-    TransitionGroup,
-} from 'react-transition-group';
 
-import LinkPage from '../linkPage/LinkPage';
+const BasketView = ({ id, img, title, country, price, quantity, incr, decr, ...rest }) => {
 
-import coffeeIcon from 'src/assets/coffeeIcon.svg';
-
-import {
-    incrementQuantity,
-    decrementQuantity,
-    basketAmount,
-    removeProduct,
-    activeIncrTotals,
-    activeDecrTotals,
-    statePrice,
-} from 'src/store/slices/basketSlice';
-
-import { useLocalStorage } from 'src/hooks/useLocalStorage';
-
-import './basketView.scss';
-
-import 'animate.css';
-
-
-const BasketLayout = ({ setModalActive }) => {
-
-    const addProduct = useSelector(state => state.basket.items);
-    const stateBasketAmount = useSelector(state => state.basket.amount);
-    const total = useSelector(state => state.basket.total);
-
-    // eslint-disable-next-line
-    const [localbasketObj, setLocalbasketArr] = useLocalStorage('object', 0);
-    const [localBasketAmount, setLocalBasketAmount] = useLocalStorage('amount', 0);
-    const [localBasketTotal, setLocalBasketTotal] = useLocalStorage('total', 0);
-
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        setLocalBasketAmount(stateBasketAmount);
-        setLocalbasketArr(addProduct);
-        setLocalBasketTotal(Number(total));
-        dispatch(basketAmount(addProduct));
-        // eslint-disable-next-line
-    }, [addProduct, stateBasketAmount]);
-
-    const incr = (id, price) => {
-        dispatch(statePrice({ price }));
-        dispatch(activeIncrTotals(price));
-        dispatch(incrementQuantity(id));
-    };
-
-    const decr = (id, price) => {
-        dispatch(statePrice({ price }));
-        dispatch(activeDecrTotals(price));
-        dispatch(decrementQuantity(id));
-        dispatch(removeProduct(id));
-    };
-
-
-
-    const view = (arr) => {
-        return arr.map(({ id, img, title, country, price, quantity }) => {
-            return <CSSTransition key={id} timeout={500} classNames="basketView__wrapper" >
-                <div key={id}
-                    className="basketView__wrapper">
-                    <Link to={`/ourcoffee/${id}`}>
-                        <img src={img} alt="coffee" className="basketView__img" />
-                    </Link>
-                    <div className="basketView__quantity">{quantity}</div>
-                    <div className="basketView__result">
-                        <div className="basketView__subtitle">{title}</div>
-                        <div className="basketView__country">{country}</div>
-                        <div className="basketView__price">{price}</div>
-                        <div className="basketView__btnWrapper">
-                            <button onClick={() => incr(id, price)} className="basketView__btnWrapper-btn">+</button>
-                            <button onClick={() => decr(id, price)} className="basketView__btnWrapper-btn">-</button>
-                        </div>
-                    </div>
-                </div>
-            </CSSTransition>
-        })
-    };
-
-    const elements = view(addProduct)
+    const nodeRef = useRef(null);
 
     return (
-        <>
-            <section className="basketView">
-                <LinkPage img={coffeeIcon} style={{ margin: '0 auto' }}>
-                    <Link to='/'>
-                        <div className="linkPageBlack__descr fz-12">Coffee house</div>
-                    </Link>
-                    <Link to='/ourcoffee'>
-                        <div className="linkPageBlack__descr fz-12">Our coffee</div>
-                    </Link>
-                    <Link to="/pleasure">
-                        <div className="linkPageBlack__descr fz-12">For your pleasure</div>
-                    </Link>
-                </LinkPage>
-                <div className="container">
-                    <div className="basketView__layout">
-                        <h2 className="basketView__title">Shopping cart</h2>
-                        <h3 className="basketView__amount">Amount of products: {localBasketAmount}</h3>
-                        <h3 className="basketView__amount">Total price: {localBasketTotal}</h3>
-                        <TransitionGroup component={null}>
-                            {elements}
-                        </TransitionGroup>
-                        <button onClick={() => setModalActive(true)} className="basketView__btnBuy">Place an order</button>
+        <CSSTransition {...rest} key={id} nodeRef={nodeRef} timeout={500} classNames="basketView__wrapper" >
+            <div key={id}
+                ref={nodeRef}
+                className="basketView__wrapper">
+                <Link to={`/ourcoffee/${id}`}>
+                    <img src={img} alt="coffee" className="basketView__img" />
+                </Link>
+                <div className="basketView__quantity">{quantity}</div>
+                <div className="basketView__result">
+                    <div className="basketView__subtitle">{title}</div>
+                    <div className="basketView__country">{country}</div>
+                    <div className="basketView__price">{price}</div>
+                    <div className="basketView__btnWrapper">
+                        <button onClick={() => incr(id, price)} className="basketView__btnWrapper-btn">+</button>
+                        <button onClick={() => decr(id, price)} className="basketView__btnWrapper-btn">-</button>
                     </div>
                 </div>
-            </section>
-
-        </>
+            </div>
+        </CSSTransition>
     )
-};
+}
 
-export default BasketLayout;
+export default BasketView

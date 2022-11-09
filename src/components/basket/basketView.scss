@@ -47,10 +47,10 @@
     }
     &__quantity {
         position: absolute;
+        margin-top: -17px;
         width: 25px;
         height: 28px;
-        top: -15px;
-        left: 142px;
+        left: 165px;
         border: 1px solid #f7bb7a;
         border-radius: 50px;
         color: brown;
@@ -59,7 +59,7 @@
     &__btnWrapper {
         position: absolute;
         margin-top: -35px;
-        right: 50px;
+        right: 70px;
         width: 110px;
         display: flex;
         justify-content: space-between;
@@ -96,26 +96,6 @@
         width: 100%;
     }
 } 
-
-
-// .basketView__wrapper {
-//     &-enter {
-//         opacity: 0.1;
-//         transition: opacity 500ms ease-in;
-//     }
-//     &-enter-active {
-//         opacity: 0.1;
-//         transition: opacity 500ms ease-in;
-//     }
-//     &-exit {
-//         opacity: 1;
-//         transition: opacity 500ms ease-in;
-//     }
-//     &-exit-active {
-//         opacity: 0.1;
-//         transition: opacity 500ms ease-in;
-//     }
-// }
 
 .basketView__wrapper-enter {
     opacity: 0.1;

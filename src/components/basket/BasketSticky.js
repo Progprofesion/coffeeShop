@@ -27,7 +27,7 @@ const Basket = () => {
         setLocalbasketObj(addProduct);
         setLocalBasketTotal(Number(totalTest));
         dispatch(basketAmount(addProduct));
-        localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
+        localStorage.setItem('object', JSON.stringify(stateArrRender));
         // eslint-disable-next-line
     }, [addProduct, stateBasketAmount]);
 

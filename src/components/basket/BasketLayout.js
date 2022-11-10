@@ -30,11 +30,13 @@ const BasketLayout = ({ setModalActive }) => {
     const stateBasketAmount = useSelector(state => state.basket.amount);
     const total = useSelector(state => state.basket.total);
     const stateArrRender = useSelector(state => state.basket.stateStartArr);
+    const disable = useSelector(state => state.basket.disableButton);
 
     // eslint-disable-next-line
     const [localbasketObj, setLocalbasketObj] = useLocalStorage('object', 0);
     const [localBasketAmount, setLocalBasketAmount] = useLocalStorage('amount', 0);
     const [localBasketTotal, setLocalBasketTotal] = useLocalStorage('total', 0);
+
 
     const dispatch = useDispatch();
 
@@ -48,12 +50,8 @@ const BasketLayout = ({ setModalActive }) => {
     }, [addProduct, stateBasketAmount, stateArrRender, localbasketObj]);
 
 
-
-
-
     const view = (arr) => {
         return arr.map(({ id, img, title, country, price, quantity, ...rest }) => {
-
             const incr = () => {
                 dispatch(statePrice({ price }));
                 dispatch(activeIncrTotals(price));
@@ -66,6 +64,7 @@ const BasketLayout = ({ setModalActive }) => {
                 dispatch(decrementQuantity(id));
                 dispatch(removeProduct(id));
             };
+
             return <BasketView
                 {...rest}
                 key={id}
@@ -76,7 +75,8 @@ const BasketLayout = ({ setModalActive }) => {
                 price={price}
                 quantity={quantity}
                 incr={incr}
-                decr={decr} />
+                decr={decr}
+                isDisabled={disable} />
         })
     };
 
@@ -101,9 +101,9 @@ const BasketLayout = ({ setModalActive }) => {
                         <h2 className="basketView__title">Shopping cart</h2>
                         <h3 className="basketView__amount">Amount of products: {localBasketAmount}</h3>
                         <h3 className="basketView__amount">Total price: {localBasketTotal > 0 ? localBasketTotal.toFixed(2) + `$` : `0.00$`}</h3>
-                        {/* <TransitionGroup component={null}> */}
-                        {elements}
-                        {/* </TransitionGroup> */}
+                        <TransitionGroup>
+                            {elements}
+                        </TransitionGroup>
                         <button onClick={() => setModalActive(true)} className="basketView__btnBuy">Place an order</button>
                     </div>
                 </div>

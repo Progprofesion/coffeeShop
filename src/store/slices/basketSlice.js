@@ -1,6 +1,4 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
-import Big from 'big.js';
-
 
 const cardsAdapter = createEntityAdapter();
 const initialState = cardsAdapter.getInitialState({
@@ -9,6 +7,7 @@ const initialState = cardsAdapter.getInitialState({
     amount: localStorage.getItem('amount') || 0,
     items: JSON.parse(localStorage.getItem('object')) || [],
     stateStartArr: JSON.parse(localStorage.getItem('stateArr')) || [],
+    disableButton: false
 });
 
 const cardsSlice = createSlice({
@@ -23,18 +22,13 @@ const cardsSlice = createSlice({
         },
         activeIncrTotals: (state, action) => {
             if (state.statePrice.price) {
-                // let sum = Number(state.total) + Number(action.payload).toFixed(12);
                 let sum = (parseFloat(state.total) + action.payload).toFixed(2);
-                // let x = new Big(state.total).round(2).plus(action.payload);
                 state.total = sum
             }
         },
         activeDecrTotals: (state, action) => {
             if (state.statePrice.price) {
-                // let x = new Big(state.total).round(2).minus(action.payload);
-                // state.total = x;
                 let sum = (parseFloat(state.total) - action.payload).toFixed(2);
-                // let x = new Big(state.total).round(2).plus(action.payload);
                 state.total = sum
             }
         },
@@ -73,6 +67,7 @@ const cardsSlice = createSlice({
             if (item && item.quantity === 0) {
                 const removeItem = state.items.filter((item) => item.id !== action.payload);
                 state.items = removeItem;
+                state.disableButton = true
             }
         },
     }

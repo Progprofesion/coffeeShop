@@ -9,9 +9,9 @@ import { basketAmount } from 'src/store/slices/basketSlice';
 import './basketSticky.scss';
 
 const Basket = () => {
-    const addProduct = useSelector(state => state.basket.items);
-    const totalTest = useSelector(state => state.basket.total);
 
+    const addProduct = useSelector(state => state.basket.items);
+    const total = useSelector(state => state.basket.total);
     const stateArrRender = useSelector(state => state.basket.stateStartArr);
     const stateBasketAmount = useSelector(state => state.basket.amount);
 
@@ -25,16 +25,16 @@ const Basket = () => {
     useEffect(() => {
         setLocalBasketAmount(stateBasketAmount);
         setLocalbasketObj(addProduct);
-        setLocalBasketTotal(Number(totalTest));
+        setLocalBasketTotal(Number(total));
         dispatch(basketAmount(addProduct));
-        localStorage.setItem('object', JSON.stringify(stateArrRender));
+        localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
         // eslint-disable-next-line
-    }, [addProduct, stateBasketAmount]);
+    }, [addProduct, stateBasketAmount, stateArrRender, localbasketObj]);
 
     return (
         <Link to="/basket" className="basketSticky">
             <div className="basketSticky__amount">{localBasketAmount ? localBasketAmount : 0}</div>
-            <div className="basketSticky__price">{localBasketTotal > 0 ? localBasketTotal + `$` : `0.00$`}</div>
+            <div className="basketSticky__price">{localBasketTotal > 0 ? localBasketTotal.toFixed(2) + `$` : `0.00$`}</div>
         </Link>
     )
 };

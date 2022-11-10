@@ -82,6 +82,16 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
                 dispatch(activeIncrTotals(price))
             };
 
+            const basketDecr = (e) => {
+                e.preventDefault();
+                dispatch(statePrice({ price }))
+                if (quantity > 0) {
+                    dispatch(activeDecrTotals(price))
+                }
+                dispatch(decrementQuantity(id))
+                dispatch(removeProduct(id))
+            };
+
             const addItem = () => {
                 const item = {
                     id,
@@ -93,17 +103,9 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
                 dispatch(addProduct(item))
             };
 
-            const basketDecr = (e) => {
-                e.preventDefault();
-                dispatch(statePrice({ price }))
-                if (quantity > 0) {
-                    dispatch(activeDecrTotals(price))
-                }
-                dispatch(decrementQuantity(id))
-                dispatch(removeProduct(id))
-            };
+
             if (page > cardsView) {
-                return isLoading ? [...new Array(1)].map((_, index) => <SkeletonCardsList key={index} />)
+                return isLoading ? <SkeletonCardsList key={id} />
                     : <CardsListItem
                         key={page}
                         price={price}

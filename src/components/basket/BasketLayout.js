@@ -29,6 +29,7 @@ const BasketLayout = ({ setModalActive }) => {
     const addProduct = useSelector(state => state.basket.items);
     const stateBasketAmount = useSelector(state => state.basket.amount);
     const total = useSelector(state => state.basket.total);
+    const stateArrRender = useSelector(state => state.basket.stateStartArr);
 
     // eslint-disable-next-line
     const [localbasketObj, setLocalbasketObj] = useLocalStorage('object', 0);
@@ -42,24 +43,29 @@ const BasketLayout = ({ setModalActive }) => {
         setLocalbasketObj(addProduct);
         setLocalBasketTotal(Number(total));
         dispatch(basketAmount(addProduct));
+        localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
         // eslint-disable-next-line
-    }, [addProduct, stateBasketAmount]);
+    }, [addProduct, stateBasketAmount, stateArrRender, localbasketObj]);
 
-    const incr = (id, price) => {
-        dispatch(statePrice({ price }));
-        dispatch(activeIncrTotals(price));
-        dispatch(incrementQuantity(id));
-    };
 
-    const decr = (id, price) => {
-        dispatch(statePrice({ price }));
-        dispatch(activeDecrTotals(price));
-        dispatch(decrementQuantity(id));
-        dispatch(removeProduct(id));
-    };
+
+
 
     const view = (arr) => {
         return arr.map(({ id, img, title, country, price, quantity, ...rest }) => {
+
+            const incr = () => {
+                dispatch(statePrice({ price }));
+                dispatch(activeIncrTotals(price));
+                dispatch(incrementQuantity(id));
+            };
+
+            const decr = () => {
+                dispatch(statePrice({ price }));
+                dispatch(activeDecrTotals(price));
+                dispatch(decrementQuantity(id));
+                dispatch(removeProduct(id));
+            };
             return <BasketView
                 {...rest}
                 key={id}
@@ -74,7 +80,7 @@ const BasketLayout = ({ setModalActive }) => {
         })
     };
 
-    const elements = view(addProduct)
+    const elements = view(localbasketObj || addProduct)
 
     return (
         <>
@@ -94,10 +100,10 @@ const BasketLayout = ({ setModalActive }) => {
                     <div className="basketView__layout">
                         <h2 className="basketView__title">Shopping cart</h2>
                         <h3 className="basketView__amount">Amount of products: {localBasketAmount}</h3>
-                        <h3 className="basketView__amount">Total price: {localBasketTotal}</h3>
-                        <TransitionGroup component={null}>
-                            {elements}
-                        </TransitionGroup>
+                        <h3 className="basketView__amount">Total price: {localBasketTotal > 0 ? localBasketTotal.toFixed(2) + `$` : `0.00$`}</h3>
+                        {/* <TransitionGroup component={null}> */}
+                        {elements}
+                        {/* </TransitionGroup> */}
                         <button onClick={() => setModalActive(true)} className="basketView__btnBuy">Place an order</button>
                     </div>
                 </div>

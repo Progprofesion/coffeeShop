@@ -1,4 +1,5 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
+import Big from 'big.js';
 
 
 const cardsAdapter = createEntityAdapter();
@@ -7,7 +8,7 @@ const initialState = cardsAdapter.getInitialState({
     total: localStorage.getItem('total') || 0,
     amount: localStorage.getItem('amount') || 0,
     items: JSON.parse(localStorage.getItem('object')) || [],
-    stateStartArr: JSON.parse(localStorage.getItem('object')) || [],
+    stateStartArr: JSON.parse(localStorage.getItem('stateArr')) || [],
 });
 
 const cardsSlice = createSlice({
@@ -22,16 +23,19 @@ const cardsSlice = createSlice({
         },
         activeIncrTotals: (state, action) => {
             if (state.statePrice.price) {
-                let sum = Number(state.total) + action.payload
-                let rounded = Math.round(sum * 100) / 100;
-                state.total = rounded
+                // let sum = Number(state.total) + Number(action.payload).toFixed(12);
+                let sum = (parseFloat(state.total) + action.payload).toFixed(2);
+                // let x = new Big(state.total).round(2).plus(action.payload);
+                state.total = sum
             }
         },
         activeDecrTotals: (state, action) => {
             if (state.statePrice.price) {
-                let sum = Number(state.total) - action.payload
-                let rounded = Math.round(sum * 100) / 100;
-                state.total = rounded
+                // let x = new Big(state.total).round(2).minus(action.payload);
+                // state.total = x;
+                let sum = (parseFloat(state.total) - action.payload).toFixed(2);
+                // let x = new Big(state.total).round(2).plus(action.payload);
+                state.total = sum
             }
         },
         basketAmount: (state) => {

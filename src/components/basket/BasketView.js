@@ -17,29 +17,32 @@ const BasketView = ({ id, img, title, country, price, quantity, incr, decr, ...r
             onExiting={() => setShowButton(true)}
             onExited={() => setShowButton(false)}
             classNames="basketView__wrapper" >
-            <div
-                key={id}
-                ref={nodeRef}
-                className="basketView__wrapper">
-                <Link to={`/ourcoffee/${id}`}>
-                    <img src={img} alt="coffee" className="basketView__img" />
-                </Link>
-                <div className="basketView__quantity">{quantity}</div>
-                <div className="basketView__result">
-                    <div className="basketView__subtitle">{title}</div>
-                    <div className="basketView__country">{country}</div>
-                    <div className="basketView__price">{price}</div>
-                    <div className="basketView__btnWrapper">
-                        <button
-                            disabled={showButton}
-                            onClick={decr}
-                            className="basketView__btnWrapper-btn">-</button>
-                        <button
-                            onClick={incr}
-                            className="basketView__btnWrapper-btn">+</button>
+            <div className="animate__animated animate__flipInX ">
+                <div
+                    key={id}
+                    ref={nodeRef}
+                    className="basketView__wrapper">
+                    <Link to={`/ourcoffee/${id}`}>
+                        <img src={img} alt="coffee" className="basketView__img" />
+                    </Link>
+                    <div className="basketView__quantity">{quantity}</div>
+                    <div className="basketView__result">
+                        <div className="basketView__subtitle">{title}</div>
+                        <div className="basketView__country">{country}</div>
+                        <div className="basketView__price">{price}</div>
+                        <div className="basketView__btnWrapper">
+                            <button
+                                disabled={showButton}
+                                onClick={decr}
+                                className="basketView__btnWrapper-btn">-</button>
+                            <button
+                                onClick={incr}
+                                className="basketView__btnWrapper-btn">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </CSSTransition>
 
     )

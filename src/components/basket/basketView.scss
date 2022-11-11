@@ -1,6 +1,6 @@
 .basketView {
     background: url('../../assets/524da229af587856fb0c03e41d5ef300.jpg') center / cover ;
-    padding-bottom: 40vh;
+    padding-bottom: 50px;
     &__layout {
         max-width: 500px;
         min-height: 500px;
@@ -19,6 +19,7 @@
         margin-top: 20px;
     }
     &__wrapper {
+        position: relative;
         margin: 50px auto;
         width: 450px;
         display: flex;
@@ -47,10 +48,10 @@
     }
     &__quantity {
         position: absolute;
-        margin-top: -17px;
         width: 25px;
         height: 28px;
-        left: 165px;
+        top: -20px;
+        left: 140px;
         border: 1px solid #f7bb7a;
         border-radius: 50px;
         color: brown;
@@ -138,13 +139,12 @@
     }
     .basketView {
         padding-top: 50px;
-        margin-top: -50px;
-        // height: unset;
     }
 }
 
 @media (max-width: 576px) {
     .basketView {
+        padding-bottom: 50px;
         &__wrapper {
             max-width: 250px;
             flex-direction: column;
@@ -153,12 +153,17 @@
         }
         &__subtitle {
             margin-top: 5px;
+            text-align: center;
         }
         &__quantity {
             left: 165px;
        }
         &__img {
             margin-right: 0;
+       }
+       &__btnWrapper {
+        right: 15px;
+        bottom: 5px;
        }
         &__btnBuy {
             width: 120px;

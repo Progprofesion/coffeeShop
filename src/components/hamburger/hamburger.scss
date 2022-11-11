@@ -47,9 +47,9 @@
     z-index: 10;
     transition: 0.5s all;    
     transform: translateX(-191%);
-    // background: url(../../assets/bgMenu2.jpg);
     background: url(../../assets/bgMenu1.jpg) center / cover no-repeat;
-    // background: url(../../assets/bgMenu3.jpg) center / cover no-repeat;
+    border: 1px solid;
+    border-right-color: gold;
    &__active {
     opacity: 0.95;
     transform: translateX(0%);

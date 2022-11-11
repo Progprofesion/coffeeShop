@@ -1,13 +1,13 @@
 .cardsList {
     background: url(../../assets/bgOurCoffee.jpg) center / cover no-repeat;
     position: relative;
-    padding: 150px 0 150px;
+    padding: 230px 0 150px;
     &__title {
         position: absolute;
         text-align: center;
         left: 50%;
         transform: translateX(-50%);
-        top: 40px;
+        top: 45px;
         color: gold;
         font-size: 56px;
     }

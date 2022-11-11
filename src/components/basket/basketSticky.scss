@@ -13,12 +13,12 @@
     align-items: center;
     z-index: 1;
     &__amount {
-        padding: 0 5px 0 5px;
+        padding: 0 5px 1px 5px;
         border: 2px solid antiquewhite;
         border-radius: 30%;
     }
-    &__price {
-        padding: 0 5px 0 5px;
+    &__total {
+        padding: 0 5px 1px 5px;
         border: 2px solid antiquewhite;
         border-radius: 8px;
     }

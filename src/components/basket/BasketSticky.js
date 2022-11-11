@@ -34,7 +34,7 @@ const Basket = () => {
     return (
         <Link to="/basket" className="basketSticky">
             <div className="basketSticky__amount">{localBasketAmount ? localBasketAmount : 0}</div>
-            <div className="basketSticky__price">{localBasketTotal > 0 ? localBasketTotal.toFixed(2) + `$` : `0.00$`}</div>
+            <div className="basketSticky__total">{localBasketTotal > 0 ? localBasketTotal.toFixed(2) + `$` : `0.00$`}</div>
         </Link>
     )
 };

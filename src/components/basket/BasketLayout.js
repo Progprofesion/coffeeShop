@@ -30,7 +30,6 @@ const BasketLayout = ({ setModalActive }) => {
     const stateBasketAmount = useSelector(state => state.basket.amount);
     const total = useSelector(state => state.basket.total);
     const stateArrRender = useSelector(state => state.basket.stateStartArr);
-    const disable = useSelector(state => state.basket.disableButton);
 
     // eslint-disable-next-line
     const [localbasketObj, setLocalbasketObj] = useLocalStorage('object', 0);
@@ -75,12 +74,11 @@ const BasketLayout = ({ setModalActive }) => {
                 price={price}
                 quantity={quantity}
                 incr={incr}
-                decr={decr}
-                isDisabled={disable} />
+                decr={decr} />
         })
     };
 
-    const elements = view(localbasketObj || addProduct)
+    const elements = view(addProduct)
 
     return (
         <>

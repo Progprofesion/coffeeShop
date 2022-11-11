@@ -7,7 +7,6 @@ const initialState = cardsAdapter.getInitialState({
     amount: localStorage.getItem('amount') || 0,
     items: JSON.parse(localStorage.getItem('object')) || [],
     stateStartArr: JSON.parse(localStorage.getItem('stateArr')) || [],
-    disableButton: false
 });
 
 const cardsSlice = createSlice({
@@ -67,7 +66,6 @@ const cardsSlice = createSlice({
             if (item && item.quantity === 0) {
                 const removeItem = state.items.filter((item) => item.id !== action.payload);
                 state.items = removeItem;
-                state.disableButton = true
             }
         },
     }

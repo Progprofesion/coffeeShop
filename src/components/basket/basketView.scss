@@ -1,6 +1,5 @@
 .basketView {
-    background: url('../../assets/524da229af587856fb0c03e41d5ef300.jpg') center / cover ;
-    padding-bottom: 50px;
+
     &__layout {
         max-width: 500px;
         min-height: 500px;
@@ -119,24 +118,7 @@
 
 // Media ----------------
 
-@media (max-width: 1280px) {
-    .basketLayout {
-        &__modal {
-            flex-direction: column;
-        }
-        &__input {
-            max-width: 250px;
-        }
-        &__item {
-            margin: 15px 0;
-        }
-    }
-}
-
 @media (max-width: 767px) {
-    .basketLayout {
-        margin: 75px auto 35px;
-    }
     .basketView {
         padding-top: 50px;
     }

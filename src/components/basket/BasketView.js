@@ -2,6 +2,8 @@ import { useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
 
+import './basketView.scss';
+
 const BasketView = ({ id, img, title, country, price, quantity, incr, decr, ...rest }) => {
     const [showButton, setShowButton] = useState(false)
 

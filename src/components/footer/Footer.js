@@ -12,13 +12,13 @@ const Footer = () => {
         <footer className="footer">
             <LinkPage img={coffeeIcon} style={{ margin: '0 auto' }}>
                 <Link to='/'>
-                    <div className="linkPageBlack__descr fz-12">Coffee house</div>
+                    <div className="linkPage__descr fz-12">Coffee house</div>
                 </Link>
                 <Link to='/ourcoffee'>
-                    <div className="linkPageBlack__descr fz-12">Our coffee</div>
+                    <div className="linkPage__descr fz-12">Our coffee</div>
                 </Link>
                 <Link to="/pleasure">
-                    <div className="linkPageBlack__descr fz-12">For your pleasure</div>
+                    <div className="linkPage__descr fz-12">For your pleasure</div>
                 </Link>
                 <Link to="/basket">
                     <div className="fz-12">Basket</div>

@@ -1,26 +1,24 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
 
-const BasketView = ({ id, img, title, country, price, quantity, incr, decr, isDisabled, ...rest }) => {
+const BasketView = ({ id, img, title, country, price, quantity, incr, decr, ...rest }) => {
+    const [showButton, setShowButton] = useState(false)
 
     const nodeRef = useRef(null);
 
-    useEffect(() => {
-
-    }, [isDisabled])
-
-
-    const test = setTimeout(() => {
-        isDisabled = false;
-        console.log(isDisabled)
-    }, 500)
-
-    console.log(test)
     return (
-        <CSSTransition {...rest} key={id} nodeRef={nodeRef} timeout={500}
+        <CSSTransition
+            {...rest}
+            key={id}
+            nodeRef={nodeRef}
+            timeout={500}
+            unmountOnExit
+            onExiting={() => setShowButton(true)}
+            onExited={() => setShowButton(false)}
             classNames="basketView__wrapper" >
-            <div key={id}
+            <div
+                key={id}
                 ref={nodeRef}
                 className="basketView__wrapper">
                 <Link to={`/ourcoffee/${id}`}>
@@ -33,7 +31,7 @@ const BasketView = ({ id, img, title, country, price, quantity, incr, decr, isDi
                     <div className="basketView__price">{price}</div>
                     <div className="basketView__btnWrapper">
                         <button
-                            disabled={isDisabled ? test : false}
+                            disabled={showButton}
                             onClick={decr}
                             className="basketView__btnWrapper-btn">-</button>
                         <button

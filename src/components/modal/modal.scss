@@ -12,7 +12,6 @@
     pointer-events: none;
     transition: 0.5s;
     z-index: 10;
-
     &__content {
         padding: 20px;
         border-radius: 12px;
@@ -31,3 +30,20 @@
 .modal__content.activeModal {
     transform: scale(1);
 }
+
+
+// Media ----------------
+
+@media (max-width: 767px) {
+    .modal__content {
+        width: 75vw;
+    }
+}
+
+@media (max-width: 320px) {
+    .modal__content {
+        width: 85vw;
+    }
+}
+
+

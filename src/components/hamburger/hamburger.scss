@@ -33,31 +33,32 @@
                 
         }
     }
+    &__menu {
+        position: fixed;
+        width: 30%;
+        height: 100vh;
+        text-align: center;
+        margin-bottom: 4px;
+        z-index: 10;
+        transition: 0.5s all;    
+        transform: translateX(-191%);
+        background: url(../../assets/bgMenu1.jpg) center / cover no-repeat;
+        border: 1px solid;
+        border-right-color: gold;
+    }
+    &__activeMenu {
+        opacity: 0.95;
+        transform: translateX(0%);
+    }
+    &__link {
+        margin-top: 30px;
+        color: antiquewhite;
+        cursor: pointer;
+    }
        
 }
 
-.menu {
-    position: fixed;
-    width: 30%;
-    height: 100vh;
-    text-align: center;
-    margin-bottom: 4px;
-    z-index: 10;
-    transition: 0.5s all;    
-    transform: translateX(-191%);
-    background: url(../../assets/bgMenu1.jpg) center / cover no-repeat;
-    border: 1px solid;
-    border-right-color: gold;
-   &__active {
-    opacity: 0.95;
-    transform: translateX(0%);
-   }
-   &__link {
-    margin-top: 30px;
-    color: antiquewhite;
-    cursor: pointer;
-   }
-}
+
 
 
 // Media -------------------

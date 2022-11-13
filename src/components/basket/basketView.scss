@@ -1,5 +1,4 @@
 .basketView {
-
     &__layout {
         max-width: 500px;
         min-height: 500px;
@@ -84,47 +83,71 @@
     }
     &__form {
         text-align: center;
+        &-title {
+            color: brown;
+        }
+        &-modal {
+            display: flex;
+            justify-content: center;
+        }
+        &-item {
+            margin: 25px;
+        }
+        &-input {
+            width: 100%;
+            border: 1px solid;
+            border-block-color: brown;
+        }
     }
-    &__modal {
-        display: flex;
-        justify-content: center;
-    }
-    &__item {
-        margin: 25px;
-    }
-    &__input {
-        width: 100%;
-    }
+
 } 
+
+// Animate
 
 .basketView__wrapper-enter {
     opacity: 0.1;
-  }
-  .basketView__wrapper-enter-active {
+}
+.basketView__wrapper-enter-active {
     opacity: 0.1;
     transition: opacity 500ms ease-in;
-  }
-  .basketView__wrapper-exit {
+}
+.basketView__wrapper-exit {
     opacity: 1;
-  }
-  .basketView__wrapper-exit-active {
+}
+.basketView__wrapper-exit-active {
     opacity: 0;
     transition: opacity 500ms ease-in;
-  }
-
-
-
+}
 
 
 // Media ----------------
 
-@media (max-width: 767px) {
+@media (max-width: 1280px) {
     .basketView {
         padding-top: 50px;
+        &__form {
+            &-modal {
+                flex-direction: column;
+            }
+            &-input {
+                width: 65%;
+            }
+        }
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
+    .basketView {
+        padding-top: 50px;
+        &__form {
+            &-input {
+                width: 85%;
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
     .basketView {
         padding-bottom: 50px;
         &__wrapper {
@@ -139,21 +162,31 @@
         }
         &__quantity {
             left: 165px;
-       }
+        }
         &__img {
             margin-right: 0;
-       }
+        }
        &__btnWrapper {
         right: 15px;
         bottom: 5px;
-       }
+        }
         &__btnBuy {
             width: 120px;
-       }  
+            font-size: 14px;
+        }  
     }
-    .modal {
-        &__content {
-            width: 70vw;
+}
+
+@media (max-width: 320px) {
+    .basketView {
+        padding-top: 50px;
+        &__form {
+            &-item {
+                margin: 15px 0 15px;
+            }
+            &-input {
+                width: 90%;
+            }
         }
     }
 }

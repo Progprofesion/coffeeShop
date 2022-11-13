@@ -13,7 +13,7 @@ const Burger = () => {
     const activeBurgerClass = (e) => {
         e.preventDefault()
         e.currentTarget.classList.toggle('hamburger__active')
-        menuBlock.current.classList.toggle('menu__active')
+        menuBlock.current.classList.toggle('hamburger__activeMenu')
         return
     }
 
@@ -27,18 +27,18 @@ const Burger = () => {
                     <span></span>
                 </div>
             </div>
-            <nav className="menu" ref={menuBlock}>
+            <nav className="hamburger__menu" ref={menuBlock}>
                 <Link to="/">
-                    <div className="menu__link">Coffee house</div>
+                    <div className="hamburger__link">Coffee house</div>
                 </Link>
                 <Link to="/ourcoffee">
-                    <div className="menu__link">Our coffee</div>
+                    <div className="hamburger__link">Our coffee</div>
                 </Link>
                 <Link to="/pleasure">
-                    <div className="menu__link">For your pleasure</div>
+                    <div className="hamburger__link">For your pleasure</div>
                 </Link>
                 <Link to="/basket">
-                    <div className="menu__link">Basket</div>
+                    <div className="hamburger__link">Basket</div>
                 </Link>
                 <button className="loginView__btn" style={{ left: '0px' }} onClick={() => dispatch(removeUser())}>Выйти</button>
             </nav>

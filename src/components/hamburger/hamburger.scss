@@ -16,6 +16,19 @@
         margin-bottom: 4px;
         transition: 0.5s all;
     }
+    &__content {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,0.4);
+        position: fixed;
+        pointer-events: none;
+        transition: 0.5s;
+        z-index: 10;
+        opacity: 0;
+    }
+    &__activeContent {
+        opacity: 1;
+    }
     &__active {
         span {
             margin-bottom: -2px ;
@@ -45,6 +58,7 @@
         background: url(../../assets/bgMenu1.jpg) center / cover no-repeat;
         border: 1px solid;
         border-right-color: gold;
+        pointer-events: all;
     }
     &__activeMenu {
         opacity: 0.95;
@@ -67,6 +81,11 @@
     .menu {
         display: none;
     }
+    .hamburger {
+        &__content {
+            display: none;
+        }
+    }
 }
 
 @media (max-width: 767px) {
@@ -75,6 +94,9 @@
     }
     .hamburger {
         display: block;
+        &__content {
+            display: block;
+        }
     }
 }
 

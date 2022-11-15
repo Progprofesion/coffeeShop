@@ -8,6 +8,8 @@ import Modal from '../modal/Modal';
 import BasketLayout from '../basket/BasketLayout';
 import Footer from '../footer/Footer';
 
+import HamburgerV2 from '../hamburger/HamburgerV2';
+
 import { useMask } from 'src/hooks/useMask';
 
 const BasketPage = () => {
@@ -115,7 +117,8 @@ const BasketPage = () => {
                     <button type='submit' className="basketView__btnBuy">Купить</button>
                 </form>
             </Modal>
-            <Hamburger />
+            {/* <Hamburger /> */}
+            <HamburgerV2 />
             <BasketLayout setModalActive={setModalActive} />
             <Footer />
         </HelmetProvider>

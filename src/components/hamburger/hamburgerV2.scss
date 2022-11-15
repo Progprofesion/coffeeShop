@@ -1,0 +1,37 @@
+.hamburerV2Button {
+    width: 100px;
+    height: 100px;
+}
+
+.hamburgerV2 {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    z-index: 10;
+    &__content {
+        padding: 20px;
+        border-radius: 12px;
+        background-color: white;
+        width: 50vw;
+        transform: scale(0.5);
+        transition: 0.4s all;
+    }
+}
+
+.hamburgerV2.activeHamburgerV2 {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.hamburgerV2__content.activeHamburgerV2 {
+    transform: scale(1);
+}

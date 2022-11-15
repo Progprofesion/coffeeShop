@@ -27,7 +27,6 @@ const Burger = () => {
                     <span></span>
                     <span></span>
                     <span></span>
-                    <span></span>
                 </div>
             </div>
             <div

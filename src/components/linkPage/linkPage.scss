@@ -34,5 +34,14 @@
     }
 }
 
+@media (max-width: 576px) {
+    .linkPage {
+        max-width: 270px;
+        &__img {
+            left: 66px;
+        }
+    }
+}
+
 
     

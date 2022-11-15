@@ -1,6 +1,8 @@
 .hamburerV2Button {
     width: 100px;
     height: 100px;
+    right: 0;
+    position: fixed;
 }
 
 .hamburgerV2 {
@@ -12,18 +14,40 @@
     left: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
     opacity: 0;
     pointer-events: none;
     transition: 0.5s;
     z-index: 10;
     &__content {
-        padding: 20px;
-        border-radius: 12px;
-        background-color: white;
-        width: 50vw;
-        transform: scale(0.5);
-        transition: 0.4s all;
+        position: fixed;
+        width: 30%;
+        height: 100vh;
+        text-align: center;
+        margin-bottom: 4px;
+        z-index: 10;
+        transition: 0.5s all;    
+        transform: translateX(-191%);
+        background: url(../../assets/bgMenu1.jpg) center / cover no-repeat;
+        border: 1px solid;
+        border-right-color: gold;
+        pointer-events: all;
+    }
+    &__active {
+        span {
+            margin-bottom: -2px ;
+            &:nth-child(1)  {
+                transform: translateY(3px) rotate(-45deg);
+            }
+            
+            &:nth-child(2)  {
+                display: none;
+            }
+                
+            &:nth-child(3) {
+                transform: translateY(3px) rotate(45deg);
+            }
+                
+        }
     }
 }
 

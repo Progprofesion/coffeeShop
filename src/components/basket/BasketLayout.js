@@ -5,7 +5,7 @@ import { TransitionGroup } from 'react-transition-group';
 
 import LinkPage from '../linkPage/LinkPage';
 import BasketView from './BasketView';
-
+import HamburgerV2 from '../hamburger/HamburgerV2';
 import coffeeIcon from 'src/assets/coffeeIcon.svg';
 
 import {
@@ -94,6 +94,7 @@ const BasketLayout = ({ setModalActive }) => {
                     <div className="linkPageBlack__descr fz-12">For your pleasure</div>
                 </Link>
             </LinkPage>
+            <HamburgerV2 />
             <div className="container">
                 <ul className="basketView__layout">
                     <h2 className="basketView__title">Shopping cart</h2>

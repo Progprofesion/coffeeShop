@@ -20,7 +20,7 @@ const Hamburger = () => {
                     <span></span>
                     <span></span>
                     <span></span>
-                </div> commit -a -m"coffeeShopBeta"
+                </div>
             </div>
             <div className={modalActive ? 'hamburger activeHamburger' : 'hamburger'} onClick={() => setModalActive(false)}>
                 <nav className={modalActive ? 'hamburger__content activeHamburger' : 'hamburger__content'} onClick={e => e.stopPropagation()}>

@@ -21,8 +21,6 @@ const MainPage = () => {
                 <LoginView />
                 <Humburger />
                 <Header />
-                {/* <About /> */}
-                {/* <Best /> */}
                 <CardsList
                     cardsView={3}
                     title={'Our best'} />

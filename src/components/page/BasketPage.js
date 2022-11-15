@@ -3,12 +3,9 @@ import { useForm } from 'react-hook-form';
 import { useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-// import Hamburger from '../hamburger/Hamburger';
 import Modal from '../modal/Modal';
 import BasketLayout from '../basket/BasketLayout';
 import Footer from '../footer/Footer';
-
-// import HamburgerV2 from '../hamburger/HamburgerV2';
 
 import { useMask } from 'src/hooks/useMask';
 

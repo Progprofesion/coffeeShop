@@ -1,9 +1,10 @@
-.hamburger {
+.hamburgerBtn {
     display: none;
     position: fixed;
     right: 10px;
     top: 30px;
     transform: translateY(-50%);
+    cursor: pointer;
     &__wrapper {
         padding: 20px;
     }
@@ -15,43 +16,39 @@
         margin-bottom: 4px;
         transition: 0.5s all;
     }
-    &__content {
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0,0,0,0.4);
-        position: fixed;
-        pointer-events: none;
-        transition: 0.5s;
-        z-index: 10;
-        opacity: 0;
-    }
-    &__activeContent {
-        opacity: 1;
-    }
     &__active {
         span {
             margin-bottom: -2px ;
             &:nth-child(1)  {
                 transform: translateY(3px) rotate(-45deg);
-            }
-            
+            }      
             &:nth-child(2)  {
                 display: none;
-            }
-                
+            }               
             &:nth-child(3) {
                 transform: translateY(3px) rotate(45deg);
-            }
-                
+            }   
         }
     }
-    &__menu {
-        position: fixed;
-        width: 30%;
+}
+
+.hamburger {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 10;
+    transition: 0.5s;
+    &__content {
+        width: 35%;
         height: 100vh;
         text-align: center;
         margin-bottom: 4px;
-        z-index: 10;
+        opacity: 0.95;
         transition: 0.5s all;    
         transform: translateX(-191%);
         background: url(../../assets/bgMenu1.jpg) center / cover no-repeat;
@@ -59,54 +56,29 @@
         border-right-color: gold;
         pointer-events: all;
     }
-    &__activeMenu {
-        opacity: 0.95;
-        transform: translateX(0%);
-    }
     &__link {
         margin-top: 30px;
         color: antiquewhite;
         cursor: pointer;
     }
-       
 }
 
+.hamburger.activeHamburger {
+    opacity: 1;
+    pointer-events: all;
+}
 
-
+.hamburger__content.activeHamburger {
+    transform: scale(1);
+}
 
 
 // Media -------------------
 
-@media (max-width: 2560px) {
-    .menu {
-        display: none;
-    }
-    .hamburger {
-        &__content {
-            display: none;
-        }
-    }
-}
-
 @media (max-width: 767px) {
-    .menu {
+    .hamburgerBtn {
         display: block;
     }
-    .hamburger {
-        display: block;
-        &__content {
-            display: block;
-        }
-    }
-}
 
-@media (max-width: 575px) {
-    .menu {
-        &__link {
-            margin-top: 30px;
-            text-align: center;
-            cursor: pointer;
-           }
-    }
 }
    

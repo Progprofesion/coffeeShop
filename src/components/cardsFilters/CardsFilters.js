@@ -38,7 +38,6 @@ const CardsFilters = () => {
                 id={name}
                 className={btnClass}
                 onClick={() => dispatch(activeFilterChanged(name))}>
-
                 {label}</button>
         })
     }

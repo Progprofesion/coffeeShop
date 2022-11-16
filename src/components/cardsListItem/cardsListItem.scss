@@ -27,6 +27,7 @@
         bottom: 15px;
         border-radius: 10px;
         border:2px solid rgba(33, 154, 121, 0.657);
+        font-size: 16px;
     }
     &__basketDecr {
         position: absolute;
@@ -36,13 +37,14 @@
         bottom: 15px;
         border-radius: 10px;
         border: 2px solid rgba(33, 154, 121, 0.657);
+        font-size: 16px;
     }
     &__amount {
         width: 25px;
         height: 25px;
         border: 2px solid rgba(33, 154, 121, 0.657);
         border-radius: 100%;
-        margin-top: -15px;
+        margin-top: -5px;
         position: absolute;
         right: 65px;
         text-align: center;

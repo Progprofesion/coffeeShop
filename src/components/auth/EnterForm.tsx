@@ -1,6 +1,11 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 
-const Form = ({ title, handleClick }) => {
+interface FormProps {
+    title: string,
+    handleClick: (email: string, pass: string) => void;
+}
+
+const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
 
@@ -9,14 +14,14 @@ const Form = ({ title, handleClick }) => {
             <input className="enter__input"
                 type="email"
                 placeholder="email"
-                valuse={email}
+                value={email}
                 onChange={(e) => setEmail(e.target.value)} />
             <input className="enter__input"
                 type="password"
                 placeholder="password"
                 value={pass}
                 onChange={(e) => setPass(e.target.value)} />
-            <button className="loginView__btn"
+            <button className="enter__btn"
                 onClick={() => handleClick(email, pass)}>
                 {title}
             </button>
@@ -24,4 +29,4 @@ const Form = ({ title, handleClick }) => {
     )
 }
 
-export default Form
+export default EnterForm

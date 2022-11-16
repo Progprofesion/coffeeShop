@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
+import LoginView from '../auth/LoginView';
 import Modal from '../modal/Modal';
 import BasketLayout from '../basket/BasketLayout';
 import Footer from '../footer/Footer';
@@ -114,6 +115,7 @@ const BasketPage = () => {
                     <button type='submit' className="basketView__btnBuy">Купить</button>
                 </form>
             </Modal>
+            <LoginView style={{ display: 'none' }} />
             <BasketLayout setModalActive={setModalActive} />
             <Footer />
         </HelmetProvider>

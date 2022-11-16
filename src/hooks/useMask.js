@@ -1,3 +1,4 @@
+
 export const useMask = (inputRef) => {
     let getInputNumbersValue = (input) => {
         return input.value.replace(/\D/g, "");

@@ -115,7 +115,6 @@ const BasketPage = () => {
                     <button type='submit' className="basketView__btnBuy">Купить</button>
                 </form>
             </Modal>
-            <LoginView style={{ display: 'none' }} />
             <BasketLayout setModalActive={setModalActive} />
             <Footer />
         </HelmetProvider>

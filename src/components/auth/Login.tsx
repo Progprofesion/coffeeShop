@@ -1,38 +1,44 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { useDispatch } from "react-redux";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 
-import Form from '../auth/Form';
+import { useAppDispatch } from 'src/hooks/redux-hooks';
+import Form from './EnterForm';
 import { setUser } from 'src/store/slices/userSlice';
 
-const SignUp = () => {
-    const dispatch = useDispatch();
+import './enter.scss';
+
+
+const Login = () => {
+    const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
-    const handleRegister = (email, password) => {
+    const handleLogin = (email: string, password: string) => {
         const auth = getAuth();
-        createUserWithEmailAndPassword(auth, email, password)
+        signInWithEmailAndPassword(auth, email, password)
             .then(({ user }) => {
                 localStorage.setItem('userEmail', user.email)
-                localStorage.setItem('accessToken', user.accessToken)
+                localStorage.setItem('accessToken', user.refreshToken)
                 localStorage.setItem('id', user.uid)
+            })
+            .then(() => {
                 dispatch(setUser({
                     email: localStorage.getItem('userEmail'),
                     token: localStorage.getItem('accessToken'),
                     id: localStorage.getItem('id'),
                 }))
-                navigate('/');
+                navigate('/')
             })
             .catch(() => alert('Invalid user!'));
     }
+
     return (
         <div className="enter">
             <Form
-                title="Register"
-                handleClick={handleRegister}
+                title="Login"
+                handleClick={handleLogin}
             />
         </div>
     )
-}
+};
 
-export default SignUp
+export default Login

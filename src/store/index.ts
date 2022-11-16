@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import filters from 'src/store/slices/cadsFiltersSlice';
 import basket from 'src/store/slices/basketSlice';
 
-import user from '../store/slices/userSlice';
+import user from './slices/userSlice';
 import { apiSlice } from '../components/api/apiSlice';
 
 const store = configureStore({
@@ -13,7 +13,10 @@ const store = configureStore({
     middleware: getDefaultMiddleware => getDefaultMiddleware({
         serializableCheck: false,
     }).concat(apiSlice.middleware),
-    devtools: process.env.NODE_ENV !== 'production'
+    devTools: process.env.NODE_ENV !== 'production'
 });
 
 export default store;
+
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;

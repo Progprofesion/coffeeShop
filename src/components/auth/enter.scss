@@ -1,5 +1,5 @@
 .enter {
-    max-width: 500px;
+    max-width: 510px;
     min-height: 150px;
     margin: 35px auto 0; 
     text-align: center;
@@ -12,6 +12,7 @@
         border: 1px solid #bd00854d;
         border-radius: 5px;
         padding: 0px 3px;
+        outline: none;
     }
     &__link {
         margin-top: 20px;
@@ -21,12 +22,24 @@
         margin-top: 100px;
         text-align: center;
     }
+    &__btn {
+        position: relative;
+        margin: 17px auto;
+        width: 130px;
+        height: 38px;
+        border-radius: 10px;
+        border: 2px solid rgba(33, 154, 121, 0.657);
+        filter: drop-shadow(5px 5px 35px rgba(74, 131, 172, 0.25));
+        background: url(../../assets/bgMenu.jpg) center / cover no-repeat;
+        color: gold;
+    }
 } 
 
 // Media --------------------
 
-@media (max-width: px) {
+@media (max-width: 576px) {
     .enter {
+        width: 85%;
         &__input {
             display: flex;
             flex-direction: column;

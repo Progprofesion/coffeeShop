@@ -1,44 +1,38 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 
-import Form from './Form';
+import Form from './EnterForm';
 import { setUser } from 'src/store/slices/userSlice';
 
-import './enter.scss';
-
-
-const Login = () => {
+const SignUp = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const handleLogin = (email, password) => {
+    const handleRegister = (email: string, password: string) => {
         const auth = getAuth();
-        signInWithEmailAndPassword(auth, email, password)
+        createUserWithEmailAndPassword(auth, email, password)
             .then(({ user }) => {
                 localStorage.setItem('userEmail', user.email)
-                localStorage.setItem('accessToken', user.accessToken)
+                localStorage.setItem('accessToken', user.refreshToken)
                 localStorage.setItem('id', user.uid)
-            })
-            .then(() => {
                 dispatch(setUser({
                     email: localStorage.getItem('userEmail'),
                     token: localStorage.getItem('accessToken'),
                     id: localStorage.getItem('id'),
                 }))
-                navigate('/')
+                navigate('/');
             })
             .catch(() => alert('Invalid user!'));
     }
-
     return (
         <div className="enter">
             <Form
-                title="Login"
-                handleClick={handleLogin}
+                title="Register"
+                handleClick={handleRegister}
             />
         </div>
     )
-};
+}
 
-export default Login
+export default SignUp

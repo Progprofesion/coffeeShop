@@ -36,7 +36,7 @@ const Hamburger = () => {
                     <Link to="/basket">
                         <div className="hamburger__link">Basket</div>
                     </Link>
-                    <button className="loginView__btn" style={{ left: '0px', color: 'antiquewhite', display: 'block' }} onClick={() => dispatch(removeUser())}>Выйти</button>
+                    <div className="hamburger__exit" onClick={() => dispatch(removeUser())}>Exit</div>
                 </nav>
             </div>
         </>

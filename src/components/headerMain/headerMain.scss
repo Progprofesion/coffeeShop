@@ -53,7 +53,6 @@
         filter: drop-shadow(5px 5px 35px rgba(74, 131, 172, 0.25));
         background: url(../../assets/bgMenu.jpg) center / cover no-repeat;
         color: gold;
-
     }   
 };
 
@@ -86,6 +85,7 @@
 
 @media (max-width: 575px) {
     .headerMain {
+        height: 75vh;
         &__title {
             font-size: 24px;
         }
@@ -94,6 +94,9 @@
         }
         &__subtitleShadow{
             font-size: 18px;
+        }
+        &__mainBtn {
+            margin-top: 50px;
         }
     }
 } 
@@ -114,6 +117,9 @@
         }
         &__item {
             margin: 30px auto;
+        }
+        &__mainBtn {
+            margin-top: 50px;
         }
     }
 }

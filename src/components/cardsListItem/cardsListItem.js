@@ -18,12 +18,14 @@ const CardsListItem = ({ id, img, title, country, price, quantity, basketIncr, b
                 <div className="cardsListItem__amount">{quantity}</div>
             </div>
             <div className="cardsListItem__price fz-14">{price}</div>
-            <button
-                onClick={basketIncr}
-                className="cardsListItem__basketIncr">+1</button>
-            <button
-                onClick={basketDecr}
-                className="cardsListItem__basketDecr">-1</button>
+            <div className="cardsListItem__wrapper">
+                <button
+                    onClick={basketDecr}
+                    className="cardsListItem__wrapper-btn">-1</button>
+                <button
+                    onClick={basketIncr}
+                    className="cardsListItem__wrapper-btn">+1</button>
+            </div>
         </div>
     )
 };

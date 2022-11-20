@@ -68,8 +68,18 @@
             width: 45px;
             height: 35px;
             border-radius: 10px;
-            border: 2px solid rgba(174, 242, 224, 0.657);
-            border-block-color: lightYellow;
+            border: 1px solid #f7bb7a;
+            border-block-color: lightyellow;
+
+        }
+        :hover {
+            transition: 500ms;
+            opacity: 0.95;
+            color: brown;
+        }
+        :active {
+            transition: 250ms;
+            transform: scale(95%);
         }
     }
     &__btnBuy {

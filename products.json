@@ -23,7 +23,7 @@
             "page": 3,
             "img": "/static/media/AROMISTICOCoffee1kg.f570b11568e712c75c491a4f849202c3.svg",
             "title": "AROMISTICO Coffee 1 kg",
-            "country": "Columbias",
+            "country": "Columbia",
             "price": 6.99,
             "quantity": 0
         },
@@ -50,7 +50,7 @@
             "page": 6,
             "img": "/static/media/LORCremaAbsoluClassique.77c8d2ef80e4d561756f.webp",
             "title": "LOR Crema Classique 1 kg",
-            "country": "Columbias",
+            "country": "Columbia",
             "price": 7.56,
             "quantity": 0
         }
@@ -75,10 +75,10 @@
             "className": "cardsFilters__Kenya"
         },
         {
-            "id": "Columbias",
-            "name": "Columbias",
-            "label": "Columbias",
-            "className": "cardsFilters__Columbias"
+            "id": "Columbia",
+            "name": "Columbia",
+            "label": "Columbia",
+            "className": "cardsFilters__Columbia"
         }
     ]
 }

@@ -88,10 +88,29 @@
 
 // Media -------------------
 
+@media (min-width: 767px) {
+    .hamburger {
+        display: none;
+    }
+}
+
 @media (max-width: 767px) {
     .hamburgerBtn {
         display: block;
     }
+    .hamburger {
+        display: block;
+        &__content {
+            width: 30%;
+        }
+    }
+}
 
+@media (max-width: 576px) {
+    .hamburger {
+        &__content {
+            width: 35%;
+        }
+    }
 }
    

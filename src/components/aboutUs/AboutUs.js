@@ -11,6 +11,8 @@ const AboutUs = () => {
             <div className="aboutUs__wrapper">
                 <div className="container">
                     <h2 className="aboutUs__title fz-24">About Us</h2>
+                    <p className="aboutUs__fruitLeft">Coffee is a fruit</p>
+                    <p className="aboutUs__fruitRight">Coffee is a fruit</p>
                     <IconLine img={coffeeBeansIconBlack} style={{ border: '1px solid black' }} />
                     <p className="aboutUs__descr fz-14">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
                         Afraid at highly months do things on at. Situation recommend objection do intention

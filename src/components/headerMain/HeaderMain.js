@@ -31,7 +31,7 @@ const HeaderMain = () => {
                 <h2 className="headerMain__subtitle">We makes every day full of energy and taste</h2>
                 <h2 className="headerMain__subtitleShadow">Want to try our beans?</h2>
                 <Link className="headerMain__wrapperBtn" to="/ourcoffee">
-                    <button className="headerMain__mainBtn flare-button">More</button>
+                    <button className="headerMain__mainBtn"><span>More</span></button>
                 </Link>
             </div>
         </header>

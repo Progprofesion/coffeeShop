@@ -10,7 +10,7 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
     const [pass, setPass] = useState('');
 
     return (
-        <div >
+        <section  >
             <input className="enter__input"
                 type="email"
                 placeholder="email"
@@ -25,7 +25,7 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
                 onClick={() => handleClick(email, pass)}>
                 {title}
             </button>
-        </div>
+        </section>
     )
 }
 

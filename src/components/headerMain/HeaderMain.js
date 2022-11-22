@@ -28,8 +28,7 @@ const HeaderMain = () => {
             <div className="container">
                 <h1 className="headerMain__title">Everything You Love About <span>Coffee</span></h1>
                 <IconLine img={coffeeBeansIconWhite} style={{ border: '1px solid white' }} />
-                <h2 className="headerMain__subtitle">We makes every day full of energy and taste</h2>
-                <h2 className="headerMain__subtitleShadow">Want to try our beans?</h2>
+                <h2 className="headerMain__subtitle">We makes every day full of energy and taste <p>Want to try our beans?</p></h2>
                 <Link className="headerMain__wrapperBtn" to="/ourcoffee">
                     <button className="headerMain__mainBtn"><span>More</span></button>
                 </Link>

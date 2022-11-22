@@ -18,7 +18,7 @@
     }
     &__wrapper {
         position: relative;
-        margin: 50px auto 40px;
+        margin: 50px auto 0px;
         max-width: 400px;
         display: flex;
         justify-content: center;
@@ -85,13 +85,6 @@
     &__btnBuy {
         position: relative;
         margin: 20px auto 35px;
-        width: 140px;
-        min-height: 40px;
-        border-radius: 10px;
-        border: 2px solid rgba(33, 154, 121, 0.657);
-        background: url(../../assets/bgMenu.jpg) center / cover no-repeat;
-        color: gold;
-        filter: drop-shadow(5px 5px 35px rgba(74, 131, 172, 0.25));
     }
     &__form {
         text-align: center;

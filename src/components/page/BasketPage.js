@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
+import Button from '../button/Button';
 import Modal from '../modal/Modal';
 import BasketLayout from '../basket/BasketLayout';
 import Footer from '../footer/Footer';
@@ -111,7 +112,10 @@ const BasketPage = () => {
                             {errors.phone ? <p className="basketView__form-errorMessage" >{errors.phone.message}</p> : null}
                         </div>
                     </div>
-                    <button type='submit' className="basketView__btnBuy">Купить</button>
+                    <Button
+                        title={'Купить'}
+                        type='submit'
+                        style={{ margin: '10px' }} />
                 </form>
             </Modal>
             <BasketLayout setModalActive={setModalActive} />

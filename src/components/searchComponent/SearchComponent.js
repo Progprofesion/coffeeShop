@@ -13,7 +13,7 @@ const SearchComponent = () => {
             <div className="container">
                 <div className="search__looking">
                     <div className="search__block">
-                        <div className="search__block-title fz-14">Looking foor</div>
+                        <div className="search__block-title">Looking foor</div>
                         <form>
                             <input
                                 type="text"

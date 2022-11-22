@@ -32,12 +32,12 @@ const Login = () => {
     }
 
     return (
-        <div className="enter">
+        <section className="enter">
             <Form
                 title="Login"
                 handleClick={handleLogin}
             />
-        </div>
+        </section>
     )
 };
 

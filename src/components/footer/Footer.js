@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import IconLine from '../iconLine/IconLine';
 import LinkPage from '../linkPage/LinkPage';
+import ExitLink from '../exitLink/ExitLink';
 import coffeeBeansIconWhite from 'src/assets/coffeeBeansIconWhite.svg'
 
 import coffeeIcon from 'src/assets/coffeeIcon.svg';
@@ -11,18 +12,11 @@ const Footer = () => {
     return (
         <footer className="footer">
             <LinkPage img={coffeeIcon} style={{ margin: '0 auto', display: 'flex' }}>
-                <Link to='/'>
-                    <div className="linkPage__descr fz-12">Coffee house</div>
-                </Link>
-                <Link to='/ourcoffee'>
-                    <div className="linkPage__descr fz-12">Our coffee</div>
-                </Link>
-                <Link to="/pleasure">
-                    <div className="linkPage__descr fz-12">For your pleasure</div>
-                </Link>
-                <Link to="/basket">
-                    <div className="fz-12">Basket</div>
-                </Link>
+                <Link className="fz-14" to="/" >Coffee house</Link>
+                <Link className="fz-14" to="/ourcoffee">Our coffee</Link>
+                <Link className="fz-14" to="/pleasure">For your pleasure</Link>
+                <Link className="fz-14" to="/basket">Basket</Link>
+                <ExitLink />
             </LinkPage>
             <IconLine img={coffeeBeansIconWhite} style={{ border: '1px solid white' }} />
         </footer>

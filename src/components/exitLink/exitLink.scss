@@ -1,0 +1,7 @@
+.exitLink {
+        cursor: pointer;
+        &:hover {
+            transition: 0.5s;
+            color: coral;
+        }
+}

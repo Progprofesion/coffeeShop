@@ -48,7 +48,7 @@ const CardsFilters = () => {
         <div className="cardsFilters">
             <div className="container">
                 <div className="cardsFilters__wrapper">
-                    <div className="cardsFilters__title fz-14">Or filter</div>
+                    <div className="cardsFilters__title">Or filter</div>
                     {elements}
                 </div>
             </div>

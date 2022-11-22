@@ -13,11 +13,11 @@ const CardsListItem = ({ id, img, title, country, price, quantity, basketIncr, b
                     <img className="cardsListItem__img" src={img} alt="coffee" />
                 </Link>
             </div>
-            <h3 className="cardsListItem__subtitle fz-14">{title}</h3>
-            <div className="cardsListItem__country fz-14">{country}
+            <h3 className="cardsListItem__subtitle fz-14Black">{title}</h3>
+            <div className="cardsListItem__country fz-14Black">{country}
                 <div className="cardsListItem__amount">{quantity}</div>
             </div>
-            <div className="cardsListItem__price fz-14">{price}</div>
+            <div className="cardsListItem__price fz-14Black">{price}</div>
             <div className="cardsListItem__wrapper">
                 <button
                     onClick={basketDecr}

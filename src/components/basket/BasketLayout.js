@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { TransitionGroup } from 'react-transition-group';
 
+import Button from '../button/Button';
 import LinkPage from '../linkPage/LinkPage';
 import BasketView from './BasketView';
 import Hamburger from '../hamburger/Hamburger';
@@ -102,7 +103,9 @@ const BasketLayout = ({ setModalActive }) => {
                     <TransitionGroup>
                         {elements}
                     </TransitionGroup>
-                    <button onClick={() => setModalActive(true)} className="basketView__btnBuy">Place an order</button>
+                    <Button
+                        title={'Place an order'}
+                        fn={() => setModalActive(true)} />
                 </ul>
             </div>
         </section>

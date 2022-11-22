@@ -26,12 +26,12 @@ const SignUp = () => {
             .catch(() => alert('Invalid user!'));
     }
     return (
-        <div className="enter">
+        <section className="enter">
             <Form
                 title="Register"
                 handleClick={handleRegister}
             />
-        </div>
+        </section>
     )
 }
 

@@ -45,6 +45,8 @@
     z-index: 10;
     transition: 0.5s;
     &__content {
+        display: flex;
+        flex-direction: column;
         width: 35%;
         height: 100vh;
         text-align: center;
@@ -60,17 +62,6 @@
     &__link {
         margin-top: 30px;
         color: antiquewhite;
-        cursor: pointer;
-        border-block-end: 1px solid antiquewhite;
-    }
-    :hover {
-        transition: 0.5s;
-        color:coral;
-    }
-    &__exit {
-        color: antiquewhite;
-        margin-top: 30px;
-        font-size: 18px;
         cursor: pointer;
         border-block-end: 1px solid antiquewhite;
     }

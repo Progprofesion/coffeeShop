@@ -3,6 +3,10 @@
 .app {
     a {
         text-decoration: none;
+        &:hover{
+            transition: 0.5s;
+            color: coral;
+        }
     }
     font-family: 'Merienda', cursive;
 }

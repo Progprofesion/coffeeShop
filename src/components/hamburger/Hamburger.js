@@ -24,18 +24,10 @@ const Hamburger = () => {
             </div>
             <div className={modalActive ? 'hamburger activeHamburger' : 'hamburger'} onClick={() => setModalActive(false)}>
                 <nav className={modalActive ? 'hamburger__content activeHamburger' : 'hamburger__content'} onClick={e => e.stopPropagation()}>
-                    <Link to="/">
-                        <div className="hamburger__link">Coffee house</div>
-                    </Link>
-                    <Link to="/ourcoffee">
-                        <div className="hamburger__link">Our coffee</div>
-                    </Link>
-                    <Link to="/pleasure">
-                        <div className="hamburger__link">For your pleasure</div>
-                    </Link>
-                    <Link to="/basket">
-                        <div className="hamburger__link">Basket</div>
-                    </Link>
+                    <Link className="hamburger__link" to="/">Coffee house</Link>
+                    <Link className="hamburger__link" to="/ourcoffee">Our coffee</Link>
+                    <Link className="hamburger__link" to="/pleasure">For your pleasure</Link>
+                    <Link className="hamburger__link" to="/basket">Basket</Link>
                     <div className="hamburger__exit" onClick={() => dispatch(removeUser())}>Exit</div>
                 </nav>
             </div>

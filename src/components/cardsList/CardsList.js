@@ -126,12 +126,10 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
             <div className="container">
                 <h2 className="cardsList__title">{title}</h2>
                 <div className="cardsList__bg" style={bg} >
-                    {/* <div className="container"> */}
                     <SearchComponent />
                     <ul className="cardsList__wrapper" style={height}>
                         {elements}
                     </ul>
-                    {/* </div> */}
                 </div>
             </div>
         </section>

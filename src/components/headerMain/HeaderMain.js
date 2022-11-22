@@ -12,23 +12,16 @@ const HeaderMain = () => {
     return (
         <header className="headerMain">
             <LinkPage img={coffeeIcon}>
-                <Link to="/" >
-                    <div className="fz-12">Coffee house</div>
-                </Link>
-                <Link to="/ourcoffee">
-                    <div className="fz-12">Our coffee</div>
-                </Link>
-                <Link to="/pleasure">
-                    <div className="fz-12">For your pleasure</div>
-                </Link>
-                <Link to="/basket">
-                    <div className="fz-12">Basket</div>
-                </Link>
+                <Link className="fz-14" to="/" >Coffee house</Link>
+                <Link className="fz-14" to="/ourcoffee">Our coffee</Link>
+                <Link className="fz-14" to="/pleasure">For your pleasure</Link>
+                <Link className="fz-14" to="/basket">Basket</Link>
+                <Link className="fz-14" to="/basket">Exit</Link>
             </LinkPage>
             <div className="container">
                 <h1 className="headerMain__title">Everything You Love About <span>Coffee</span></h1>
                 <IconLine img={coffeeBeansIconWhite} style={{ border: '1px solid white' }} />
-                <h2 className="headerMain__subtitle">We makes every day full of energy and taste <p>Want to try our beans?</p></h2>
+                <h2 className="headerMain__subtitle">We makes every day full of <span>energy</span> and <span>taste</span> <p>Want to try our beans?</p></h2>
                 <Link className="headerMain__wrapperBtn" to="/ourcoffee">
                     <button className="headerMain__mainBtn"><span>More</span></button>
                 </Link>

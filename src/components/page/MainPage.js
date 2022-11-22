@@ -1,6 +1,6 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-import Header from "../headerMain/HeaderMain";
+import HeaderMain from "../headerMain/HeaderMain";
 import Footer from "../footer/Footer";
 import Humburger from "../hamburger/Hamburger";
 import BasketSticky from "../basket/BasketSticky";
@@ -20,7 +20,7 @@ const MainPage = () => {
                 <BasketSticky />
                 <LoginView />
                 <Humburger />
-                <Header />
+                <HeaderMain />
                 <CardsList
                     cardsView={3}
                     title={'Our best'} />

@@ -17,6 +17,10 @@
         transition: 250ms;
         color: coral;
     }
+    &__link {
+        padding-right: 5px;
+        border-right: 1px solid white;
+    }
 
 }
 

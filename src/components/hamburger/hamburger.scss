@@ -60,10 +60,22 @@
         pointer-events: all;
     }
     &__link {
-        margin-top: 30px;
+        padding-top: 15px;
+        padding-bottom: 15px;
         color: antiquewhite;
         cursor: pointer;
         border-block-end: 1px solid antiquewhite;
+    }
+    &__exit {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        color: antiquewhite;
+        cursor: pointer;
+        border-block-end: 1px solid antiquewhite;
+        &:hover {
+            transition: 0.5s;
+            color: coral;
+        }
     }
 }
 

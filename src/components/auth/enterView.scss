@@ -1,9 +1,14 @@
 .enter {
+    background: url(../../assets/bgEnter.jpg) center / cover no-repeat;
+    height: 100vh;
+}
+
+.enterView {
     max-width: 510px;
     min-height: 150px;
     margin: 35px auto 0; 
     text-align: center;
-    border: 1px solid rgb(30, 240, 255);
+    border:1px solid gold;
     border-radius: 50px;
     background: rgba(255, 255, 255, 0.65);
     filter: drop-shadow(5px 5px 35px rgba(0, 0, 0, 0.25));
@@ -19,7 +24,7 @@
         text-align: center;
     }
     &__title {
-        margin-top: 100px;
+        padding-top: 25vh;
         text-align: center;
     }
     &__btn {

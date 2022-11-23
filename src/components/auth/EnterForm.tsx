@@ -13,12 +13,12 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
 
     return (
         <>
-            <input className="enter__input"
+            <input className="enterView__input"
                 type="email"
                 placeholder="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)} />
-            <input className="enter__input"
+            <input className="enterView__input"
                 type="password"
                 placeholder="password"
                 value={pass}

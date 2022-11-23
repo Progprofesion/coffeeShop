@@ -5,7 +5,7 @@ import { useAppDispatch } from 'src/hooks/redux-hooks';
 import Form from './EnterForm';
 import { setUser } from 'src/store/slices/userSlice';
 
-import './enter.scss';
+import './enterView.scss';
 
 
 const Login = () => {
@@ -32,7 +32,7 @@ const Login = () => {
     }
 
     return (
-        <section className="enter">
+        <section className="enterView">
             <Form
                 title="Login"
                 handleClick={handleLogin}

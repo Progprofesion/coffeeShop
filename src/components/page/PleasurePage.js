@@ -1,13 +1,15 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-import HeaderPages from '../headerPages/HeaderPages';
+import HeaderPages from '../headerBanner/HeaderBanner';
 import CardsList from '../cardsList/CardsList';
 import Footer from '../footer/Footer';
 import Hamburger from '../hamburger/Hamburger';
 import BasketSticky from '../basket/BasketSticky';
 import LoginView from '../auth/LoginView';
+import bgPleasure from 'src/assets/bgPleasure.jpg';
 
 const PleasurePage = () => {
+    console.log(bgPleasure)
     return (
         <>
             <HelmetProvider>
@@ -27,7 +29,7 @@ const PleasurePage = () => {
                     title={'For your pleasure'} />
                 <CardsList
                     cardsView={0}
-                    style={{ background: 'url(/static/media/bgBest.d188eb7d5a4a40d545af.png) center / cover no-repeat' }}
+                    style={{ background: 'url(/static/media/bgPleasure.a7f47f19fc96c8d06797.jpg) center / cover no-repeat' }}
                     height={{ 'minHeight': '624px' }}
                 />
                 <Footer />

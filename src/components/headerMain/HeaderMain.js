@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 
+import ExitLink from '../exitLink/ExitLink';
 import IconLine from "../iconLine/IconLine";
-import coffeeBeansIconWhite from 'src/assets/coffeeBeansIconWhite.svg'
 
 import LinkPage from '../linkPage/LinkPage';
+import coffeeBeansIconWhite from 'src/assets/coffeeBeansIconWhite.svg'
 import coffeeIcon from 'src/assets/coffeeIcon.svg';
 
 import './headerMain.scss';
@@ -16,7 +17,7 @@ const HeaderMain = () => {
                 <Link className="fz-14" to="/ourcoffee">Our coffee</Link>
                 <Link className="fz-14" to="/pleasure">For your pleasure</Link>
                 <Link className="fz-14" to="/basket">Basket</Link>
-                <Link className="fz-14" to="/basket">Exit</Link>
+                <ExitLink />
             </LinkPage>
             <div className="container">
                 <h1 className="headerMain__title">Everything You Love About <span>Coffee</span></h1>

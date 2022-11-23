@@ -1,6 +1,7 @@
 import IconLine from "../iconLine/IconLine";
 
 import coffeeBeansIconBlack from "src/assets/coffeeBeansIconBlack.svg";
+import coffeeBeansIconWhite from 'src/assets/coffeeBeansIconWhite.svg'
 
 import "./aboutUs.scss"
 
@@ -13,7 +14,7 @@ const AboutUs = () => {
                     <h2 className="aboutUs__title fz-24">About Us</h2>
                     <p className="aboutUs__fruitLeft">Coffee is a fruit</p>
                     <p className="aboutUs__fruitRight">Coffee is a fruit</p>
-                    <IconLine img={coffeeBeansIconBlack} style={{ border: '1px solid black' }} />
+                    <IconLine img={coffeeBeansIconWhite} style={{ border: '1px solid white' }} />
                     <p className="aboutUs__descr fz-14">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
                         Afraid at highly months do things on at. Situation recommend objection do intention
                         so questions. As greatly removed calling pleased improve an. Last ask him cold feel

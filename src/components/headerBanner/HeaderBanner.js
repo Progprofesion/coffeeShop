@@ -1,26 +1,29 @@
 import { Link } from 'react-router-dom';
+
+import ExitLink from '../exitLink/ExitLink';
 import LinkPage from '../linkPage/LinkPage';
 
 import coffeeIcon from 'src/assets/coffeeIcon.svg';
 
-import './headerPages.scss';
+import './headerBanner.scss';
 
 const HeaderPages = ({ style, title }) => {
     return (
         <section className="headerPages" style={style}>
             <LinkPage img={coffeeIcon}>
                 <Link to="/" >
-                    <div className="fz-12">Coffee house</div>
+                    <div className="fz-14">Coffee house</div>
                 </Link>
                 <Link to="/ourcoffee">
-                    <div className="fz-12">Our coffee</div>
+                    <div className="fz-14">Our coffee</div>
                 </Link>
                 <Link to="/pleasure">
-                    <div className="fz-12">For your pleasure</div>
+                    <div className="fz-14">For your pleasure</div>
                 </Link>
                 <Link to="/basket">
-                    <div className="fz-12">Basket</div>
+                    <div className="fz-14">Basket</div>
                 </Link>
+                <ExitLink />
             </LinkPage>
             <h2 className="headerPages__title" >{title}</h2>
             {/* <div className="container aboutOur__wrapper">

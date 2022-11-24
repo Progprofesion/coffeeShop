@@ -15,7 +15,7 @@
             color: gold;
         }
         &-email{
-            padding-left: 20px;
+            padding-left: 10px;
             color: coral;
             margin-top: 5px;
             margin-bottom: 5px;
@@ -43,6 +43,7 @@
 
 @media (max-width: 991px) {
     .loginView {
+        right: 20px;
         &__wrapper {
             font-size: 20px;
         }

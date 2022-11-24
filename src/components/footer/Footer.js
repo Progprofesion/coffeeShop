@@ -12,10 +12,10 @@ const Footer = () => {
     return (
         <footer className="footer">
             <LinkPage img={coffeeIcon} style={{ margin: '0 auto', display: 'flex' }}>
-                <Link className="fz-14" to="/" >Coffee house</Link>
-                <Link className="fz-14" to="/ourcoffee">Our coffee</Link>
-                <Link className="fz-14" to="/pleasure">For your pleasure</Link>
-                <Link className="fz-14" to="/basket">Basket</Link>
+                <Link className="linkPage__link fz-14" to="/" >Coffee house</Link>
+                <Link className="linkPage__link fz-14" to="/ourcoffee">Our coffee</Link>
+                <Link className="linkPage__link fz-14" to="/pleasure">For your pleasure</Link>
+                <Link className="linkPage__link fz-14" to="/basket">Basket</Link>
                 <ExitLink />
             </LinkPage>
             <IconLine img={coffeeBeansIconWhite} style={{ border: '1px solid white' }} />

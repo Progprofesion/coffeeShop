@@ -9,23 +9,15 @@ import './headerBanner.scss';
 
 const HeaderPages = ({ style, title }) => {
     return (
-        <section className="headerPages" style={style}>
+        <section className="headerBanner" style={style}>
             <LinkPage img={coffeeIcon}>
-                <Link to="/" >
-                    <div className="fz-14">Coffee house</div>
-                </Link>
-                <Link to="/ourcoffee">
-                    <div className="fz-14">Our coffee</div>
-                </Link>
-                <Link to="/pleasure">
-                    <div className="fz-14">For your pleasure</div>
-                </Link>
-                <Link to="/basket">
-                    <div className="fz-14">Basket</div>
-                </Link>
+                <Link className="linkPage__link fz-14" to="/" >Coffee house</Link>
+                <Link className="linkPage__link fz-14" to="/ourcoffee">Our coffee</Link>
+                <Link className="linkPage__link fz-14" to="/pleasure">For your pleasure</Link>
+                <Link className="linkPage__link fz-14" to="/basket">Basket</Link>
                 <ExitLink />
             </LinkPage>
-            <h2 className="headerPages__title" >{title}</h2>
+            <h2 className="headerBanner__title" >{title}</h2>
             {/* <div className="container aboutOur__wrapper">
                 <img src={img} alt="" className="aboutOur__girl" />
                 <div className="aboutOur__descr fz-24">

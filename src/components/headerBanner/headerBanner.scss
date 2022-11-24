@@ -1,4 +1,4 @@
-.headerPages {
+.headerBanner {
     min-height: 500px;
     &__title {
         padding-top: 150px;
@@ -38,7 +38,7 @@
     .contaier {
         max-width: 700px;
     }
-   .headerPages {
+   .headerBanner {
     &__title {
         font-size: 56px;
     }
@@ -46,7 +46,7 @@
 }
 
 @media (max-width: 767px) {
-    .headerPages {
+    .headerBanner {
           &__title {
             padding-top: 220px;
           }
@@ -54,7 +54,7 @@
 }
 
 @media (max-width: 575px) {
-    .headerPages {
+    .headerBanner {
         &__title {
             font-size: 45px;
         }

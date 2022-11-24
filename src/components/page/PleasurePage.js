@@ -1,6 +1,6 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-import HeaderPages from '../headerBanner/HeaderBanner';
+import HeaderBanner from '../headerBanner/HeaderBanner';
 import CardsList from '../cardsList/CardsList';
 import Footer from '../footer/Footer';
 import Hamburger from '../hamburger/Hamburger';
@@ -22,7 +22,7 @@ const PleasurePage = () => {
                 <Hamburger />
                 <BasketSticky />
                 <LoginView />
-                <HeaderPages
+                <HeaderBanner
                     style={{
                         background: "url(/static/media/bgPleasurePage.fe6ab9436eeb459ce2ab.png) center / cover no-repeat"
                     }}

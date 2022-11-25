@@ -8,8 +8,6 @@ import bgPleasurePage from './assets/bgPleasurePage.png';
 // eslint-disable-next-line
 import bgOurCoffee from './assets/bgOurCoffee.jpg';
 // eslint-disable-next-line
-import bgBest from './assets/bgBest.png';
-// eslint-disable-next-line
 import AROMISTICOCoffee1kg from './img/AROMISTICOCoffee1kg.svg';
 // eslint-disable-next-line
 import PrestoCoffeeBeans1kg from './img/PrestoCoffeeBeans1kg.svg';

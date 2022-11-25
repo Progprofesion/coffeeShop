@@ -9,6 +9,15 @@ import './firebase';
 import './styles/index.scss';
 import "src/styles/fontSize.scss";
 
+const express = require('express');
+const app = express();
+const cors = require('cors');
+
+
+app.use(cors({
+  origin: ["http://localhost:3000"]
+}));
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

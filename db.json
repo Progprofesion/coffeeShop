@@ -1,0 +1,84 @@
+{
+    "products": [
+        {
+            "id": 0,
+            "page": 1,
+            "img": "/static/media/SolimoCooffeeBeans2kg.54bf00220b02339f5c39c645f58b8fb6.svg",
+            "title": "Solimo Coffee Beans 2 kg",
+            "country": "Brazil",
+            "price": 10.73,
+            "quantity": 0
+        },
+        {
+            "id": 1,
+            "page": 2,
+            "img": "/static/media/PrestoCoffeeBeans1kg.64e083ada70fb7bfb9d8c18b253cbb72.svg",
+            "title": "Presto Coffee Beans 1 kg",
+            "country": "Kenya",
+            "price": 15.99,
+            "quantity": 0
+        },
+        {
+            "id": 2,
+            "page": 3,
+            "img": "/static/media/AROMISTICOCoffee1kg.f570b11568e712c75c491a4f849202c3.svg",
+            "title": "AROMISTICO Coffee 1 kg",
+            "country": "Columbia",
+            "price": 6.99,
+            "quantity": 0
+        },
+        {
+            "id": 3,
+            "page": 4,
+            "img": "/static/media/LavazzaTierra1KG.96029b59be841ade8189.jpg",
+            "title": "Lavazza Tierra 1 kg",
+            "country": "Brazil",
+            "price": 12.53,
+            "quantity": 0
+        },
+        {
+            "id": 4,
+            "page": 5,
+            "img": "/static/media/EvaDiaKenyaGrinders.76d4d12a78bf263da39a.jpg",
+            "title": "EvaDia Grinders 1 kg",
+            "country": "Kenya",
+            "price": 9.99,
+            "quantity": 0
+        },
+        {
+            "id": 5,
+            "page": 6,
+            "img": "/static/media/LORCremaAbsoluClassique.77c8d2ef80e4d561756f.webp",
+            "title": "LOR Crema Classique 1 kg",
+            "country": "Columbia",
+            "price": 7.56,
+            "quantity": 0
+        }
+    ],
+    "filters": [
+        {
+            "id": "all",
+            "name": "all",
+            "label": "all",
+            "className": "cardsFilters__all"
+        },
+        {
+            "id": "Brazil",
+            "name": "Brazil",
+            "label": "Brazil",
+            "className": "cardsFilters__brazil"
+        },
+        {
+            "id": "Kenya",
+            "name": "Kenya",
+            "label": "Kenya",
+            "className": "cardsFilters__Kenya"
+        },
+        {
+            "id": "Columbia",
+            "name": "Columbia",
+            "label": "Columbia",
+            "className": "cardsFilters__Columbia"
+        }
+    ]
+}

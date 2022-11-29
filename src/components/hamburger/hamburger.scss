@@ -65,6 +65,15 @@
         color: antiquewhite;
         cursor: pointer;
         border-block-end: 1px solid antiquewhite;
+        &:hover {
+            transition: 500ms;
+            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,203,253,1) 50%, rgba(252,176,69,1) 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
+            background-size: 200%;
+            animation: gradient 5s ease infinite;
+        }
     }
     &__exit {
         padding-top: 15px;
@@ -73,8 +82,13 @@
         cursor: pointer;
         border-block-end: 1px solid antiquewhite;
         &:hover {
-            transition: 0.5s;
-            color: coral;
+            transition: 500ms;
+            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,203,253,1) 50%, rgba(252,176,69,1) 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
+            background-size: 200%;
+            animation: gradient 5s ease infinite;
         }
     }
 }

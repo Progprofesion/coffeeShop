@@ -38,12 +38,14 @@
 
 @media (max-width: 576px) {
     .enter {
-        width: 85%;
         &__input {
             display: flex;
             flex-direction: column;
             margin: 30px auto 10px;
         }
+    }
+    .enterView {
+        width: 85%;
     }
     .content {
         width: 90%;

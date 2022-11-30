@@ -1,8 +1,6 @@
 import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 
-import useAuth from 'src/hooks/use-auth';
-
 import MainPage from '../page/MainPage';
 import Spinner from '../spinner/Spinner';
 import LoginPage from '../page/LoginPage';
@@ -19,8 +17,7 @@ const BasketPage = lazy(() => import('../page/BasketPage'));
 const Page404 = lazy(() => import('../page/404'));
 
 const App = () => {
-    const { isAuth } = useAuth();
-    return isAuth ? (
+    return (
         <BrowserRouter>
             <main className="app">
                 <Suspense fallback={<Spinner />}>
@@ -33,18 +30,6 @@ const App = () => {
                         <Route path="/login" element={<LoginPage />} />
                         <Route path="/register" element={<RegisterPage />} />
                         <Route path="*" element={<Page404 />} />
-                    </Routes>
-                </Suspense>
-            </main>
-        </BrowserRouter>
-    ) : (
-        <BrowserRouter>
-            <main className="app">
-                <Suspense fallback={<Spinner />}>
-                    <Routes>
-                        <Route path="*" element={<Navigate to='/login' />} />
-                        <Route path="/login" element={<LoginPage />} />
-                        <Route path="/register" element={<RegisterPage />} />
                     </Routes>
                 </Suspense>
             </main>

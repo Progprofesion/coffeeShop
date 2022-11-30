@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import './loginView.scss';
 
@@ -9,8 +10,10 @@ const LoginView = () => {
     return (
         <div className="loginView">
             <div className="loginView__wrapper" >
-                <p className="loginView__wrapper-title" > Вы вошли как:</p>
-                <p className="loginView__wrapper-email">{userEmail.replace(/['"]+/g, '')}</p>
+                <p className="loginView__wrapper-title" >{userEmail ? 'Вы вошли как:' :
+                    <Link className="loginView__btn" to="/login">Enter</Link>}</p>
+                {userEmail ? <p className="loginView__wrapper-email">{
+                    userEmail.replace(/['"]+/g, '')}</p> : null}
             </div>
         </div>
     )

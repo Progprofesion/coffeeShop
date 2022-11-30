@@ -38,7 +38,7 @@ const BasketPage = () => {
         Имя: ${data.name}
         Почта: ${data.email}`)
         alert(`ЗАКАЗ: ${normalData}, 
-            Общая сумма: ${JSON.stringify(total)})`);
+            Общая сумма: ${JSON.stringify(total).replace(/['"]+/g, '')}`);
         reset();
     };
 

@@ -18,6 +18,9 @@
         border-radius: 5px;
         padding: 0px 3px;
         outline: none;
+        &-errorMessage {
+            margin-left: -250px;
+        }
     }
     &__link {
         margin-top: 20px;

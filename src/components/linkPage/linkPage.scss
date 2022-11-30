@@ -14,8 +14,11 @@
         left: -31px;
     }
     &__link {
-        padding-right: 6px;
+        padding-right: 12px;
         border-right: 1px solid white;
+        &:nth-child(5) {
+            border: none;
+        }
         &:hover{
             transition: 500ms;
             background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,203,253,1) 50%, rgba(252,176,69,1) 100%);

@@ -8,14 +8,12 @@ const LoginView = () => {
     const userEmail = useSelector(state => state.user.email);
 
     return (
-        <div className="loginView">
+        userEmail ? <div className="loginView">
             <div className="loginView__wrapper" >
-                <p className="loginView__wrapper-title" >{userEmail ? 'Вы вошли как:' :
-                    <Link className="loginView__btn" to="/login">Enter</Link>}</p>
-                {userEmail ? <p className="loginView__wrapper-email">{
-                    userEmail.replace(/['"]+/g, '')}</p> : null}
+                <p className="loginView__wrapper-title" >Вы вошли как:</p>
+                <p className="loginView__wrapper-email">{userEmail.replace(/['"]+/g, '')}</p>
             </div>
-        </div>
+        </div> : null
     )
 }
 

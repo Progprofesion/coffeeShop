@@ -21,32 +21,6 @@
             margin-bottom: 5px;
         }
     }
-    &__btn {
-        display: block;
-        text-align: center;
-        position: relative;
-        width: 140px;
-        height: 40px;
-        border-radius: 10px;
-        border: 2px solid rgba(33, 154, 121, 0.657);
-        filter: drop-shadow(5px 5px 35px rgba(74, 131, 172, 0.25));
-        background: url(../../assets/bgMenu.jpg) center / cover no-repeat;
-        color: gold;
-        font-size: 20px;
-        line-height: 35px;
-        &:hover {
-            transition: 100s;
-            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
-            background-size: 200%;
-            animation: gradient 5s ease infinite;
-        }
-        &:active {
-            transition: 150ms;
-            transform: scale(95%);
-        }
-    }
     &__input {
         margin-right: 25px;
     }
@@ -74,13 +48,6 @@
     .loginView {
         left: 20px;
         right: unset;
-        &__btn {
-           display: none;
-           margin-top: 25px;
-           width: 100px;
-           height: 25px;
-           line-height: 10px;
-        }
     }
 }
 
@@ -94,9 +61,6 @@
                 padding-left: 0;
             }
         }
-        &__btn {
-            display: none;
-        }
     }
  }
 
@@ -104,10 +68,6 @@
    .loginView {
         &__wrapper {
             font-size: 14px;
-        }
-        &__btn {
-            width: 50%;
-            height: 4%;
         }
    }
 }

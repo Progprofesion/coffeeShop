@@ -3,7 +3,7 @@
         display: flex;
         justify-content: space-between;
         padding-top: 52px;
-        max-width: 410px;
+        max-width: 450px;
         font-weight: 400;
         margin-left: 4%;
         color: #FFFFFF;
@@ -14,10 +14,10 @@
         left: -31px;
     }
     &__link {
-        padding-right: 12px;
+        padding-right: 10px;
         border-right: 1px solid white;
-        &:nth-child(5) {
-            border: none;
+        &:nth-child(6) {
+            border: none
         }
         &:hover{
             transition: 500ms;
@@ -31,6 +31,7 @@
     }
 
 }
+
 
 // Media --------------------------
 

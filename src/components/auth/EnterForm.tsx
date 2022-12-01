@@ -15,8 +15,6 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
     const {
         register,
         formState: { errors },
-        handleSubmit,
-        reset,
     } = useForm<{ [x: string]: string }>({
         mode: "onBlur"
     });
@@ -24,11 +22,8 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
     const handleKeyPress = (target: any) => {
         if (target.charCode === 13) {
             handleClick(email, pass)
-            console.log('test')
         }
     }
-
-
 
     return (
         <> <form action="">
@@ -63,7 +58,6 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
                 onKeyPress={handleKeyPress} />
             {errors.password ? <p className="basketView__form-errorMessage" >{errors.password.message}</p> : null}
         </form>
-
             <Button
                 title={title}
                 fn={() => handleClick(email, pass)}

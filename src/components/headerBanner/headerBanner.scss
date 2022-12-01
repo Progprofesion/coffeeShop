@@ -40,17 +40,10 @@
     }
    .headerBanner {
     &__title {
-        font-size: 56px;
+        font-size: 52px;
+        padding-top: 250px;
     }
    }
-}
-
-@media (max-width: 767px) {
-    .headerBanner {
-          &__title {
-            padding-top: 220px;
-          }
-    }
 }
 
 @media (max-width: 575px) {

@@ -18,7 +18,9 @@ const HeaderPages = ({ style, title }) => {
                 <Link className="linkPage__link fz-14" to="/login">Enter</Link>
                 {/* <ExitLink /> */}
             </LinkPage>
-            <h2 className="headerBanner__title" >{title}</h2>
+            <div className="container">
+                <h2 className="headerBanner__title" >{title}</h2>
+            </div>
         </section>
     )
 };

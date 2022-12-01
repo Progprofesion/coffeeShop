@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { TransitionGroup } from 'react-transition-group';
 
 import Button from '../button/Button';
+import ExitLink from '../exitLink/ExitLink';
 import LinkPage from '../linkPage/LinkPage';
 import BasketView from './BasketView';
 import Hamburger from '../hamburger/Hamburger';
@@ -88,7 +89,7 @@ const BasketLayout = ({ setModalActive }) => {
                 <Link className="linkPage__link fz-14" to="/ourcoffee">Our coffee</Link>
                 <Link className="linkPage__link fz-14" to="/pleasure">For your pleasure</Link>
                 <Link className="linkPage__link fz-14" to="/basket">Basket</Link>
-                <Link className="linkPage__link fz-14" to="/login" style={{ border: 'none' }}>Enter</Link>
+                <ExitLink />
             </LinkPage>
             <Hamburger />
             <div className="container">

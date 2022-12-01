@@ -21,8 +21,11 @@ const CardsListItem = ({ id, img, title, country, price, quantity, basketIncr, b
             <h3 className="cardsListItem__subtitle fz-14Black">{title}</h3>
             <div className="cardsListItem__country fz-14Black">
                 <div>{country}</div>
+                <input className="cardsListItem__arbitraryNumber">
+
+                </input>
                 <Link to="/basket">
-                    <img className="cardsListItem__basket" src={basketIcon2} alt="" />
+                    <img className="cardsListItem__basket" src={basketIcon2} alt="BasketIcon" />
                 </Link>
             </div>
             <div className="cardsListItem__price fz-14Black">{price}</div>

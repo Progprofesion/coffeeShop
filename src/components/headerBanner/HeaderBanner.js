@@ -16,7 +16,6 @@ const HeaderPages = ({ style, title }) => {
                 <Link className="linkPage__link fz-14" to="/pleasure">For your pleasure</Link>
                 <Link className="linkPage__link fz-14" to="/basket">Basket</Link>
                 <Link className="linkPage__link fz-14" to="/login">Enter</Link>
-                {/* <ExitLink /> */}
             </LinkPage>
             <div className="container">
                 <h2 className="headerBanner__title" >{title}</h2>

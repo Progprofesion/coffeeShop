@@ -1,7 +1,7 @@
 .cardsListItem {
     position: relative;
     width: 220px;
-    height: 295px;
+    height: 315px;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 8px;
     text-align: center;
@@ -18,7 +18,11 @@
         display: flex;
         text-align: left;
         justify-content: space-between;
+        margin: auto;
         padding: 5px 25px 10px;
+        div {
+            line-height: 38px;
+        }
     }
     &__wrapper {
         position: absolute;
@@ -54,6 +58,8 @@
                 width: 50px;
                 height: 33px;      
                 border: unset;
+                // background: #5f8ea02e;
+                background: #24383f2e;
             }
     }
     &__amount {
@@ -74,13 +80,13 @@
     }
     &__basket {
         margin-bottom: 5px;
-        background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%); 
-        background-size: 200%;
-        animation: gradient 5s ease infinite;
+        width: 45px;
+        height: 30px;
+        background: aliceblue;
+        border-radius: 10px;
         &:hover{
             transition: 500ms;
-            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,203,253,1) 50%, rgba(252,176,69,1) 100%);
-            background-clip: text;
+            background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%); 
             -webkit-text-fill-color: transparent;
             text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
             background-size: 200%;

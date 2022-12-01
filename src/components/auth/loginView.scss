@@ -30,21 +30,21 @@
 
 
 
-@media (max-width: 991px) {
-    .loginView {
-        right: 20px;
-        &__wrapper {
-            font-size: 20px;
-        }
-        &__btn {
-            margin-top: 17px;
-            width: 125px;
-            height: 38px;
-        }
-    }
-}
+// @media (max-width: 991px) {
+//     .loginView {
+//         right: 20px;
+//         &__wrapper {
+//             font-size: 20px;
+//         }
+//         &__btn {
+//             margin-top: 17px;
+//             width: 125px;
+//             height: 38px;
+//         }
+//     }
+// }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
     .loginView {
         left: 20px;
         right: unset;

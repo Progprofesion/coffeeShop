@@ -46,12 +46,6 @@
     .basketSticky {
         min-width: 120px;
         min-height: 40px;
-        right: 20px;
-    }
-}
-
-@media (max-width: 767px) {
-    .basketSticky {
         top: 60px;
         right: 20px;
         left: unset;

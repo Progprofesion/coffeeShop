@@ -53,7 +53,7 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
                 value={pass}
                 onChange={(e) => setPass(e.target.value)}
                 onKeyPress={handleKeyPress} />
-            {errors.email ? <p className="enterView__input-errorMessage" >{'Минимум 3 буквы'}</p> : null}
+            {errors.email ? <p className="enterView__input-errorMessage" >{'Неверно введена почта'}</p> : null}
         </form>
 
             <Button

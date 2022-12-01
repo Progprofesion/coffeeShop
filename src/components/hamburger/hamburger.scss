@@ -105,13 +105,13 @@
 
 // Media -------------------
 
-@media (min-width: 767px) {
+@media (min-width: 991px) {
     .hamburger {
         display: none;
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
     .hamburgerBtn {
         display: block;
     }

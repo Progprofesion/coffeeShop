@@ -35,6 +35,12 @@
 
 // Media --------------------------
 
+@media (max-width: 991px) {
+    .linkPage {
+        display: none;
+    }
+}
+
 @media (max-width: 767px) {
     .linkPage {
         display: none;
@@ -46,7 +52,7 @@
         }
         &__img {
             top: 18px;
-            left: 127px;
+            left: 145px;
         }
         &__link {
             border-right: unset;
@@ -58,7 +64,7 @@
     .linkPage {
         max-width: 285px;
         &__img {
-            left: 66px;
+            left: 60px;
         }
     }
 }

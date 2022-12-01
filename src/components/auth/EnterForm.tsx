@@ -5,7 +5,7 @@ import Button from '../button/Button';
 
 interface FormProps {
     title: string,
-    handleClick: (email: string, pass: string) => void;
+    handleClick: (email: string, pass: string) => void,
 }
 
 const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
@@ -17,7 +17,7 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
         formState: { errors },
         handleSubmit,
         reset,
-    } = useForm({
+    } = useForm<{ [x: string]: string }>({
         mode: "onBlur"
     });
 
@@ -35,9 +35,10 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
             <input className="enterView__input"
                 {...register('email', {
                     required: 'Поле обязательно к заполнению',
-                    minLength: {
-                        value: 3,
-                        message: 'Минимум 3 буквы'
+                    pattern: {
+                        // eslint-disable-next-line
+                        value: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
+                        message: 'Не правильный адрес почты'
                     }
                 })}
                 type="email"
@@ -46,14 +47,21 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
                 onChange={(e) => setEmail(e.target.value)}
                 onKeyPress={handleKeyPress}
             />
-            {/* {errors.name ? <p className="basketView__form-errorMessage" >{errors}</p> : null} */}
+            {errors.email ? <p className="basketView__form-errorMessage" >{errors.email.message}</p> : null}
             <input className="enterView__input"
+                {...register('password', {
+                    required: 'Поле обязательно к заполнению',
+                    minLength: {
+                        value: 6,
+                        message: 'Минимум 6 знаков'
+                    }
+                })}
                 type="password"
                 placeholder="password"
                 value={pass}
                 onChange={(e) => setPass(e.target.value)}
                 onKeyPress={handleKeyPress} />
-            {errors.email ? <p className="enterView__input-errorMessage" >{'Неверно введена почта'}</p> : null}
+            {errors.password ? <p className="basketView__form-errorMessage" >{errors.password.message}</p> : null}
         </form>
 
             <Button

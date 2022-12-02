@@ -1,6 +1,6 @@
 import IconLine from "../iconLine/IconLine";
 
-import coffeeBeansIconWhite from 'src/assets/coffeeBeansIconWhite.svg'
+import coffeeBeansIconWhite from 'src/assets/icons/coffeeBeansIconWhite.svg'
 
 import "./aboutUs.scss"
 

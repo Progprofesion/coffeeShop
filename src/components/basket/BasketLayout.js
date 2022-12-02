@@ -8,7 +8,7 @@ import ExitLink from '../exitLink/ExitLink';
 import LinkPage from '../linkPage/LinkPage';
 import BasketView from './BasketView';
 import Hamburger from '../hamburger/Hamburger';
-import coffeeIcon from 'src/assets/coffeeIcon.svg';
+import coffeeIcon from 'src/assets/icons/coffeeIcon.svg';
 
 import {
     incrementQuantity,

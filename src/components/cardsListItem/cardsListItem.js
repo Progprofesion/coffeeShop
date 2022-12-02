@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import basketIcon2 from '../../assets/basketIcon2.svg';
+import basketIcon2 from '../../assets/icons/basketIcon2.svg';
 
 import 'animate.css';
 import './cardsListItem.scss';

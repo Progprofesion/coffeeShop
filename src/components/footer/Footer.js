@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import IconLine from '../iconLine/IconLine';
 import LinkPage from '../linkPage/LinkPage';
 import ExitLink from '../exitLink/ExitLink';
-import coffeeBeansIconWhite from 'src/assets/coffeeBeansIconWhite.svg'
+import coffeeBeansIconWhite from 'src/assets/icons/coffeeBeansIconWhite.svg'
 
-import coffeeIcon from 'src/assets/coffeeIcon.svg';
+import coffeeIcon from 'src/assets/icons/coffeeIcon.svg';
 
 import './footer.scss';
 

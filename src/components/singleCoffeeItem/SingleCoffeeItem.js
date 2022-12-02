@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import ExitLink from '../exitLink/ExitLink';
 import IconLine from "../iconLine/IconLine";
 import LinkPage from "../linkPage/LinkPage";
-import coffeeIcon from 'src/assets/coffeeIcon.svg';
-import coffeeBeansIconBlack from "src/assets/coffeeBeansIconBlack.svg";
+import coffeeIcon from 'src/assets/icons/coffeeIcon.svg';
+import coffeeBeansIconBlack from "src/assets/icons/coffeeBeansIconBlack.svg";
 
 import './singleCoffeeItem.scss';
 

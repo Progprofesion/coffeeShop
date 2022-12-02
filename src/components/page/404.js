@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-import gif404HD from 'src/assets/gif404HD.gif';
+import gif404HD from 'src/assets/icons/gif404HD.gif';
 // import gif404 from 'src/assets/gif404.gif';
 
 const Page404 = () => {

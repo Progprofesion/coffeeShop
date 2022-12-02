@@ -12,6 +12,8 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
 
+    const [disable, setDisable] = useState(false);
+
     const {
         register,
         formState: { errors },
@@ -38,7 +40,7 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
                 })}
                 type="email"
                 placeholder="email"
-                value={email}
+                value={email.replace(/[а-я]+/ig, '')}
                 onChange={(e) => setEmail(e.target.value)}
                 onKeyPress={handleKeyPress}
             />
@@ -60,8 +62,15 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
         </form>
             <Button
                 title={title}
-                fn={() => handleClick(email, pass)}
+                fn={() => {
+                    handleClick(email, pass)
+                    setDisable(true)
+                    setTimeout(() => {
+                        setDisable(false)
+                    }, 1000)
+                }}
                 type='submit'
+                disabled={disable}
             />
         </>
     )

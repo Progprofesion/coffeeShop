@@ -82,6 +82,15 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
                 dispatch(activeIncrTotals(price))
             };
 
+            const basketIncr10 = (e) => {
+                e.preventDefault();
+                for (let i = 0; i < 10; i++) {
+                    addItem()
+                    dispatch(statePrice({ price }))
+                    dispatch(activeIncrTotals(price))
+                }
+            }
+
             const basketDecr = (e) => {
                 e.preventDefault();
                 dispatch(statePrice({ price }))
@@ -115,6 +124,7 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
                         country={country}
                         quantity={quantity}
                         basketIncr={basketIncr}
+                        basketIncr10={basketIncr10}
                         basketDecr={basketDecr} />
             }
         });

@@ -1,14 +1,11 @@
 import { Link } from 'react-router-dom';
-import basketIcon from '../../assets/basketIcon.png';
-import basketIcon1 from '../../assets/basketIcon1.svg';
+
 import basketIcon2 from '../../assets/basketIcon2.svg';
-import basketIcon3 from '../../assets/basketIcon3.svg';
-import basketIcon4 from '../../assets/basketIcon4.svg';
 
 import 'animate.css';
 import './cardsListItem.scss';
 
-const CardsListItem = ({ id, img, title, country, price, quantity, basketIncr, basketDecr }) => {
+const CardsListItem = ({ id, img, title, country, price, quantity, basketIncr, basketIncr10, basketDecr }) => {
     return (
         <div
             name='cards'
@@ -21,9 +18,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity, basketIncr, b
             <h3 className="cardsListItem__subtitle fz-14Black">{title}</h3>
             <div className="cardsListItem__country fz-14Black">
                 <div>{country}</div>
-                <input className="cardsListItem__arbitraryNumber">
-
-                </input>
+                <button onClick={basketIncr10} className="cardsListItem__incr10">+10</button>
                 <Link to="/basket">
                     <img className="cardsListItem__basket" src={basketIcon2} alt="BasketIcon" />
                 </Link>

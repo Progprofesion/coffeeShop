@@ -58,9 +58,24 @@
                 width: 50px;
                 height: 33px;      
                 border: unset;
-                // background: #5f8ea02e;
                 background: #24383f2e;
             }
+    }
+    &__incr10 {
+        margin-bottom: 5px;
+        width: 45px;
+        height: 30px;
+        background: aliceblue;
+        border-radius: 10px;
+        border: none;
+        &:hover{
+            transition: 500ms;
+            background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%); 
+            // -webkit-text-fill-color: transparent;
+            text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
+            background-size: 200%;
+            animation: gradient 5s ease infinite;
+        }
     }
     &__amount {
         width: 25px;

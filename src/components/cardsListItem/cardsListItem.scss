@@ -109,6 +109,9 @@
             background-size: 200%;
             animation: gradient 5s ease infinite;
         }
+        &:active {
+            transform: scale(90%);
+        }
     }
     filter: drop-shadow(5px 5px 35px rgba(0, 0, 0, 0.25));
     &__arbitraryNumber {

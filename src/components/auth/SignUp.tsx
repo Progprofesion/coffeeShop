@@ -23,7 +23,7 @@ const SignUp = () => {
                 }))
                 navigate('/');
             })
-            .catch(() => alert('Такая почта уже существует!'));
+            .catch(() => alert('Такая почта уже существует'));
     }
     return (
         <section className="enterView">

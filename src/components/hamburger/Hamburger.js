@@ -1,15 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 
 import ExitLink from '../exitLink/ExitLink';
-import { removeUser } from 'src/store/slices/userSlice';
 import './hamburger.scss';
 
 const Hamburger = () => {
     const [modalActive, setModalActive] = useState(false);
-
-    const dispatch = useDispatch();
 
     return (
         <>
@@ -29,7 +25,7 @@ const Hamburger = () => {
                     <Link className="hamburger__link" to="/ourcoffee">Our coffee</Link>
                     <Link className="hamburger__link" to="/pleasure">For your pleasure</Link>
                     <Link className="hamburger__link" to="/basket">Basket</Link>
-                    <ExitLink style={{ border: '1px solid antiquewhite', padding: '15px', color: 'antiquewhite' }} />
+                    <ExitLink style={{ borderBlockEnd: '1px solid antiquewhite', padding: '15px', color: 'antiquewhite' }} />
                 </nav>
             </div>
         </>

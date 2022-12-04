@@ -1,10 +1,11 @@
 # Coffee shop 
 
-React app    
+## React app    
+
 Магазин по продаже кофе.     
 Функционал: добавление, удаление, фильтрация, корзина товаров, поиск, авторизация на TS, localStorage, модальные окна, меню hamburger, заказ товаров, маски для почты и телефона, анимации.
 
-## Installing
+### Installing
 
-`npm i` `npm start`
+`npm i`  `npm start`
 

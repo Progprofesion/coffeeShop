@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Coffee shop 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React app  
+Магазин по продаже кофе. 
+Функционал: добавление, удаление, фильтрация, корзина товаров, поиск, авторизация на TS, localStorage, модальные окна, меню hamburger, оформление товаров, маски для почты и телефона, анимации.
 
-## Available Scripts
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Prerequisites
 
-In the project directory, you can run:
+What things you need to install the software and how to install them
 
-### `npm start`
+Give examples
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Installing
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+A step by step series of examples that tell you how to get a development env running
 
-### `npm test`
+Say what the step will be
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Give the example
 
-### `npm run build`
+And repeat
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+until finished
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+End with an example of getting some data out of the system or using it for a little demo
+Running the tests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Explain how to run the automated tests for this system
+Break down into end to end tests
 
-### `npm run eject`
+Explain what these tests test and why
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Give an example
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+And coding style tests
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Explain what these tests test and why
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Give an example
 
-## Learn More
+Deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Add additional notes about how to deploy this on a live system
+Built With
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Dropwizard - The web framework used
+    Maven - Dependency Management
+    ROME - Used to generate RSS Feeds
 
-### Code Splitting
+Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+Versioning
 
-### Analyzing the Bundle Size
+We use SemVer for versioning. For the versions available, see the tags on this repository.
+Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    Billie Thompson - Initial work - PurpleBooth
 
-### Making a Progressive Web App
+See also the list of contributors who participated in this project.
+License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This project is licensed under the MIT License - see the LICENSE.md file for details
+Acknowledgments
 
-### Advanced Configuration
+    Hat tip to anyone whose code was used
+    Inspiration
+    etc
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

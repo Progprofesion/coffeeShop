@@ -17,7 +17,7 @@
         padding-right: 10px;
         border-right: 1px solid white;
         &:nth-child(6) {
-            border: none
+            border-right: none;
         }
         &:hover{
             transition: 500ms;
@@ -61,9 +61,6 @@
             padding-right: unset;
             padding: 5px;
             border-bottom: 1px solid darkslategray;
-            // border-bottom: 1px solid red;
-            // border-image: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,203,253,1) 50%, rgba(252,176,69,1) 100%);
-            // border-image-slice: 1;
         }
     }
 }

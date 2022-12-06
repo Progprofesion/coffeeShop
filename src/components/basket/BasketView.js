@@ -31,7 +31,7 @@ const BasketView = ({ id, img, title, country, price, quantity, incr, decr, ...r
                     <div className="basketView__result">
                         <div className="basketView__subtitle">{title}</div>
                         <div className="basketView__country">{country}</div>
-                        <div className="basketView__price">{price}</div>
+                        <div className="basketView__price">{price}<span>$</span></div>
                         <div className="basketView__btnWrapper">
                             <button
                                 disabled={showButton}

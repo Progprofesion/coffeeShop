@@ -45,6 +45,9 @@
     }
     &__price {
         margin-top: 10px;
+        span {
+            color: darkgreen;
+        }
     }
     &__quantity {
         position: absolute;

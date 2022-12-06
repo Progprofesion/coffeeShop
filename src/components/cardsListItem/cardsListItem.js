@@ -1,11 +1,36 @@
+import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
-import basketIcon2 from 'src/assets/icons/basketIcon2.svg';
+import { randomNumber } from 'src/store/slices/basketSlice';
+
+import basketIcon from 'src/assets/icons/basketIcon.svg';
 
 import 'animate.css';
 import './cardsListItem.scss';
 
 const CardsListItem = ({ id, img, title, country, price, quantity, basketIncr, basketIncr10, basketDecr }) => {
+    const stateRandom = useSelector(state => state.basket.stateRandom);
+
+    const [value, setValue] = useState('');
+
+    const dispatch = useDispatch();
+
+    const {
+        register,
+        formState: { errors },
+        handleSubmit,
+        reset,
+    } = useForm({
+        mode: "onBlur"
+    });
+
+    const onSubmit = () => {
+        reset();
+    };
+    // console.log(stateRandom)
+
     return (
         <div
             name='cards'
@@ -18,9 +43,31 @@ const CardsListItem = ({ id, img, title, country, price, quantity, basketIncr, b
             <h3 className="cardsListItem__subtitle fz-14Black">{title}</h3>
             <div className="cardsListItem__country fz-14Black">
                 <div>{country}</div>
-                <button onClick={basketIncr10} className="cardsListItem__incr10">+10</button>
+                <form onSubmit={handleSubmit(onSubmit)} action="">
+                    <input
+                        {...register('number', {
+                            pattern: {
+                                value: /^[0-9]+$/,
+                                message: 'Please enter a number',
+                            },
+                            minLength: {
+                                value: /^\d+$/,
+                                message: 'Нажмите Enter',
+                            }
+                        })}
+                        value={value.replace(/[A-Za-zА-Яа-яЁё.,]/, '')}
+                        maxLength={2}
+                        onKeyDown={e => basketIncr10(e, stateRandom)}
+                        onChange={e => {
+                            dispatch(randomNumber(e.target.value))
+                            setValue(e.target.value)
+                        }}
+                        className="cardsListItem__incr10" placeholder="00" type='text' />
+                    {errors.number ? <p className="basketView__form-errorMessage" >{errors.number.message}</p> : null}
+                    <button>asd</button>
+                </form>
                 <Link to="/basket">
-                    <img className="cardsListItem__basket" src={basketIcon2} alt="BasketIcon" />
+                    <img className="cardsListItem__basket" src={basketIcon} alt="BasketIcon" />
                 </Link>
             </div>
             <div className="cardsListItem__price fz-14Black">{price}</div>
@@ -33,7 +80,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity, basketIncr, b
                     onClick={basketIncr}
                     className="cardsListItem__wrapper-btn">+</button>
             </div>
-        </div>
+        </div >
     )
 };
 

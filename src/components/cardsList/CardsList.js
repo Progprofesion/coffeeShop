@@ -34,6 +34,7 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
     const activeFilter = useSelector(state => state.filters.activeFilter);
     const searchCoffee = useSelector(state => state.filters.searchCoffee);
     const stateArrRender = useSelector(state => state.basket.stateStartArr);
+    const stateRandom = useSelector(state => state.basket.stateRandom);
 
     useEffect(() => {
         if (stateArrRender.length < 6) {
@@ -82,12 +83,16 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
                 dispatch(activeIncrTotals(price))
             };
 
-            const basketIncr10 = (e) => {
-                e.preventDefault();
-                for (let i = 0; i < 10; i++) {
-                    addItem()
-                    dispatch(statePrice({ price }))
-                    dispatch(activeIncrTotals(price))
+
+            const basketIncr10 = (e, stateRandom) => {
+                // e.preventDefault();
+                if (e.code === "Enter") {
+                    for (let t = 0; t < stateRandom; t++) {
+                        e.preventDefault();
+                        addItem()
+                        dispatch(statePrice({ price }))
+                        dispatch(activeIncrTotals(price))
+                    }
                 }
             }
 

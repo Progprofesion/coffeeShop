@@ -38,7 +38,7 @@ const BasketPage = () => {
         Имя: ${data.name}
         Почта: ${data.email}`)
         alert(`ЗАКАЗ: ${normalData}, 
-            Общая сумма: ${JSON.stringify(total).replace(/['"]+/g, '')}`);
+            Общая сумма: ${JSON.stringify(total).replace(/['"]+/g, '')}$`);
         reset();
     };
 
@@ -46,7 +46,7 @@ const BasketPage = () => {
         return arr.map(({ title, quantity, price, }) => {
             const data = `
             ${title},
-            Количество: ${quantity}, Цена: ${price}`;
+            Количество: ${quantity}, Цена: ${price}$`;
             return data
         })
     };

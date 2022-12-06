@@ -80,7 +80,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity }) => {
                 <div>{country}</div>
                 <form action="">
                     <input
-                        value={value.replace(/[A-Za-zА-Яа-яЁё.,]/, '')}
+                        value={value.replace(/^[^0-9._]*[a-zA-Z0-9_]*[^0-9._]$/, '')}
                         maxLength={2}
                         onKeyDown={e => basketIncr10(e, value)}
                         onChange={e => setValue(e.target.value)}

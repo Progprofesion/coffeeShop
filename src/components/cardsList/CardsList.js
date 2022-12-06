@@ -1,4 +1,4 @@
-import { useMemo, useEffect } from 'react';
+import { useMemo, useEffect, useState } from 'react';
 import { useGetProductsQuery } from '../api/apiSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -8,15 +8,7 @@ import CardsListItem from '../cardsListItem/CardsListItem';
 import SkeletonCardsList from '../skeleton/SkeletonCardsList';
 
 
-import {
-    statePrice,
-    addProduct,
-    decrementQuantity,
-    removeProduct,
-    activeIncrTotals,
-    activeDecrTotals,
-    startState
-} from 'src/store/slices/basketSlice';
+import { startState } from 'src/store/slices/basketSlice';
 
 import './cardsList.scss';
 
@@ -34,7 +26,6 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
     const activeFilter = useSelector(state => state.filters.activeFilter);
     const searchCoffee = useSelector(state => state.filters.searchCoffee);
     const stateArrRender = useSelector(state => state.basket.stateStartArr);
-    const stateRandom = useSelector(state => state.basket.stateRandom);
 
     useEffect(() => {
         if (stateArrRender.length < 6) {
@@ -76,48 +67,6 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
         }
         // eslint-disable-next-line
         return arr.map(({ page, price, id, img, title, country, quantity }) => {
-            const basketIncr = (e) => {
-                e.preventDefault();
-                addItem()
-                dispatch(statePrice({ price }))
-                dispatch(activeIncrTotals(price))
-            };
-
-
-            const basketIncr10 = (e, stateRandom) => {
-                // e.preventDefault();
-                if (e.code === "Enter") {
-                    for (let t = 0; t < stateRandom; t++) {
-                        e.preventDefault();
-                        addItem()
-                        dispatch(statePrice({ price }))
-                        dispatch(activeIncrTotals(price))
-                    }
-                }
-            }
-
-            const basketDecr = (e) => {
-                e.preventDefault();
-                dispatch(statePrice({ price }))
-                if (quantity > 0) {
-                    dispatch(activeDecrTotals(price))
-                }
-                dispatch(decrementQuantity(id))
-                dispatch(removeProduct(id))
-            };
-
-            const addItem = () => {
-                const item = {
-                    id,
-                    img,
-                    title,
-                    country,
-                    price,
-                }
-                dispatch(addProduct(item))
-            };
-
-
             if (page > cardsView) {
                 return isLoading ? <SkeletonCardsList key={id} />
                     : <CardsListItem
@@ -127,10 +76,7 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
                         img={img}
                         title={title}
                         country={country}
-                        quantity={quantity}
-                        basketIncr={basketIncr}
-                        basketIncr10={basketIncr10}
-                        basketDecr={basketDecr} />
+                        quantity={quantity} />
             }
         });
     };

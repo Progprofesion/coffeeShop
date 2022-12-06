@@ -1,6 +1,6 @@
 .cardsListItem {
     position: relative;
-    width: 220px;
+    width: 235px;
     height: 315px;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 8px;
@@ -13,6 +13,9 @@
     &__price {
         text-align: left;
         padding: 5px 25px;
+        span {
+            color: darkgreen;
+        }
     }
     &__country {
         display: flex;

@@ -7,7 +7,6 @@ const initialState = cardsAdapter.getInitialState({
     amount: localStorage.getItem('amount') || 0,
     items: JSON.parse(localStorage.getItem('object')) || [],
     stateStartArr: JSON.parse(localStorage.getItem('stateArr')) || [],
-    stateRandom: null
 });
 
 const cardsSlice = createSlice({
@@ -69,9 +68,6 @@ const cardsSlice = createSlice({
                 state.items = removeItem;
             }
         },
-        randomNumber: (state, action) => {
-            state.stateRandom = action.payload;
-        }
     }
 });
 
@@ -90,5 +86,4 @@ export const { statePrice,
     basketAmount,
     removeProduct,
     startState,
-    randomNumber,
 } = actions;

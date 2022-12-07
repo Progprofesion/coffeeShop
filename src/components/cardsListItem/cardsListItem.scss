@@ -25,7 +25,7 @@
     }
     &__wrapperBtnAmount {
         position: absolute;
-        margin-top: 5px;
+        margin-top: 10px;
         right: 22px;
         width: 140px;
         display: flex;
@@ -75,7 +75,6 @@
     &__form {
         border: 1px solid #24383f2e;
         border-radius: 10px;
-        // background: #24383f2e;
     }
     &__input {
         width: 50px;

@@ -23,10 +23,28 @@
         background: url(../../assets/bg/bgCardsList.jpg) center / cover  no-repeat;
         padding: 50px 0 50px 0;
         max-width: 1000px;
+        min-height: 1100px;
         border-radius: 50px;
         margin: 0 auto;
     }
 }
+
+// Animate
+.cards__item-enter {
+    display: none;
+    opacity: 0;
+  }
+.cards__item-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+.cards__item-exit {
+    opacity: 1;
+  }
+.cards__item-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+  }
 
 // Media ----------------------
 

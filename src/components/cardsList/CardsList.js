@@ -1,6 +1,10 @@
-import { useMemo, useEffect, useState } from 'react';
+import { useMemo, useEffect } from 'react';
 import { useGetProductsQuery } from '../api/apiSlice';
 import { useSelector, useDispatch } from 'react-redux';
+import {
+    CSSTransition,
+    TransitionGroup,
+} from 'react-transition-group';
 
 import SearchComponent from '../searchComponent/SearchComponent';
 import Error from 'src/assets/icons/Error.gif';
@@ -68,15 +72,20 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
         // eslint-disable-next-line
         return arr.map(({ page, price, id, img, title, country, quantity }) => {
             if (page > cardsView) {
-                return isLoading ? <SkeletonCardsList key={id} />
-                    : <CardsListItem
-                        key={page}
-                        price={price}
-                        id={id}
-                        img={img}
-                        title={title}
-                        country={country}
-                        quantity={quantity} />
+                return (isLoading ? <SkeletonCardsList key={id} /> :
+                    <CSSTransition key={id} timeout={500} classNames="cards__item">
+                        <CardsListItem
+                            key={page}
+                            price={price}
+                            id={id}
+                            img={img}
+                            title={title}
+                            country={country}
+                            quantity={quantity}
+                            style={height} />
+                    </CSSTransition>
+
+                )
             }
         });
     };
@@ -88,12 +97,12 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
                 <h2 className="cardsList__title">{title}</h2>
                 <div className="cardsList__bg" style={bg} >
                     <SearchComponent />
-                    <ul className="cardsList__wrapper" style={height}>
+                    <TransitionGroup className="cardsList__wrapper" style={height}>
                         {elements}
-                    </ul>
+                    </TransitionGroup>
                 </div>
             </div>
-        </section>
+        </section >
     )
 
 };

@@ -16,12 +16,7 @@ const Footer = () => {
                 <Link className="linkPage__link fz-14" to="/ourcoffee">Our coffee</Link>
                 <Link className="linkPage__link fz-14" to="/pleasure">For your pleasure</Link>
                 <Link className="linkPage__link fz-14" to="/basket">Basket</Link>
-                <ExitLink
-                // styleEnter={{
-                //     borderBottom: "1px solid darkslategray"
-                // }}
-
-                />
+                <ExitLink />
             </LinkPage>
             <IconLine img={coffeeBeansIconWhite} style={{ border: '1px solid white' }} />
         </footer>

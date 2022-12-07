@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import coffeeBeansIconBlack from 'src/assets/icons/coffeeBeansIconBlack.svg'
+
 import {
     statePrice,
     addProduct,
@@ -9,8 +11,6 @@ import {
     removeProduct,
     activeIncrTotals,
     activeDecrTotals,
-    startState,
-    randomNumber
 } from 'src/store/slices/basketSlice';
 
 import basketIcon from 'src/assets/icons/basketIcon.svg';
@@ -32,8 +32,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity }) => {
     };
 
 
-    const basketIncr10 = (e, stateRandom) => {
-        // e.preventDefault();
+    const basketRandom = (e, stateRandom) => {
         if (e.code === "Enter") {
             for (let t = 0; t < stateRandom; t++) {
                 e.preventDefault();
@@ -42,6 +41,16 @@ const CardsListItem = ({ id, img, title, country, price, quantity }) => {
                 dispatch(activeIncrTotals(price))
                 setValue('')
             }
+        }
+    }
+
+    const basketRandomBtn = (e, stateRandom) => {
+        e.preventDefault();
+        for (let t = 0; t < stateRandom; t++) {
+            addItem()
+            dispatch(statePrice({ price }))
+            dispatch(activeIncrTotals(price))
+            setValue('')
         }
     }
 
@@ -76,29 +85,37 @@ const CardsListItem = ({ id, img, title, country, price, quantity }) => {
                 </Link>
             </div>
             <h3 className="cardsListItem__subtitle fz-14Black">{title}</h3>
-            <div className="cardsListItem__country fz-14Black">
-                <div>{country}</div>
-                <form action="">
+            <div className="cardsListItem__wrapperCountryPrice fz-14Black">
+                <div className="cardsListItem__country">{country}:</div>
+                <div className="cardsListItem__price fz-14Black">{price}<span>$</span></div>
+            </div>
+            <div className="cardsListItem__wrapperBasketInput">
+                <form className='cardsListItem__form' action="">
                     <input
                         value={value.replace(/^[^0-9._]*[a-zA-Z0-9_]*[^0-9._]$/, '')}
                         maxLength={2}
-                        onKeyDown={e => basketIncr10(e, value)}
+                        onKeyDown={e => basketRandom(e, value)}
                         onChange={e => setValue(e.target.value)}
-                        className="cardsListItem__incr10" placeholder="00" type='text' />
+                        className="cardsListItem__input" placeholder="00" type='text' />
+                    <button
+                        onClick={e => basketRandomBtn(e, value)}
+                        // onChange={e => setValue(e.target.value)}
+                        className="cardsListItem__randomBtn">+</button>
                 </form>
+
                 <Link to="/basket">
                     <img className="cardsListItem__basket" src={basketIcon} alt="BasketIcon" />
                 </Link>
             </div>
-            <div className="cardsListItem__price fz-14Black">{price}<span>$</span></div>
-            <div className="cardsListItem__wrapper">
+            <img className='cardsListItem__imgIcon' src={coffeeBeansIconBlack} alt="" />
+            <div className="cardsListItem__wrapperBtnAmount">
                 <button
                     onClick={basketDecr}
-                    className="cardsListItem__wrapper-btn">-</button>
+                    className="cardsListItem__btn">-</button>
                 <div className="cardsListItem__amount">{quantity}</div>
                 <button
                     onClick={basketIncr}
-                    className="cardsListItem__wrapper-btn">+</button>
+                    className="cardsListItem__btn">+</button>
             </div>
         </div >
     )

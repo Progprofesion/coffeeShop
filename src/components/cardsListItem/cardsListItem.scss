@@ -1,7 +1,7 @@
 .cardsListItem {
     position: relative;
     width: 235px;
-    height: 315px;
+    height: 350px;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 8px;
     text-align: center;
@@ -11,27 +11,23 @@
     height: 140px;
     }
     &__price {
-        text-align: left;
-        padding: 5px 25px;
+        padding: 5px 0 0 10px;
         span {
             color: darkgreen;
         }
     }
-    &__country {
+    &__wrapperCountryPrice {
         display: flex;
-        text-align: left;
-        justify-content: space-between;
-        margin: auto;
         padding: 5px 25px 10px;
-        div {
-            line-height: 38px;
-        }
     }
-    &__wrapper {
+    &__country {
+        padding-top: 5px;
+    }
+    &__wrapperBtnAmount {
         position: absolute;
-        margin-top: -33px;
+        margin-top: 5px;
         right: 22px;
-        width: 130px;
+        width: 140px;
         display: flex;
         justify-content: space-between;
         transition: 1s;
@@ -57,16 +53,32 @@
                 border-top-right-radius: 10px;
                 border-bottom-right-radius: 10px;
             }
-            &-btn {
-                width: 50px;
-                height: 33px;      
-                border: unset;
-                background: #24383f2e;
-            }
+
+
     }
-    &__incr10 {
-        margin-bottom: 5px;
-        width: 45px;
+    &__btn {
+        width: 50px;
+        height: 33px;      
+        border: unset;
+        background: #24383f2e;
+    }
+    &__amount {
+        width: 25px;
+        height: 25px;
+        margin-top: 3px;
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%);
+        text-align: center;
+        pointer-events: none;
+    }
+    &__form {
+        border: 1px solid #24383f2e;
+        border-radius: 10px;
+        // background: #24383f2e;
+    }
+    &__input {
+        width: 50px;
         height: 30px;
         background: aliceblue;
         border-radius: 10px;
@@ -83,16 +95,26 @@
             transform: scale(95%);
         }
     }
-    &__amount {
-        width: 25px;
-        height: 25px;
-        margin-top: 3px;
-        position: absolute;
-        right: 50%;
-        transform: translateX(50%);
-        text-align: center;
-        padding: 1px;
-        pointer-events: none;
+    &__wrapperBasketInput {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 25px 5px 25px;
+    }
+    &__randomBtn {
+        margin-left: 10px;
+        width: 40px;
+        height: 30px;      
+        border-radius: 10px;
+        border: none;
+        background: aliceblue;
+        &:hover{
+            transition: 500ms;
+            opacity: 0.95;
+            color: brown;
+        }
+        &:active {
+            transform: scale(90%);
+        }
     }
     &__img {
         width: 100%;
@@ -100,7 +122,7 @@
         cursor: pointer;
     }
     &__basket {
-        margin-bottom: 5px;
+        margin: 0 0 0 25px;
         width: 45px;
         height: 30px;
         background: aliceblue;
@@ -118,6 +140,11 @@
         }
     }
     filter: drop-shadow(5px 5px 35px rgba(0, 0, 0, 0.25));
+    &__imgIcon{
+        position: absolute;
+        left: 25px;
+        bottom: 20px;
+    }
     &__arbitraryNumber {
         max-width: 20%;
         height: 30px;

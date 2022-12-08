@@ -85,10 +85,8 @@ const CardsListItem = ({ id, img, title, country, price, quantity, ...rest }) =>
             timeout={500}
             nodeRef={nodeRef}
             classNames="cards__item">
-            <ul className="cardsListItem" ref={nodeRef}>
-                <div
-                    name='cards'
-                    className=" animate__animated animate__flipInX ">
+            <div ref={nodeRef}>
+                <ul className=" cardsListItem animate__animated animate__flipInX " >
                     <div className="cardsListItem__item" name='cards' type="text">
                         <Link to={`/ourcoffee/${id}`}>
                             <img className="cardsListItem__img" src={img} alt="coffee" />
@@ -111,7 +109,6 @@ const CardsListItem = ({ id, img, title, country, price, quantity, ...rest }) =>
                                 onClick={e => basketRandomBtn(e, value)}
                                 className="cardsListItem__randomBtn">+</button>
                         </form>
-
                         <Link to="/basket">
                             <img className="cardsListItem__basket" src={basketIcon} alt="BasketIcon" />
                         </Link>
@@ -126,8 +123,8 @@ const CardsListItem = ({ id, img, title, country, price, quantity, ...rest }) =>
                             onClick={basketIncr}
                             className="cardsListItem__btn">+</button>
                     </div>
-                </div >
-            </ul>
+                </ul>
+            </div >
         </CSSTransition>
 
     )

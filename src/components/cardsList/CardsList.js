@@ -1,10 +1,7 @@
-import { useMemo, useEffect, useRef } from 'react';
+import { useMemo, useEffect } from 'react';
 import { useGetProductsQuery } from '../api/apiSlice';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-    CSSTransition,
-    TransitionGroup,
-} from 'react-transition-group';
+import { TransitionGroup } from 'react-transition-group';
 
 import SearchComponent from '../searchComponent/SearchComponent';
 import Error from 'src/assets/icons/Error.gif';
@@ -81,8 +78,7 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
                         img={img}
                         title={title}
                         country={country}
-                        quantity={quantity}
-                        style={height} />
+                        quantity={quantity} />
                 )
             }
         });
@@ -93,7 +89,7 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
         <section className="cardsList" style={style} >
             <div className="container">
                 <h2 className="cardsList__title">{title}</h2>
-                <div className="cardsList__bg" style={bg} >
+                <div className="cardsList__bg" style={bg} style={height}>
                     <SearchComponent />
                     <TransitionGroup className="cardsList__wrapper" >
                         {elements}

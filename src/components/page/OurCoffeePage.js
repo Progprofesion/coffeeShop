@@ -30,7 +30,7 @@ const OurCoffeePage = () => {
                 <AboutUs />
                 <CardsList
                     cardsView={0}
-                    height={{ 'minHeight': '624px' }}
+                // height={{ 'minHeight': '624px' }}
                 />
                 <Footer />
             </HelmetProvider>

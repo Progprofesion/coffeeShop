@@ -1,4 +1,4 @@
-import { useMemo, useEffect } from 'react';
+import { useMemo, useEffect, useRef } from 'react';
 import { useGetProductsQuery } from '../api/apiSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -70,21 +70,19 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
             return <h5>No products</h5>
         }
         // eslint-disable-next-line
-        return arr.map(({ page, price, id, img, title, country, quantity }) => {
+        return arr.map(({ page, price, id, img, title, country, quantity, ...rest }) => {
             if (page > cardsView) {
-                return (isLoading ? <SkeletonCardsList key={id} /> :
-                    <CSSTransition key={id} timeout={500} classNames="cards__item">
-                        <CardsListItem
-                            key={page}
-                            price={price}
-                            id={id}
-                            img={img}
-                            title={title}
-                            country={country}
-                            quantity={quantity}
-                            style={height} />
-                    </CSSTransition>
-
+                return (
+                    <CardsListItem
+                        {...rest}
+                        key={page}
+                        price={price}
+                        id={id}
+                        img={img}
+                        title={title}
+                        country={country}
+                        quantity={quantity}
+                        style={height} />
                 )
             }
         });
@@ -97,7 +95,7 @@ const CardsList = ({ cardsView, style, bg, title, height }) => {
                 <h2 className="cardsList__title">{title}</h2>
                 <div className="cardsList__bg" style={bg} >
                     <SearchComponent />
-                    <TransitionGroup className="cardsList__wrapper" style={height}>
+                    <TransitionGroup className="cardsList__wrapper" >
                         {elements}
                     </TransitionGroup>
                 </div>

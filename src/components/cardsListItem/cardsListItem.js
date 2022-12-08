@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 
 import coffeeBeansIconWhite from 'src/assets/icons/coffeeBeansIconWhite.svg'
 
@@ -18,9 +19,11 @@ import basketIcon from 'src/assets/icons/basketIcon.svg';
 import 'animate.css';
 import './cardsListItem.scss';
 
-const CardsListItem = ({ id, img, title, country, price, quantity, height }) => {
+const CardsListItem = ({ id, img, title, country, price, quantity, ...rest }) => {
 
     const [value, setValue] = useState('');
+
+    const nodeRef = useRef();
 
     const dispatch = useDispatch();
 
@@ -76,49 +79,57 @@ const CardsListItem = ({ id, img, title, country, price, quantity, height }) => 
     };
 
     return (
-        <ul className="cardsList__wrapper" style={height}>
-            <div
-                name='cards'
-                className="cardsListItem  animate__animated animate__flipInX ">
-                <div className="cardsListItem__item" name='cards' type="text">
-                    <Link to={`/ourcoffee/${id}`}>
-                        <img className="cardsListItem__img" src={img} alt="coffee" />
-                    </Link>
-                </div>
-                <h3 className="cardsListItem__subtitle fz-14Black">{title}</h3>
-                <div className="cardsListItem__wrapperCountryPrice fz-14Black">
-                    <div className="cardsListItem__country">{country}:</div>
-                    <div className="cardsListItem__price fz-14Black">{price}<span>$</span></div>
-                </div>
-                <div className="cardsListItem__wrapperBasketInput">
-                    <form className='cardsListItem__form' action="">
-                        <input
-                            value={value.replace(/^[^0-9._]*[a-zA-Z0-9_]*[^0-9._]$/, '')}
-                            maxLength={2}
-                            onKeyDown={e => basketRandom(e, value)}
-                            onChange={e => setValue(e.target.value)}
-                            className="cardsListItem__input" placeholder="00" type='text' />
-                        <button
-                            onClick={e => basketRandomBtn(e, value)}
-                            className="cardsListItem__randomBtn">+</button>
-                    </form>
+        <CSSTransition
+            {...rest}
+            key={id}
+            timeout={500}
+            nodeRef={nodeRef}
+            classNames="cards__item">
+            <ul className="cardsListItem" ref={nodeRef}>
+                <div
+                    name='cards'
+                    className=" animate__animated animate__flipInX ">
+                    <div className="cardsListItem__item" name='cards' type="text">
+                        <Link to={`/ourcoffee/${id}`}>
+                            <img className="cardsListItem__img" src={img} alt="coffee" />
+                        </Link>
+                    </div>
+                    <h3 className="cardsListItem__subtitle fz-14Black">{title}</h3>
+                    <div className="cardsListItem__wrapperCountryPrice fz-14Black">
+                        <div className="cardsListItem__country">{country}:</div>
+                        <div className="cardsListItem__price fz-14Black">{price}<span>$</span></div>
+                    </div>
+                    <div className="cardsListItem__wrapperBasketInput">
+                        <form className='cardsListItem__form' action="">
+                            <input
+                                value={value.replace(/^[^0-9._]*[a-zA-Z0-9_]*[^0-9._]$/, '')}
+                                maxLength={2}
+                                onKeyDown={e => basketRandom(e, value)}
+                                onChange={e => setValue(e.target.value)}
+                                className="cardsListItem__input" placeholder="00" type='text' />
+                            <button
+                                onClick={e => basketRandomBtn(e, value)}
+                                className="cardsListItem__randomBtn">+</button>
+                        </form>
 
-                    <Link to="/basket">
-                        <img className="cardsListItem__basket" src={basketIcon} alt="BasketIcon" />
-                    </Link>
-                </div>
-                <img className='cardsListItem__imgIcon' src={coffeeBeansIconWhite} alt="" />
-                <div className="cardsListItem__wrapperBtnAmount">
-                    <button
-                        onClick={basketDecr}
-                        className="cardsListItem__btn">-</button>
-                    <div className="cardsListItem__amount">{quantity}</div>
-                    <button
-                        onClick={basketIncr}
-                        className="cardsListItem__btn">+</button>
-                </div>
-            </div >
-        </ul>
+                        <Link to="/basket">
+                            <img className="cardsListItem__basket" src={basketIcon} alt="BasketIcon" />
+                        </Link>
+                    </div>
+                    <img className='cardsListItem__imgIcon' src={coffeeBeansIconWhite} alt="" />
+                    <div className="cardsListItem__wrapperBtnAmount">
+                        <button
+                            onClick={basketDecr}
+                            className="cardsListItem__btn">-</button>
+                        <div className="cardsListItem__amount">{quantity}</div>
+                        <button
+                            onClick={basketIncr}
+                            className="cardsListItem__btn">+</button>
+                    </div>
+                </div >
+            </ul>
+        </CSSTransition>
+
     )
 };
 

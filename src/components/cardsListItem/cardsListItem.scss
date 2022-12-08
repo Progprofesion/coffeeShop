@@ -73,7 +73,7 @@
         pointer-events: none;
     }
     &__form {
-        border: 1px solid #24383f2e;
+        border: 1px solid burlywood;
         border-radius: 10px;
     }
     &__input {
@@ -142,7 +142,7 @@
     &__imgIcon{
         position: absolute;
         left: 25px;
-        bottom: 20px;
+        bottom: -40px;
     }
     &__arbitraryNumber {
         max-width: 20%;

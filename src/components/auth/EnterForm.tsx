@@ -42,7 +42,7 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
                 placeholder="email"
                 value={email.replace(/[а-я]+/ig, '')}
                 onChange={(e) => setEmail(e.target.value)}
-                onKeyPress={handleKeyPress}
+                onKeyDown={handleKeyPress}
             />
             {errors.email ? <p className="basketView__form-errorMessage" >{errors.email.message}</p> : null}
             <input className="enterView__input"
@@ -57,7 +57,7 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
                 placeholder="password"
                 value={pass}
                 onChange={(e) => setPass(e.target.value)}
-                onKeyPress={handleKeyPress} />
+                onKeyDown={handleKeyPress} />
             {errors.password ? <p className="basketView__form-errorMessage" >{errors.password.message}</p> : null}
         </form>
             <Button

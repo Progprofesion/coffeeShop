@@ -23,7 +23,8 @@ const MainPage = () => {
                 <HeaderMain />
                 <CardsList
                     cardsView={3}
-                    title={'Our best'} />
+                    title={'Our best'}
+                    height={{ minHeight: '565px' }} />
                 <Footer />
             </HelmetProvider>
         </>

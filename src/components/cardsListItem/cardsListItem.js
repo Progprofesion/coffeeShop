@@ -87,7 +87,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity, ...rest }) =>
             classNames="cards__item">
             <div ref={nodeRef}>
                 <ul className=" cardsListItem animate__animated animate__flipInX " >
-                    <div className="cardsListItem__item" name='cards' type="text">
+                    <div className="cardsListItem__wrapperImg" name='cards' type="text">
                         <Link to={`/ourcoffee/${id}`}>
                             <img className="cardsListItem__img" src={img} alt="coffee" />
                         </Link>

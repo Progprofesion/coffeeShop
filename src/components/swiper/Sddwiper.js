@@ -1,82 +1,32 @@
-// core version + navigation, pagination modules:
-import Swiper, { Navigation, Pagination } from 'swiper';
-// import Swiper and modules styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import './swiper.scss';
+// Import Swiper styles
+import 'swiper/scss';
+import './swap.scss';
+
 import AROMISTICOCoffee1kg from "src/assets/cardsImg/AROMISTICOCoffee1kg.svg";
 import EvaDiaKenyaGrinders from "src/assets/cardsImg/EvaDiaKenyaGrinders.jpg"
 import LavazzaTierra1KG from "src/assets/cardsImg/LavazzaTierra1KG.jpg";
-import LORCremaAbsoluClassique from "src/assets/cardsImg/LORCremaAbsoluClassique.webp";
+import LORCremaAbsoluClassique from 'src/assets/cardsImg/LORCremaAbsoluClassique.webp';
 import PrestoCoffeeBeans1kg from "src/assets/cardsImg/PrestoCoffeeBeans1kg.svg";
 import SolimoCooffeeBeans2kg from "src/assets/cardsImg/SolimoCooffeeBeans2kg.svg";
 
-const Sddwiper = () => {
-    const swiper = new Swiper('.swiper', {
-
-        modules: [Navigation, Pagination],
-        // Optional parameters
-        direction: 'vertical',
-        loop: true,
-
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-        },
-
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-
-        // And if we need scrollbar
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
-    });
-
-
+export default () => {
     return (
-        <div class="swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src={AROMISTICOCoffee1kg} alt="" />
-                </div>
-                <div class="swiper-slide">
-                    <img src={EvaDiaKenyaGrinders} alt="" />
-                </div>
-                <div class="swiper-slide">
-                    <img src={LavazzaTierra1KG} alt="" />
-                </div>
-                <div class="swiper-slide">
-                    <img src={LORCremaAbsoluClassique} alt="" />
-                </div>
-                <div class="swiper-slide">
-                    <img src={PrestoCoffeeBeans1kg} alt="" />
-                </div>
-                <div class="swiper-slide">
-                    <img src={SolimoCooffeeBeans2kg} alt="" />
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-scrollbar"></div>
+        <div className="swap">
+            <Swiper
+                spaceBetween={50}
+                slidesPerView={3}
+                onSlideChange={() => console.log('slide change')}
+                onSwiper={(swiper) => console.log(swiper)}
+            >
+                <SwiperSlide><img className="swapImg" src='https://about-tea.ru/wp-content/uploads/d/4/1/d4103f7ca3583352ce2078b29e0fa262.jpeg' alt="coffee" /></SwiperSlide>
+                <SwiperSlide><img className="swapImg" src={EvaDiaKenyaGrinders} alt="coffee" /></SwiperSlide>
+                <SwiperSlide><img className="swapImg" src='https://ra-karandash.ru/wp-content/uploads/2017/10/%D0%A3%D0%BF%D0%B0%D0%BA%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BA%D0%BE%D1%84%D0%B5_Parrada_5.jpg' alt="coffee" /></SwiperSlide>
+                <SwiperSlide><img className="swapImg" src={LORCremaAbsoluClassique} alt="coffee" /></SwiperSlide>
+                <SwiperSlide><img className="swapImg" src="http://micahhansen.com/wp-content/uploads/2017/01/Fiddlers-Coffee-bag-01.jpg" alt="coffee" /></SwiperSlide>
+                <SwiperSlide><img className="swapImg" src="https://kofe78.ru/image/cache/data/Vergnano_new/Vergnano%20Espresso%201%20kg-800x800.jpg" alt="coffee" /></SwiperSlide>
+            </Swiper>
         </div>
-    )
-
-}
-
-export default Sddwiper;
-
-// init Swiper:
-
-
-
-
-
-
-
+    );
+};

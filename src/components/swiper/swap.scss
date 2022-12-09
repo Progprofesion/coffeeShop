@@ -1,0 +1,27 @@
+.swap {
+    background: rgb(126, 154, 178) ;
+
+}
+.swapImg {
+    width: 80%;
+}
+
+.swapWrapp{
+    width: 50vh;
+    &__img{
+        width: 100%
+    }
+}
+
+.swiper {
+
+    border: 1px solid brown;
+    width: 90%;
+    background-color: aliceblue;
+    margin: 0 auto;
+    &__wrapper{
+        width: 100%;
+    }
+}
+
+

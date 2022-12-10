@@ -62,7 +62,7 @@ import { Pagination, Navigation } from "swiper";
 export default function App() {
     return (
 
-        <>
+        <section className='swaperSection'>
             <div className="container">
                 <Swiper
                     slidesPerView={1}
@@ -83,6 +83,6 @@ export default function App() {
                     <SwiperSlide><img className="swapImg" src={bushido} alt="coffee" /></SwiperSlide>
                 </Swiper>
             </div>
-        </>
+        </section>
     );
 }

@@ -1,5 +1,5 @@
 .swiper {
-    width: 30vh;
+    width: 40vh;
     height: 100%;
 }
 
@@ -33,4 +33,8 @@
 .swiper {
     margin-left: auto;
     margin-right: auto;
+}
+
+.swaperSection {
+    background: url(https://img.freepik.com/free-vector/white-and-gray-geometric-pattern-background-vector_53876-136510.jpg?w=2000&t=st=1670681827~exp=1670682427~hmac=9626a16f57a5836fa770bdfdf856b8b2a1e5795fee3b79f3a41673b983ff4914) center / cover no-repeat;
 }

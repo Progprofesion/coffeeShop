@@ -1,0 +1,84 @@
+{
+    "products": [
+        {
+            "id": 0,
+            "page": 1,
+            "img": "/static/media/lavazza.343525c5ddf5b50c4964.jpg",
+            "title": "lavazza Crema",
+            "country": "Brazil",
+            "price": 10.73,
+            "quantity": 0
+        },
+        {
+            "id": 1,
+            "page": 2,
+            "img": "/static/media/egoisteEspresso.18b415ee72edefd377a0.jpg",
+            "title": "Egoiste Espresso",
+            "country": "Kenya",
+            "price": 15.99,
+            "quantity": 0
+        },
+        {
+            "id": 2,
+            "page": 3,
+            "img": "/static/media/lavazzaColumbia.f3a1f30de8bfba8979d4.jpg",
+            "title": "lavazza ORO",
+            "country": "Columbia",
+            "price": 6.99,
+            "quantity": 0
+        },
+        {
+            "id": 3,
+            "page": 4,
+            "img": "/static/media/egoiste.fbfab7a634163b0eb90d.jpg",
+            "title": "Egoiste Truggle",
+            "country": "Brazil",
+            "price": 12.53,
+            "quantity": 0
+        },
+        {
+            "id": 4,
+            "page": 5,
+            "img": "/static/media/bushidoColumbia.2c5d02fbc421863455b5.jpg",
+            "title": "Bushido Black Katana",
+            "country": "Kenya",
+            "price": 9.99,
+            "quantity": 0
+        },
+        {
+            "id": 5,
+            "page": 6,
+            "img": "/static/media/bushido.b9b5abec2116260284c5.jpg",
+            "title": "Bushido Red Katana",
+            "country": "Columbia",
+            "price": 7.56,
+            "quantity": 0
+        }
+    ],
+    "filters": [
+        {
+            "id": "all",
+            "name": "all",
+            "label": "all",
+            "className": "cardsFilters__all"
+        },
+        {
+            "id": "Brazil",
+            "name": "Brazil",
+            "label": "Brazil",
+            "className": "cardsFilters__brazil"
+        },
+        {
+            "id": "Kenya",
+            "name": "Kenya",
+            "label": "Kenya",
+            "className": "cardsFilters__Kenya"
+        },
+        {
+            "id": "Columbia",
+            "name": "Columbia",
+            "label": "Columbia",
+            "className": "cardsFilters__Columbia"
+        }
+    ]
+}

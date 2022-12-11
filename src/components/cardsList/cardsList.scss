@@ -21,12 +21,13 @@
         grid-column-gap: 20px;
     }
     &__bg {
-        background: url(../../assets/bg/testBg.png) center / cover  no-repeat;
+        margin: 0 auto;
+        // background: url(../../assets/bg/testBg.png) center / cover  no-repeat;
         // background: url(../../assets/bg/bgCardsList.jpg) center / cover  no-repeat;
         padding: 50px 0 50px 0;
         max-width: 1000px;
         border-radius: 50px;
-        margin: 0 auto;
+        border: 2px solid aliceblue;
     }
 }
 

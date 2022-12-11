@@ -53,15 +53,6 @@
             "country": "Columbia",
             "price": 7.56,
             "quantity": 0
-        },
-        {
-            "id": 5,
-            "page": 6,
-            "img": "/static/media/bushido.b9b5abec2116260284c5.jpg",
-            "title": "Bushido Red Katana",
-            "country": "Columbia",
-            "price": 7.56,
-            "quantity": 0
         }
     ],
     "filters": [

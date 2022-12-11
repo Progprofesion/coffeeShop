@@ -1,5 +1,5 @@
 import lavazza from 'src/assets/cardsImg/lavazza.jpg';
-import leboCenia from "src/assets/cardsImg/leboCenia.jpg";
+import egoisteEspresso from "src/assets/cardsImg/egoisteEspresso.jpg";
 import lavazzaColumbia from "src/assets/cardsImg/lavazzaColumbia.jpg";
 import egoiste from "src/assets/cardsImg/egoiste.jpg";
 import bushidoColumbia from "src/assets/cardsImg/bushidoColumbia.jpg";
@@ -18,7 +18,7 @@ import "./swiper.scss";
 import { Pagination, Navigation } from "swiper";
 
 export default function App({ style }) {
-    console.log(lavazza, leboCenia, lavazzaColumbia, egoiste, bushidoColumbia, bushido)
+    console.log(egoisteEspresso)
     return (
         <section className='swiperSection' style={style}>
             <div className="container">
@@ -34,7 +34,7 @@ export default function App({ style }) {
                     className="mySwiper"
                 >
                     <SwiperSlide><img className="swapImg" src={lavazza} alt="coffee" /></SwiperSlide>
-                    <SwiperSlide><img className="swapImg" src={leboCenia} alt="coffee" /></SwiperSlide>
+                    <SwiperSlide><img className="swapImg" src={egoisteEspresso} alt="coffee" /></SwiperSlide>
                     <SwiperSlide><img className="swapImg" src={lavazzaColumbia} alt="coffee" /></SwiperSlide>
                     <SwiperSlide><img className="swapImg" src={egoiste} alt="coffee" /></SwiperSlide>
                     <SwiperSlide><img className="swapImg" src={bushidoColumbia} alt="coffee" /></SwiperSlide>

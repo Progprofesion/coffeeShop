@@ -21,7 +21,7 @@ const HeaderMain = () => {
             </LinkPage>
             <div className="container">
                 <h1 className="headerMain__title">Everything You Love About <span>Coffee</span></h1>
-                <IconLine img={coffeeBeansIconWhite} style={{ border: '1px solid white' }} />
+                <IconLine img={coffeeBeansIconWhite} />
                 <h2 className="headerMain__subtitle">We makes every day full of <span>energy</span> and <span>taste</span> <p>Want to try our beans?</p></h2>
                 <Link className="headerMain__wrapperBtn" to="/ourcoffee">
                     <button className="headerMain__mainBtn"><span>More</span></button>

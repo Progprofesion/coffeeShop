@@ -3,8 +3,8 @@
         {
             "id": 0,
             "page": 1,
-            "img": "/static/media/SolimoCooffeeBeans2kg.54bf00220b02339f5c39c645f58b8fb6.svg",
-            "title": "Solimo Coffee Beans 2 kg",
+            "img": "/static/media/lavazza.343525c5ddf5b50c4964.jpg",
+            "title": "lavazza Crema",
             "country": "Brazil",
             "price": 10.73,
             "quantity": 0
@@ -12,8 +12,8 @@
         {
             "id": 1,
             "page": 2,
-            "img": "/static/media/PrestoCoffeeBeans1kg.64e083ada70fb7bfb9d8c18b253cbb72.svg",
-            "title": "Presto Coffee Beans 1 kg",
+            "img": "/static/media/static/media/leboCenia.8e1e05880f706ee49dd6.jpg",
+            "title": "lebo Classic",
             "country": "Kenya",
             "price": 15.99,
             "quantity": 0
@@ -21,8 +21,8 @@
         {
             "id": 2,
             "page": 3,
-            "img": "/static/media/AROMISTICOCoffee1kg.f570b11568e712c75c491a4f849202c3.svg",
-            "title": "AROMISTICO Coffee 1 kg",
+            "img": "/static/media/lavazzaColumbia.f3a1f30de8bfba8979d4.jpg",
+            "title": "lavazza ORO",
             "country": "Columbia",
             "price": 6.99,
             "quantity": 0
@@ -30,8 +30,8 @@
         {
             "id": 3,
             "page": 4,
-            "img": "/static/media/LavazzaTierra1KG.96029b59be841ade8189.jpg",
-            "title": "Lavazza Tierra 1 kg",
+            "img": "/static/media/egoiste.fbfab7a634163b0eb90d.jpg",
+            "title": "Egoiste Truggle",
             "country": "Brazil",
             "price": 12.53,
             "quantity": 0
@@ -39,8 +39,8 @@
         {
             "id": 4,
             "page": 5,
-            "img": "/static/media/EvaDiaKenyaGrinders.76d4d12a78bf263da39a.jpg",
-            "title": "EvaDia Grinders 1 kg",
+            "img": "/static/media/bushidoColumbia.2c5d02fbc421863455b5.jpg",
+            "title": "Bushido Black Katana",
             "country": "Kenya",
             "price": 9.99,
             "quantity": 0
@@ -48,8 +48,8 @@
         {
             "id": 5,
             "page": 6,
-            "img": "/static/media/LORCremaAbsoluClassique.77c8d2ef80e4d561756f.webp",
-            "title": "LOR Crema Classique 1 kg",
+            "img": "/static/media/bushido.b9b5abec2116260284c5.jpg",
+            "title": "Bushido Red Katana",
             "country": "Columbia",
             "price": 7.56,
             "quantity": 0

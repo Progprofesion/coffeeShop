@@ -27,7 +27,7 @@ const OurCoffeePage = () => {
                         background: "url(/static/media/bgOurCoffeePage.9928212fb1eb01de6816.png) center / cover no-repeat"
                     }}
                     title={'Our coffee'} />
-                <AboutUs />
+                <AboutUs style={{ display: "none" }} />
                 <CardsList
                     cardsView={0}
                     height={{ minHeight: '1000px' }}

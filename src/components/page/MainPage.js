@@ -5,8 +5,8 @@ import Footer from "../footer/Footer";
 import Humburger from "../hamburger/Hamburger";
 import BasketSticky from "../basket/BasketSticky";
 import LoginView from '../auth/LoginView';
-import Sddwiper from '../swiper/Sddwiper';
 import CardsList from '../cardsList/CardsList';
+import AboutUs from '../aboutUs/AboutUs';
 
 const MainPage = () => {
     return (
@@ -22,7 +22,7 @@ const MainPage = () => {
                 <LoginView />
                 <Humburger />
                 <HeaderMain />
-                <Sddwiper />
+                <AboutUs noneDescr={{ display: "none" }} />
                 <CardsList
                     cardsView={3}
                     title={'Our best'}

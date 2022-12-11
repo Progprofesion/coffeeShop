@@ -18,7 +18,7 @@ const Footer = () => {
                 <Link className="linkPage__link fz-14" to="/basket">Basket</Link>
                 <ExitLink />
             </LinkPage>
-            <IconLine img={coffeeBeansIconWhite} style={{ border: '1px solid white' }} />
+            <IconLine img={coffeeBeansIconWhite} />
         </footer>
     )
 };

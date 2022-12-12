@@ -18,7 +18,7 @@ import "./swiper.scss";
 import { Pagination, Navigation } from "swiper";
 
 export default function App({ style }) {
-    console.log(egoisteEspresso)
+
     return (
         <section className='swiperSection' style={style}>
             <div className="container">

@@ -47,13 +47,13 @@ const cardsSlice = createSlice({
             const stateCartAmount = state.stateStartArr.find((item) => item.id === action.payload.id);
             stateCartAmount.quantity++;
         },
-        incrementQuantity: (state, action) => {
+        incrQuantity: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);
             item.quantity++;
             const stateCartAmount = state.stateStartArr.find((item) => item.id === action.payload);
             stateCartAmount.quantity++;
         },
-        decrementQuantity: (state, action) => {
+        decrQuantity: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);
             if (item && item.quantity > 0) {
                 item.quantity--;
@@ -81,8 +81,8 @@ export const { statePrice,
     activeIncrTotals,
     activeDecrTotals,
     addProduct,
-    incrementQuantity,
-    decrementQuantity,
+    incrQuantity,
+    decrQuantity,
     basketAmount,
     removeProduct,
     startState,

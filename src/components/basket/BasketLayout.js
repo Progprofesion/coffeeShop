@@ -11,8 +11,8 @@ import Hamburger from '../hamburger/Hamburger';
 import coffeeIcon from 'src/assets/icons/coffeeIcon.svg';
 
 import {
-    incrementQuantity,
-    decrementQuantity,
+    incrQuantity,
+    decrQuantity,
     basketAmount,
     removeProduct,
     activeIncrTotals,
@@ -56,13 +56,13 @@ const BasketLayout = ({ setModalActive }) => {
             const incr = () => {
                 dispatch(statePrice({ price }));
                 dispatch(activeIncrTotals(price));
-                dispatch(incrementQuantity(id));
+                dispatch(incrQuantity(id));
             };
 
             const decr = () => {
                 dispatch(statePrice({ price }));
                 dispatch(activeDecrTotals(price));
-                dispatch(decrementQuantity(id));
+                dispatch(decrQuantity(id));
                 dispatch(removeProduct(id));
             };
 

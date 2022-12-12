@@ -31,7 +31,7 @@
             "id": 3,
             "page": 4,
             "img": "/static/media/egoiste.fbfab7a634163b0eb90d.jpg",
-            "title": "Egoiste Truggle",
+            "title": "Egoiste Truffle",
             "country": "Brazil",
             "price": 12.53,
             "quantity": 0
@@ -43,15 +43,6 @@
             "title": "Bushido Black Katana",
             "country": "Kenya",
             "price": 9.99,
-            "quantity": 0
-        },
-        {
-            "id": 5,
-            "page": 6,
-            "img": "/static/media/bushido.b9b5abec2116260284c5.jpg",
-            "title": "Bushido Red Katana",
-            "country": "Columbia",
-            "price": 7.56,
             "quantity": 0
         },
         {

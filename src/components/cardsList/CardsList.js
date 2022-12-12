@@ -29,10 +29,8 @@ const CardsList = ({ cardsView, style, title, height }) => {
     const stateArrRender = useSelector(state => state.basket.stateStartArr);
 
     useEffect(() => {
-        if (stateArrRender.length < 6) {
+        if (!stateArrRender.length) {
             dispatch(startState(products))
-        } else {
-            dispatch(startState(stateArrRender))
         }
         // eslint-disable-next-line
     }, [isSuccess])
@@ -97,7 +95,6 @@ const CardsList = ({ cardsView, style, title, height }) => {
             </div>
         </section >
     )
-
 };
 
 export default CardsList;

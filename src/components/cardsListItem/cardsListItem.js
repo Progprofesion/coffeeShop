@@ -8,7 +8,7 @@ import coffeeBeansIconWhite from 'src/assets/icons/coffeeBeansIconWhite.svg'
 import {
     statePrice,
     addProduct,
-    decrementQuantity,
+    decrQuantity,
     removeProduct,
     activeIncrTotals,
     activeDecrTotals,
@@ -63,7 +63,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity, ...rest }) =>
         if (quantity > 0) {
             dispatch(activeDecrTotals(price))
         }
-        dispatch(decrementQuantity(id))
+        dispatch(decrQuantity(id))
         dispatch(removeProduct(id))
     };
 

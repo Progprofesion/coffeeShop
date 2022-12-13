@@ -34,3 +34,24 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+
+// Media --------------------------
+
+@media (max-width: 767px) {
+    .swiper {
+        width: 65%;
+    }
+    .swapImg {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .swiper {
+        width: 90%;
+    }
+    .swapImg {
+        width: 100%;
+    }
+}

@@ -5,8 +5,6 @@ import egoiste from "src/assets/cardsImg/egoiste.jpg";
 import bushidoColumbia from "src/assets/cardsImg/bushidoColumbia.jpg";
 import bushido from "src/assets/cardsImg/bushido.jpg";
 
-import React from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -19,13 +17,9 @@ import { Pagination, Navigation } from "swiper";
 
 export default function App({ style }) {
 
-    const size = (e) => {
-        e.preventDefault();
-    };
-
     return (
         <section className='swiperSection' style={style}>
-            <div onClick={e => size(e)} className="container">
+            <div className="container">
                 <Swiper
                     slidesPerView={1}
                     spaceBetween={30}

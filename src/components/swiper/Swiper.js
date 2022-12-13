@@ -19,9 +19,13 @@ import { Pagination, Navigation } from "swiper";
 
 export default function App({ style }) {
 
+    const size = (e) => {
+        e.preventDefault();
+    };
+
     return (
         <section className='swiperSection' style={style}>
-            <div className="container">
+            <div onClick={e => size(e)} className="container">
                 <Swiper
                     slidesPerView={1}
                     spaceBetween={30}

@@ -151,6 +151,17 @@
         height: 30px;
         padding: 6px;
     }
+    &__star {
+        position: absolute;
+        width: 40px;
+        right: 0px;
+        cursor: pointer;
+    }
+}
+
+.activeStarClick {
+    background: gold;
+    border-radius: 5px;
 }
 
 // Animate

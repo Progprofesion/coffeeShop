@@ -22,6 +22,7 @@ import './cardsListItem.scss';
 const CardsListItem = ({ id, img, title, country, price, quantity, ...rest }) => {
 
     const [value, setValue] = useState('');
+    const [starClick, setStarClick] = useState(false);
 
     const nodeRef = useRef();
 
@@ -78,6 +79,14 @@ const CardsListItem = ({ id, img, title, country, price, quantity, ...rest }) =>
         dispatch(addProduct(item))
     };
 
+    const star = () => {
+        if (!starClick) {
+            setStarClick(true)
+        } else {
+            setStarClick(false)
+        }
+    };
+
     return (
         <CSSTransition
             {...rest}
@@ -87,6 +96,10 @@ const CardsListItem = ({ id, img, title, country, price, quantity, ...rest }) =>
             classNames="cards__item">
             <div ref={nodeRef}>
                 <ul className=" cardsListItem animate__animated animate__flipInX " >
+                    <div className="cardsListItem__star">
+                        <img onClick={() => star()} className={starClick ? "activeStarClick cardsListItem__starImg" : "cardsListItem__starImg"} src="https://www.svgrepo.com/show/22539/star.svg" alt="" />
+                    </div>
+
                     <div className="cardsListItem__wrapperImg" name='cards' type="text">
                         <Link to={`/ourcoffee/${id}`}>
                             <img className="cardsListItem__img" src={img} alt="coffee" />

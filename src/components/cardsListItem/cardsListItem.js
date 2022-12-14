@@ -100,11 +100,13 @@ const CardsListItem = ({ id, img, title, country, price, quantity, ...rest }) =>
                     <div className="cardsListItem__wrapperBasketInput">
                         <form className='cardsListItem__form' action="">
                             <input
-                                value={value.replace(/^[^0-9._]*[a-zA-Z0-9_]*[^0-9._]$/, '')}
+                                inputMode='tel'
+                                value={value.replace(/^[^0-9_]*[a-zA-Z0-9_]*[^0-9]$/, '')}
+                                // value={value.replace(/\./g, '')}
                                 maxLength={2}
                                 onKeyDown={e => basketRandom(e, value)}
                                 onChange={e => setValue(e.target.value)}
-                                className="cardsListItem__input" placeholder="00" type='text' />
+                                className="cardsListItem__input" placeholder="00" type='tel' />
                             <button
                                 onClick={e => basketRandomBtn(e, value)}
                                 className="cardsListItem__randomBtn">+</button>

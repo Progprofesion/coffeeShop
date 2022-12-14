@@ -13,7 +13,7 @@ import "swiper/css/navigation";
 
 import "./swiper.scss";
 
-import { Pagination, Navigation } from "swiper";
+import { Navigation } from "swiper";
 
 export default function App({ style }) {
 
@@ -24,11 +24,8 @@ export default function App({ style }) {
                     slidesPerView={1}
                     spaceBetween={30}
                     loop={true}
-                    pagination={{
-                        clickable: true,
-                    }}
                     navigation={true}
-                    modules={[Pagination, Navigation]}
+                    modules={[Navigation]}
                     className="mySwiper"
                 >
                     <SwiperSlide><img className="swapImg" src={lavazza} alt="coffee" /></SwiperSlide>

@@ -153,15 +153,16 @@
     }
     &__star {
         position: absolute;
-        width: 40px;
-        right: 0px;
+        width: 35px;
+        top: 5px;
+        right: 5px;
         cursor: pointer;
     }
 }
 
 .activeStarClick {
     background: gold;
-    border-radius: 5px;
+    border-radius: 20px;
 }
 
 // Animate

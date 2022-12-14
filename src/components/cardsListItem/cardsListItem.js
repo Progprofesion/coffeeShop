@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
 import coffeeBeansIconWhite from 'src/assets/icons/coffeeBeansIconWhite.svg'
+import starImg from '../../assets/icons/star.svg'
 
 import {
     statePrice,
@@ -97,7 +98,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity, ...rest }) =>
             <div ref={nodeRef}>
                 <ul className=" cardsListItem animate__animated animate__flipInX " >
                     <div className="cardsListItem__star">
-                        <img onClick={() => star()} className={starClick ? "activeStarClick cardsListItem__starImg" : "cardsListItem__starImg"} src="https://www.svgrepo.com/show/22539/star.svg" alt="" />
+                        <img onClick={() => star()} className={starClick ? "activeStarClick cardsListItem__starImg" : "cardsListItem__starImg"} src={starImg} alt="" />
                     </div>
 
                     <div className="cardsListItem__wrapperImg" name='cards' type="text">

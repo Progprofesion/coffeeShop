@@ -7,7 +7,8 @@
             "title": "lavazza Crema",
             "country": "Brazil",
             "price": 10.73,
-            "quantity": 0
+            "quantity": 0,
+            "faivorite": false
         },
         {
             "id": 1,
@@ -16,7 +17,8 @@
             "title": "Egoiste Espresso",
             "country": "Kenya",
             "price": 15.99,
-            "quantity": 0
+            "quantity": 0,
+            "faivorite": false
         },
         {
             "id": 2,
@@ -25,7 +27,8 @@
             "title": "lavazza ORO",
             "country": "Columbia",
             "price": 6.99,
-            "quantity": 0
+            "quantity": 0,
+            "faivorite": false
         },
         {
             "id": 3,
@@ -34,7 +37,8 @@
             "title": "Egoiste Truffle",
             "country": "Brazil",
             "price": 12.53,
-            "quantity": 0
+            "quantity": 0,
+            "faivorite": false
         },
         {
             "id": 4,
@@ -43,7 +47,8 @@
             "title": "Bushido Black Katana",
             "country": "Kenya",
             "price": 9.99,
-            "quantity": 0
+            "quantity": 0,
+            "faivorite": false
         },
         {
             "id": 5,
@@ -52,7 +57,8 @@
             "title": "Bushido Red Katana",
             "country": "Columbia",
             "price": 7.56,
-            "quantity": 0
+            "quantity": 0,
+            "faivorite": false
         }
     ],
     "filters": [

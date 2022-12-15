@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
@@ -13,6 +13,7 @@ import {
     removeProduct,
     activeIncrTotals,
     activeDecrTotals,
+    startState
 } from 'src/store/slices/basketSlice';
 
 import basketIcon from 'src/assets/icons/basketIcon.svg';
@@ -28,6 +29,8 @@ const CardsListItem = ({ id, img, title, country, price, quantity, ...rest }) =>
     const nodeRef = useRef();
 
     const dispatch = useDispatch();
+
+    const stateArrRender = useSelector(state => state.basket.stateStartArr);
 
     const basketIncr = (e) => {
         e.preventDefault();
@@ -81,11 +84,14 @@ const CardsListItem = ({ id, img, title, country, price, quantity, ...rest }) =>
     };
 
     const star = () => {
+        // dispatch(startState({ price }))
+        console.log(stateArrRender)
         if (!starClick) {
             setStarClick(true)
         } else {
             setStarClick(false)
         }
+        // console.log(price);
     };
 
     return (

@@ -113,7 +113,9 @@
             color: brown;
         }
         &:active {
+            transition: 250ms;
             transform: scale(90%);
+            background: green;
         }
     }
     &__img {

@@ -47,11 +47,17 @@ const cardsSlice = createSlice({
             const stateCartAmount = state.stateStartArr.find((item) => item.id === action.payload.id);
             stateCartAmount.quantity++;
         },
+        activeFavorite: (state, action) => {
+            const item = state.items.find((item) => item.id === action.payload);
+            item.faivorit++;
+            const stateCartAmount = state.stateStartArr.find((item) => item.id === action.payload);
+            stateCartAmount.faivorit++;
+        },
         incrQuantity: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);
-            item.quantity++;
+            item.faivorit++;
             const stateCartAmount = state.stateStartArr.find((item) => item.id === action.payload);
-            stateCartAmount.quantity++;
+            stateCartAmount.faivorit++;
         },
         decrQuantity: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);

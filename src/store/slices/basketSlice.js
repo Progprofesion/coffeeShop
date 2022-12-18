@@ -7,6 +7,7 @@ const initialState = cardsAdapter.getInitialState({
     amount: localStorage.getItem('amount') || 0,
     items: JSON.parse(localStorage.getItem('object')) || [],
     stateStartArr: JSON.parse(localStorage.getItem('stateArr')) || [],
+    faivorite: false,
 });
 
 const cardsSlice = createSlice({
@@ -47,17 +48,27 @@ const cardsSlice = createSlice({
             const stateCartAmount = state.stateStartArr.find((item) => item.id === action.payload.id);
             stateCartAmount.quantity++;
         },
-        activeFavorite: (state, action) => {
+        addFavorite: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);
-            item.faivorit++;
-            const stateCartAmount = state.stateStartArr.find((item) => item.id === action.payload);
-            stateCartAmount.faivorit++;
+            // if (item) {
+            item.faivorite = true;
+            // }
+            const cartFaivorite = state.stateStartArr.find((item) => item.id === action.payload);
+            cartFaivorite.faivorite = true;
+        },
+        removeFaivorite: (state, action) => {
+            const item = state.items.find((item) => item.id === action.payload);
+            // if (item) {
+            item.faivorite = false;
+            // }
+            const cartFaivorite = state.stateStartArr.find((item) => item.id === action.payload);
+            cartFaivorite.faivorite = false;
         },
         incrQuantity: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);
-            item.faivorit++;
+            item.quantity++;
             const stateCartAmount = state.stateStartArr.find((item) => item.id === action.payload);
-            stateCartAmount.faivorit++;
+            stateCartAmount.quantity++;
         },
         decrQuantity: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);
@@ -92,4 +103,6 @@ export const { statePrice,
     basketAmount,
     removeProduct,
     startState,
+    addFavorite,
+    removeFaivorite
 } = actions;

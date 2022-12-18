@@ -13,7 +13,8 @@ import {
     removeProduct,
     activeIncrTotals,
     activeDecrTotals,
-    startState
+    addFavorite,
+    removeFaivorite
 } from 'src/store/slices/basketSlice';
 
 import basketIcon from 'src/assets/icons/basketIcon.svg';
@@ -21,7 +22,7 @@ import basketIcon from 'src/assets/icons/basketIcon.svg';
 import 'animate.css';
 import './cardsListItem.scss';
 
-const CardsListItem = ({ id, img, title, country, price, quantity, ...rest }) => {
+const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ...rest }) => {
 
     const [value, setValue] = useState('');
     const [starClick, setStarClick] = useState(false);
@@ -84,14 +85,16 @@ const CardsListItem = ({ id, img, title, country, price, quantity, ...rest }) =>
     };
 
     const star = () => {
-        // dispatch(startState({ price }))
-        console.log(stateArrRender)
+        // console.log(stateArrRender);
+
         if (!starClick) {
             setStarClick(true)
+
         } else {
             setStarClick(false)
+            dispatch(addFavorite(id))
         }
-        // console.log(price);
+
     };
 
     return (

@@ -50,17 +50,17 @@ const cardsSlice = createSlice({
         },
         addFavorite: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);
-            // if (item) {
-            item.faivorite = true;
-            // }
+            if (item) {
+                item.faivorite = true;
+            }
             const cartFaivorite = state.stateStartArr.find((item) => item.id === action.payload);
             cartFaivorite.faivorite = true;
         },
         removeFaivorite: (state, action) => {
             const item = state.items.find((item) => item.id === action.payload);
-            // if (item) {
-            item.faivorite = false;
-            // }
+            if (item) {
+                item.faivorite = false;
+            }
             const cartFaivorite = state.stateStartArr.find((item) => item.id === action.payload);
             cartFaivorite.faivorite = false;
         },

@@ -8,7 +8,6 @@ import Error from 'src/assets/icons/Error.gif';
 import CardsListItem from '../cardsListItem/CardsListItem';
 import SkeletonCardsList from '../skeleton/SkeletonCardsList';
 
-
 import { startState } from 'src/store/slices/basketSlice';
 
 import './cardsList.scss';

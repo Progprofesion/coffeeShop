@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
@@ -25,13 +25,12 @@ import './cardsListItem.scss';
 const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ...rest }) => {
 
     const [value, setValue] = useState('');
-    const [starClick, setStarClick] = useState(false);
+
+    const stateArrRender = useSelector(state => state.basket.stateStartArr);
 
     const nodeRef = useRef();
 
     const dispatch = useDispatch();
-
-    const stateArrRender = useSelector(state => state.basket.stateStartArr);
 
     const basketIncr = (e) => {
         e.preventDefault();
@@ -85,16 +84,11 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
     };
 
     const star = () => {
-        // console.log(stateArrRender);
-
-        if (!starClick) {
-            setStarClick(true)
-
-        } else {
-            setStarClick(false)
+        if (!stateArrRender[id].faivorite) {
             dispatch(addFavorite(id))
+        } else {
+            dispatch(removeFaivorite(id))
         }
-
     };
 
     return (
@@ -107,9 +101,8 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
             <div ref={nodeRef}>
                 <ul className=" cardsListItem animate__animated animate__flipInX " >
                     <div className="cardsListItem__star">
-                        <img onClick={() => star()} className={starClick ? "activeStarClick cardsListItem__starImg" : "cardsListItem__starImg"} src={starImg} alt="" />
+                        <img onClick={() => star()} className={faivorite ? "activeStarClick cardsListItem__starImg" : "cardsListItem__starImg"} src={starImg} alt="" />
                     </div>
-
                     <div className="cardsListItem__wrapperImg" name='cards' type="text">
                         <Link to={`/ourcoffee/${id}`}>
                             <img className="cardsListItem__img" src={img} alt="coffee" />
@@ -125,7 +118,6 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
                             <input
                                 inputMode='tel'
                                 value={value.replace(/^[^0-9_]*[a-zA-Z0-9_]*[^0-9]$/, '')}
-                                // value={value.replace(/\./g, '')}
                                 maxLength={2}
                                 onKeyDown={e => basketRandom(e, value)}
                                 onChange={e => setValue(e.target.value)}

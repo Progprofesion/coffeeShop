@@ -24,4 +24,4 @@ const HeaderPages = ({ style, title }) => {
     )
 };
 
-export default HeaderPages;
+export default HeaderPages; 

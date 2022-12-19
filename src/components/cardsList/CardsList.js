@@ -12,7 +12,7 @@ import { startState } from 'src/store/slices/basketSlice';
 
 import './cardsList.scss';
 
-const CardsList = ({ cardsView, style, title, height }) => {
+const CardsList = ({ cardsView, style, title, height, faivorite }) => {
 
     const {
         data: products = [],
@@ -64,8 +64,8 @@ const CardsList = ({ cardsView, style, title, height }) => {
             return <h5>No products</h5>
         }
         // eslint-disable-next-line
-        return arr.map(({ page, price, id, img, title, country, quantity, ...rest }) => {
-            if (page > cardsView) {
+        return arr.map(({ page, price, id, img, title, country, quantity, faivorite, ...rest }) => {
+            if (page > cardsView || faivorite) {
                 return isLoading ? <SkeletonCardsList key={page} />
                     : <CardsListItem
                         {...rest}
@@ -75,7 +75,8 @@ const CardsList = ({ cardsView, style, title, height }) => {
                         img={img}
                         title={title}
                         country={country}
-                        quantity={quantity} />
+                        quantity={quantity}
+                        faivorite={faivorite} />
             }
         });
     };

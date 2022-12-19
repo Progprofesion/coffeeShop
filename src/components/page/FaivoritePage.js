@@ -11,7 +11,7 @@ import coffeeIcon from 'src/assets/icons/coffeeIcon.svg';
 const FaivoritePage = () => {
     return (
         <>
-            <section className="faivorite" style={{ background: "url(/static/media/bgMain.9e5017213a32dfd782e1.jpg) center / cover no-repeat", height: '100%' }}>
+            <section className="faivorite" style={{ background: "url(/static/media/bgMain.9e5017213a32dfd782e1.jpg) center / cover no-repeat", minHeight: '100vh' }}>
                 <LinkPage img={coffeeIcon}>
                     <Link className="linkPage__link fz-14" to="/" >Coffee house</Link>
                     <Link className="linkPage__link fz-14" to="/ourcoffee">Our coffee</Link>

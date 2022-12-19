@@ -7,7 +7,6 @@ const initialState = cardsAdapter.getInitialState({
     amount: localStorage.getItem('amount') || 0,
     items: JSON.parse(localStorage.getItem('object')) || [],
     stateStartArr: JSON.parse(localStorage.getItem('stateArr')) || [],
-    faivorite: false,
 });
 
 const cardsSlice = createSlice({

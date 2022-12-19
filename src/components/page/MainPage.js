@@ -25,7 +25,8 @@ const MainPage = () => {
                 <AboutUs noneDescr={{ display: "none" }} />
                 <CardsList
                     cardsView={3}
-                    title={'Our best'}
+                    faivorite={true}
+                    title={'  Our best! '}
                     height={{ minHeight: '565px' }} />
                 <Footer />
             </HelmetProvider>

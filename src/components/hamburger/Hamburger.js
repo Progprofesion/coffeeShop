@@ -25,6 +25,7 @@ const Hamburger = () => {
                     <Link className="hamburger__link" to="/ourcoffee">Our coffee</Link>
                     <Link className="hamburger__link" to="/pleasure">For your pleasure</Link>
                     <Link className="hamburger__link" to="/basket">Basket</Link>
+                    <Link className="hamburger__link" to="/faivorite">Faivorite</Link>
                     <ExitLink
                         styleEnter={{ borderBottom: '1px solid gold', width: '100%', padding: "15px" }}
                         styleExit={{ borderBottom: '1px solid gold', width: '100%', padding: "15px" }} />

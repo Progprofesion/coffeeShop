@@ -3,7 +3,7 @@
         display: flex;
         justify-content: space-between;
         padding-top: 52px;
-        max-width: 450px;
+        max-width: 520px;
         font-weight: 400;
         margin-left: 4%;
         color: #FFFFFF;
@@ -16,7 +16,7 @@
     &__link {
         padding-right: 10px;
         border-right: 1px solid white;
-        &:nth-child(6) {
+        &:nth-child(7) {
             border-right: none;
         }
         &:hover{
@@ -52,7 +52,7 @@
         }
         &__img {
             top: 23px;
-            left: 150px;
+            left: 185px;
         }
         &__link {
             width: 200px;

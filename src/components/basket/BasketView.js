@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './basketView.scss';
 
-const BasketView = ({ id, img, title, country, price, quantity, incr, decr, ...rest }) => {
+const BasketView = ({ id, img, title, country, price, quantity, incr, decr, faivorite, ...rest }) => {
     const [showButton, setShowButton] = useState(false)
 
     const nodeRef = useRef(null);

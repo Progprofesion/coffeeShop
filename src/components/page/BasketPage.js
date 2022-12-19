@@ -84,7 +84,7 @@ const BasketPage = () => {
                                     pattern: {
                                         // eslint-disable-next-line
                                         value: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
-                                        message: 'Не правильный адрес почты'
+                                        message: 'Неправильный адрес почты'
                                     }
                                 })}
                                 className="basketView__form-input" placeholder="Почта" type='email' />

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+import Hamburger from '../hamburger/Hamburger';
 import LinkPage from '../linkPage/LinkPage';
 import CardsList from '../cardsList/CardsList';
 import ExitLink from '../exitLink/ExitLink';
@@ -17,12 +18,14 @@ const FaivoritePage = () => {
                     <Link className="linkPage__link fz-14" to="/ourcoffee">Our coffee</Link>
                     <Link className="linkPage__link fz-14" to="/pleasure">For your pleasure</Link>
                     <Link className="linkPage__link fz-14" to="/basket">Basket</Link>
+                    <Link className="linkPage__link fz-14" to="/faivorite">Faivorite</Link>
                     <ExitLink />
                 </LinkPage>
+                <Hamburger />
                 <BasketSticky />
                 <CardsList
                     title={'Faivorite'}
-                    faivorite={true}
+                    stateFaivorite={true}
                     style={{ background: 'none' }} />
             </section>
             <Footer />

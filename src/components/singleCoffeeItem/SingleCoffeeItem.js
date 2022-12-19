@@ -17,6 +17,7 @@ const SingleCoffee = ({ img, country, price }) => {
                 <Link className="linkPage__link fz-14" to="/ourcoffee">Our coffee</Link>
                 <Link className="linkPage__link fz-14" to="/pleasure">For your pleasure</Link>
                 <Link className="linkPage__link fz-14" to="/basket">Basket</Link>
+                <Link className="linkPage__link fz-14" to="/faivorite">Faivorite</Link>
                 <ExitLink />
             </LinkPage>
             <div className="container">

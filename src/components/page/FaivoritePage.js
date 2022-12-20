@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import Hamburger from '../hamburger/Hamburger';
+import LoginView from '../auth/LoginView';
 import LinkPage from '../linkPage/LinkPage';
 import CardsList from '../cardsList/CardsList';
 import ExitLink from '../exitLink/ExitLink';
@@ -17,10 +18,11 @@ const FaivoritePage = () => {
                     <Link className="linkPage__link fz-14" to="/" >Coffee house</Link>
                     <Link className="linkPage__link fz-14" to="/ourcoffee">Our coffee</Link>
                     <Link className="linkPage__link fz-14" to="/pleasure">For your pleasure</Link>
-                    <Link className="linkPage__link fz-14" to="/basket">Basket</Link>
                     <Link className="linkPage__link fz-14" to="/faivorite">Faivorite</Link>
+                    <Link className="linkPage__link fz-14" to="/basket">Basket</Link>
                     <ExitLink />
                 </LinkPage>
+                <LoginView />
                 <Hamburger />
                 <BasketSticky />
                 <CardsList

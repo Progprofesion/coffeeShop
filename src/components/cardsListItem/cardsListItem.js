@@ -119,7 +119,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
                                 inputMode='tel'
                                 value={value.replace(/^[^0-9_]*[a-zA-Z0-9_]*[^0-9]$/, '')}
                                 maxLength={2}
-                                onKeyDown={e => basketRandom(e, value)}
+                                // onKeyDown={e => basketRandom(e, value)}
                                 onChange={e => setValue(e.target.value)}
                                 className="cardsListItem__input" placeholder="00" type='tel' />
                             <button

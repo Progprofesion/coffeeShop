@@ -21,8 +21,8 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
         mode: "onBlur"
     });
 
-    const handleKeyPress = (target: any) => {
-        if (target.charCode === 13) {
+    const handleKeyPress = (e: any) => {
+        if (e.code === "Enter") {
             handleClick(email, pass)
         }
     }
@@ -42,7 +42,7 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
                 placeholder="email"
                 value={email.replace(/[а-я]+/ig, '')}
                 onChange={(e) => setEmail(e.target.value)}
-                onKeyDown={handleKeyPress}
+                onKeyDown={(e) => handleKeyPress(e)}
             />
             {errors.email ? <p className="basketView__form-errorMessage" >{errors.email.message}</p> : null}
             <input className="enterView__input"

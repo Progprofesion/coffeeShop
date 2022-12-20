@@ -88,8 +88,8 @@ const BasketLayout = ({ setModalActive }) => {
                 <Link className="linkPage__link fz-14" to="/" >Coffee house</Link>
                 <Link className="linkPage__link fz-14" to="/ourcoffee">Our coffee</Link>
                 <Link className="linkPage__link fz-14" to="/pleasure">For your pleasure</Link>
-                <Link className="linkPage__link fz-14" to="/basket">Basket</Link>
                 <Link className="linkPage__link fz-14" to="/faivorite">Faivorite</Link>
+                <Link className="linkPage__link fz-14" to="/basket">Basket</Link>
                 <ExitLink />
             </LinkPage>
             <Hamburger />
@@ -99,7 +99,7 @@ const BasketLayout = ({ setModalActive }) => {
                     <h3 className="basketView__amount">Amount of goods: {localBasketAmount}</h3>
                     <h3 className="basketView__amount">Total price: {localBasketTotal > 0 ? localBasketTotal.toFixed(2) + `$` : `0.00$`}</h3>
                     <TransitionGroup>
-                        {elements}
+                        {elements.length > 0 ? elements : 'The basket is empty'}
                     </TransitionGroup>
                     <Button
                         title={'Place an order'}

@@ -44,7 +44,7 @@ const BasketView = ({ id, img, title, country, price, quantity, incr, decr, faiv
                     </div>
                 </div>
             </div>
-        </CSSTransition>
+        </CSSTransition >
     )
 }
 

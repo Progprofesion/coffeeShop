@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 
 import { activeSearchCoffee } from 'src/store/slices/cadsFiltersSlice';
 
-import CardsFilters from '../cardsFilters/CardsFilters';
+import CardsFilters from '../cardsFilters/CardsFilters'; // @ts-ignore
 
 import './searchComponent.scss';
 

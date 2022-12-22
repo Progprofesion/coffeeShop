@@ -1,10 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+export interface UserSliceInterface {
+    email: string | null,
+    token: string | null,
+    id: string | null
+}
+
 const initialState = {
     email: localStorage.getItem('userEmail') || null,
     token: localStorage.getItem('accessToken') || null,
     id: localStorage.getItem('id') || null,
-}
+} as UserSliceInterface
 
 const userSlice = createSlice({
     name: 'user',

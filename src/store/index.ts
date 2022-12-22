@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import filters from 'src/store/slices/cadsFiltersSlice';
-import basket from 'src/store/slices/basketSlice';
+import filters from '../store/slices/cadsFiltersSlice';
+import basket from '../store/slices/basketSlice';
 
 import user from './slices/userSlice';
 import { apiSlice } from '../components/api/apiSlice';

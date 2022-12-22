@@ -1,6 +1,9 @@
+import { LinkPageInterface } from '../linkPage/LinkPage';
+
 import './iconLine.scss';
 
-const IconLineBlack = ({ img, style }) => {
+
+const IconLineBlack = ({ img, style }: LinkPageInterface) => {
     return (
         <div style={style} className="iconLine">
             <div className="iconLine__item"></div>

@@ -9,7 +9,13 @@ import coffeeBeansIconBlack from "src/assets/icons/coffeeBeansIconBlack.svg";
 
 import './singleCoffeeItem.scss';
 
-const SingleCoffee = ({ img, country, price }) => {
+interface SingleCoffee {
+    img: string,
+    country: string,
+    price: number
+}
+
+const SingleCoffee = ({ img, country, price }: SingleCoffee) => {
     return (
         <article className="singleCoffeeItem">
             <LinkPage img={coffeeIcon}>

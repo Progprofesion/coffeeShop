@@ -1,6 +1,6 @@
 import ContentLoader from "react-content-loader"
 
-const SkeletonFilters = (props) => (
+const SkeletonFilters = (props: object) => (
     <ContentLoader
         speed={2}
         width={450}

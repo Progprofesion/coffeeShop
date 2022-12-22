@@ -16,7 +16,7 @@ const Login = () => {
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
             .then(({ user }) => {
-                localStorage.setItem('userEmail', user.email)
+                localStorage.setItem('userEmail', user.email || '')
                 localStorage.setItem('accessToken', user.refreshToken)
                 localStorage.setItem('id', user.uid)
             })

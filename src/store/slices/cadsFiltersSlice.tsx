@@ -47,6 +47,6 @@ const { actions, reducer } = cardsSlice;
 
 export default reducer;
 
-export const { selectAll } = cardsAdapter.getSelectors(state => state.filters);
+export const { selectAll } = cardsAdapter.getSelectors((state: any) => state.filters);
 
 export const { activeFilterChanged, activeSearchCoffee } = actions;

@@ -4,19 +4,22 @@ import classNames from 'classnames';
 
 import { activeFilterChanged, selectAll, fetchFilters } from 'src/store/slices/cadsFiltersSlice';
 import store from 'src/store';
+import { AppDispatch } from 'src/store';
 import SkeletonFilters from '../skeleton/SkeletonFilters';
 import './cardsFilters.scss';
 
-interface CardsFilters {
+interface CardsFiltersInterface {
     state: any,
     arr: []
 }
+
+
 
 const CardsFilters = () => {
 
     const { filtersLoadingStatus, activeFilter } = useSelector((state: any) => state.filters);
     const filters = selectAll(store.getState());
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
 
 
     useEffect(() => {
@@ -44,7 +47,6 @@ const CardsFilters = () => {
                 id={name}
                 className={btnClass}
                 onClick={() => dispatch(activeFilterChanged(name))}>
-
                 {label}</button>
         })
     }

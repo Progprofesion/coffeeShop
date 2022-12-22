@@ -1,6 +1,7 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
 
 const cardsAdapter = createEntityAdapter();
+
 const initialState = cardsAdapter.getInitialState({
     statePrice: {},
     total: localStorage.getItem('total') || 0,
@@ -9,9 +10,11 @@ const initialState = cardsAdapter.getInitialState({
     stateStartArr: JSON.parse(localStorage.getItem('stateArr')!) || [],             // !
 });
 
-interface cardsSlice {
-    price: number;
-}
+// interface cardsSlice {
+//     state: any,
+//     statePrice: any,
+//     price: any
+// }
 
 const cardsSlice = createSlice({
     name: 'basket',
@@ -23,13 +26,13 @@ const cardsSlice = createSlice({
         statePrice: (state, action) => {
             state.statePrice = action.payload
         },
-        activeIncrTotals: (state, action) => {
+        activeIncrTotals: (state: any, action) => {
             if (state.statePrice.price) {
                 let sum = (parseFloat(state.total.toString()) + action.payload).toFixed(2);
                 state.total = sum
             }
         },
-        activeDecrTotals: (state, action) => {
+        activeDecrTotals: (state: any, action) => {
             if (state.statePrice.price) {
                 let sum = (parseFloat(state.total.toString()) - action.payload).toFixed(2);
                 state.total = sum

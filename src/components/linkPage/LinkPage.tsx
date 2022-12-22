@@ -2,8 +2,8 @@ import './linkPage.scss';
 
 interface LinkPageInterface {
     img: string,
-    children: [],
-    style: object,
+    children?: any // !
+    style?: object,
 }
 
 const LinkPage = ({ img, children, style }: LinkPageInterface) => {

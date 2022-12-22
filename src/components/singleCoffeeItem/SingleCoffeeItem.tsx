@@ -12,19 +12,19 @@ import './singleCoffeeItem.scss';
 interface SingleCoffee {
     img: string,
     country: string,
-    price: number
+    price: number,
 }
 
 const SingleCoffee = ({ img, country, price }: SingleCoffee) => {
     return (
         <article className="singleCoffeeItem">
-            <LinkPage img={coffeeIcon}>
+            <LinkPage img={coffeeIcon} >
                 <Link className="linkPage__link fz-14" to="/" >Coffee house</Link>
                 <Link className="linkPage__link fz-14" to="/ourcoffee">Our coffee</Link>
                 <Link className="linkPage__link fz-14" to="/pleasure">For your pleasure</Link>
                 <Link className="linkPage__link fz-14" to="/faivorite">Faivorite</Link>
                 <Link className="linkPage__link fz-14" to="/basket">Basket</Link>
-                <ExitLink />
+                <ExitLink styleEnter={''} styleExit={''} />
             </LinkPage>
             <div className="container">
                 <div className="singleCoffeeItem__wrapper">

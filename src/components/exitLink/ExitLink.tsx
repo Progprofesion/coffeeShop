@@ -9,15 +9,9 @@ import { removeUser } from 'src/store/slices/userSlice';
 import './exitLink.scss';
 
 interface ExitLinkintrface {
-    styleExit: {},
-    styleEnter: {}
+    styleExit: any,
+    styleEnter: any
 }
-
-interface UserInterface {
-    user: string;
-    email: string
-}
-
 
 const ExitLink = ({ styleExit, styleEnter }: ExitLinkintrface) => {
     const userEmail = useSelector((state: RootState) => state.user.email);

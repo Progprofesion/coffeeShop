@@ -6,7 +6,7 @@ import coffeeBeansIconWhite from 'src/assets/icons/coffeeBeansIconWhite.svg'
 import "./aboutUs.scss"
 
 interface AboutUsInterface {
-    style: any
+    style: React.CSSProperties
     noneDescr: object
 }
 

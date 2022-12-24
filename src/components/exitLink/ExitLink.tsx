@@ -7,8 +7,8 @@ import { removeUser } from 'src/store/slices/userSlice';
 import './exitLink.scss';
 
 interface ExitLinkintrface {
-    styleExit?: any,
-    styleEnter?: any
+    styleExit?: React.CSSProperties
+    styleEnter?: React.CSSProperties
 }
 
 const ExitLink = ({ styleExit, styleEnter }: ExitLinkintrface) => {

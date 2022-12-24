@@ -15,11 +15,11 @@ import "./swiper.scss";
 
 import { Navigation } from "swiper";
 
-interface Swiper {
+interface SwiperInterface {
     style: object,
 }
 
-export default function App({ style }: Swiper) {
+export default function App({ style }: SwiperInterface) {
 
     return (
         <section className='swiperSection' style={style}>

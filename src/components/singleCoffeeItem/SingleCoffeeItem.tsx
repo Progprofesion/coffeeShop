@@ -9,13 +9,13 @@ import coffeeBeansIconBlack from "src/assets/icons/coffeeBeansIconBlack.svg";
 
 import './singleCoffeeItem.scss';
 
-interface SingleCoffee {
+interface SingleCoffeeInterface {
     img: string,
     country: string,
     price: number,
 }
 
-const SingleCoffee = ({ img, country, price }: SingleCoffee) => {
+const SingleCoffee = ({ img, country, price }: SingleCoffeeInterface) => {
     return (
         <article className="singleCoffeeItem">
             <LinkPage img={coffeeIcon} >
@@ -24,7 +24,7 @@ const SingleCoffee = ({ img, country, price }: SingleCoffee) => {
                 <Link className="linkPage__link fz-14" to="/pleasure">For your pleasure</Link>
                 <Link className="linkPage__link fz-14" to="/faivorite">Faivorite</Link>
                 <Link className="linkPage__link fz-14" to="/basket">Basket</Link>
-                <ExitLink styleEnter={''} styleExit={''} />
+                <ExitLink />
             </LinkPage>
             <div className="container">
                 <div className="singleCoffeeItem__wrapper">

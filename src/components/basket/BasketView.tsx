@@ -4,7 +4,19 @@ import { Link } from 'react-router-dom';
 
 import './basketView.scss';
 
-const BasketView = ({ id, img, title, country, price, quantity, incr, decr, faivorite, ...rest }) => {
+interface BasketViewIntreface {
+    id: number
+    img: string
+    title: string
+    country: string
+    price: number
+    quantity: number
+    incr: () => number
+    decr: () => number
+    faivorite: boolean
+}
+
+const BasketView = ({ id, img, title, country, price, quantity, incr, decr, faivorite, ...rest }: BasketViewIntreface) => {
     const [showButton, setShowButton] = useState(false)
 
     const nodeRef = useRef(null);

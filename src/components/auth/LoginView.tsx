@@ -1,10 +1,11 @@
 import { useSelector } from 'react-redux';
+import { RootState } from 'src/store/index';
 
 import './loginView.scss';
 
 const LoginView = () => {
 
-    const userEmail = useSelector(state => state.user.email);
+    const userEmail = useSelector((state: RootState) => state.user.email);
 
     return (
         userEmail ? <div className="loginView">

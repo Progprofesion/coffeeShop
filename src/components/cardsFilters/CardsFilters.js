@@ -8,18 +8,18 @@ import { AppDispatch } from 'src/store';
 import SkeletonFilters from '../skeleton/SkeletonFilters';
 import './cardsFilters.scss';
 
-interface CardsFiltersInterface {
-    state: any,
-    arr: []
-}
+// interface CardsFiltersInterface {
+//     state: any,
+//     arr: []
+// }
 
 
 
 const CardsFilters = () => {
 
-    const { filtersLoadingStatus, activeFilter } = useSelector((state: any) => state.filters);
+    const { filtersLoadingStatus, activeFilter } = useSelector((state) => state.filters);
     const filters = selectAll(store.getState());
-    const dispatch = useDispatch<AppDispatch>();
+    const dispatch = useDispatch();
 
 
     useEffect(() => {
@@ -34,7 +34,7 @@ const CardsFilters = () => {
         return <h5 className="cardsFilters__statusLoading">Error</h5>
     }
 
-    const renderFilters = (arr: []) => {
+    const renderFilters = (arr) => {
         if (arr.length === 0) {
             return <h5>No filters</h5>
         }

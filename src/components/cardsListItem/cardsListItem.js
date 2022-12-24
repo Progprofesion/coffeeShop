@@ -9,6 +9,7 @@ import starImg from '../../assets/icons/star.svg'
 import {
     statePrice,
     addProduct,
+    incrQuantity,
     decrQuantity,
     removeProduct,
     activeIncrTotals,
@@ -32,46 +33,6 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
 
     const dispatch = useDispatch();
 
-    const basketIncr = (e) => {
-        e.preventDefault();
-        addItem()
-        dispatch(statePrice({ price }))
-        dispatch(activeIncrTotals(price))
-    };
-
-
-    const basketRandom = (e, stateRandom) => {
-        if (e.code === "Enter") {
-            for (let t = 0; t < stateRandom; t++) {
-                e.preventDefault();
-                addItem()
-                dispatch(statePrice({ price }))
-                dispatch(activeIncrTotals(price))
-                setValue('')
-            }
-        }
-    }
-
-    const basketRandomBtn = (e, stateRandom) => {
-        e.preventDefault();
-        for (let t = 0; t < stateRandom; t++) {
-            addItem()
-            dispatch(statePrice({ price }))
-            dispatch(activeIncrTotals(price))
-            setValue('')
-        }
-    }
-
-    const basketDecr = (e) => {
-        e.preventDefault();
-        dispatch(statePrice({ price }))
-        if (quantity > 0) {
-            dispatch(activeDecrTotals(price))
-        }
-        dispatch(decrQuantity(id))
-        dispatch(removeProduct(id))
-    };
-
     const addItem = () => {
         const item = {
             id,
@@ -82,6 +43,49 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
         }
         dispatch(addProduct(item))
     };
+
+    const basketIncr = (e) => {
+        e.preventDefault();
+        addItem()
+        dispatch(incrQuantity())
+        dispatch(statePrice({ price }))
+        dispatch(activeIncrTotals(price))
+    };
+
+
+    const basketDecr = (e) => {
+        e.preventDefault();
+        dispatch(statePrice({ price }))
+        // if (quantity) {            // !!!!!!!!
+        dispatch(decrQuantity(id))
+        dispatch(activeDecrTotals(price))
+        // }
+        dispatch(removeProduct(id))
+    };
+
+
+    // const basketRandom = (e, stateRandom) => {
+    //     if (e.code === "Enter") {
+    //         for (let t = 0; t < stateRandom; t++) {
+    //             e.preventDefault();
+    //             addItem()
+    //             dispatch(statePrice({ price }))
+    //             dispatch(activeIncrTotals(price))
+    //             setValue('')
+    //         }
+    //     }
+    // }
+
+    const basketRandomBtn = (e, stateRandom) => {
+        e.preventDefault();
+        for (let t = 0; t < stateRandom; t++) {
+            addItem()
+            dispatch(incrQuantity())
+            dispatch(statePrice({ price }))
+            dispatch(activeIncrTotals(price))
+            setValue('')
+        }
+    }
 
     const star = () => {
         if (!stateArrRender[id].faivorite) {

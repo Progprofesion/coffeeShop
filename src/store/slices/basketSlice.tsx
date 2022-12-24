@@ -1,20 +1,13 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
 
 const cardsAdapter = createEntityAdapter();
-
 const initialState = cardsAdapter.getInitialState({
     statePrice: {},
     total: localStorage.getItem('total') || 0,
     amount: localStorage.getItem('amount') || 0,
-    items: JSON.parse(localStorage.getItem('object')!) || [],              // !
-    stateStartArr: JSON.parse(localStorage.getItem('stateArr')!) || [],             // !
+    items: JSON.parse(localStorage.getItem('object')!) || [],
+    stateStartArr: JSON.parse(localStorage.getItem('stateArr')!) || [],
 });
-
-// interface cardsSlice {
-//     state: any,
-//     statePrice: any,
-//     price: any
-// }
 
 const cardsSlice = createSlice({
     name: 'basket',
@@ -28,20 +21,19 @@ const cardsSlice = createSlice({
         },
         activeIncrTotals: (state: any, action) => {
             if (state.statePrice.price) {
-                let sum = (parseFloat(state.total.toString()) + action.payload).toFixed(2);
+                let sum = (parseFloat(state.total.toString()) + action.payload).toFixed(2); // .toFixed(2)
                 state.total = sum
             }
         },
         activeDecrTotals: (state: any, action) => {
             if (state.statePrice.price) {
-                let sum = (parseFloat(state.total.toString()) - action.payload).toFixed(2);
+                let sum = (parseFloat(state.total.toString()) - action.payload).toFixed(2); // .toFixed(2)
                 state.total = sum
-                console.log(state.statePrice.price)
             }
         },
         basketAmount: (state) => {
             state.amount = state.items.reduce(
-                (prev: number, current: any) => prev + current.quantity,
+                (prev: any, current: any) => prev + current.quantity,
                 0
             );
         },
@@ -52,7 +44,7 @@ const cardsSlice = createSlice({
             } else {
                 state.items.push({ ...action.payload, quantity: 1 });
             }
-            const stateCartAmount = state.stateStartArr.find((item: any) => item.id === action.payload);
+            const stateCartAmount = state.stateStartArr.find((item: any) => item.id === action.payload.id);
             stateCartAmount.quantity++;
         },
         addFavorite: (state, action) => {
@@ -73,9 +65,13 @@ const cardsSlice = createSlice({
         },
         incrQuantity: (state, action) => {
             const item = state.items.find((item: any) => item.id === action.payload);
-            item.quantity++;
+            if (item) {
+                item.quantity++;
+            }
             const stateCartAmount = state.stateStartArr.find((item: any) => item.id === action.payload);
-            stateCartAmount.quantity++;
+            if (stateCartAmount) {
+                stateCartAmount.quantity++;
+            }
         },
         decrQuantity: (state, action) => {
             const item = state.items.find((item: any) => item.id === action.payload);

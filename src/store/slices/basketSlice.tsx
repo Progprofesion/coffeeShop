@@ -1,5 +1,6 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
 
+
 const cardsAdapter = createEntityAdapter();
 const initialState = cardsAdapter.getInitialState({
     statePrice: {},

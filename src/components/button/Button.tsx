@@ -5,7 +5,7 @@ interface ButtonProps {
     title: string,
     fn: () => void,
     type: 'submit',
-    disabled: boolean
+    disabled?: boolean
 }
 
 const Button: FC<ButtonProps> = ({ title, fn, type, disabled }) => {

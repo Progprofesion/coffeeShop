@@ -1,10 +1,11 @@
 import './linkPage.scss';
 
 interface LinkPageInterface {
-    img: string,
-    children?: any // !
-    style?: object,
-    title?: string,
+    img: string
+    children?: any
+    style?: object
+    title?: string
+    styleLine?: React.CSSProperties
 }
 
 const LinkPage = ({ img, children, style }: LinkPageInterface) => {

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { TransitionGroup } from 'react-transition-group';
+import { RootState } from 'src/store/index';
 
 import Button from '../button/Button';
 import ExitLink from '../exitLink/ExitLink';
@@ -27,12 +28,26 @@ import './basketLayout.scss';
 
 import 'animate.css';
 
-const BasketLayout = ({ setModalActive }) => {
+interface BasketLayoutInterface {
+    setModalActive: (open: boolean) => void;
+}
 
-    const addProduct = useSelector(state => state.basket.items);
-    const stateBasketAmount = useSelector(state => state.basket.amount);
-    const total = useSelector(state => state.basket.total);
-    const stateArrRender = useSelector(state => state.basket.stateStartArr);
+interface BasketLayoutRest {
+    id: number
+    img: string
+    title: string
+    country: string
+    price: number
+    quantity: number
+    faivorite: boolean
+}
+
+const BasketLayout = ({ setModalActive }: BasketLayoutInterface) => {
+
+    const addProduct = useSelector((state: RootState) => state.basket.items);
+    const stateBasketAmount = useSelector((state: RootState) => state.basket.amount);
+    const total = useSelector((state: RootState) => state.basket.total);
+    const stateArrRender = useSelector((state: RootState) => state.basket.stateStartArr);
 
     // eslint-disable-next-line
     const [localbasketObj, setLocalbasketObj] = useLocalStorage('object', 0);
@@ -52,8 +67,8 @@ const BasketLayout = ({ setModalActive }) => {
     }, [addProduct]);
 
 
-    const view = (arr) => {
-        return arr.map(({ id, img, title, country, price, quantity, ...rest }) => {
+    const view = (arr: []) => {
+        return arr.map(({ id, img, title, country, price, quantity, faivorite, ...rest }: BasketLayoutRest) => {
             const incr = () => {
                 dispatch(statePrice({ price }));
                 dispatch(activeIncrTotals(price));
@@ -77,7 +92,8 @@ const BasketLayout = ({ setModalActive }) => {
                 price={price}
                 quantity={quantity}
                 incr={incr}
-                decr={decr} />
+                decr={decr}
+                faivorite={faivorite} />
         })
     };
 
@@ -104,7 +120,8 @@ const BasketLayout = ({ setModalActive }) => {
                     </TransitionGroup>
                     <Button
                         title={'Place an order'}
-                        fn={() => setModalActive(true)} />
+                        fn={() => setModalActive(true)}
+                        type='submit' />
                 </ul>
             </div>
         </section>

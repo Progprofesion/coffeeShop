@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk, createEntityAdapter } from '@reduxjs/toolkit';
+import { RootState } from 'src/store/index';
 import { useHttp } from 'src/hooks/http.hook';
 
 const cardsAdapter = createEntityAdapter();
@@ -47,6 +48,6 @@ const { actions, reducer } = cardsSlice;
 
 export default reducer;
 
-export const { selectAll } = cardsAdapter.getSelectors((state: any) => state.filters);
+export const { selectAll } = cardsAdapter.getSelectors((state: RootState) => state.filters);
 
 export const { activeFilterChanged, activeSearchCoffee } = actions;

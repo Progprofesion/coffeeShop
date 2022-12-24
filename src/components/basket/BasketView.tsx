@@ -11,8 +11,8 @@ interface BasketViewIntreface {
     country: string
     price: number
     quantity: number
-    incr: () => number
-    decr: () => number
+    incr: () => void
+    decr: () => void
     faivorite: boolean
 }
 

@@ -5,14 +5,19 @@ import coffeeBeansIconWhite from 'src/assets/icons/coffeeBeansIconWhite.svg'
 
 import "./aboutUs.scss"
 
-const AboutUs = ({ style, noneDescr }) => {
+interface AboutUsInterface {
+    style: any
+    noneDescr: object
+}
+
+const AboutUs = ({ style, noneDescr }: AboutUsInterface) => {
     return (
         <section className="aboutUs">
             <div className="aboutUs__wrapper">
                 <Swiper style={style} />
                 <div className="container">
                     <h2 style={noneDescr} className="aboutUs__title fz-24">About Us</h2>
-                    <IconLine style={noneDescr} a img={coffeeBeansIconWhite} />
+                    <IconLine style={noneDescr} img={coffeeBeansIconWhite} />
                     <p style={noneDescr} className="aboutUs__descr fz-14">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
                         Afraid at highly months do things on at. Situation recommend objection do intention
                         so questions. As greatly removed calling pleased improve an. Last ask him cold feel

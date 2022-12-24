@@ -4,6 +4,7 @@ interface LinkPageInterface {
     img: string,
     children?: any // !
     style?: object,
+    title?: string,
 }
 
 const LinkPage = ({ img, children, style }: LinkPageInterface) => {

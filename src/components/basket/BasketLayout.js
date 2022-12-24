@@ -34,6 +34,7 @@ const BasketLayout = ({ setModalActive }) => {
     const total = useSelector(state => state.basket.total);
     const stateArrRender = useSelector(state => state.basket.stateStartArr);
 
+    // eslint-disable-next-line
     const [localbasketObj, setLocalbasketObj] = useLocalStorage('object', 0);
     const [localBasketAmount, setLocalBasketAmount] = useLocalStorage('amount', 0);
     const [localBasketTotal, setLocalBasketTotal] = useLocalStorage('total', 0);
@@ -48,7 +49,7 @@ const BasketLayout = ({ setModalActive }) => {
         dispatch(basketAmount(addProduct));
         localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
         // eslint-disable-next-line
-    }, [addProduct, stateBasketAmount, stateArrRender, localbasketObj]);
+    }, [addProduct]);
 
 
     const view = (arr) => {

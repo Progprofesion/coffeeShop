@@ -4,15 +4,9 @@ import classNames from 'classnames';
 
 import { activeFilterChanged, selectAll, fetchFilters } from 'src/store/slices/cadsFiltersSlice';
 import store from 'src/store';
-import { AppDispatch } from 'src/store';
+
 import SkeletonFilters from '../skeleton/SkeletonFilters';
 import './cardsFilters.scss';
-
-// interface CardsFiltersInterface {
-//     state: any,
-//     arr: []
-// }
-
 
 
 const CardsFilters = () => {

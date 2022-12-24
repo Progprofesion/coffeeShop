@@ -56,25 +56,10 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
     const basketDecr = (e) => {
         e.preventDefault();
         dispatch(statePrice({ price }))
-        // if (quantity) {            // !!!!!!!!
         dispatch(decrQuantity(id))
         dispatch(activeDecrTotals(price))
-        // }
         dispatch(removeProduct(id))
     };
-
-
-    // const basketRandom = (e, stateRandom) => {
-    //     if (e.code === "Enter") {
-    //         for (let t = 0; t < stateRandom; t++) {
-    //             e.preventDefault();
-    //             addItem()
-    //             dispatch(statePrice({ price }))
-    //             dispatch(activeIncrTotals(price))
-    //             setValue('')
-    //         }
-    //     }
-    // }
 
     const basketRandomBtn = (e, stateRandom) => {
         e.preventDefault();

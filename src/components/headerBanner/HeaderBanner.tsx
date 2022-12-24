@@ -2,12 +2,13 @@ import { Link } from 'react-router-dom';
 
 import ExitLink from '../exitLink/ExitLink';
 import LinkPage from '../linkPage/LinkPage';
+import { LinkPageInterface } from '../linkPage/LinkPage';
 
 import coffeeIcon from 'src/assets/icons/coffeeIcon.svg';
 
 import './headerBanner.scss';
 
-const HeaderPages = ({ style, title }) => {
+const HeaderPages = ({ style, title }: LinkPageInterface) => {
     return (
         <section className="headerBanner" style={style}>
             <LinkPage img={coffeeIcon}>

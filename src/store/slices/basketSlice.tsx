@@ -21,13 +21,13 @@ const cardsSlice = createSlice({
         },
         activeIncrTotals: (state: any, action) => {
             if (state.statePrice.price) {
-                let sum = (parseFloat(state.total.toString()) + action.payload).toFixed(2); // .toFixed(2)
+                let sum = (parseFloat(state.total.toString()) + action.payload).toFixed(2);
                 state.total = sum
             }
         },
         activeDecrTotals: (state: any, action) => {
             if (state.statePrice.price) {
-                let sum = (parseFloat(state.total.toString()) - action.payload).toFixed(2); // .toFixed(2)
+                let sum = (parseFloat(state.total.toString()) - action.payload).toFixed(2);
                 state.total = sum
             }
         },

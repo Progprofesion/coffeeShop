@@ -1,4 +1,3 @@
-
 import './modal.scss';
 
 const Modal = ({ active, setActive, children }) => {

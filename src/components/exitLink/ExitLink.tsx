@@ -2,15 +2,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { RootState } from 'src/store/index';
 
-import UserInterface from "../../store/slices/userSlice";
-
 import { removeUser } from 'src/store/slices/userSlice';
 
 import './exitLink.scss';
 
 interface ExitLinkintrface {
-    styleExit: any,
-    styleEnter: any
+    styleExit?: any,
+    styleEnter?: any
 }
 
 const ExitLink = ({ styleExit, styleEnter }: ExitLinkintrface) => {

@@ -61,7 +61,7 @@ const BasketLayout = ({ setModalActive }: BasketLayoutInterface) => {
         setLocalBasketAmount(stateBasketAmount);
         setLocalbasketObj(addProduct);
         setLocalBasketTotal(Number(total));
-        dispatch(basketAmount(addProduct));
+        // dispatch(basketAmount(addProduct));
         localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
         // eslint-disable-next-line
     }, [addProduct]);

@@ -1,14 +1,39 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
+// import { Instance } from '@testing-library/user-event/dist/types/setup';
+import { IndexRouteProps } from 'react-router-dom';
+// import { RootState, AppDispatch } from 'src/store/index';
+
+
+export interface basketSliceInterface {
+    statePrice: {}
+    total: number
+    amount: number
+    items: []
+    stateStartArr: []
+
+}
+
+interface basketType {
+    statePrice: any
+    total: any
+    amount: number
+    items: any
+    stateStartArr?: any
+    quantity?: number
+}
 
 
 const cardsAdapter = createEntityAdapter();
+
 const initialState = cardsAdapter.getInitialState({
     statePrice: {},
     total: localStorage.getItem('total') || 0,
     amount: localStorage.getItem('amount') || 0,
     items: JSON.parse(localStorage.getItem('object')!) || [],
     stateStartArr: JSON.parse(localStorage.getItem('stateArr')!) || [],
-});
+    quantity: 0,
+    itemInCart: 0
+}) as basketSliceInterface
 
 const cardsSlice = createSlice({
     name: 'basket',
@@ -20,72 +45,75 @@ const cardsSlice = createSlice({
         statePrice: (state, action) => {
             state.statePrice = action.payload
         },
-        activeIncrTotals: (state: any, action) => {
+        activeIncrTotals: (state: basketType, action) => {
             if (state.statePrice.price) {
                 let sum = (parseFloat(state.total.toString()) + action.payload).toFixed(2);
                 state.total = sum
             }
         },
-        activeDecrTotals: (state: any, action) => {
+        activeDecrTotals: (state: basketType, action) => {
             if (state.statePrice.price) {
                 let sum = (parseFloat(state.total.toString()) - action.payload).toFixed(2);
                 state.total = sum
             }
         },
-        basketAmount: (state) => {
+        basketAmount: (state: basketType) => {
             state.amount = state.items.reduce(
-                (prev: any, current: any) => prev + current.quantity,
+                (prev: IDBCursorDirection, current: basketType) => prev + current.quantity,
                 0
             );
         },
-        addProduct: (state, action) => {
-            const itemInCart = state.items.find((item: any) => item.id === action.payload.id);
+        addProduct: (state: basketType, action) => {
+            const itemInCart = state.items.find((item: IndexRouteProps) => item.id === action.payload.id);
             if (itemInCart) {
                 itemInCart.quantity++;
             } else {
                 state.items.push({ ...action.payload, quantity: 1 });
             }
-            const stateCartAmount = state.stateStartArr.find((item: any) => item.id === action.payload.id);
-            stateCartAmount.quantity++;
+            const stateCartAmount = state.stateStartArr.find((item: IndexRouteProps) => item.id === action.payload.id);
+            if (stateCartAmount) {
+                stateCartAmount.quantity++;
+            }
+
         },
-        addFavorite: (state, action) => {
-            const item = state.items.find((item: any) => item.id === action.payload);
+        addFavorite: (state: basketType, action) => {
+            const item = state.items.find((item: IndexRouteProps) => item.id === action.payload);
             if (item) {
                 item.faivorite = true;
             }
-            const cartFaivorite = state.stateStartArr.find((item: any) => item.id === action.payload);
+            const cartFaivorite = state.stateStartArr.find((item: IndexRouteProps) => item.id === action.payload);
             cartFaivorite.faivorite = true;
         },
-        removeFaivorite: (state, action) => {
-            const item = state.items.find((item: any) => item.id === action.payload);
+        removeFaivorite: (state: basketType, action) => {
+            const item = state.items.find((item: IndexRouteProps) => item.id === action.payload);
             if (item) {
                 item.faivorite = false;
             }
-            const cartFaivorite = state.stateStartArr.find((item: any) => item.id === action.payload);
+            const cartFaivorite = state.stateStartArr.find((item: IndexRouteProps) => item.id === action.payload);
             cartFaivorite.faivorite = false;
         },
-        incrQuantity: (state, action) => {
-            const item = state.items.find((item: any) => item.id === action.payload);
+        incrQuantity: (state: basketType, action) => {
+            const item = state.items.find((item: IndexRouteProps) => item.id === action.payload);
             if (item) {
                 item.quantity++;
             }
-            const stateCartAmount = state.stateStartArr.find((item: any) => item.id === action.payload);
+            const stateCartAmount = state.stateStartArr.find((item: IndexRouteProps) => item.id === action.payload);
             if (stateCartAmount) {
                 stateCartAmount.quantity++;
             }
         },
-        decrQuantity: (state, action) => {
-            const item = state.items.find((item: any) => item.id === action.payload);
+        decrQuantity: (state: basketType, action) => {
+            const item = state.items.find((item: IndexRouteProps) => item.id === action.payload);
             if (item && item.quantity > 0) {
                 item.quantity--;
-                const stateCartAmount = state.stateStartArr.find((item: any) => item.id === action.payload);
+                const stateCartAmount = state.stateStartArr.find((item: IndexRouteProps) => item.id === action.payload);
                 stateCartAmount.quantity--;
             }
         },
-        removeProduct: (state, action) => {
-            const item = state.items.find((item: any) => item.id === action.payload);
+        removeProduct: (state: basketType, action) => {
+            const item = state.items.find((item: IndexRouteProps) => item.id === action.payload);
             if (item && item.quantity === 0) {
-                const removeItem = state.items.filter((item: any) => item.id !== action.payload);
+                const removeItem = state.items.filter((item: IndexRouteProps) => item.id !== action.payload);
                 state.items = removeItem;
             }
         },

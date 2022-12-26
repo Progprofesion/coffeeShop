@@ -9,8 +9,7 @@ export interface basketSliceInterface {
     total: number
     amount: number
     items: []
-    stateStartArr: []
-
+    stateStartArr: [];
 }
 
 interface basketType {

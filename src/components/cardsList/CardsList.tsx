@@ -32,6 +32,10 @@ interface arrInterface {
     faivorite: boolean
 }
 
+interface filteredCardsInterface {
+    filteredCards: any
+}
+
 const CardsList = ({ cardsView, style, title, height, stateFaivorite }: CardListInterface) => {
 
     const {
@@ -67,14 +71,13 @@ const CardsList = ({ cardsView, style, title, height, stateFaivorite }: CardList
         }
     }, [searchCoffee, stateArrRender]);
 
-    const filteredCards = useMemo(() => {
+    const filteredCards = useMemo<any>(() => {
         const filteredCards = searchCoffeeFiltered.slice();
         if (activeFilter === 'all') {
             return filteredCards
         } else {
             return filteredCards.filter((item: Record<string, string>) => item.country === activeFilter);
-        };
-
+        }
     }, [activeFilter, searchCoffeeFiltered]);
 
     if (isError) {

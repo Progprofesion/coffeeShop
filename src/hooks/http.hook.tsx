@@ -1,3 +1,4 @@
+
 export const useHttp = () => {
 
     const request = async (url: string, method = 'GET', body = null, headers = { 'Content-Type': 'application/json' }) => {
@@ -8,7 +9,7 @@ export const useHttp = () => {
                 throw new Error(`Could not fetch ${url}, status: ${response.status}`);
             }
 
-            const data = await response.json();
+            const data: any = await response.json();
 
             return data;
         } catch (e) {

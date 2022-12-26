@@ -21,7 +21,7 @@ const Login = () => {
                 localStorage.setItem('id', user.uid)
             })
             .then(() => {
-                dispatch(setUser({
+                (setUser({
                     email: localStorage.getItem('userEmail'),
                     token: localStorage.getItem('accessToken'),
                     id: localStorage.getItem('id'),

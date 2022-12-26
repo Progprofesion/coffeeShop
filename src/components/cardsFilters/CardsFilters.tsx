@@ -1,31 +1,22 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import classNames from 'classnames';
-import { RootState, AppDispatch } from 'src/store/index';
+
+import { useAppDispatch } from 'src/hooks/redux-hooks';
 
 import { activeFilterChanged, selectAll, fetchFilters } from 'src/store/slices/cadsFiltersSlice';
 import store from 'src/store';
-import basketSliceInterface from '../../store/slices/basketSlice';
+
 
 import SkeletonFilters from '../skeleton/SkeletonFilters';
 import './cardsFilters.scss';
 
 
-// interface arrInterface {
-//     name: string;
-//     label: string;
-//     className: string
-//     filters: any
-//     basket: any
-//     user: any
-//     api: any
-// }
-
 const CardsFilters = () => {
 
-    const { filtersLoadingStatus, activeFilter } = useSelector((state) => state.filters);
-    const filters = selectAll(store.getState());
-    const dispatch = useDispatch(); //<AppDispatch>
+    const { filtersLoadingStatus, activeFilter } = useSelector((state: any) => state.filters);
+    const filters: [] = selectAll(store.getState()) as []
+    const dispatch = useAppDispatch();
 
 
     useEffect(() => {
@@ -40,7 +31,7 @@ const CardsFilters = () => {
         return <h5 className="cardsFilters__statusLoading">Error</h5>
     }
 
-    const renderFilters = (arr) => {
+    const renderFilters = (arr: []) => {
         if (arr.length === 0) {
             return <h5>No filters</h5>
         }

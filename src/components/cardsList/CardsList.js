@@ -2,7 +2,6 @@ import { useMemo, useEffect } from 'react';
 import { useGetProductsQuery } from '../api/apiSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { TransitionGroup } from 'react-transition-group';
-import { RootState } from 'src/store/index';
 
 import SearchComponent from '../searchComponent/SearchComponent';
 import Error from 'src/assets/icons/Error.gif';
@@ -13,39 +12,20 @@ import { startState } from 'src/store/slices/basketSlice';
 
 import './cardsList.scss';
 
-interface CardListInterface {
-    cardsView: number
-    style: React.CSSProperties
-    title: string
-    height: React.CSSProperties
-    stateFaivorite: boolean
-}
-
-interface arrInterface {
-    page: number
-    price: number
-    id: number
-    img: string
-    title: string
-    country: string
-    quantity: number
-    faivorite: boolean
-}
-
-const CardsList = ({ cardsView, style, title, height, stateFaivorite }: CardListInterface) => {
+const CardsList = ({ cardsView, style, title, height, stateFaivorite }) => {
 
     const {
         data: products = [],
         isLoading,
         isError,
         isSuccess
-    } = useGetProductsQuery(null);
+    } = useGetProductsQuery();
 
     const dispatch = useDispatch();
 
-    const activeFilter = useSelector((state: RootState) => state.filters.activeFilter);
-    const searchCoffee = useSelector((state: RootState) => state.filters.searchCoffee);
-    const stateArrRender = useSelector((state: RootState) => state.basket.stateStartArr);
+    const activeFilter = useSelector(state => state.filters.activeFilter);
+    const searchCoffee = useSelector(state => state.filters.searchCoffee);
+    const stateArrRender = useSelector(state => state.basket.stateStartArr);
 
     useEffect(() => {
         if (!stateArrRender.length) {
@@ -61,28 +41,32 @@ const CardsList = ({ cardsView, style, title, height, stateFaivorite }: CardList
         if (searchCoffee === '') {
             return searchCoffeeFiltered;
         } else {
-            return searchCoffeeFiltered.filter((item: Record<string, string>) => {
+            return searchCoffeeFiltered.filter(item => {
                 return item.title.toLowerCase().indexOf(searchCoffee.toLowerCase()) > -1
             })
         }
     }, [searchCoffee, stateArrRender]);
 
-    const filteredCards = useMemo<any>(() => {
+    const filteredCards = useMemo(() => {
         const filteredCards = searchCoffeeFiltered.slice();
         if (activeFilter === 'all') {
             return filteredCards
         } else {
-            return filteredCards.filter((item: Record<string, string>) => item.country === activeFilter);
-        }
+            return filteredCards.filter(item => item.country === activeFilter);
+        };
+
     }, [activeFilter, searchCoffeeFiltered]);
 
     if (isError) {
         return <Error />
     }
 
-    const renderCardsList = (arr: []) => {
+    const renderCardsList = (arr) => {
+        if (arr.lenght === 0) {
+            return <h5>No products</h5>
+        }
         // eslint-disable-next-line
-        return arr.map(({ page, price, id, img, title, country, quantity, faivorite, ...rest }: arrInterface) => {
+        return arr.map(({ page, price, id, img, title, country, quantity, faivorite, ...rest }) => {
             if (page > cardsView || (stateFaivorite && faivorite)) {
                 return isLoading ? <SkeletonCardsList key={page} />
                     : <CardsListItem

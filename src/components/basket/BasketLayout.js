@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { TransitionGroup } from 'react-transition-group';
-import { RootState } from 'src/store/index';
 
 import Button from '../button/Button';
 import ExitLink from '../exitLink/ExitLink';
@@ -28,26 +27,12 @@ import './basketLayout.scss';
 
 import 'animate.css';
 
-interface BasketLayoutInterface {
-    setModalActive: (open: boolean) => void;
-}
+const BasketLayout = ({ setModalActive }) => {
 
-interface BasketLayoutRest {
-    id: number
-    img: string
-    title: string
-    country: string
-    price: number
-    quantity: number
-    faivorite: boolean
-}
-
-const BasketLayout = ({ setModalActive }: BasketLayoutInterface) => {
-
-    const addProduct = useSelector((state: RootState) => state.basket.items);
-    const stateBasketAmount = useSelector((state: RootState) => state.basket.amount);
-    const total = useSelector((state: RootState) => state.basket.total);
-    const stateArrRender = useSelector((state: RootState) => state.basket.stateStartArr);
+    const addProduct = useSelector(state => state.basket.items);
+    const stateBasketAmount = useSelector(state => state.basket.amount);
+    const total = useSelector(state => state.basket.total);
+    const stateArrRender = useSelector(state => state.basket.stateStartArr);
 
     // eslint-disable-next-line
     const [localbasketObj, setLocalbasketObj] = useLocalStorage('object', 0);
@@ -61,14 +46,14 @@ const BasketLayout = ({ setModalActive }: BasketLayoutInterface) => {
         setLocalBasketAmount(stateBasketAmount);
         setLocalbasketObj(addProduct);
         setLocalBasketTotal(Number(total));
-        // dispatch(basketAmount(addProduct));
+        dispatch(basketAmount(addProduct));
         localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
         // eslint-disable-next-line
     }, [addProduct]);
 
 
-    const view = (arr: []) => {
-        return arr.map(({ id, img, title, country, price, quantity, faivorite, ...rest }: BasketLayoutRest) => {
+    const view = (arr) => {
+        return arr.map(({ id, img, title, country, price, quantity, ...rest }) => {
             const incr = () => {
                 dispatch(statePrice({ price }));
                 dispatch(activeIncrTotals(price));
@@ -92,8 +77,7 @@ const BasketLayout = ({ setModalActive }: BasketLayoutInterface) => {
                 price={price}
                 quantity={quantity}
                 incr={incr}
-                decr={decr}
-                faivorite={faivorite} />
+                decr={decr} />
         })
     };
 
@@ -115,13 +99,12 @@ const BasketLayout = ({ setModalActive }: BasketLayoutInterface) => {
                     <h2 className="basketView__title">Shopping cart</h2>
                     <h3 className="basketView__amount">Amount of goods: {localBasketAmount}</h3>
                     <h3 className="basketView__amount">Total price: {localBasketTotal > 0 ? localBasketTotal.toFixed(2) + `$` : `0.00$`}</h3>
-                    <TransitionGroup >
+                    <TransitionGroup>
                         {elements.length > 0 ? elements : 'The basket is empty'}
                     </TransitionGroup>
                     <Button
                         title={'Place an order'}
-                        fn={() => setModalActive(true)}
-                        type='submit' />
+                        fn={() => setModalActive(true)} />
                 </ul>
             </div>
         </section>

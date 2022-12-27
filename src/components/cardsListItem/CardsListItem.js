@@ -2,7 +2,6 @@ import { useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import { RootState } from 'src/store/index';
 
 import coffeeBeansIconWhite from 'src/assets/icons/coffeeBeansIconWhite.svg'
 import starImg from '../../assets/icons/star.svg'
@@ -24,25 +23,13 @@ import basketIcon from 'src/assets/icons/basketIcon.svg';
 import 'animate.css';
 import './cardsListItem.scss';
 
-interface CardListItemInterface {
-    id: number
-    img: string
-    title: string
-    country: string
-    price: number
-    quantity: number
-    faivorite: boolean
-}
-
-const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ...rest }: CardListItemInterface) => {
+const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ...rest }) => {
 
     const [value, setValue] = useState('');
 
-    const stateArrRender = useSelector((state: RootState) => state.basket.stateStartArr);
+    const stateArrRender = useSelector(state => state.basket.stateStartArr);
 
-    const nodeRef = useRef<HTMLLabelElement>();
-
-    const inputLabel = useRef<HTMLDivElement>(null);
+    const nodeRef = useRef();
 
     const dispatch = useDispatch();
 
@@ -57,16 +44,16 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
         dispatch(addProduct(item))
     };
 
-    const basketIncr = (e: any) => {
+    const basketIncr = (e) => {
         e.preventDefault();
         addItem()
-        dispatch(incrQuantity(price))
+        dispatch(incrQuantity())
         dispatch(statePrice({ price }))
         dispatch(activeIncrTotals(price))
     };
 
 
-    const basketDecr = (e: any) => {
+    const basketDecr = (e) => {
         e.preventDefault();
         dispatch(statePrice({ price }))
         dispatch(decrQuantity(id))
@@ -74,11 +61,11 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
         dispatch(removeProduct(id))
     };
 
-    const basketRandomBtn = (e: any, stateRandom: any) => {
+    const basketRandomBtn = (e, stateRandom) => {
         e.preventDefault();
         for (let t = 0; t < stateRandom; t++) {
             addItem()
-            dispatch(incrQuantity(price))
+            dispatch(incrQuantity())
             dispatch(statePrice({ price }))
             dispatch(activeIncrTotals(price))
             setValue('')
@@ -86,7 +73,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
     }
 
     const star = () => {
-        if (!stateArrRender[id]) {
+        if (!stateArrRender[id].faivorite) {
             dispatch(addFavorite(id))
         } else {
             dispatch(removeFaivorite(id))
@@ -100,12 +87,12 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
             timeout={500}
             nodeRef={nodeRef}
             classNames="cards__item">
-            <div ref={inputLabel}>
-                <ul className="cardsListItem animate__animated animate__flipInX " >
+            <div ref={nodeRef}>
+                <ul className=" cardsListItem animate__animated animate__flipInX " >
                     <div className="cardsListItem__star">
                         <img onClick={() => star()} className={faivorite ? "activeStarClick cardsListItem__starImg" : "cardsListItem__starImg"} src={starImg} alt="" />
                     </div>
-                    <div className="cardsListItem__wrapperImg">
+                    <div className="cardsListItem__wrapperImg" name='cards' type="text">
                         <Link to={`/ourcoffee/${id}`}>
                             <img className="cardsListItem__img" src={img} alt="coffee" />
                         </Link>
@@ -121,6 +108,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
                                 inputMode='tel'
                                 value={value.replace(/^[^0-9_]*[a-zA-Z0-9_]*[^0-9]$/, '')}
                                 maxLength={2}
+                                // onKeyDown={e => basketRandom(e, value)}
                                 onChange={e => setValue(e.target.value)}
                                 className="cardsListItem__input" placeholder="00" type='tel' />
                             <button
@@ -144,6 +132,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
                 </ul>
             </div >
         </CSSTransition>
+
     )
 };
 

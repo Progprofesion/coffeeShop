@@ -168,17 +168,18 @@
 
 // Animate
 .cards__item-enter {
-    display: none;
-    opacity: 0;
+
+    opacity: 1;
   }
 .cards__item-enter-active {
     opacity: 1;
+    display: none;
     transition: opacity 500ms ease-in;
   }
 .cards__item-exit {
     opacity: 1;
   }
 .cards__item-exit-active {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 500ms ease-in;
   }

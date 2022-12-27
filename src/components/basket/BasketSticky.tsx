@@ -28,15 +28,14 @@ const Basket = () => {
         setLocalBasketAmount(stateBasketAmount);
         setLocalbasketObj(addProduct);
         setLocalBasketTotal(Number(total));
-        dispatch(basketAmount(addProduct)) as
-            localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
+        dispatch(basketAmount())
+        localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
         // eslint-disable-next-line
     }, [addProduct, stateBasketAmount]);
-    console.log(localBasketAmount)
 
     return (
         <Link to="/basket" id="basketSticky" className="basketSticky">
-            {/* <div className="basketSticky__amount">{localBasketAmount ? localBasketAmount : 0}</div> */}
+            <div className="basketSticky__amount">{localBasketAmount ? localBasketAmount : 0}</div>
             <div className="basketSticky__total">{localBasketTotal > 0 ? localBasketTotal.toFixed(2) + `$` : `0.00$`}</div>
         </Link>
     )

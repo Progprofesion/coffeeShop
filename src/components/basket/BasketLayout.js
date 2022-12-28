@@ -49,7 +49,7 @@ const BasketLayout = ({ setModalActive }) => {
         dispatch(basketAmount(addProduct));
         localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
         // eslint-disable-next-line
-    }, [addProduct]);
+    }, [addProduct, stateBasketAmount]);
 
 
     const view = (arr) => {

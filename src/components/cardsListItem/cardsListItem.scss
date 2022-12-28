@@ -165,21 +165,24 @@
     background: gold;
     border-radius: 20px;
 }
+// .cardsListItemAnimat {
+//     display: none;
+// }
 
+//
 // Animate
 .cards__item-enter {
-
-    opacity: 1;
+    display: none;
+    opacity: 0;
   }
 .cards__item-enter-active {
     opacity: 1;
-    display: none;
     transition: opacity 500ms ease-in;
   }
 .cards__item-exit {
     opacity: 1;
   }
 .cards__item-exit-active {
-    opacity: 1;
+    opacity: 0;
     transition: opacity 500ms ease-in;
   }

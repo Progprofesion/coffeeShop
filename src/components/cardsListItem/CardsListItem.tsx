@@ -40,8 +40,6 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
 
     const stateArrRender = useSelector((state: RootState) => state.basket.stateStartArr);
 
-    const nodeRef = useRef<HTMLLabelElement>();
-
     const inputLabel = useRef<HTMLDivElement>(null);
 
     const dispatch = useDispatch();
@@ -86,19 +84,21 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
     }
 
     const star = () => {
-        if (!stateArrRender[id]) {
+        // @ts-ignore
+        if (!stateArrRender[id].faivorite) {
             dispatch(addFavorite(id))
         } else {
             dispatch(removeFaivorite(id))
         }
     };
 
+
     return (
         <CSSTransition
             {...rest}
             key={id}
             timeout={500}
-            nodeRef={nodeRef}
+            nodeRef={inputLabel}
             classNames="cards__item">
             <div ref={inputLabel}>
                 <ul className="cardsListItem animate__animated animate__flipInX " >

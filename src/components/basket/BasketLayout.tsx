@@ -14,7 +14,6 @@ import coffeeIcon from 'src/assets/icons/coffeeIcon.svg';
 import {
     incrQuantity,
     decrQuantity,
-    basketAmount,
     removeProduct,
     activeIncrTotals,
     activeDecrTotals,
@@ -61,7 +60,6 @@ const BasketLayout = ({ setModalActive }: BasketLayoutInterface) => {
         setLocalBasketAmount(stateBasketAmount);
         setLocalbasketObj(addProduct);
         setLocalBasketTotal(Number(total));
-        // dispatch(basketAmount(addProduct));
         localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
         // eslint-disable-next-line
     }, [addProduct]);

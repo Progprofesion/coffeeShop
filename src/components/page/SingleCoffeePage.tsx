@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useGetProductsIdQuery } from '../api/apiSlice';
-import { Helmet, HelmetProvider } from 'react-helmet'
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import SingleCoffeeItem from '../singleCoffeeItem/SingleCoffeeItem';
 import Footer from '../footer/Footer';

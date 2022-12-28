@@ -1,39 +1,43 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
+
 import HeaderBanner from '../headerBanner/HeaderBanner';
+import AboutUs from '../aboutUs/AboutUs';
 import CardsList from '../cardsList/CardsList';
 import Footer from '../footer/Footer';
-import Hamburger from '../hamburger/Hamburger';
+import Humburger from '../hamburger/Hamburger';
 import BasketSticky from '../basket/BasketSticky';
 import LoginView from '../auth/LoginView';
 
-const PleasurePage = () => {
+const OurCoffeePage = () => {
     return (
         <>
             <HelmetProvider>
                 <Helmet>
                     <meta
                         name="description"
-                        content="Page for your pleasure" />
-                    <title>For your pleasure</title>
+                        content="Page our coffee" />
+                    <title>Our coffee</title>
                 </Helmet>
-                <Hamburger />
+                <Humburger />
                 <BasketSticky />
                 <LoginView />
                 <HeaderBanner
+                    img={''}
                     style={{
-                        background: "url(/static/media/bgPleasurePage.fe6ab9436eeb459ce2ab.png) center / cover no-repeat"
+                        background: "url(/static/media/bgOurCoffeePage.9928212fb1eb01de6816.png) center / cover no-repeat"
                     }}
-                    title={'For your pleasure'} />
+                    title={'Our coffee'} />
+                <AboutUs style={{ display: "none" }} />
                 <CardsList
+                    style={{ display: "block" }}
                     cardsView={0}
-                    style={{ background: 'url(/static/media/bgPleasure.1369d88c70440b25153e.jpg) center / cover no-repeat' }}
-                    height={{ 'minHeight': '624px' }}
+                    height={{ minHeight: '1000px' }}
                 />
                 <Footer />
             </HelmetProvider>
         </>
     )
-};
+}
 
-export default PleasurePage;
+export default OurCoffeePage;

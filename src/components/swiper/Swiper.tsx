@@ -16,7 +16,7 @@ import "./swiper.scss";
 import { Navigation } from "swiper";
 
 interface SwiperInterface {
-    style: object,
+    style: React.CSSProperties | undefined
 }
 
 export default function App({ style }: SwiperInterface) {

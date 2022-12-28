@@ -15,10 +15,11 @@ import './cardsList.scss';
 
 interface CardListInterface {
     cardsView: number
-    style: React.CSSProperties
-    title: string
+    style?: React.CSSProperties
+    title?: string
     height: React.CSSProperties
-    stateFaivorite: boolean
+    stateFaivorite?: boolean
+    faivorite?: boolean
 }
 
 interface arrInterface {

@@ -31,7 +31,7 @@ const Basket = () => {
         dispatch(basketAmount())
         localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
         // eslint-disable-next-line
-    }, [addProduct, stateBasketAmount]);
+    }, [addProduct, stateBasketAmount, stateArrRender]);
 
     return (
         <Link to="/basket" id="basketSticky" className="basketSticky">

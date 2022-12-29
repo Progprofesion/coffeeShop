@@ -55,7 +55,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
         dispatch(addProduct(item))
     };
 
-    const basketIncr = (e: any) => {
+    const basketIncr = (e: React.MouseEvent) => {
         e.preventDefault();
         addItem()
         dispatch(incrQuantity(price))
@@ -64,7 +64,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
     };
 
 
-    const basketDecr = (e: any) => {
+    const basketDecr = (e: React.MouseEvent) => {
         e.preventDefault();
         dispatch(statePrice({ price }))
         dispatch(decrQuantity(id))
@@ -72,7 +72,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
         dispatch(removeProduct(id))
     };
 
-    const basketRandomBtn = (e: any, stateRandom: any) => {
+    const basketRandomBtn = (e: React.MouseEvent, stateRandom: number | string) => {
         e.preventDefault();
         for (let t = 0; t < stateRandom; t++) {
             addItem()

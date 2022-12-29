@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import classNames from 'classnames';
+import { RootState } from 'src/store/index';
 
 import { useAppDispatch } from 'src/hooks/redux-hooks';
 
@@ -14,7 +15,7 @@ import './cardsFilters.scss';
 
 const CardsFilters = () => {
 
-    const { filtersLoadingStatus, activeFilter } = useSelector((state: any) => state.filters);
+    const { filtersLoadingStatus, activeFilter } = useSelector((state: RootState) => state.filters);
     const filters: [] = selectAll(store.getState()) as []
     const dispatch = useAppDispatch();
 

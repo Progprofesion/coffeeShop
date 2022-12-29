@@ -68,7 +68,7 @@ const CardsList = ({ cardsView, style, title, height, stateFaivorite }: CardList
         }
     }, [searchCoffee, stateArrRender]);
 
-    const filteredCards = useMemo<any>(() => {
+    const filteredCards: any = useMemo(() => {
         const filteredCards = searchCoffeeFiltered.slice();
         if (activeFilter === 'all') {
             return filteredCards

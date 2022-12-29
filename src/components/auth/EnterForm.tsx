@@ -21,7 +21,7 @@ const EnterForm: FC<FormProps> = ({ title, handleClick }) => {
         mode: "onBlur"
     });
 
-    const handleKeyPress = (e: any) => {
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.code === "Enter") {
             handleClick(email, pass)
         }

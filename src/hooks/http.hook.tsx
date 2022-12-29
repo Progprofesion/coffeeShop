@@ -9,7 +9,7 @@ export const useHttp = () => {
                 throw new Error(`Could not fetch ${url}, status: ${response.status}`);
             }
 
-            const data: any = await response.json();
+            const data: [] = await response.json();
 
             return data;
         } catch (e) {

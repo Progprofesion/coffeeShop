@@ -14,10 +14,10 @@ import { startState } from 'src/store/slices/basketSlice';
 import './cardsList.scss';
 
 interface CardListInterface {
-    cardsView: number
+    cardsView?: number
     style?: React.CSSProperties
     title?: string
-    height: React.CSSProperties
+    height?: React.CSSProperties
     stateFaivorite?: boolean
     faivorite?: boolean
 }
@@ -84,7 +84,7 @@ const CardsList = ({ cardsView, style, title, height, stateFaivorite }: CardList
     const renderCardsList = (arr: []) => {
         // eslint-disable-next-line
         return arr.map(({ page, price, id, img, title, country, quantity, faivorite, ...rest }: arrInterface) => {
-            if (page > cardsView || (stateFaivorite && faivorite)) {
+            if ((page > cardsView!) || (stateFaivorite && faivorite)) {
                 return isLoading ? <SkeletonCardsList key={page} />
                     : <CardsListItem
                         {...rest}

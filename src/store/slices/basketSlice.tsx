@@ -10,7 +10,7 @@ type Tprice = {
 
 export interface basketSliceInterface {
     statePrice: any
-    total: number
+    total: number | string
     amount: number
     items: []
     stateStartArr: []
@@ -21,7 +21,6 @@ type TBasket = {
 };
 
 interface basketType {
-    // statePrice: { price: number }
     amount: number
     total: number | string
     items: any
@@ -52,13 +51,13 @@ const cardsSlice = createSlice({
         statePrice: (state, action) => {
             state.statePrice = action.payload
         },
-        activeIncrTotals: (state: basketType, action) => {
+        activeIncrTotals: (state: basketSliceInterface, action) => {
             if (state.statePrice.price) {
                 let sum = (parseFloat(state.total.toString()) + action.payload).toFixed(2);
                 state.total = sum
             }
         },
-        activeDecrTotals: (state: basketType, action) => {
+        activeDecrTotals: (state: basketSliceInterface, action) => {
             if (state.statePrice.price) {
                 let sum = (parseFloat(state.total.toString()) - action.payload).toFixed(2);
                 state.total = sum

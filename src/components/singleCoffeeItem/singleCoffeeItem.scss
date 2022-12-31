@@ -82,15 +82,12 @@
 
 @media (max-width: 575px) {
     .singleCoffeeItem {
+        min-height: 130vh;
         &__img {
-            width: 240px;
+            width: 90%;
+            margin-top: 220px;
         }
 
     }
 }
 
-@media (max-width: 575px) {
-    .singleCoffeeItem {
-        min-height: 120vh;
-    }
-}

@@ -84,7 +84,8 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
     }
 
     const star = () => {
-        if (!stateArrRender[id]) {
+        // @ts-ignore
+        if (!stateArrRender[id].faivorite) {
             dispatch(addFavorite(id))
         } else {
             dispatch(removeFaivorite(id))

@@ -1,9 +1,32 @@
-export const useMask = (inputRef) => {
-    let getInputNumbersValue = (input) => {
+import { EventType } from "@testing-library/user-event/event/types";
+import { NativeFieldValue } from "react-hook-form";
+
+type TgetInputNumbersValue = {
+    value: string
+};
+
+interface Tmask {
+    e: {}
+    current: {
+        selectionStart: number
+        value: string
+    }
+    keyCode: number
+    clipboardData: {
+        getData: ((value: string) => string)
+    }
+    nativeEvent: {
+        data: string
+    }
+}
+
+
+export const useMask = (inputRef: Tmask) => {
+    let getInputNumbersValue = (input: TgetInputNumbersValue) => {
         return input.value.replace(/\D/g, "");
     }
 
-    let onPhoneinput = (e) => {
+    let onPhoneinput = (e: Tmask) => {
         let input = inputRef.current,
             inputNumbersValue = getInputNumbersValue(input),
             formattedInputValue = "",
@@ -44,14 +67,14 @@ export const useMask = (inputRef) => {
         input.value = formattedInputValue;
     }
 
-    let onPhoneKeyDown = (e) => {
+    let onPhoneKeyDown = (e: Tmask) => {
         let input = inputRef.current;
         if (e.keyCode === 8 && getInputNumbersValue(input).length === 1) {
             input.value = "";
         }
     }
 
-    let onPhonePaste = (e) => {
+    let onPhonePaste = (e: Tmask) => {
         let pasted = e.clipboardData || window.Clipboard,
             input = inputRef.current,
             inputNumbersValue = getInputNumbersValue(input);

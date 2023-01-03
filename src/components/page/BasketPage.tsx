@@ -9,11 +9,18 @@ import BasketLayout from '../basket/BasketLayout';
 import Footer from '../footer/Footer';
 
 import { useMask } from 'src/hooks/useMask';
+import { RootState } from '@/store';
+
+type Tdata = {
+    phone: number
+    name: string
+    email: string | number
+};
 
 const BasketPage = () => {
 
-    const addProduct = useSelector(state => state.basket.items);
-    const total = useSelector(state => state.basket.total);
+    const addProduct = useSelector((state: RootState) => state.basket.items);
+    const total = useSelector((state: RootState) => state.basket.total);
 
     const {
         register,
@@ -32,7 +39,7 @@ const BasketPage = () => {
 
     const [modalActive, setModalActive] = useState(false);
 
-    const onSubmit = (data) => {
+    const onSubmit = (data: Tdata) => {
         alert(`Данные пользователя: 
         Телефон: ${data.phone}
         Имя: ${data.name}
@@ -42,7 +49,7 @@ const BasketPage = () => {
         reset();
     };
 
-    const normalize = (arr) => {
+    const normalize = (arr: []) => {
         return arr.map(({ title, quantity, price, }) => {
             const data = `
             ${title},
@@ -107,7 +114,7 @@ const BasketPage = () => {
                                 onChange={(e) => onPhoneinput(e)}
                                 onKeyDown={onPhoneKeyDown}
                                 onPaste={onPhonePaste}
-                                maxLength="18"
+                                maxLength={18}
                             />
                             {errors.phone ? <p className="basketView__form-errorMessage" >{errors.phone.message}</p> : null}
                         </div>

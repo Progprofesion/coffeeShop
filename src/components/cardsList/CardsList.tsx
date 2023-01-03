@@ -68,7 +68,7 @@ const CardsList = ({ cardsView, style, title, height, stateFaivorite }: CardList
         }
     }, [searchCoffee, stateArrRender]);
 
-    const filteredCards: any = useMemo(() => {
+    const filteredCards: arrInterface[] = useMemo(() => {
         const filteredCards = searchCoffeeFiltered.slice();
         if (activeFilter === 'all') {
             return filteredCards
@@ -81,7 +81,7 @@ const CardsList = ({ cardsView, style, title, height, stateFaivorite }: CardList
         return <Error />
     }
 
-    const renderCardsList = (arr: []) => {
+    const renderCardsList = (arr: any[]) => {
         // eslint-disable-next-line
         return arr.map(({ page, price, id, img, title, country, quantity, faivorite, ...rest }: arrInterface) => {
             if ((page > cardsView!) || (stateFaivorite && faivorite)) {

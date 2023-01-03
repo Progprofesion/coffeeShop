@@ -7,7 +7,7 @@ import Spinner from '../spinner/Spinner';
 import LoginPage from '../page/LoginPage';
 import RegisterPage from '../page/RegisterPage';
 // eslint-disable-next-line
-import technicalFile from 'src/technicalFile';
+// import technicalFile from '../../technicalFile';
 
 import './app.scss';
 
@@ -15,7 +15,7 @@ const OurCoffeePage = lazy(() => import('../page/OurCoffeePage'));
 const SingleCoffeePage = lazy(() => import('../page/SingleCoffeePage'));
 const PleasurePage = lazy(() => import('../page/PleasurePage'));
 const FaivoritePage = lazy(() => import('../page/FaivoritePage'));
-const BasketPage = lazy(() => import('../page/BasketPage'));
+const BasketPage = lazy(() => import('../page/BasketPage'))
 const Page404 = lazy(() => import('../page/404'));
 
 const App = () => {

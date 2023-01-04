@@ -34,7 +34,7 @@ const BasketPage = () => {
     });
 
 
-    const inputRef = useRef<HTMLInputElement | null>(null);
+    const inputRef = useRef<HTMLElement | null>(null);
     const { ref, ...rest } = register('phone');
 
     const { onPhoneinput, onPhoneKeyDown, onPhonePaste } = useMask(inputRef);

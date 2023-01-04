@@ -1,28 +1,33 @@
 // import { EventType } from "@testing-library/user-event/event/types";
 // import { NativeFieldValue } from "react-hook-form";
 
-// type TgetInputNumbersValue = {
-//     value: string
-// };
+type Tcurrent = {
+    current: {
+        data: string
+        selectionStart: any
+        value: any
+    }
+    keyCode: any
+    nativeEvent: {
+        data: string
+    }
+}
 
 export default interface Tmask {
     e?: HTMLElement
-    current?: HTMLInputElement | null
-    keyCode?: number
-    clipboardData?: {
+    clipboardData: {
         getData: ((value: string) => string)
     }
-    nativeEvent?: any
     value?: string
 }
 
 
-export const useMask = (inputRef: Tmask) => {
-    let getInputNumbersValue = (input: HTMLInputElement) => {
+export const useMask = (inputRef: Tcurrent) => {
+    let getInputNumbersValue = (input: any) => {
         return input.value.replace(/\D/g, "");
     }
 
-    let onPhoneinput = (e: Tmask) => {
+    let onPhoneinput = (e: Tcurrent) => {
         let input = inputRef.current,
             inputNumbersValue = getInputNumbersValue(input),
             formattedInputValue = "",
@@ -58,12 +63,12 @@ export const useMask = (inputRef: Tmask) => {
             }
         } else {
             // Not Russian phone number
-            formattedInputValue = "+" + inputNumbersValue;
+            formattedInputValue = "+" + inputNumbersValue; input
         }
         input.value = formattedInputValue;
     }
 
-    let onPhoneKeyDown = (e: Tmask) => {
+    let onPhoneKeyDown = (e: Tcurrent) => {
         let input = inputRef.current;
         if (e.keyCode === 8 && getInputNumbersValue(input).length === 1) {
             input.value = "";

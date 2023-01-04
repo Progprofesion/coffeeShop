@@ -3,7 +3,7 @@ import './modal.scss';
 interface Imodal {
     active: boolean;
     setActive: (value: boolean) => void
-    children: []
+    children?: JSX.Element | JSX.Element[];
 }
 
 

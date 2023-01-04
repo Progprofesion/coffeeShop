@@ -1,28 +1,24 @@
-import { EventType } from "@testing-library/user-event/event/types";
-import { NativeFieldValue } from "react-hook-form";
+// import { EventType } from "@testing-library/user-event/event/types";
+// import { NativeFieldValue } from "react-hook-form";
 
-type TgetInputNumbersValue = {
-    value: string
-};
+// type TgetInputNumbersValue = {
+//     value: string
+// };
 
-interface Tmask {
-    e: {}
-    current: {
-        selectionStart: number
-        value: string
-    }
-    keyCode: number
-    clipboardData: {
+export default interface Tmask {
+    e?: HTMLElement
+    current?: HTMLInputElement | null
+    keyCode?: number
+    clipboardData?: {
         getData: ((value: string) => string)
     }
-    nativeEvent: {
-        data: string
-    }
+    nativeEvent?: any
+    value?: string
 }
 
 
 export const useMask = (inputRef: Tmask) => {
-    let getInputNumbersValue = (input: TgetInputNumbersValue) => {
+    let getInputNumbersValue = (input: HTMLInputElement) => {
         return input.value.replace(/\D/g, "");
     }
 

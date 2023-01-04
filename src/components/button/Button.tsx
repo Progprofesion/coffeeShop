@@ -2,10 +2,11 @@ import { FC } from 'react';
 import './button.scss';
 
 interface ButtonProps {
-    title: string,
-    fn: () => void,
-    type: 'submit',
+    title: string
+    fn?: () => void
+    type: 'submit'
     disabled?: boolean
+    style?: {}
 }
 
 const Button: FC<ButtonProps> = ({ title, fn, type, disabled }) => {

@@ -8,11 +8,13 @@ import Modal from '../modal/Modal';
 import BasketLayout from '../basket/BasketLayout';
 import Footer from '../footer/Footer';
 
+import Tmask from '../../hooks/useMask';
+
 import { useMask } from 'src/hooks/useMask';
 import { RootState } from '@/store';
 
 type Tdata = {
-    phone: number
+    phone: string
     name: string
     email: string | number
 };
@@ -27,12 +29,12 @@ const BasketPage = () => {
         formState: { errors },
         handleSubmit,
         reset,
-    } = useForm({
+    } = useForm<{ [x: string]: string, phone: string, name: string, email: string }>({
         mode: "onBlur"
     });
 
 
-    const inputRef = useRef(null);
+    const inputRef = useRef<HTMLInputElement | null>(null);
     const { ref, ...rest } = register('phone');
 
     const { onPhoneinput, onPhoneKeyDown, onPhonePaste } = useMask(inputRef);

@@ -33,8 +33,10 @@ const BasketPage = () => {
         mode: "onBlur"
     });
 
+    // выше возможно удалить
 
-    const inputRef = useRef<HTMLElement | null>(null);
+
+    const inputRef = useRef<HTMLInputElement>();
     const { ref, ...rest } = register('phone');
 
     const { onPhoneinput, onPhoneKeyDown, onPhonePaste } = useMask(inputRef);
@@ -109,12 +111,13 @@ const BasketPage = () => {
                                     },
                                 })}
                                 className="basketView__form-input" placeholder="Телефон" type='tel'
-                                {...rest} name="phone" ref={(e) => {
+                                {...rest} name="phone" ref={(e: HTMLInputElement) => {
                                     ref(e)
                                     inputRef.current = e
                                 }}
-                                onChange={(e) => onPhoneinput(e)}
-                                onKeyDown={onPhoneKeyDown}
+                                onChange={(e: any) => onPhoneinput(e)}
+                                // возможно лишняя анонимная функция
+                                onKeyDown={() => onPhoneKeyDown}
                                 onPaste={onPhonePaste}
                                 maxLength={18}
                             />

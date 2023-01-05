@@ -1,16 +1,10 @@
-// import { EventType } from "@testing-library/user-event/event/types";
-// import { NativeFieldValue } from "react-hook-form";
+import { EventType } from "@testing-library/user-event/event/types";
+import { NativeFieldValue } from "react-hook-form";
+
 
 type Tcurrent = {
-    current: {
-        data: string
-        selectionStart: any
-        value: any
-    }
-    keyCode: any
-    nativeEvent: {
-        data: string
-    }
+    current: HTMLInputElement
+    keyCode?: number
 }
 
 export default interface Tmask {
@@ -21,25 +15,33 @@ export default interface Tmask {
     value?: string
 }
 
+type Tinput = {
+    // event?: React.ChangeEvent<HTMLSelectElement>
+    // event?: React.ChangeEventHandler<HTMLInputElement>
+    nativeEvent: {
+        data: string
+    }
+}
+
 
 export const useMask = (inputRef: Tcurrent) => {
-    let getInputNumbersValue = (input: any) => {
+    let getInputNumbersValue = (input: HTMLInputElement) => {
         return input.value.replace(/\D/g, "");
     }
 
-    let onPhoneinput = (e: Tcurrent) => {
+    let onPhoneinput = (e: Tinput) => {
         let input = inputRef.current,
             inputNumbersValue = getInputNumbersValue(input),
             formattedInputValue = "",
-            selectionStart = input.selectionStart;
+            selectionStart = input!.selectionStart;
 
         if (!inputNumbersValue) {
-            return input.value = "";
+            return input!.value = "";
         }
 
-        if (input.value.length !== selectionStart) {
+        if (input!.value.length !== selectionStart) {
             if (e.nativeEvent.data && /\D/g.test(e.nativeEvent.data)) {
-                input.value = inputNumbersValue;
+                input!.value = inputNumbersValue;
             }
             return;
         }
@@ -65,13 +67,13 @@ export const useMask = (inputRef: Tcurrent) => {
             // Not Russian phone number
             formattedInputValue = "+" + inputNumbersValue; input
         }
-        input.value = formattedInputValue;
+        input!.value = formattedInputValue;
     }
 
     let onPhoneKeyDown = (e: Tcurrent) => {
         let input = inputRef.current;
         if (e.keyCode === 8 && getInputNumbersValue(input).length === 1) {
-            input.value = "";
+            input!.value = "";
         }
     }
 
@@ -83,7 +85,7 @@ export const useMask = (inputRef: Tcurrent) => {
         if (pasted) {
             let pastedText = pasted.getData("Text");
             if (/\D/g.test(pastedText)) {
-                input.value = inputNumbersValue;
+                input!.value = inputNumbersValue;
             }
         }
     }

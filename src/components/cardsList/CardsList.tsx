@@ -22,7 +22,7 @@ interface CardListInterface {
     faivorite?: boolean
 }
 
-interface arrInterface {
+type arrInterface = {
     page: number
     price: number
     id: number

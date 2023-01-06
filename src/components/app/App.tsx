@@ -6,8 +6,6 @@ import MainPage from '../page/MainPage';
 import Spinner from '../spinner/Spinner';
 import LoginPage from '../page/LoginPage';
 import RegisterPage from '../page/RegisterPage';
-// eslint-disable-next-line
-// import technicalFile from '../../technicalFile';
 
 import './app.scss';
 

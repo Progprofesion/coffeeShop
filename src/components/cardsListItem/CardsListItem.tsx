@@ -34,11 +34,13 @@ interface CardListItemInterface {
     faivorite: boolean
 }
 
+
+
 const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ...rest }: CardListItemInterface) => {
 
     const [value, setValue] = useState('');
 
-    const stateArrRender = useSelector((state: RootState) => state.basket.stateStartArr);
+    const stateArrRender: CardListItemInterface[] = useSelector((state: RootState) => state.basket.stateStartArr);
 
     const inputLabel = useRef<HTMLDivElement>(null);
 
@@ -82,7 +84,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
     }
 
     const star = () => {
-        // @ts-ignore
+
         if (!stateArrRender[id].faivorite) {
             dispatch(addFavorite(id))
         } else {

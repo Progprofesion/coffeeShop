@@ -12,6 +12,7 @@ import bgPleasure from 'src/assets/bg/bgPleasure.jpg';
 
 
 const PleasurePage = () => {
+
     return (
         <>
             <HelmetProvider>

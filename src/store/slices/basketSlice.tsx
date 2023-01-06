@@ -130,7 +130,7 @@ const { actions, reducer } = cardsSlice;
 
 export default reducer;
 
-export const { selectAll } = cardsAdapter.getSelectors((state: RootState) => state.basket)
+export const { selectAll } = cardsAdapter.getSelectors((state: any) => state.basket)
 
 export const { statePrice,
     activeIncrTotals,

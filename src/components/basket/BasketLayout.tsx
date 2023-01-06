@@ -11,7 +11,7 @@ import BasketView from './BasketView';
 import Hamburger from '../hamburger/Hamburger';
 import coffeeIcon from 'src/assets/icons/coffeeIcon.svg';
 
-
+import { basketAmount } from 'src/store/slices/basketSlice';
 import { useLocalStorage } from 'src/hooks/useLocalStorage';
 
 import './basketLayout.scss';
@@ -52,9 +52,10 @@ const BasketLayout = ({ setModalActive }: BasketLayoutInterface) => {
         setLocalBasketAmount(stateBasketAmount);
         setLocalbasketObj(addProduct);
         setLocalBasketTotal(Number(total));
+        dispatch(basketAmount())
         localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
         // eslint-disable-next-line
-    }, [addProduct]);
+    }, [addProduct, stateBasketAmount]);
 
 
     const view = (arr: []) => {

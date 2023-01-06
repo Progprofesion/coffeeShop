@@ -1,12 +1,12 @@
 {
-    "compilerOptions": {
-      "moduleResolution": "node",
-      "strict": true,
-      "esModuleInterop": true,  
-      "jsx": "react-jsx",
-      "baseUrl": ".",
-      "paths": {
-        "@/*":["src/*"]
-      }
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,  
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/*":["src/*"]
     }
+  }
 }

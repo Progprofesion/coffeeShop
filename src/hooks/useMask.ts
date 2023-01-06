@@ -1,8 +1,3 @@
-import { EventType } from "@testing-library/user-event/event/types";
-import { ReactEventHandler } from "react";
-import { NativeFieldValue } from "react-hook-form";
-
-
 type Tcurrent = {
     current?: HTMLInputElement
     keyCode?: number
@@ -17,9 +12,6 @@ export default interface Tmask {
 }
 
 export type Tinput = {
-    // event?: React.ChangeEvent<HTMLSelectElement>
-    // event?: React.ChangeEventHandler<HTMLInputElement>
-    // nativeEvent?: React.InputHTMLAttributes<HTMLInputElement>
     nativeEvent?: React.InputHTMLAttributes<HTMLInputElement>
 }
 
@@ -68,6 +60,7 @@ export const useMask = (inputRef: Tcurrent) => {
             }
         } else {
             // Not Russian phone number
+            // eslint-disable-next-line
             formattedInputValue = "+" + inputNumbersValue; input
         }
         input!.value = formattedInputValue;

@@ -1,7 +1,6 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 
-import { useAppDispatch } from 'src/hooks/redux-hooks';
 import Form from './EnterForm';
 import { setUser } from 'src/store/slices/userSlice';
 
@@ -9,7 +8,6 @@ import './enterView.scss';
 
 
 const Login = () => {
-    const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
     const handleLogin = (email: string, password: string) => {

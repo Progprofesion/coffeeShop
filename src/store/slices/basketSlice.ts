@@ -1,12 +1,9 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
-import { RootState, AppDispatch } from 'src/store/index';
-
-type statePriceType = {
-    price?: number
-};
 
 export interface basketSliceInterface {
-    statePrice: statePriceType
+    statePrice: {
+        price?: number
+    }
     total: number | string
     amount: number
     items: []

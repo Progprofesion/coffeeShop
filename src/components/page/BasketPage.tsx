@@ -8,8 +8,6 @@ import Modal from '../modal/Modal';
 import BasketLayout from '../basket/BasketLayout';
 import Footer from '../footer/Footer';
 
-import Tmask from '../../hooks/useMask';
-
 import { useMask } from 'src/hooks/useMask';
 import { RootState } from '@/store';
 
@@ -115,9 +113,9 @@ const BasketPage = () => {
                                     ref(e)
                                     inputRef.current = e
                                 }}
-                                onChange={(e: any) => onPhoneinput(e)}
+                                onChange={(e) => onPhoneinput(e)}
                                 // возможно лишняя анонимная функция
-                                onKeyDown={() => onPhoneKeyDown}
+                                onKeyDown={onPhoneKeyDown}
                                 onPaste={onPhonePaste}
                                 maxLength={18}
                             />

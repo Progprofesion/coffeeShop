@@ -1,9 +1,10 @@
 import { EventType } from "@testing-library/user-event/event/types";
+import { ReactEventHandler } from "react";
 import { NativeFieldValue } from "react-hook-form";
 
 
 type Tcurrent = {
-    current: HTMLInputElement
+    current?: HTMLInputElement
     keyCode?: number
 }
 
@@ -15,12 +16,11 @@ export default interface Tmask {
     value?: string
 }
 
-type Tinput = {
+export type Tinput = {
     // event?: React.ChangeEvent<HTMLSelectElement>
     // event?: React.ChangeEventHandler<HTMLInputElement>
-    nativeEvent: {
-        data: string
-    }
+    // nativeEvent?: React.InputHTMLAttributes<HTMLInputElement>
+    nativeEvent?: React.InputHTMLAttributes<HTMLInputElement>
 }
 
 
@@ -31,7 +31,7 @@ export const useMask = (inputRef: Tcurrent) => {
 
     let onPhoneinput = (e: Tinput) => {
         let input = inputRef.current,
-            inputNumbersValue = getInputNumbersValue(input),
+            inputNumbersValue = getInputNumbersValue(input!),
             formattedInputValue = "",
             selectionStart = input!.selectionStart;
 
@@ -40,9 +40,12 @@ export const useMask = (inputRef: Tcurrent) => {
         }
 
         if (input!.value.length !== selectionStart) {
-            if (e.nativeEvent.data && /\D/g.test(e.nativeEvent.data)) {
+            // if (e instanceof InputEvent) {
+            // @ts-ignore
+            if (e.nativeEvent!.data && /\D/g.test(e.nativeEvent!.data)) {
                 input!.value = inputNumbersValue;
             }
+            // }
             return;
         }
 
@@ -72,7 +75,7 @@ export const useMask = (inputRef: Tcurrent) => {
 
     let onPhoneKeyDown = (e: Tcurrent) => {
         let input = inputRef.current;
-        if (e.keyCode === 8 && getInputNumbersValue(input).length === 1) {
+        if (e.keyCode === 8 && getInputNumbersValue(input!).length === 1) {
             input!.value = "";
         }
     }
@@ -80,7 +83,7 @@ export const useMask = (inputRef: Tcurrent) => {
     let onPhonePaste = (e: Tmask) => {
         let pasted = e.clipboardData || window.Clipboard,
             input = inputRef.current,
-            inputNumbersValue = getInputNumbersValue(input);
+            inputNumbersValue = getInputNumbersValue(input!);
 
         if (pasted) {
             let pastedText = pasted.getData("Text");

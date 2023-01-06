@@ -51,8 +51,6 @@ const cardsSlice = createSlice({
         },
         activeIncrTotals: (state: basketSliceInterface, action) => {
             if (typeof state.statePrice.price) {
-                console.log(state.statePrice.price, statePrice)
-                console.log(statePrice)
                 let sum = (parseFloat(state.total.toString()) + action.payload).toFixed(2);
                 state.total = sum
             }
@@ -132,7 +130,7 @@ const { actions, reducer } = cardsSlice;
 
 export default reducer;
 
-// export const { selectAll } = cardsAdapter.getSelectors((state: RootState) => state.basket)
+export const { selectAll } = cardsAdapter.getSelectors((state: RootState) => state.basket)
 
 export const { statePrice,
     activeIncrTotals,

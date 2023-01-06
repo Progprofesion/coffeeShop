@@ -159,17 +159,18 @@
         right: 5px;
         cursor: pointer;
     }
+    &__starImg {
+        transition: 500ms;
+    }
 }
 
 .activeStarClick {
     background: gold;
     border-radius: 20px;
+    transition: 500ms;
 }
-// .cardsListItemAnimat {
-//     display: none;
-// }
 
-//
+
 // Animate
 .cards__item-enter {
     display: none;

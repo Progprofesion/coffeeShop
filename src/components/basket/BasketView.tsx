@@ -1,8 +1,19 @@
 import { useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import './basketView.scss';
+
+
+import {
+    incrQuantity,
+    decrQuantity,
+    removeProduct,
+    activeIncrTotals,
+    activeDecrTotals,
+    statePrice,
+} from 'src/store/slices/basketSlice';
 
 interface BasketViewIntreface {
     id: number
@@ -11,15 +22,31 @@ interface BasketViewIntreface {
     country: string
     price: number
     quantity: number
-    incr: () => void
-    decr: () => void
     faivorite: boolean
 }
 
-const BasketView = ({ id, img, title, country, price, quantity, incr, decr, faivorite, ...rest }: BasketViewIntreface) => {
+
+
+const BasketView = ({ id, img, title, country, price, quantity, faivorite, ...rest }: BasketViewIntreface) => {
     const [showButton, setShowButton] = useState(false)
 
     const nodeRef = useRef(null);
+
+    const dispatch = useDispatch();
+
+    const incr = () => {
+        dispatch(statePrice({ price }));
+        dispatch(activeIncrTotals(price));
+        dispatch(incrQuantity(id));
+
+    };
+
+    const decr = () => {
+        dispatch(statePrice({ price }))
+        dispatch(decrQuantity(id))
+        dispatch(activeDecrTotals(price))
+        dispatch(removeProduct(id))
+    };
 
     return (
         <CSSTransition

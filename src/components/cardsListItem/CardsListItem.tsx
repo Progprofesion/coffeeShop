@@ -55,8 +55,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
         dispatch(addProduct(item))
     };
 
-    const basketIncr = (e: React.MouseEvent) => {
-        e.preventDefault();
+    const basketIncr = () => {
         addItem()
         dispatch(incrQuantity(price))
         dispatch(statePrice({ price }))
@@ -64,8 +63,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
     };
 
 
-    const basketDecr = (e: React.MouseEvent) => {
-        e.preventDefault();
+    const basketDecr = () => {
         dispatch(statePrice({ price }))
         dispatch(decrQuantity(id))
         dispatch(activeDecrTotals(price))

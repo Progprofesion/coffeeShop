@@ -7,7 +7,12 @@ import Hamburger from '../hamburger/Hamburger';
 import BasketSticky from '../basket/BasketSticky';
 import LoginView from '../auth/LoginView';
 
+import bgPleasurePage from 'src/assets/bg/bgPleasurePage.png';
+import bgPleasure from 'src/assets/bg/bgPleasure.jpg';
+
+
 const PleasurePage = () => {
+
     return (
         <>
             <HelmetProvider>
@@ -23,12 +28,12 @@ const PleasurePage = () => {
                 <HeaderBanner
                     img={''}
                     style={{
-                        background: "url(/static/media/bgPleasurePage.fe6ab9436eeb459ce2ab.png) center / cover no-repeat"
+                        background: `url(${bgPleasurePage}) center / cover no-repeat`
                     }}
                     title={'For your pleasure'} />
                 <CardsList
                     cardsView={0}
-                    style={{ background: 'url(/static/media/bgPleasure.1369d88c70440b25153e.jpg) center / cover no-repeat' }}
+                    style={{ background: `url(${bgPleasure}) center / cover no-repeat` }}
                     height={{ 'minHeight': '624px' }}
                 />
                 <Footer />

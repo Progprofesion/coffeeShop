@@ -11,14 +11,6 @@ import BasketView from './BasketView';
 import Hamburger from '../hamburger/Hamburger';
 import coffeeIcon from 'src/assets/icons/coffeeIcon.svg';
 
-import {
-    incrQuantity,
-    decrQuantity,
-    removeProduct,
-    activeIncrTotals,
-    activeDecrTotals,
-    statePrice,
-} from 'src/store/slices/basketSlice';
 
 import { useLocalStorage } from 'src/hooks/useLocalStorage';
 
@@ -67,18 +59,6 @@ const BasketLayout = ({ setModalActive }: BasketLayoutInterface) => {
 
     const view = (arr: []) => {
         return arr.map(({ id, img, title, country, price, quantity, faivorite, ...rest }: BasketLayoutRest) => {
-            const incr = () => {
-                dispatch(statePrice({ price }));
-                dispatch(activeIncrTotals(price));
-                dispatch(incrQuantity(id));
-            };
-
-            const decr = () => {
-                dispatch(statePrice({ price }));
-                dispatch(activeDecrTotals(price));
-                dispatch(decrQuantity(id));
-                dispatch(removeProduct(id));
-            };
 
             return <BasketView
                 {...rest}
@@ -89,8 +69,6 @@ const BasketLayout = ({ setModalActive }: BasketLayoutInterface) => {
                 country={country}
                 price={price}
                 quantity={quantity}
-                incr={incr}
-                decr={decr}
                 faivorite={faivorite} />
         })
     };

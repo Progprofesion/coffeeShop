@@ -1,6 +1,5 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-
 import HeaderBanner from '../headerBanner/HeaderBanner';
 import AboutUs from '../aboutUs/AboutUs';
 import CardsList from '../cardsList/CardsList';
@@ -8,6 +7,9 @@ import Footer from '../footer/Footer';
 import Humburger from '../hamburger/Hamburger';
 import BasketSticky from '../basket/BasketSticky';
 import LoginView from '../auth/LoginView';
+
+import bgOurCoffeePage from 'src/assets/bg/bgOurCoffeePage.png';
+
 
 const OurCoffeePage = () => {
     return (
@@ -25,7 +27,7 @@ const OurCoffeePage = () => {
                 <HeaderBanner
                     img={''}
                     style={{
-                        background: "url(/static/media/bgOurCoffeePage.9928212fb1eb01de6816.png) center / cover no-repeat"
+                        background: `url(${bgOurCoffeePage}) center / cover no-repeat`
                     }}
                     title={'Our coffee'} />
                 <AboutUs style={{ display: "none" }} />

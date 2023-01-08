@@ -7,10 +7,7 @@ const StartPage = () => {
         <section className="startPage">
             <div className="container">
                 <h1 className="startPage__title">Добро пожаловать</h1>
-                <h2>Меня завут Горбунов Дмитрий Алексеевич</h2>
-                <p>Front-End Software Engineer</p>
-                <p>Здесь расположенно мое портфолио и сслыка на основной пет проект React app Магазин по продаже кофе.</p>
-                <p> Функционал: добавление, удаление, фильтрация, корзина товаров, поиск, авторизация на TS, localStorage, модальные окна, меню hamburger, оформление товаров, маски для почты и телефона, слайдер, анимации. </p>
+                <h4>TS React app Coffee shop</h4>
                 <h3>Languages:</h3>
                 <img src="https://img.icons8.com/color/48/null/html-5--v1.png" alt={'HTML'} />
                 <img src="https://img.icons8.com/fluency/48/null/css3.png" alt={'CSS'} />
@@ -26,7 +23,7 @@ const StartPage = () => {
                 <img src="https://img.icons8.com/color/48/null/webpack.png" alt={'webPack'} />
                 <img src="https://img.icons8.com/color/48/null/bootstrap.png" alt={'Bootstrap'} />
                 <Link to={'/'}>
-                    <button className="startPage__btn">Click</button>
+                    <button className="startPage__btn"><span>Click</span></button>
                 </Link>
             </div>
         </section>

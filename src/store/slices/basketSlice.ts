@@ -17,7 +17,6 @@ type TBasket = {
 
 type basketType = {
     amount: number
-    total: number | string
     items: any[]
     stateStartArr: TBasket[]
     quantity?: number

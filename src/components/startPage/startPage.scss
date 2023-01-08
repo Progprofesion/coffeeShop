@@ -1,34 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap');
+
 .startPage {
-    background: url(https://images7.alphacoders.com/374/thumb-1920-374658.jpg) center / cover no-repeat;
+    background: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1612772960_17-p-tekhnicheskii-fon-goluboi-24.jpg) center / cover no-repeat;
    height: 100vh;
    color: white;
    font-size: 18px;
+   font-family: 'Proxima Nova Light';
    &__title {
     padding-top: 50px;
    }
    &__btn {
     background: url(../../assets/bg/bgButton17.jpg) center / cover no-repeat;
-    transition: 500ms;
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,203,253,1) 50%, rgba(252,176,69,1) 100%);
+    background: linear-gradient(90deg, rgb(191, 76, 191) 0%, rgb(40, 194, 81) 50%, rgba(252,176,69,1) 100%);
     text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
     background-size: 200%;
     display: block;
     margin: 50px 0;
-    width: 380px;
+    min-width: 250px;
     height: 100px;
     border-radius: 10px;
     font-size: 56px;
-    color: aliceblue;;
+    color: aliceblue;
+    transition: 500ms;
+    filter: drop-shadow(5px 5px 20px #54affffe);
+    background: linear-gradient(90deg, rgb(191, 76, 191) 0%, rgb(40, 194, 81) 50%, rgba(252,176,69,1) 100%);
+    background-size: 200%;
+    animation: gradient 10s ease infinite;
+    border: none;
+    span {
+        background: linear-gradient(90deg, #b6fff4 3%, #00d4ff 67%);
+        background-size: auto;
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0px 4px 4px rgba(255, 255, 156, 0.25);
+        background-size: 300%;
+        animation: gradient 1s ease infinite;
+    }
+
     &:hover {
         transition: 250ms;
         transform: scale(105%);
         border: 2px solid gold;
     }
     &:active {
-        transition: 250ms;
+        transition: 150ms;
         transform: translateX(50%);
         transform: scale(95%);
     } 
+   }
+   a {
+    display: block;
+    max-width: 380px;
    }
    
 }

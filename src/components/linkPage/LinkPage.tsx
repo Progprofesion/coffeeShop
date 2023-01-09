@@ -1,7 +1,7 @@
 import './linkPage.scss';
 
 interface LinkPageInterface {
-    img: string
+    img?: string
     children?: React.ReactNode
     style?: object
     title?: string

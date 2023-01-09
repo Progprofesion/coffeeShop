@@ -79,7 +79,7 @@ const BasketLayout = ({ setModalActive }: BasketLayoutInterface) => {
     return (
         <section className="basketLayout">
             <LinkPage img={coffeeIcon} style={{ margin: '0 auto' }}>
-                <Link className="linkPage__link fz-14" to="/" >Coffee house</Link>
+                <Link className="linkPage__link fz-14" to="/main" >Coffee house</Link>
                 <Link className="linkPage__link fz-14" to="/ourcoffee">Our coffee</Link>
                 <Link className="linkPage__link fz-14" to="/pleasure">For your pleasure</Link>
                 <Link className="linkPage__link fz-14" to="/faivorite">Faivorite</Link>

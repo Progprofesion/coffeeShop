@@ -13,7 +13,7 @@ const HeaderMain = () => {
     return (
         <header className="headerMain">
             <LinkPage img={coffeeIcon}>
-                <Link className="linkPage__link fz-14" to="/" >Coffee house</Link>
+                <Link className="linkPage__link fz-14" to="/main" >Coffee house</Link>
                 <Link className="linkPage__link fz-14" to="/ourcoffee">Our coffee</Link>
                 <Link className="linkPage__link fz-14" to="/pleasure">For your pleasure</Link>
                 <Link className="linkPage__link fz-14" to="/faivorite">Faivorite</Link>

@@ -21,7 +21,7 @@ const Hamburger = () => {
             </div>
             <div className={modalActive ? 'hamburger activeHamburger' : 'hamburger'} onClick={() => setModalActive(false)}>
                 <nav className={modalActive ? 'hamburger__content activeHamburger' : 'hamburger__content'} onClick={e => e.stopPropagation()}>
-                    <Link className="hamburger__link" to="/">Coffee house</Link>
+                    <Link className="hamburger__link" to="/main">Coffee house</Link>
                     <Link className="hamburger__link" to="/ourcoffee">Our coffee</Link>
                     <Link className="hamburger__link" to="/pleasure">For your pleasure</Link>
                     <Link className="hamburger__link" to="/faivorite">Faivorite</Link>

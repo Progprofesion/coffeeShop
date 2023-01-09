@@ -25,7 +25,6 @@ const OurCoffeePage = () => {
                 <BasketSticky />
                 <LoginView />
                 <HeaderBanner
-                    img={''}
                     style={{
                         background: `url(${bgOurCoffeePage}) center / cover no-repeat`
                     }}

@@ -22,8 +22,8 @@ const App = () => {
             <main className="app">
                 <Suspense fallback={<Spinner />}>
                     <Routes>
-                        <Route path="/" element={<MainPage />} />
-                        <Route path="/startPage" element={<StartPage />} />
+                        <Route path="/" element={<StartPage />} />
+                        <Route path="/main" element={<MainPage />} />
                         <Route path="/ourCoffee" element={<OurCoffeePage />} />
                         <Route path="/ourCoffee/:coffeeId" element={<SingleCoffeePage />} />
                         <Route path="/pleasure" element={<PleasurePage />} />

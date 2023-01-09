@@ -16,7 +16,7 @@ const Page404 = () => {
                 </Helmet>
                 <img src={gif404HD} alt="error" style={{ 'display': 'block', 'margin': '0 auto 0', paddingTop: '10vh', 'fontWeight': 'bold', 'fontStyle': '24px' }} />
                 <h5 style={{ 'display': 'block', 'textAlign': 'center', 'fontWeight': 'bold', 'fontSize': '36px', color: 'white' }} >Page not found</h5>
-                <Link style={{ 'display': 'block', 'textAlign': 'center', 'fontWeight': 'bold', 'fontSize': '36px', 'margin': '20px' }} to="/">Back to main page</Link>
+                <Link style={{ 'display': 'block', 'textAlign': 'center', 'fontWeight': 'bold', 'fontSize': '36px', 'margin': '20px' }} to="/main">Back to main page</Link>
             </HelmetProvider>
         </section>
     )

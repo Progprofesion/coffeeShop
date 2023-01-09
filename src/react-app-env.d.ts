@@ -2,3 +2,4 @@
 declare module "react-helmet-async"
 declare module 'react-transition-group';
 declare module 'classnames';
+declare module "*.mp3"

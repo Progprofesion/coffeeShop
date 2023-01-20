@@ -42,6 +42,7 @@ const CardsList = ({ cardsView, style, title, height, stateFaivorite }: CardList
         isSuccess
     } = useGetProductsQuery(null);
 
+
     const dispatch = useDispatch();
 
     const activeFilter = useSelector((state: RootState) => state.filters.activeFilter);

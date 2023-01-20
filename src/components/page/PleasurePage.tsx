@@ -8,7 +8,7 @@ import BasketSticky from '../basket/BasketSticky';
 import LoginView from '../auth/LoginView';
 
 import bgPleasurePage from 'src/assets/bg/bgPleasurePage.png';
-import bgPleasure from 'src/assets/bg/bgPleasure.jpg';
+import bgPleasure from 'src/assets/bg/bgPleasure.webp';
 
 
 const PleasurePage = () => {

@@ -1,5 +1,5 @@
 .headerMain {
-    background: url('../../assets/bg/bgMain.jpg') center / cover ;
+    background: url('../../assets/bg/bgMain.webp') center / cover ;
     height: 100vh;
     &__title {
         width: 80%;
@@ -16,7 +16,7 @@
         border-block-end: 1px solid coral;
         padding-bottom: 10px;
         background-size: 200%;
-        animation: gradient 5s ease infinite;
+        animation: headerGradientAnimation 5s ease infinite;
         span {
             background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,183,29,1) 50%, rgba(252,176,69,1) 100%);
             background-clip: text;
@@ -52,7 +52,7 @@
             -webkit-text-fill-color: transparent;
             text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
             background-size: 200%;
-            animation: gradient 5s ease infinite;
+            animation: headerGradientAnimation 5s ease infinite;
             font-size: 32px;
         }
     }
@@ -72,14 +72,14 @@
         border-radius: 10px;
         border: 2px solid rgba(174, 242, 224, 0.657);
         filter: drop-shadow(5px 5px 35px rgba(74, 131, 172, 0.25));
-        background: url(../../assets/bg/bgButton17.jpg) center / cover no-repeat;
+        background: url(../../assets/bg/bgButton17.webp) center / cover no-repeat;
         span {
             background: linear-gradient(90deg, rgba(182,255,244,1) 3%, rgba(0,212,255,1) 67%);
             background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
             background-size: 300%;
-            animation: gradient 1s ease infinite;
+            animation: headerGradientAnimation 1s ease infinite;
             &:hover {
                 border: unset;
             }           
@@ -96,7 +96,7 @@
 
 };
 
-@keyframes gradient {
+@keyframes headerGradientAnimation {
     0% {
         background-position: 0 50%;
     }

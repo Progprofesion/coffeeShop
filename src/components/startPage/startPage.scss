@@ -10,7 +10,7 @@
     padding-top: 50px;
    }
    &__btn {
-    background: url(../../assets/bg/bgButton17.jpg) center / cover no-repeat;
+    background: url(../../assets/bg/bgButton17.webp) center / cover no-repeat;
     background: linear-gradient(90deg, rgb(191, 76, 191) 0%, rgb(40, 194, 81) 50%, rgba(252,176,69,1) 100%);
     text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
     background-size: 200%;
@@ -25,7 +25,7 @@
     filter: drop-shadow(5px 5px 20px #54affffe);
     background: linear-gradient(90deg, rgb(191, 76, 191) 0%, rgb(40, 194, 81) 50%, rgba(252,176,69,1) 100%);
     background-size: 200%;
-    animation: gradient 10s ease infinite;
+    animation: gradientAnimation 10s ease infinite;
     border: none;
     span {
         background: linear-gradient(90deg, #b6fff4 3%, #00d4ff 67%);
@@ -36,7 +36,7 @@
         -webkit-text-fill-color: transparent;
         text-shadow: 0px 4px 4px rgba(255, 255, 156, 0.25);
         background-size: 300%;
-        animation: gradient 1s ease infinite;
+        animation: gradientAnimation 1s ease infinite;
     }
 
     &:hover {

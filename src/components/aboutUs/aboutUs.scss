@@ -5,8 +5,8 @@
     &__wrapper {
         padding-top: 80px;  
         background: radial-gradient(circle, rgba(238,174,202,0.8) 0%, rgba(148,187,233,0.8) 100%);
-        -size: 200%;
-        animation: gradient 10s ease infinite;
+        background-size: 200%;
+        animation: gradientAnimation 10s ease infinite;
         padding-bottom: 80px;
     }
     &__descr {
@@ -35,15 +35,15 @@
     }
 }
 
-@keyframes gradient {
+@keyframes gradientAnimation {
     0% {
-        -position: 0 50%;
+        background-position: 0 50%;
     }
     50% {
-        -position: 100% 50%;
+        background-position: 100% 50%;
     }
     100% {
-        -position: 0 50%;
+        background-position: 0 50%;
     }
 }
 

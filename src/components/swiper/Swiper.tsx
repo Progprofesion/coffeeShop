@@ -21,13 +21,6 @@ interface SwiperInterface {
 
 export default function App({ style }: SwiperInterface) {
 
-    console.log(lavazza)
-    console.log(egoisteEspresso)
-    console.log(lavazzaColumbia)
-    console.log(egoiste)
-    console.log(bushidoColumbia)
-    console.log(bushido)
-
     return (
         <section className='swiperSection' style={style}>
             <div className="container">

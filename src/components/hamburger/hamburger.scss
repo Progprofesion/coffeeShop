@@ -53,7 +53,7 @@
         opacity: 0.95;
         transition: 0.5s all;    
         transform: translateX(-191%);
-        background: url(../../assets/bg/bgMenu1.jpg) center / cover no-repeat;
+        background: url(../../assets/bg/bgMenu1.webp) center / cover no-repeat;
         border: 1px solid;
         border-right-color: gold;
         pointer-events: all;
@@ -71,7 +71,7 @@
             -webkit-text-fill-color: transparent;
             text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
             background-size: 200%;
-            animation: gradient 5s ease infinite;
+            animation: gradientAnimation 5s ease infinite;
         }
     }
     &__exit {
@@ -87,7 +87,7 @@
             -webkit-text-fill-color: transparent;
             text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
             background-size: 200%;
-            animation: gradient 5s ease infinite;
+            animation: gradientAnimation 5s ease infinite;
         }
     }
 }

@@ -1,9 +1,9 @@
-import lavazza from 'src/assets/cardsImg/lavazza.jpg';
-import egoisteEspresso from "src/assets/cardsImg/egoisteEspresso.jpg";
-import lavazzaColumbia from "src/assets/cardsImg/lavazzaColumbia.jpg";
-import egoiste from "src/assets/cardsImg/egoiste.jpg";
-import bushidoColumbia from "src/assets/cardsImg/bushidoColumbia.jpg";
-import bushido from "src/assets/cardsImg/bushido.jpg";
+import lavazza from 'src/assets/cardsImg/lavazza.webp';
+import egoisteEspresso from "src/assets/cardsImg/egoisteEspresso.webp";
+import lavazzaColumbia from "src/assets/cardsImg/lavazzaColumbia.webp";
+import egoiste from "src/assets/cardsImg/egoiste.webp";
+import bushidoColumbia from "src/assets/cardsImg/bushidoColumbia.webp";
+import bushido from "src/assets/cardsImg/bushido.webp";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 

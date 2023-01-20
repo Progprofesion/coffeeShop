@@ -1,10 +1,10 @@
 .aboutUs {
-    : url(../../assets/bg/bgAboutUs.png) center / cover no-repeat;
+    background: url(../../assets/bg/bgAboutUs.png) center / cover no-repeat;
     text-align: center;
     position: relative;
     &__wrapper {
         padding-top: 80px;  
-        : radial-gradient(circle, rgba(238,174,202,0.8) 0%, rgba(148,187,233,0.8) 100%);
+        background: radial-gradient(circle, rgba(238,174,202,0.8) 0%, rgba(148,187,233,0.8) 100%);
         -size: 200%;
         animation: gradient 10s ease infinite;
         padding-bottom: 80px;
@@ -27,7 +27,7 @@
                 padding-right: 51%;
             }
         p {
-            : radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
             text-transform: uppercase;
             -clip: text;
             -webkit-text-fill-color: transparent;

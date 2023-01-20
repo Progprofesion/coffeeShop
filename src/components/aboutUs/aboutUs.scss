@@ -29,7 +29,7 @@
         p {
             background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
             text-transform: uppercase;
-            -clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
     }

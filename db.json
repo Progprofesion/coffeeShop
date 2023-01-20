@@ -3,7 +3,7 @@
         {
             "id": 0,
             "page": 1,
-            "img": "/static/media/lavazza.343525c5ddf5b50c4964.webp",
+            "img": "/static/media/lavazza.907e9c50462d4905840a.webp",
             "title": "lavazza Crema",
             "country": "Brazil",
             "price": 10.73,
@@ -13,7 +13,7 @@
         {
             "id": 1,
             "page": 2,
-            "img": "/static/media/egoisteEspresso.18b415ee72edefd377a0.webp",
+            "img": "/static/media/egoisteEspresso.43f07df4e99fc41cca13.webp",
             "title": "Egoiste Espresso",
             "country": "Kenya",
             "price": 15.99,
@@ -23,7 +23,7 @@
         {
             "id": 2,
             "page": 3,
-            "img": "/static/media/lavazzaColumbia.f3a1f30de8bfba8979d4.webp",
+            "img": "/static/media/lavazzaColumbia.4d86bda0e4dc435ea9f0.webp",
             "title": "lavazza ORO",
             "country": "Columbia",
             "price": 6.99,
@@ -33,7 +33,7 @@
         {
             "id": 3,
             "page": 4,
-            "img": "/static/media/egoiste.fbfab7a634163b0eb90d.webp",
+            "img": "/static/media/egoiste.4c405eace68d85575c3a.webp",
             "title": "Egoiste Truffle",
             "country": "Brazil",
             "price": 12.53,
@@ -43,7 +43,7 @@
         {
             "id": 4,
             "page": 5,
-            "img": "/static/media/bushidoColumbia.2c5d02fbc421863455b5.webp",
+            "img": "/static/media/bushidoColumbia.e8d055a013efc6196722.webp",
             "title": "Bushido Black Katana",
             "country": "Kenya",
             "price": 9.99,
@@ -53,7 +53,7 @@
         {
             "id": 5,
             "page": 6,
-            "img": "/static/media/bushido.b9b5abec2116260284c5.webp",
+            "img": "/static/media/bushido.14512384d795c681868b.webp",
             "title": "Bushido Red Katana",
             "country": "Columbia",
             "price": 7.56,

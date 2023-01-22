@@ -4,7 +4,7 @@
     "strict": true,
     "esModuleInterop": true,  
     "jsx": "react-jsx",
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "@/*":["src/*"]
     }

@@ -8,10 +8,12 @@ import CardsList from '../cardsList/CardsList';
 import ExitLink from '../exitLink/ExitLink';
 import BasketSticky from '../basket/BasketSticky';
 import Footer from '../footer/Footer';
+import bgMain from 'src/assets/bg/bgMain.webp';
 
 import coffeeIcon from 'src/assets/icons/coffeeIcon.svg';
 
 const FaivoritePage = () => {
+    console.log(bgMain)
     return (
         <HelmetProvider>
             <Helmet>
@@ -20,7 +22,7 @@ const FaivoritePage = () => {
                     content="Faivorite page" />
                 <title>Faivorite</title>
             </Helmet>
-            <section className="faivorite" style={{ background: "url(/static/media/bgMain.9e5017213a32dfd782e1.jpg) center / cover no-repeat", minHeight: '100vh' }}>
+            <section className="faivorite" style={{ background: "url(/static/media/bgMain.cc6573b53d9366175b87.webp) center / cover no-repeat", minHeight: '100vh' }}>
                 <LinkPage img={coffeeIcon}>
                     <Link className="linkPage__link fz-14" to="/main" >Coffee house</Link>
                     <Link className="linkPage__link fz-14" to="/ourcoffee">Our coffee</Link>

@@ -16,7 +16,7 @@
         border-block-end: 1px solid coral;
         padding-bottom: 10px;
         background-size: 200%;
-        animation: headerGradientAnimation 5s ease infinite;
+        animation: headerGradientAnimation 7s ease infinite;
         span {
             background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,183,29,1) 50%, rgba(252,176,69,1) 100%);
             background-clip: text;
@@ -70,7 +70,7 @@
         left: 50%;
         transform: translateX(-50%);
         border-radius: 10px;
-        border: 2px solid rgba(174, 242, 224, 0.657);
+        border: 2px solid aquamarine;
         filter: drop-shadow(5px 5px 35px rgba(74, 131, 172, 0.25));
         background: url(../../assets/bg/bgButton17.webp) center / cover no-repeat;
         span {

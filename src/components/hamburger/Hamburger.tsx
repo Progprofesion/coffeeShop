@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import ExitLink from '../exitLink/ExitLink';
+import logoCoffeeHouse from 'src/assets/icons/logoCoffeeHouse.webp';
 import './hamburger.scss';
 
 const Hamburger = () => {
@@ -19,8 +20,10 @@ const Hamburger = () => {
                     <span></span>
                 </div>
             </div>
+
             <div className={modalActive ? 'hamburger activeHamburger' : 'hamburger'} onClick={() => setModalActive(false)}>
                 <nav className={modalActive ? 'hamburger__content activeHamburger' : 'hamburger__content'} onClick={e => e.stopPropagation()}>
+                    <img src={logoCoffeeHouse} alt="" className="hamburger__logoCoffeeHouse" />
                     <Link className="hamburger__link" to="/main">Coffee house</Link>
                     <Link className="hamburger__link" to="/ourcoffee">Our coffee</Link>
                     <Link className="hamburger__link" to="/pleasure">For your pleasure</Link>
@@ -31,8 +34,8 @@ const Hamburger = () => {
                         styleExit={{ borderBottom: '1px solid gold', width: '100%', padding: "15px" }} />
                 </nav>
             </div>
-        </>
 
+        </>
     )
 };
 

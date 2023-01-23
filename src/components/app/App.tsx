@@ -1,14 +1,15 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 
-import StartPage from '../startPage/StartPage';
 import MainPage from '../page/MainPage';
 import Spinner from '../spinner/Spinner';
-import LoginPage from '../page/LoginPage';
-import RegisterPage from '../page/RegisterPage';
 
 import './app.scss';
 
+
+const StartPage = lazy(() => import('../startPage/StartPage'));
+const LoginPage = lazy(() => import('../page/LoginPage'));
+const RegisterPage = lazy(() => import('../page/RegisterPage'));
 const OurCoffeePage = lazy(() => import('../page/OurCoffeePage'));
 const SingleCoffeePage = lazy(() => import('../page/SingleCoffeePage'));
 const PleasurePage = lazy(() => import('../page/PleasurePage'));

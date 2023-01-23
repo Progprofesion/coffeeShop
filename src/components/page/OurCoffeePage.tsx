@@ -8,7 +8,7 @@ import Humburger from '../hamburger/Hamburger';
 import BasketSticky from '../basket/BasketSticky';
 import LoginView from '../auth/LoginView';
 
-import bgOurCoffeePage from 'src/assets/bg/bgOurCoffeePage.png';
+import bgOurCoffeePage from 'src/assets/bg/bgOurCoffeePage.webp';
 
 
 const OurCoffeePage = () => {

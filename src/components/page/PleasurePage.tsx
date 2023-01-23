@@ -7,7 +7,7 @@ import Hamburger from '../hamburger/Hamburger';
 import BasketSticky from '../basket/BasketSticky';
 import LoginView from '../auth/LoginView';
 
-import bgPleasurePage from 'src/assets/bg/bgPleasurePage.png';
+import bgPleasurePage from 'src/assets/bg/bgPleasurePage.webp';
 import bgPleasure from 'src/assets/bg/bgPleasure.webp';
 
 

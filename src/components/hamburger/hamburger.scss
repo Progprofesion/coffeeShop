@@ -13,7 +13,7 @@
         display: block ;
         width: 40px;
         height: 2px;
-        background-color: #fff ;
+        background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,203,253,1) 50%, rgba(252,176,69,1) 100%);
         margin-bottom: 4px;
         transition: 0.5s all;
     }
@@ -45,7 +45,7 @@
     z-index: 10;
     transition: 0.5s;
     &__content {
-        display: flex;
+        display: none;
         flex-direction: column;
         width: 35%;
         height: 100vh;
@@ -98,6 +98,8 @@
 }
 
 .hamburger__content.activeHamburger {
+    display: flex;
+    transition: 0ms;
     transform: scale(1);
 }
 

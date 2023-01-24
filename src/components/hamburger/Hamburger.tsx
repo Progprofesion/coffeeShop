@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import ExitLink from '../exitLink/ExitLink';
@@ -8,7 +8,6 @@ import './hamburger.scss';
 
 const Hamburger = () => {
     const [modalActive, setModalActive] = useState(false);
-    const imgRef = useRef(null);
 
     return (
         <>
@@ -23,7 +22,7 @@ const Hamburger = () => {
                 </div>
             </div>
             <div className={modalActive ? 'hamburger activeHamburger' : 'hamburger'} onClick={() => setModalActive(false)}>
-                <nav ref={imgRef} className={modalActive ? 'hamburger__content activeHamburger' : 'hamburger__content'} onClick={e => e.stopPropagation()}>
+                <nav className={modalActive ? 'hamburger__content activeHamburger' : 'hamburger__content'} onClick={e => e.stopPropagation()}>
                     <img loading="lazy" className='hamburger__bg' src={hambMenu} alt="coffee" />
                     <Link to="/main">
                         <img loading="lazy" className="hamburger__logoCoffeeHouse" src={logoCoffeeHouse} alt='logoCoffeeHouse' />

@@ -32,7 +32,6 @@ export const useMask = (inputRef: Tcurrent) => {
         }
 
         if (input!.value.length !== selectionStart) {
-            // if (e instanceof InputEvent) {
             // @ts-ignore
             if (e.nativeEvent!.data && /\D/g.test(e.nativeEvent!.data)) {
                 input!.value = inputNumbersValue;

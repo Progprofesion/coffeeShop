@@ -19,8 +19,8 @@ const MainPage = () => {
                     <title>Coffee house</title>
                 </Helmet>
                 <BasketSticky />
-                <LoginView />
                 <Humburger />
+                <LoginView />
                 <HeaderMain />
                 <AboutUs noneDescr={{ display: "none" }} />
                 <CardsList
@@ -28,6 +28,7 @@ const MainPage = () => {
                     faivorite={true}
                     title={'  Our best! '}
                     height={{ minHeight: '565px' }} />
+
                 <Footer />
             </HelmetProvider>
         </>

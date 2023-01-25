@@ -32,7 +32,7 @@ export default function App({ style }: SwiperInterface) {
                     modules={[Navigation]}
                     className="mySwiper"
                 >
-                    <SwiperSlide><img loading="lazy" className="swapImg" src={lavazza} alt="coffee" /></SwiperSlide>
+                    <SwiperSlide><img className="swapImg" src={lavazza} alt="coffee" /></SwiperSlide>
                     <SwiperSlide><img loading="lazy" className="swapImg" src={egoisteEspresso} alt="coffee" /></SwiperSlide>
                     <SwiperSlide><img loading="lazy" className="swapImg" src={lavazzaColumbia} alt="coffee" /></SwiperSlide>
                     <SwiperSlide><img loading="lazy" className="swapImg" src={egoiste} alt="coffee" /></SwiperSlide>

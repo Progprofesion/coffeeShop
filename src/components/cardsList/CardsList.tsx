@@ -56,8 +56,6 @@ const CardsList = ({ cardsView, style, title, height, stateFaivorite }: CardList
         // eslint-disable-next-line
     }, [isSuccess])
 
-
-
     const searchCoffeeFiltered = useMemo(() => {
         const searchCoffeeFiltered = stateArrRender.slice();
         if (searchCoffee === '') {

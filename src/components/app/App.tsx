@@ -2,10 +2,11 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 
 import MainPage from '../page/MainPage';
+import Spinner from '../spinner/Spinner';
 
 import './app.scss';
 
-const Spinner = lazy(() => import('../spinner/Spinner'));
+
 const StartPage = lazy(() => import('../startPage/StartPage'));
 const LoginPage = lazy(() => import('../page/LoginPage'));
 const RegisterPage = lazy(() => import('../page/RegisterPage'));

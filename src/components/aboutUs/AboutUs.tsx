@@ -33,7 +33,9 @@ const AboutUs = ({ style, noneDescr }: AboutUsInterface) => {
                         recommend. Did even but nor are most gave hope. Secure active living depend son
                         repair day ladies now.</p>
                 </div>
+
             </div>
+            <div className='wave'></div>
         </section>
     )
 }

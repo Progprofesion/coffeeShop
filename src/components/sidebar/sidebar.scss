@@ -1,0 +1,64 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 97%;
+    height: 100%;
+    z-index: 100;
+    transition: 1.5s all;
+    // &:hover {
+    //     transform: translateX(10%);
+    //     transition: 1s all;
+    // }
+    &__wrapp {
+        width: 20vh;
+        height: 100%;
+        transition: 1s all;
+        box-shadow: 4px 4px 20px rgb(120, 175, 197);
+    }
+    &__list {
+        &-item {
+            background-color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: gold;
+            height: 17vh;
+            border: 1px solid rgb(120, 175, 197);
+            transition: 1s all;
+            font-size: 19px;
+            cursor: pointer;
+            &:hover {
+                background: linear-gradient(90deg, rgb(131, 58, 180) 0%, rgb(29, 203, 253) 50%, rgb(252, 176, 69) 100%);
+                background-size: 200%;
+                animation: gradientAnimation 5s ease infinite;
+                transform: translateX(53%);
+                transition: 1s all;
+                border-radius: 10px;
+            }
+            p {
+                text-align: right;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+// Media ----------------------------
+
+@media (max-width: 1264px) {
+    .sidebar {
+        right: 90%;
+    }
+}
+
+@media (max-width: 320px) {
+    .sidebar {
+        &__list {
+            &-item{
+               p {
+                width: 70px;
+               }
+            }
+        }
+    }
+}

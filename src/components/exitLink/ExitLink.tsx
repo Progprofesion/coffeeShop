@@ -9,7 +9,7 @@ import './exitLink.scss';
 interface ExitLinkintrface {
     styleExit?: React.CSSProperties
     styleEnter?: React.CSSProperties
-    addClass?: any
+    addClass?: string
 }
 
 const ExitLink = ({ styleExit, styleEnter, addClass }: ExitLinkintrface) => {

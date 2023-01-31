@@ -33,7 +33,6 @@ const OurCoffeePage = () => {
                 <CardsList
                     style={{ display: "block" }}
                     cardsView={0}
-                    height={{ minHeight: '1000px' }}
                 />
                 <Footer />
             </HelmetProvider>

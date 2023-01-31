@@ -34,7 +34,7 @@ const PleasurePage = () => {
                 <CardsList
                     cardsView={0}
                     style={{ background: `url(${bgPleasure}) center / cover no-repeat` }}
-                    height={{ 'minHeight': '624px' }}
+                    props={{ background: 'aliceblue', boxShadow: 'rgba(168, 200, 210, 0.25) 0 10px 25px 10px' }}
                 />
                 <Footer />
             </HelmetProvider>

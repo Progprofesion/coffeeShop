@@ -2,13 +2,58 @@
     background: url(../../assets/bg/bgAboutUs.webp) center / cover no-repeat;
     text-align: center;
     position: relative;
+
+    // position: relative;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // flex-direction: column;
+    // min-height: 100vh;
+    // background: radial-gradient(circle, rgba(238,174,202,0.8) 0%, rgba(148,187,233,0.8) 100%);
+    // overflow: hidden;
+
+    // &:before,
+    // &:after {
+    //   content: "";
+    //   position: absolute;
+    //   left: 50%;
+    //   min-width: 300vw;
+    //   min-height: 300vw;
+    //   background-color: #FCFFF5;
+    //   animation-name: rotate;
+    //   animation-iteration-count: infinite;
+    //   animation-timing-function: linear;
+    // }
+    
+    // &:before {
+    //   bottom: 15vh;
+    //   border-radius: 45%;
+    //   animation-duration: 10s;
+    // }
+    
+    // &:after {
+    //   bottom: 12vh;
+    //   opacity: .1;
+    //   border-radius: 47%;
+    //   animation-duration: 10s;
+    // } 
+  
+
+  
+  @keyframes rotate {
+    0% {transform: translate(-50%, 0) rotateZ(0deg);}
+    50% {transform: translate(-50%, -2%) rotateZ(180deg);}
+    100% {transform: translate(-50%, 0%) rotateZ(360deg);}
+  } 
+
+
     &__wrapper {
         padding-top: 80px;  
         background: radial-gradient(circle, rgba(238,174,202,0.8) 0%, rgba(148,187,233,0.8) 100%);
         background-size: 200%;
         animation: gradientAnimation 10s ease infinite;
         padding-bottom: 80px;
-    }
+    } 
     &__descr {
         opacity: 1;
         max-width: 590px;
@@ -35,36 +80,7 @@
     }
 }
 
-.wave{
-    background: radial-gradient(circle, rgba(238, 174, 202, 0.8) 0%, rgba(148, 187, 233, 0.8) 100%);
-    height: 50px;
-    position: relative;  
-  }
-  .wave::before, .wave::after{
-    border-bottom: 5px solid yellow;
-  }
-  .wave::before{
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 10px;
-    background-size: 20px 40px;
-    background-image:
-      radial-gradient(circle at 10px -15px, transparent 20px, yellow 21px);
-  }
-  .wave::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 15px;
-    background-size: 40px 40px;
-    background-image:
-      radial-gradient(circle at 10px 26px, yellow 20px, transparent 21px);
-  }
+
 
 // @Animation --------------------------------
 

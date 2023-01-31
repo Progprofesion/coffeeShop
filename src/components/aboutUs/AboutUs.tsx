@@ -1,5 +1,6 @@
+import { lazy, Suspense } from 'react'
 import IconLine from "../iconLine/IconLine";
-import Swiper from "../swiper/Swiper";
+
 
 import coffeeBeansIconWhite from 'src/assets/icons/coffeeBeansIconWhite.svg'
 
@@ -9,12 +10,16 @@ interface AboutUsInterface {
     style?: React.CSSProperties
     noneDescr?: object
 }
+const Spinner = lazy(() => import('../spinner/Spinner'));
+const Swiper = lazy(() => import("../swiper/Swiper"));
 
 const AboutUs = ({ style, noneDescr }: AboutUsInterface) => {
     return (
         <section className="aboutUs">
             <div className="aboutUs__wrapper">
-                <Swiper style={style} />
+                <Suspense fallback={<Spinner />}>
+                    <Swiper style={style} />
+                </Suspense>
                 <div className="container">
                     <h2 style={noneDescr} className="aboutUs__title fz-24">About Us</h2>
                     <IconLine style={noneDescr} img={coffeeBeansIconWhite} />
@@ -33,9 +38,7 @@ const AboutUs = ({ style, noneDescr }: AboutUsInterface) => {
                         recommend. Did even but nor are most gave hope. Secure active living depend son
                         repair day ladies now.</p>
                 </div>
-
             </div>
-            <div className='wave'></div>
         </section>
     )
 }

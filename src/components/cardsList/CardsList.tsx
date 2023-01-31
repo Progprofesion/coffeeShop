@@ -17,7 +17,7 @@ interface CardListInterface {
     cardsView?: number
     style?: React.CSSProperties
     title?: string
-    height?: React.CSSProperties
+    props?: React.CSSProperties
     stateFaivorite?: boolean
     faivorite?: boolean
 }
@@ -33,7 +33,7 @@ type arrInterface = {
     faivorite: boolean
 }
 
-const CardsList = ({ cardsView, style, title, height, stateFaivorite }: CardListInterface) => {
+const CardsList = ({ cardsView, style, title, props, stateFaivorite }: CardListInterface) => {
 
     const {
         data: products = [],
@@ -104,7 +104,7 @@ const CardsList = ({ cardsView, style, title, height, stateFaivorite }: CardList
         <section className="cardsList" style={style} >
             <div className="container">
                 <h2 className="cardsList__title">{title}</h2>
-                <div className="cardsList__bg" style={height}>
+                <div className="cardsList__bg" style={props}>
                     <SearchComponent />
                     <TransitionGroup className="cardsList__wrapper" >
                         {elements}

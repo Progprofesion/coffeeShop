@@ -1,12 +1,15 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { lazy, Suspense } from 'react'
 
 import HeaderMain from "../headerMain/HeaderMain";
 import Footer from "../footer/Footer";
 import Humburger from "../hamburger/Hamburger";
 import BasketSticky from "../basket/BasketSticky";
 import LoginView from '../auth/LoginView';
-import CardsList from '../cardsList/CardsList';
 import AboutUs from '../aboutUs/AboutUs';
+
+const Spinner = lazy(() => import('../spinner/Spinner'));
+const CardsList = lazy(() => import('../cardsList/CardsList'));
 
 const MainPage = () => {
     return (
@@ -23,12 +26,14 @@ const MainPage = () => {
                 <LoginView />
                 <HeaderMain />
                 <AboutUs noneDescr={{ display: "none" }} />
-                <CardsList
-                    cardsView={3}
-                    faivorite={true}
-                    title={'  Our best! '}
-                    height={{ minHeight: '565px' }} />
-
+                <Suspense fallback={<Spinner />} >
+                    <CardsList
+                        cardsView={3}
+                        faivorite={true}
+                        title={'  Our best! '}
+                        props={{ minHeight: '565px' }}
+                        style={{ minHeight: '950px' }} />
+                </Suspense>
                 <Footer />
             </HelmetProvider>
         </>

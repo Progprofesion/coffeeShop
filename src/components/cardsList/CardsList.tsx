@@ -11,6 +11,8 @@ import SkeletonCardsList from '../skeleton/SkeletonCardsList';
 
 import { startState } from 'src/store/slices/basketSlice';
 
+import video from '../../assets/video/video.mp4';
+
 import './cardsList.scss';
 
 interface CardListInterface {
@@ -20,6 +22,7 @@ interface CardListInterface {
     props?: React.CSSProperties
     stateFaivorite?: boolean
     faivorite?: boolean
+    videoStyle?: React.CSSProperties
 }
 
 type arrInterface = {
@@ -33,7 +36,7 @@ type arrInterface = {
     faivorite: boolean
 }
 
-const CardsList = ({ cardsView, style, title, props, stateFaivorite }: CardListInterface) => {
+const CardsList = ({ cardsView, style, title, props, stateFaivorite, videoStyle }: CardListInterface) => {
 
     const {
         data: products = [],
@@ -102,6 +105,10 @@ const CardsList = ({ cardsView, style, title, props, stateFaivorite }: CardListI
     const elements = renderCardsList(filteredCards);
     return (
         <section className="cardsList" style={style} >
+            <div style={videoStyle} className="cardsList__videoWrapp" >
+                <video className="cardsList__videoWrapp-video" src={video} autoPlay muted loop>
+                </video>
+            </div>
             <div className="container">
                 <h2 className="cardsList__title">{title}</h2>
                 <div className="cardsList__bg" style={props}>

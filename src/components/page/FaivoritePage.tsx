@@ -33,6 +33,7 @@ const FaivoritePage = () => {
                 <Hamburger />
                 <BasketSticky />
                 <CardsList
+                    videoStyle={{ display: 'none' }}
                     title={'Faivorite'}
                     stateFaivorite={true}
                     style={{ background: 'none' }} />

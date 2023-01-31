@@ -28,6 +28,7 @@ const MainPage = () => {
                 <AboutUs noneDescr={{ display: "none" }} />
                 <Suspense fallback={<Spinner />} >
                     <CardsList
+                        videoStyle={{ display: 'none' }}
                         cardsView={3}
                         faivorite={true}
                         title={'  Our best! '}

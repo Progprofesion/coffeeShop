@@ -9,13 +9,14 @@ import './exitLink.scss';
 interface ExitLinkintrface {
     styleExit?: React.CSSProperties
     styleEnter?: React.CSSProperties
+    addClass?: any
 }
 
-const ExitLink = ({ styleExit, styleEnter }: ExitLinkintrface) => {
+const ExitLink = ({ styleExit, styleEnter, addClass }: ExitLinkintrface) => {
     const userEmail = useSelector((state: RootState) => state.user.email);
     const dispatch = useDispatch();
     return (
-        userEmail ? <div style={styleExit} className="exitLink fz-14" onClick={() => dispatch(removeUser())}>Exit</div> : <Link className="linkPage__link fz-14" style={styleEnter} to="/login">Enter</Link>
+        userEmail ? <div style={styleExit} className={`exitLink fz-14 ${addClass}`} onClick={() => dispatch(removeUser())}>Exit</div> : <Link className="linkPage__link fz-14" style={styleEnter} to="/login">Enter</Link>
     )
 }
 

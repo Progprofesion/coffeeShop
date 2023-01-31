@@ -1,14 +1,12 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-import HeaderBanner from '../headerBanner/HeaderBanner';
+
 import CardsList from '../cardsList/CardsList';
 import Footer from '../footer/Footer';
 import Hamburger from '../hamburger/Hamburger';
 import BasketSticky from '../basket/BasketSticky';
 import LoginView from '../auth/LoginView';
-
-import bgPleasurePage from 'src/assets/bg/bgPleasurePage.webp';
-import bgPleasure from 'src/assets/bg/bgPleasure.webp';
+import RightMeny from '../rightMenu/RightMeny';
 
 
 const PleasurePage = () => {
@@ -25,15 +23,10 @@ const PleasurePage = () => {
                 <Hamburger />
                 <BasketSticky />
                 <LoginView />
-                <HeaderBanner
-                    img={''}
-                    style={{
-                        background: `url(${bgPleasurePage}) center / cover no-repeat`
-                    }}
-                    title={'For your pleasure'} />
+                <RightMeny />
                 <CardsList
                     cardsView={0}
-                    style={{ background: `url(${bgPleasure}) center / cover no-repeat` }}
+                    style={{ background: `none` }}
                     props={{ background: 'aliceblue', boxShadow: 'rgba(168, 200, 210, 0.25) 0 10px 25px 10px' }}
                 />
                 <Footer />

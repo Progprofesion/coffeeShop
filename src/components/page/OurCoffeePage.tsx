@@ -31,6 +31,7 @@ const OurCoffeePage = () => {
                     title={'Our coffee'} />
                 <AboutUs style={{ display: "none" }} />
                 <CardsList
+                    videoStyle={{ display: 'none' }}
                     style={{ display: "block" }}
                     cardsView={0}
                 />

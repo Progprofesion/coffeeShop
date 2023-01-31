@@ -1,0 +1,43 @@
+.rightMenu {
+    position: fixed;
+    top: 0;
+    right: 98%;
+    height: 100%;
+    z-index: 100;
+    transition: 1.5s all;
+    // &__icon {
+    //     width: 10vh;
+    //     height: 100vh;
+    //     background: red;
+    //     position: absolute;
+    // }
+    &:hover {
+        transform: translateX(69.8%);
+        transition: 1s all;
+    }
+    &__wrapp {
+        width: 20vh;
+        height: 100%;
+        background-color: aliceblue;
+        transition: 1s all;
+    }
+    &__list {
+        transition: 1s all;
+        &-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: gold;
+            height: 20vh;
+            border: 1px solid rgb(120, 175, 197);
+            cursor: pointer;
+            transition: 1s all;
+            &:hover {
+                transition: 500ms;
+                background: linear-gradient(90deg, rgb(131, 58, 180) 0%, rgb(29, 203, 253) 50%, rgb(252, 176, 69) 100%);
+                background-size: 200%;
+                animation: gradientAnimation 5s ease infinite;
+            }
+        }
+    }
+}

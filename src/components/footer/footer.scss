@@ -1,6 +1,8 @@
 .footer {
+    position: relative;
     min-height: 150px;
     background: url('../../assets/bg/bGfooter.webp') center / cover no-repeat;
+    z-index: 1000;
     &__img {
         position: absolute;
         top: 30px;

@@ -25,6 +25,9 @@ const userSlice = createSlice({
             state.email = null;
             state.token = null;
             state.id = null;
+            localStorage.setItem('userEmail', '');
+            localStorage.setItem('accessToken', '');
+            localStorage.setItem('id', '');
         }
     }
 });

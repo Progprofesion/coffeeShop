@@ -6,7 +6,6 @@ import './sidebar.scss';
 const Sidebar = () => {
     return (
         <section className="sidebar">
-            <div className="sidebar__icon"></div>
             <div className="sidebar__wrapp">
                 <nav className="sidebar__list">
                     <Link className="sidebar__list-item" to="/main" > <p>Coffee house</p> </Link>

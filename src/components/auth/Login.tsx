@@ -3,28 +3,34 @@ import { useNavigate } from 'react-router-dom';
 
 import Form from './EnterForm';
 import { setUser } from 'src/store/slices/userSlice';
+import { useLocalStorage } from "src/hooks/useLocalStorage";
 
 import './enterView.scss';
 
 
 const Login = () => {
+
+    const [localEmail, setLocalEmail] = useLocalStorage('userEmail', 0);
+    const [localToken, setLocalToken] = useLocalStorage('accessToken', 0);
+    const [localId, setLocalid] = useLocalStorage('id', 0);
+
     const navigate = useNavigate();
 
     const handleLogin = (email: string, password: string) => {
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
             .then(({ user }) => {
-                localStorage.setItem('userEmail', user.email || '')
-                localStorage.setItem('accessToken', user.refreshToken)
-                localStorage.setItem('id', user.uid)
+                setLocalEmail(user.email)
+                setLocalToken(user.refreshToken)
+                setLocalid(user.uid)
             })
             .then(() => {
                 (setUser({
-                    email: localStorage.getItem('userEmail'),
-                    token: localStorage.getItem('accessToken'),
-                    id: localStorage.getItem('id'),
+                    email: localEmail,
+                    token: localToken,
+                    id: localId,
                 }))
-                navigate('/')
+                navigate('/main')
             })
             .catch(() => alert('Invalid user!'));
     }

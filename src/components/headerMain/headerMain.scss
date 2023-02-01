@@ -1,6 +1,9 @@
 .headerMain {
     background: url('../../assets/bg/bgMain.webp') center / cover ;
     height: 100vh;
+    // &__animation {
+    //     animation: 1s fadeIn;
+    // }
     &__title {
         width: 80%;
         margin: 0 auto;
@@ -15,8 +18,8 @@
         text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
         border-block-end: 1px solid coral;
         padding-bottom: 10px;
-        background-size: 200%;
-        animation: headerGradientAnimation 7s ease infinite;
+        background-size: 500%;
+        animation: headerGradientAnimation 6s ease infinite, fadeIn;
         span {
             background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,183,29,1) 50%, rgba(252,176,69,1) 100%);
             background-clip: text;

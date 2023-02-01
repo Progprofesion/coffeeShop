@@ -7,6 +7,7 @@ import LinkPage from '../linkPage/LinkPage';
 import coffeeBeansIconWhite from 'src/assets/icons/coffeeBeansIconWhite.svg'
 import coffeeIcon from 'src/assets/icons/coffeeIcon.svg';
 
+import 'animate.css';
 import './headerMain.scss';
 
 const HeaderMain = () => {
@@ -21,9 +22,11 @@ const HeaderMain = () => {
                 <ExitLink />
             </LinkPage>
             <div className="container">
-                <h1 className="headerMain__title">Everything You Love About <span>Coffee</span></h1>
+                <div className="headerMain__animation  animate__animated animate__fadeIn">
+                    <h1 className="headerMain__title">Everything You Love About <span>Coffee</span></h1>
+                </div>
                 <IconLine img={coffeeBeansIconWhite} />
-                <h2 className="headerMain__subtitle">We makes every day full of <span>energy</span> and <span>taste</span> <p>Want to try our beans?</p></h2>
+                <h2 className="headerMain__subtitle animate__animated animate__fadeIn">We makes every day full of <span>energy</span> and <span>taste</span> <p>Want to try our beans?</p></h2>
                 <Link className="headerMain__wrapperBtn" to="/ourcoffee">
                     <button className="headerMain__mainBtn"><span>More</span></button>
                 </Link>

@@ -25,7 +25,7 @@ const PleasurePage = () => {
                 <CardsList
                     title='Coffee is a fruit'
                     cardsView={0}
-                    style={{ background: `none` }}
+                    style={{ background: `none`, fontFamily: 'Poppins, sans-serif' }}
                     props={{ background: 'aliceblue', boxShadow: 'rgba(168, 200, 210, 0.25) 0 10px 25px 10px' }}
                 />
                 <Footer />

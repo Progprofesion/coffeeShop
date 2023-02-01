@@ -4,14 +4,16 @@ import { RootState } from 'src/store/index';
 import './loginView.scss';
 
 const LoginView = () => {
+    // eslint-disable-next-line
+    const userEmail = useSelector((state: RootState) => state.user.email!);
 
-    const userEmail = useSelector((state: RootState) => state.user.email);
+    const emailView = localStorage.getItem('userEmail');
 
     return (
-        userEmail ? <div className="loginView">
+        emailView ? <div className="loginView">
             <div className="loginView__wrapper" >
                 <p className="loginView__wrapper-title" >Вы вошли как:</p>
-                <p className="loginView__wrapper-email">{userEmail.replace(/['"]+/g, '')}</p>
+                <p className="loginView__wrapper-email">{emailView.replace(/['"]+/g, '')}</p>
             </div>
         </div> : null
     )

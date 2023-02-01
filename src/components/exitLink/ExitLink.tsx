@@ -16,7 +16,7 @@ const ExitLink = ({ styleExit, styleEnter, addClass }: ExitLinkintrface) => {
 
     const userEmail = useSelector((state: RootState) => state.user.email);
     const dispatch = useDispatch();
-    const emailView = localStorage.getItem('userEmail');
+    // const emailView = localStorage.getItem('userEmail');
 
     return (
         userEmail ? <div style={styleExit} className={`exitLink fz-14 ${addClass}`} onClick={() => dispatch(removeUser())}>Exit</div> : <Link className="linkPage__link fz-14" style={styleEnter} to="/login">Enter</Link>

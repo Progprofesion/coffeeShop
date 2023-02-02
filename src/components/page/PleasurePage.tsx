@@ -6,10 +6,12 @@ import Footer from '../footer/Footer';
 import BasketSticky from '../basket/BasketSticky';
 import LoginView from '../auth/LoginView';
 import Sidebar from '../sidebar/Sidebar';
+import Hamburger from '../hamburger/Hamburger';
+
+import bgFooterPleasure from 'src/assets/bg/bgFooterPleasure.png';
 
 
 const PleasurePage = () => {
-
     return (
         <>
             <HelmetProvider>
@@ -19,6 +21,7 @@ const PleasurePage = () => {
                         content="Page for your pleasure" />
                     <title>For your pleasure</title>
                 </Helmet>
+                <Hamburger />
                 <BasketSticky />
                 <LoginView />
                 <Sidebar />
@@ -29,7 +32,10 @@ const PleasurePage = () => {
                     props={{ background: 'aliceblue', boxShadow: 'rgba(168, 200, 210, 0.25) 0 10px 25px 10px' }}
                 />
                 <Footer
-                    addClass='fz-14Pleasure' />
+                    addClass='fz-14Pleasure'
+                    bgFooter={{
+                        background: `url(${bgFooterPleasure}) center / cover`
+                    }} />
             </HelmetProvider>
         </>
     )

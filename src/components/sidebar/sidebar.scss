@@ -52,6 +52,13 @@
     }
 }
 
+@media (max-width: 991px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+
 @media (max-width: 320px) {
     .sidebar {
         &__list {

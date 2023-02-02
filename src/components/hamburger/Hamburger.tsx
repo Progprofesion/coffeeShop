@@ -6,7 +6,11 @@ import hambMenu from 'src/assets/bg/hambMenu.webp';
 import logoCoffeeHouse from 'src/assets/icons/logoCoffeeHouse.webp';
 import './hamburger.scss';
 
-const Hamburger = () => {
+type Thamburger = {
+    bgStyle?: React.CSSProperties
+}
+
+const Hamburger = ({ bgStyle }: Thamburger) => {
     const [modalActive, setModalActive] = useState(false);
 
     return (
@@ -23,7 +27,7 @@ const Hamburger = () => {
             </div>
             <div className={modalActive ? 'hamburger activeHamburger' : 'hamburger'} onClick={() => setModalActive(false)}>
                 <nav className={modalActive ? 'hamburger__content activeHamburger' : 'hamburger__content'} onClick={e => e.stopPropagation()}>
-                    <img loading="lazy" className='hamburger__bg' src={hambMenu} alt="coffee" />
+                    <img loading="lazy" style={bgStyle} className='hamburger__bg' src={hambMenu} alt="coffee" />
                     <Link to="/main">
                         <img loading="lazy" className="hamburger__logoCoffeeHouse" src={logoCoffeeHouse} alt='logoCoffeeHouse' />
                     </Link>
@@ -33,11 +37,10 @@ const Hamburger = () => {
                     <Link className="hamburger__link" to="/faivorite">Faivorite</Link>
                     <Link className="hamburger__link" to="/basket">Basket</Link>
                     <ExitLink
-                        styleEnter={{ borderBottom: '1px solid gold', width: '100%', padding: "15px" }}
+                        styleEnter={{ borderBottom: '1px solid gold', width: '100%', padding: "15px", color: 'antiquewhite' }}
                         styleExit={{ borderBottom: '1px solid gold', width: '100%', padding: "15px" }} />
                 </nav>
             </div>
-
         </>
     )
 };

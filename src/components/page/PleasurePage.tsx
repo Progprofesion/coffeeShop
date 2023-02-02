@@ -28,7 +28,8 @@ const PleasurePage = () => {
                     style={{ background: `none`, fontFamily: 'Poppins, sans-serif' }}
                     props={{ background: 'aliceblue', boxShadow: 'rgba(168, 200, 210, 0.25) 0 10px 25px 10px' }}
                 />
-                <Footer />
+                <Footer
+                    addClass='fz-14Pleasure' />
             </HelmetProvider>
         </>
     )

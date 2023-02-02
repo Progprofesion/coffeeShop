@@ -1,7 +1,10 @@
 .footer {
     position: relative;
     min-height: 150px;
-    background: url('../../assets/bg/bGfooter.webp') center / cover no-repeat;
+    // background: url('../../assets/bg/bGfooter.webp') center / cover no-repeat;
+    background: radial-gradient(circle, rgba(197, 202, 252, 0.8) 0%, rgba(148,187,233,0.8) 100%);
+    background-size: 200%;
+    animation: gradientAnimation 10s ease infinite;
     z-index: 1000;
     &__img {
         position: absolute;

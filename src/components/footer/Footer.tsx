@@ -8,16 +8,21 @@ import coffeeIcon from 'src/assets/icons/coffeeIcon.svg';
 
 import './footer.scss';
 
-const Footer = () => {
+interface FoterType {
+    bgFooter?: React.CSSProperties;
+    addClass?: any;
+}
+
+const Footer = ({ bgFooter, addClass }: FoterType) => {
     return (
-        <footer className="footer">
+        <footer className="footer" style={bgFooter}>
             <LinkPage img={coffeeIcon} style={{ margin: '0 auto', display: 'flex' }}>
-                <Link className="linkPage__link fz-14" to="/main" >Coffee house</Link>
-                <Link className="linkPage__link fz-14" to="/ourcoffee">Our coffee</Link>
-                <Link className="linkPage__link fz-14" to="/pleasure">For your pleasure</Link>
-                <Link className="linkPage__link fz-14" to="/faivorite">Faivorite</Link>
-                <Link className="linkPage__link fz-14" to="/basket">Basket</Link>
-                <ExitLink />
+                <Link className={`linkPage__link ${addClass}`} to="/main" >Coffee house</Link>
+                <Link className={`linkPage__link ${addClass}`} to="/ourcoffee">Our coffee</Link>
+                <Link className={`linkPage__link ${addClass}`} to="/pleasure">For your pleasure</Link>
+                <Link className={`linkPage__link ${addClass}`} to="/faivorite">Faivorite</Link>
+                <Link className={`linkPage__link ${addClass}`} to="/basket">Basket</Link>
+                <ExitLink addClass={addClass} />
             </LinkPage>
             <IconLine img={coffeeBeansIconWhite} />
         </footer>

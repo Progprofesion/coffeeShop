@@ -10,13 +10,14 @@ import './footer.scss';
 
 interface FoterType {
     bgFooter?: React.CSSProperties;
-    addClass?: any;
+    addClass?: string;
+    styleImg?: React.CSSProperties;
 }
 
-const Footer = ({ bgFooter, addClass }: FoterType) => {
+const Footer = ({ bgFooter, addClass, styleImg }: FoterType) => {
     return (
         <footer className="footer" style={bgFooter}>
-            <LinkPage img={coffeeIcon} style={{ margin: '0 auto', display: 'flex' }}>
+            <LinkPage styleImg={styleImg} img={coffeeIcon} style={{ margin: '0 auto', display: 'flex' }}>
                 <Link className={`linkPage__link ${addClass}`} to="/main" >Coffee house</Link>
                 <Link className={`linkPage__link ${addClass}`} to="/ourcoffee">Our coffee</Link>
                 <Link className={`linkPage__link ${addClass}`} to="/pleasure">For your pleasure</Link>

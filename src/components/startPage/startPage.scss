@@ -9,6 +9,10 @@
    &__title {
     padding-top: 50px;
    }
+   &__link {
+    margin-top: 25px;
+    font-size: 36px;
+   }
    &__btn {
     background: url(../../assets/bg/bgButton17.webp) center / cover no-repeat;
     background: linear-gradient(90deg, rgb(191, 76, 191) 0%, rgb(40, 194, 81) 50%, rgba(252,176,69,1) 100%);
@@ -40,9 +44,8 @@
     }
 
     &:hover {
-        transition: 250ms;
-        transform: scale(105%);
-        border: 2px solid gold;
+        transition: 500ms;
+        transform: scale(103%);
     }
     &:active {
         transition: 150ms;
@@ -52,7 +55,7 @@
    }
    a {
     display: block;
-    max-width: 380px;
+    max-width: 250px;
    }
    
 }

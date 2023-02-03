@@ -101,13 +101,13 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
             nodeRef={inputLabel}
             classNames="cards__item">
             <div ref={inputLabel}>
-                <ul className="cardsListItem animate__animated animate__flipInX " >
+                <div className="cardsListItem animate__animated animate__flipInX " >
                     <div className="cardsListItem__star">
-                        <img onClick={() => star()} className={faivorite ? "activeStarClick cardsListItem__starImg" : "cardsListItem__starImg"} src={starImg} alt="" />
+                        <img loading="lazy" onClick={() => star()} className={faivorite ? "activeStarClick cardsListItem__starImg" : "cardsListItem__starImg"} src={starImg} alt="" />
                     </div>
                     <div className="cardsListItem__wrapperImg">
-                        <Link to={`/ourcoffee/${id}`}>
-                            <img className="cardsListItem__img" src={img} alt="coffee" />
+                        <Link to={`/ourcyoffee/${id}`}>
+                            <img loading="lazy" className="cardsListItem__img" src={img} alt="coffee" />
                         </Link>
                     </div>
                     <h3 className="cardsListItem__subtitle fz-14Black">{title}</h3>
@@ -131,7 +131,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
                             <img className="cardsListItem__basket" src={basketIcon} alt="BasketIcon" />
                         </Link>
                     </div>
-                    <img className='cardsListItem__imgIcon' src={coffeeBeansIconWhite} alt="" />
+                    <img loading="lazy" className='cardsListItem__imgIcon' src={coffeeBeansIconWhite} alt="" />
                     <div className="cardsListItem__wrapperBtnAmount">
                         <button
                             onClick={basketDecr}
@@ -141,7 +141,7 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
                             onClick={basketIncr}
                             className="cardsListItem__btn">+</button>
                     </div>
-                </ul>
+                </div>
             </div >
         </CSSTransition>
     )

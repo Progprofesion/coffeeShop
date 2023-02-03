@@ -9,19 +9,24 @@ export interface basketSliceInterface {
     items: []
     stateStartArr: []
 }
-type TBasket = {
-    quantity: number
-    faivorite: boolean
-    id: number
-};
 
 type basketType = {
     amount: number
     items: any[]
-    stateStartArr: TBasket[]
+    stateStartArr: {
+        quantity: number
+        faivorite: boolean
+        id: number
+    }[]
     quantity?: number
 }
 
+type TgetSelector = {
+    basket: {
+        ids: string[]
+        entities: {}
+    }
+}
 
 const cardsAdapter = createEntityAdapter();
 
@@ -126,7 +131,7 @@ const { actions, reducer } = cardsSlice;
 
 export default reducer;
 
-export const { selectAll } = cardsAdapter.getSelectors((state: any) => state.basket)
+export const { selectAll } = cardsAdapter.getSelectors((state: TgetSelector) => state.basket)
 
 export const { statePrice,
     activeIncrTotals,

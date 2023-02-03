@@ -28,7 +28,7 @@ const HeaderMain = () => {
                 <IconLine img={coffeeBeansIconWhite} />
                 <h2 className="headerMain__subtitle animate__animated animate__fadeIn">We makes every day full of <span>energy</span> and <span>taste</span> <p>Want to try our beans?</p></h2>
                 <Link className="headerMain__wrapperBtn" to="/ourcoffee">
-                    <button className="headerMain__mainBtn"><span>More</span></button>
+                    <button className="headerMain__mainBtn animate__animated animate__fadeIn "><span>More</span></button>
                 </Link>
             </div>
         </header>

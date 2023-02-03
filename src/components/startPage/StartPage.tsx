@@ -30,6 +30,7 @@ const StartPage = () => {
                     <img src="https://img.icons8.com/fluency/48/null/typescript--v2.png" alt={'TS Icon'} />
                     <h3>Tools:</h3>
                     <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/null/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png" alt={'React'} />
+                    <img src="https://img.icons8.com/color/48/null/typescript.png" alt='TypeScript' />
                     <img src="https://img.icons8.com/color/48/null/redux.png" alt={'redux'} />
                     <img src="https://img.icons8.com/color/48/null/figma--v1.png" alt={'Figma'} />
                     <img src="https://img.icons8.com/color/48/null/visual-studio-code-2019.png" alt={'Icon'} />
@@ -37,6 +38,10 @@ const StartPage = () => {
                     <img src="https://img.icons8.com/color/48/null/sass-avatar.png" alt={'SASS'} />
                     <img src="https://img.icons8.com/color/48/null/webpack.png" alt={'webPack'} />
                     <img src="https://img.icons8.com/color/48/null/bootstrap.png" alt={'Bootstrap'} />
+                    <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/null/external-gulp-an-open-source-javascript-toolkit-by-fractal-innovations-logo-color-tal-revivo.png" alt='gulp' />
+                    <a className='startPage__link' rel="stylesheet" href={"https://github.com/Progprofesion/coffeeShop"}>
+                        Link to Github
+                    </a>
                     <Link to={'/main'}>
                         <button onClick={start} className="startPage__btn"><span>Start</span></button>
                     </Link>

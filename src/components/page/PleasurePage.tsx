@@ -1,15 +1,14 @@
+import { lazy } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-
 import CardsList from '../cardsList/CardsList';
-import Footer from '../footer/Footer';
 import BasketSticky from '../basket/BasketSticky';
 import LoginView from '../auth/LoginView';
 import Sidebar from '../sidebar/Sidebar';
 import Hamburger from '../hamburger/Hamburger';
+import bgFooterPleasure from 'src/assets/bg/bgFooterPleasure.webp';
 
-import bgFooterPleasure from 'src/assets/bg/bgFooterPleasure.png';
-
+const Footer = lazy(() => import('../footer/Footer'));
 
 const PleasurePage = () => {
     return (
@@ -32,6 +31,7 @@ const PleasurePage = () => {
                     props={{ background: 'aliceblue', boxShadow: 'rgba(168, 200, 210, 0.25) 0 10px 25px 10px' }}
                 />
                 <Footer
+                    styleImg={{ display: 'none' }}
                     addClass='fz-14Pleasure'
                     bgFooter={{
                         background: `url(${bgFooterPleasure}) center / cover`

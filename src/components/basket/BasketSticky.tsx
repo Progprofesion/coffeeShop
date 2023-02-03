@@ -34,7 +34,7 @@ const Basket = () => {
     }, [addProduct, stateBasketAmount, stateArrRender]);
 
     return (
-        <Link to="/basket" id="basketSticky" className="basketSticky">
+        <Link to="/basket" id="basketSticky" className="basketSticky animate__animated animate__fadeIn ">
             <div className="basketSticky__amount">{localBasketAmount ? localBasketAmount : 0}</div>
             <div className="basketSticky__total">{localBasketTotal > 0 ? localBasketTotal.toFixed(2) + `$` : `0.00$`}</div>
         </Link>

@@ -9,14 +9,14 @@ import coffeeIcon from 'src/assets/icons/coffeeIcon.svg';
 import './footer.scss';
 
 interface FoterType {
-    bgFooter?: React.CSSProperties;
+    addClassFooter?: string;
     addClass?: string;
     styleImg?: React.CSSProperties;
 }
 
-const Footer = ({ bgFooter, addClass, styleImg }: FoterType) => {
+const Footer = ({ addClassFooter, addClass, styleImg }: FoterType) => {
     return (
-        <footer className="footer" style={bgFooter}>
+        <footer className={`footer ${addClassFooter}`}>
             <LinkPage styleImg={styleImg} img={coffeeIcon} style={{ margin: '0 auto', display: 'flex' }}>
                 <Link className={`linkPage__link ${addClass}`} to="/main" >Coffee house</Link>
                 <Link className={`linkPage__link ${addClass}`} to="/ourcoffee">Our coffee</Link>

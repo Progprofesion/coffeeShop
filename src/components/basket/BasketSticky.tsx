@@ -1,16 +1,18 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+
 import { RootState } from 'src/store/index';
-
 import { useLocalStorage } from 'src/hooks/useLocalStorage';
-
 import { basketAmount } from 'src/store/slices/basketSlice';
-
 
 import './basketSticky.scss';
 
-const Basket = () => {
+type basketPleasureStyle = {
+    pleasureStyle?: string
+}
+
+const Basket = ({ pleasureStyle }: basketPleasureStyle) => {
 
     const addProduct: [] = useSelector((state: RootState) => state.basket.items);
     const total = useSelector((state: RootState) => state.basket.total);
@@ -34,7 +36,7 @@ const Basket = () => {
     }, [addProduct, stateBasketAmount, stateArrRender]);
 
     return (
-        <Link to="/basket" id="basketSticky" className="basketSticky animate__animated animate__fadeIn ">
+        <Link to="/basket" id="basketSticky" className={`basketSticky ${pleasureStyle} animate__animated animate__fadeIn`} >
             <div className="basketSticky__amount">{localBasketAmount ? localBasketAmount : 0}</div>
             <div className="basketSticky__total">{localBasketTotal > 0 ? localBasketTotal.toFixed(2) + `$` : `0.00$`}</div>
         </Link>

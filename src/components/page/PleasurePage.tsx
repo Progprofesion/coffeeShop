@@ -6,7 +6,6 @@ import BasketSticky from '../basket/BasketSticky';
 import LoginView from '../auth/LoginView';
 import Sidebar from '../sidebar/Sidebar';
 import Hamburger from '../hamburger/Hamburger';
-import bgFooterPleasure from 'src/assets/bg/bgFooterPleasure.webp';
 
 const Footer = lazy(() => import('../footer/Footer'));
 
@@ -27,15 +26,14 @@ const PleasurePage = () => {
                 <CardsList
                     title='Coffee is a fruit'
                     cardsView={0}
-                    style={{ background: `none`, fontFamily: 'Poppins, sans-serif' }}
-                    props={{ background: 'aliceblue', boxShadow: 'rgba(168, 200, 210, 0.25) 0 10px 25px 10px' }}
+                    addClassBg='addClassBg'
+                    addClassCardsTitle='addClassCardsTitle'
+                    addClassCards='addClassCards'
                 />
                 <Footer
                     styleImg={{ display: 'none' }}
                     addClass='fz-14Pleasure'
-                    bgFooter={{
-                        background: `url(${bgFooterPleasure}) center / cover`
-                    }} />
+                    addClassFooter='addClassFooter' />
             </HelmetProvider>
         </>
     )

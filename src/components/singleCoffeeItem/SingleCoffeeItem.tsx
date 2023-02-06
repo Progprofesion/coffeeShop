@@ -19,7 +19,7 @@ const SingleCoffee = ({ img, country, price }: SingleCoffeeInterface) => {
     return (
         <article className="singleCoffeeItem">
             <LinkPage img={coffeeIcon} >
-                <Link className="linkPage__link fz-14" to="/main" >Coffee house</Link>
+                <Link className="linkPage__link fz-14" to="/" >Coffee house</Link>
                 <Link className="linkPage__link fz-14" to="/ourcoffee">Our coffee</Link>
                 <Link className="linkPage__link fz-14" to="/pleasure">For your pleasure</Link>
                 <Link className="linkPage__link fz-14" to="/faivorite">Faivorite</Link>
@@ -28,7 +28,7 @@ const SingleCoffee = ({ img, country, price }: SingleCoffeeInterface) => {
             </LinkPage>
             <div className="container">
                 <div className="singleCoffeeItem__wrapper">
-                    <img loading="lazy" src={img} alt="coffee" className="singleCoffeeItem__img" />
+                    <img src={img} alt="coffee" className="singleCoffeeItem__img" />
                     <div className="singleCoffeeItem__about">
                         <h3 className="singleCoffeeItem__about-title fz-24">About it</h3>
                         <IconLine styleLine={{ border: '1px solid black' }} img={coffeeBeansIconBlack} />

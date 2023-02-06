@@ -36,7 +36,10 @@ const SingleCoffeePage = () => {
                     <title>{products.title}</title>
                 </Helmet>
                 <Hamburger />
-                <SingleCoffeeItem img={products.img} country={products.country} price={products.price} />
+                <SingleCoffeeItem
+                    img={products.img}
+                    country={products.country}
+                    price={products.price} />
                 <Footer />
             </HelmetProvider>
         </>

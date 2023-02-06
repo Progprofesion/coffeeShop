@@ -6,12 +6,13 @@ import Spinner from '../spinner/Spinner';
 
 import './app.scss';
 
+import SingleCoffeePage from '../page/SingleCoffeePage';
 
 const StartPage = lazy(() => import('../startPage/StartPage'));
 const LoginPage = lazy(() => import('../page/LoginPage'));
 const RegisterPage = lazy(() => import('../page/RegisterPage'));
 const OurCoffeePage = lazy(() => import('../page/OurCoffeePage'));
-const SingleCoffeePage = lazy(() => import('../page/SingleCoffeePage'));
+// const SingleCoffeePage = lazy(() => import('../page/SingleCoffeePage'));
 const PleasurePage = lazy(() => import('../page/PleasurePage'));
 const FaivoritePage = lazy(() => import('../page/FaivoritePage'));
 const BasketPage = lazy(() => import('../page/BasketPage'))

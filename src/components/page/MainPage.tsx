@@ -33,7 +33,8 @@ const MainPage = () => {
                         faivorite={true}
                         title={'  Our best! '}
                         props={{ minHeight: '565px' }}
-                        style={{ minHeight: '950px' }} />
+                        style={{ minHeight: '950px' }}
+                        addClassBg={'addClassMainBg'} />
                 </Suspense>
                 <Footer />
             </HelmetProvider>

@@ -106,8 +106,8 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
                         <img loading="lazy" onClick={() => star()} className={faivorite ? "activeStarClick cardsListItem__starImg" : "cardsListItem__starImg"} src={starImg} alt="" />
                     </div>
                     <div className="cardsListItem__wrapperImg">
-                        <Link to={`/ourcyoffee/${id}`}>
-                            <img loading="lazy" className="cardsListItem__img" src={img} alt="coffee" />
+                        <Link to={`/ourcoffee/${id}`}>
+                            <img className="cardsListItem__img" src={img} alt="coffee" />
                         </Link>
                     </div>
                     <h3 className="cardsListItem__subtitle fz-14Black">{title}</h3>

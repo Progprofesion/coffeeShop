@@ -2,7 +2,7 @@
     background: url(../../assets/bg/bgOurCoffee.webp) center / cover no-repeat;
     position: relative;
     padding: 230px 0 150px;
-    min-height: 1340px;
+    min-height: 950px;
     &__title {
         position: absolute;
         text-align: center;
@@ -77,4 +77,20 @@
             font-size: 36px;
         }
     }
+}
+
+.addClassCardsTitle {
+    background: none;
+    font-family: Poppins;
+    min-height: 1308px;
+}
+
+.addClassBg {
+    background: aliceblue;
+    box-shadow: rgba(168, 200, 210, 0.25) 0 10px 25px 10px;
+    font-family: Poppins;
+}
+
+.addClassCards {
+    min-height: 1308px;
 }

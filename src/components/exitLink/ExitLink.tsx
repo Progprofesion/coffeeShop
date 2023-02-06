@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { RootState } from 'src/store/index';
+// import { RootState } from 'src/store/index';
 
 import { removeUser } from 'src/store/slices/userSlice';
 
@@ -15,28 +15,16 @@ interface ExitLinkintrface {
 
 const ExitLink = ({ styleExit, styleEnter, addClass }: ExitLinkintrface) => {
 
-    const [togleExitEnter, setTogleExitEnter] = useState(true);
+    // const [togleExitEnter, setTogleExitEnter] = useState(true);
 
 
-    const userEmail = useSelector((state: RootState) => state.user.email);
+    // const userEmail = useSelector((state: RootState) => state.user.email);
     const dispatch = useDispatch();
     const emailView = localStorage.getItem('userEmail');
-
-    useEffect(() => {
-        if (togleExitEnter) {
-            setTogleExitEnter(true)
-            if (userEmail) {
-                localStorage.setItem('userEmail', userEmail.toString())
-            }
-        } else {
-            setTogleExitEnter(false)
-        }
-    }, [userEmail])
-
-    // console.log(togleExitEnter);
+    // console.log(emailView)
 
     return (
-        emailView ? <div style={styleExit} className={`exitLink fz-14 ${addClass}`} onClick={() => {
+        emailView !== '' ? <div style={styleExit} className={`exitLink fz-14 ${addClass}`} onClick={(e) => {
             // setTogleExitEnter(false)
             dispatch(removeUser())
         }}>Exit</div> :

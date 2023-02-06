@@ -23,9 +23,12 @@ interface CardListInterface {
     stateFaivorite?: boolean
     faivorite?: boolean
     videoStyle?: React.CSSProperties
+    addClassBg?: string;
+    addClassCardsTitle?: string
+    addClassCards?: string
 }
 
-type arrInterface = {
+type Trender = {
     page: number
     price: number
     id: number
@@ -36,7 +39,7 @@ type arrInterface = {
     faivorite: boolean
 }
 
-const CardsList = ({ cardsView, style, title, props, stateFaivorite, videoStyle }: CardListInterface) => {
+const CardsList = ({ cardsView, addClassCardsTitle, title, stateFaivorite, videoStyle, addClassBg, addClassCards }: CardListInterface) => {
 
     const {
         data: products = [],
@@ -70,7 +73,7 @@ const CardsList = ({ cardsView, style, title, props, stateFaivorite, videoStyle 
         }
     }, [searchCoffee, stateArrRender]);
 
-    const filteredCards: arrInterface[] = useMemo(() => {
+    const filteredCards: Trender[] = useMemo(() => {
         const filteredCards = searchCoffeeFiltered.slice();
         if (activeFilter === 'all') {
             return filteredCards
@@ -83,9 +86,10 @@ const CardsList = ({ cardsView, style, title, props, stateFaivorite, videoStyle 
         return <Error />
     }
 
-    const renderCardsList = (arr: any[]) => {
+    const renderCardsList = (arr: Trender[]) => {
         // eslint-disable-next-line
-        return arr.map(({ page, price, id, img, title, country, quantity, faivorite, ...rest }: arrInterface) => {
+        return arr.map(({ page, price, id, img, title, country, quantity, faivorite, ...rest }: Trender) => {
+            // Отображение нужного количества количества карточек или отображение карточек в Избранном
             if ((page > cardsView!) || (stateFaivorite && faivorite)) {
                 return isLoading ? <SkeletonCardsList key={page} />
                     : <CardsListItem
@@ -104,14 +108,14 @@ const CardsList = ({ cardsView, style, title, props, stateFaivorite, videoStyle 
 
     const elements = renderCardsList(filteredCards);
     return (
-        <section className="cardsList" style={style} >
+        <section className={`cardsList ${addClassCards}`}>
             <div style={videoStyle} className="cardsList__videoWrapp" >
                 <video className="cardsList__videoWrapp-video" src={video} autoPlay muted loop>
                 </video>
             </div>
             <div className="container">
-                <h2 className="cardsList__title">{title}</h2>
-                <div className="cardsList__bg" style={props}>
+                <h2 className={`cardsList__title ${addClassCardsTitle}`}>{title}</h2>
+                <div className={`cardsList__bg ${addClassBg}`}>
                     <SearchComponent />
                     <TransitionGroup className="cardsList__wrapper" >
                         {elements}

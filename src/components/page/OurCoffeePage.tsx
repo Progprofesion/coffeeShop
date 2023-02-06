@@ -34,6 +34,7 @@ const OurCoffeePage = () => {
                     videoStyle={{ display: 'none' }}
                     style={{ display: "block" }}
                     cardsView={0}
+                    addClassCards='addClassCards'
                 />
                 <Footer />
             </HelmetProvider>

@@ -17,32 +17,36 @@
         margin-left: 55px;
         background-color: rgba(255, 237, 208, 0.89);
         border-radius: 10px;
-       &-title {
+    }
+    &__wrapperCountry {
+        display: flex;
+        justify-content: center;
+    }
+    &__wrapperPrice {
+        display: flex;
+        justify-content: center;
+    }
+    &__title {
         margin-top: 30px;
         text-align: center;
         color: #000000d1;
        }
-       &-subtitle {
+    &__subtitle {
         font-size: 14px;
         font-weight: 700;
         line-height: 19px;
         padding-right: 5px;
        }
-       &-descr{
+    &__descr{
         padding: 15px 20px;
         max-width: 410px;
         text-align: center;
        }
-       &-wrapper {
-        display: flex;
-        justify-content: center;
-        &-price {
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 40px;
-            padding-right: 15px;
-        }
-       }
+    &__price {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 40px;
+        padding-right: 15px;
     }   
 }
 

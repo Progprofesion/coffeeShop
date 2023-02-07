@@ -2,7 +2,6 @@ import { lazy } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import CardsList from '../cardsList/CardsList';
-import BasketSticky from '../basket/BasketSticky';
 import LoginView from '../auth/LoginView';
 import Sidebar from '../sidebar/Sidebar';
 import Hamburger from '../hamburger/Hamburger';
@@ -20,7 +19,6 @@ const PleasurePage = () => {
                     <title>For your pleasure</title>
                 </Helmet>
                 <Hamburger />
-                <BasketSticky />
                 <LoginView />
                 <Sidebar />
                 <CardsList

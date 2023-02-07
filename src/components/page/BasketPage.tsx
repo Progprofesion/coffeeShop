@@ -31,9 +31,6 @@ const BasketPage = () => {
         mode: "onBlur"
     });
 
-    // выше возможно удалить
-
-
     const inputRef = useRef<HTMLInputElement>();
     const { ref, ...rest } = register('phone');
 

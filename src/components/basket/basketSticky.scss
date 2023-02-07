@@ -5,16 +5,15 @@
     min-width: 140px;
     min-height: 50px;
     right: 50px;
-    top: 94px;;
+    top: 94px;
     border-radius: 10px;
-    border: 2px solid rgba(174, 242, 224, 0.657);
+    border: 1px solid gold;
     background: url(../../assets/bg/bgButton17.webp) center / cover no-repeat;
-    color: gold;
     align-items: center;
     z-index: 5;
     &:hover {
-        transition: 250ms;
-        border: 2px solid gold;
+        transition: 500ms;
+        box-shadow: 6px 2px 17px rgba(255, 114, 114, 0.557);
     }
     &__amount {
         padding: 0 5px 1px 5px;
@@ -25,7 +24,7 @@
         -webkit-text-fill-color: transparent;
         text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
         background-size: 300%;
-        animation: gradientAnimation 5s ease infinite;
+        // animation: gradientAnimation 1s ease infinite;
     }
     &__total {
         padding: 0 5px 1px 5px;
@@ -36,13 +35,13 @@
         -webkit-text-fill-color: transparent;
         text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
         background-size: 300%;
-        animation: gradientAnimation 5s ease infinite;
+        // animation: gradientAnimation 5s ease infinite;
     }
 
 }
 
 .pleasureStyle {
-    background:rgb(104, 154, 198);
+    background:rgba(140, 166, 188, 0.8);
 }
 
 // Media ------------------

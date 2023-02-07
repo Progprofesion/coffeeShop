@@ -1,9 +1,6 @@
 .headerMain {
-    background: url('../../assets/bg/bgMain.webp') center / cover ;
+    background: url('../../assets/bg/bgMain.webp') center / cover no-repeat;
     height: 100vh;
-    // &__animation {
-    //     animation: 1s fadeIn;
-    // }
     &__title {
         width: 80%;
         margin: 0 auto;
@@ -73,7 +70,7 @@
         left: 50%;
         transform: translateX(-50%);
         border-radius: 10px;
-        border: 2px solid aquamarine;
+        border: 1px solid gold;
         filter: drop-shadow(5px 5px 35px rgba(74, 131, 172, 0.25));
         background: url(../../assets/bg/bgButton17.webp) center / cover no-repeat;
         span {
@@ -88,8 +85,8 @@
             }           
         }
         &:hover {
-            transition: 250ms;
-            border: 2px solid gold;
+            transition: 500ms;
+            box-shadow: 6px 2px 17px rgba(255, 114, 114, 0.557);
         }
         &:active {
             transition: 250ms;

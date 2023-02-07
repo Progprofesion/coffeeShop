@@ -30,15 +30,15 @@ const SingleCoffee = ({ img, country, price }: SingleCoffeeInterface) => {
                 <div className="singleCoffeeItem__wrapper">
                     <img src={img} alt="coffee" className="singleCoffeeItem__img" />
                     <div className="singleCoffeeItem__about">
-                        <h3 className="singleCoffeeItem__about-title fz-24">About it</h3>
+                        <h3 className="singleCoffeeItem__title fz-24">About it</h3>
                         <IconLine styleLine={{ border: '1px solid black' }} img={coffeeBeansIconBlack} />
-                        <div className="singleCoffeeItem__about-wrapper">
-                            <h4 className="singleCoffeeItem__about-subtitle">Country: </h4>
+                        <div className="singleCoffeeItem__wrapperCountry">
+                            <h4 className="singleCoffeeItem__subtitle">Country: </h4>
                             <h4 className="fz-14Black">{country}</h4>
                         </div>
-                        <p className="singleCoffeeItem__about-descr">Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <div className="singleCoffeeItem__about-wrapper">
-                            <h4 className="singleCoffeeItem__about-wrapper-price">Price: </h4>
+                        <p className="singleCoffeeItem__descr">Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <div className="singleCoffeeItem__wrapperPrice">
+                            <h4 className="singleCoffeeItem__price">Price: </h4>
                             <h4 className="fz-24Black">{price}</h4>
                         </div>
                     </div>

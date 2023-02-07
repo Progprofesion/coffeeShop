@@ -36,7 +36,7 @@ const FaivoritePage = () => {
                     videoStyle={{ display: 'none' }}
                     title={'Faivorite'}
                     stateFaivorite={true}
-                    style={{ background: 'none' }} />
+                    addClassCards='addClassFaivorite' />
             </section>
             <Footer />
 

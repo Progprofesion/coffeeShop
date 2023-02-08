@@ -6,7 +6,7 @@ import { RootState } from 'src/store/index';
 
 import SearchComponent from '../searchComponent/SearchComponent';
 import Error from 'src/assets/icons/Error.gif';
-import CardsListItem from '../cardsListItem/CardsListItem';
+import Card from '../card/Card';
 import SkeletonCardsList from '../skeleton/SkeletonCardsList';
 
 import { startState } from 'src/store/slices/basketSlice';
@@ -92,7 +92,7 @@ const CardsList = ({ cardsView, addClassCardsTitle, title, stateFaivorite, video
             // Отображение нужного количества количества карточек или отображение карточек в Избранном
             if ((page > cardsView!) || (stateFaivorite && faivorite)) {
                 return isLoading ? <SkeletonCardsList key={page} />
-                    : <CardsListItem
+                    : <Card
                         {...rest}
                         key={page}
                         price={price}

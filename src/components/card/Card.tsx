@@ -22,7 +22,7 @@ import {
 import basketIcon from 'src/assets/icons/basketIcon.svg';
 
 import 'animate.css';
-import './cardsListItem.scss';
+import './card.scss';
 
 interface CardListItemInterface {
     id: number
@@ -36,7 +36,7 @@ interface CardListItemInterface {
 
 
 
-const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ...rest }: CardListItemInterface) => {
+const Card = ({ id, img, title, country, price, quantity, faivorite, ...rest }: CardListItemInterface) => {
 
     const [value, setValue] = useState('');
 
@@ -84,7 +84,6 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
     }
 
     const star = () => {
-
         if (!stateArrRender[id].faivorite) {
             dispatch(addFavorite(id))
         } else {
@@ -101,45 +100,45 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
             nodeRef={inputLabel}
             classNames="cards__item">
             <div ref={inputLabel}>
-                <div className="cardsListItem animate__animated animate__flipInX " >
-                    <div className="cardsListItem__star">
-                        <img loading="lazy" onClick={() => star()} className={faivorite ? "activeStarClick cardsListItem__starImg" : "cardsListItem__starImg"} src={starImg} alt="" />
+                <div className="card animate__animated animate__flipInX " >
+                    <div className="card__star">
+                        <img loading="lazy" onClick={() => star()} className={faivorite ? "activeStarClick card__starImg" : "cardsListItem__starImg"} src={starImg} alt="" />
                     </div>
-                    <div className="cardsListItem__wrapperImg">
+                    <div className="card__wrapperImg">
                         <Link to={`/ourcoffee/${id}`}>
-                            <img className="cardsListItem__img" src={img} alt="coffee" />
+                            <img className="card__img" src={img} alt="coffee" />
                         </Link>
                     </div>
-                    <h3 className="cardsListItem__subtitle fz-14Black">{title}</h3>
-                    <div className="cardsListItem__wrapperCountryPrice fz-14Black">
-                        <div className="cardsListItem__country">{country}:</div>
-                        <div className="cardsListItem__price fz-14Black">{price}<span>$</span></div>
+                    <h3 className="card__subtitle fz-14Black">{title}</h3>
+                    <div className="card__wrapperCountryPrice fz-14Black">
+                        <div className="card__country">{country}:</div>
+                        <div className="card__price fz-14Black">{price}<span>$</span></div>
                     </div>
-                    <div className="cardsListItem__wrapperBasketInput">
-                        <form className='cardsListItem__form' action="">
+                    <div className="card__wrapperBasketInput">
+                        <form className='card__form' action="">
                             <input
                                 inputMode='tel'
                                 value={value.replace(/^[^0-9_]*[a-zA-Z0-9_]*[^0-9]$/, '')}
                                 maxLength={2}
                                 onChange={e => setValue(e.target.value)}
-                                className="cardsListItem__input" placeholder="00" type='tel' />
+                                className="card__input" placeholder="00" type='tel' />
                             <button
                                 onClick={e => basketRandomBtn(e, value)}
-                                className="cardsListItem__randomBtn">+</button>
+                                className="card__randomBtn">+</button>
                         </form>
                         <Link to="/basket">
-                            <img className="cardsListItem__basket" src={basketIcon} alt="BasketIcon" />
+                            <img className="card__basket" src={basketIcon} alt="BasketIcon" />
                         </Link>
                     </div>
-                    <img loading="lazy" className='cardsListItem__imgIcon' src={coffeeBeansIconWhite} alt="" />
-                    <div className="cardsListItem__wrapperBtnAmount">
+                    <img loading="lazy" className='card__imgIcon' src={coffeeBeansIconWhite} alt="" />
+                    <div className="card__wrapperBtnAmount">
                         <button
                             onClick={basketDecr}
-                            className="cardsListItem__btn">-</button>
-                        <div className="cardsListItem__amount">{quantity}</div>
+                            className="card__btn">-</button>
+                        <div className="card__amount">{quantity}</div>
                         <button
                             onClick={basketIncr}
-                            className="cardsListItem__btn">+</button>
+                            className="card__btn">+</button>
                     </div>
                 </div>
             </div >
@@ -147,4 +146,4 @@ const CardsListItem = ({ id, img, title, country, price, quantity, faivorite, ..
     )
 };
 
-export default CardsListItem;
+export default Card;

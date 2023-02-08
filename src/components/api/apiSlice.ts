@@ -10,8 +10,7 @@ export const apiSlice = createApi({
             providesTags: ['Products']
         }),
         getProductsId: builder.query({
-            query: (id) => `/products/${id}`,
-            invalidatesTags: ['Products'] as any
+            query: (id) => `/products/${id}`
         })
     })
 });

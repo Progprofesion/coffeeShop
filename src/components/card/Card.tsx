@@ -5,6 +5,7 @@ import { CSSTransition } from 'react-transition-group';
 import { RootState } from 'src/store/index';
 
 import coffeeBeansIconWhite from 'src/assets/icons/coffeeBeansIconWhite.svg'
+// import coffeeBeansIconBlack from 'src/assets/icons/coffeeBeansIconBlack.svg'
 import starImg from '../../assets/icons/star.svg'
 
 import {

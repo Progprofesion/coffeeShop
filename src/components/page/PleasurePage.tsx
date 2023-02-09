@@ -5,6 +5,7 @@ import CardsList from '../cardsList/CardsList';
 import LoginView from '../auth/LoginView';
 import Sidebar from '../sidebar/Sidebar';
 import Hamburger from '../hamburger/Hamburger';
+import Comments from '../comments/Comments';
 
 const Footer = lazy(() => import('../footer/Footer'));
 
@@ -20,6 +21,7 @@ const PleasurePage = () => {
                 </Helmet>
                 <Hamburger />
                 <LoginView />
+                <Comments />
                 <Sidebar />
                 <CardsList
                     title='Coffee is a fruit'

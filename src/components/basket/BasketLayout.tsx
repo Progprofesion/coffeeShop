@@ -60,7 +60,6 @@ const BasketLayout = ({ setModalActive }: BasketLayoutInterface) => {
 
     const view = (arr: []) => {
         return arr.map(({ id, img, title, country, price, quantity, faivorite, ...rest }: BasketLayoutRest) => {
-
             return <BasketView
                 {...rest}
                 key={id}

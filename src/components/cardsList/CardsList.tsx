@@ -1,18 +1,14 @@
-import { useMemo, useEffect } from 'react';
 import { useGetProductsQuery } from '../api/apiSlice';
-import { useSelector, useDispatch } from 'react-redux';
 import { TransitionGroup } from 'react-transition-group';
-import { RootState } from 'src/store/index';
 
 import SearchComponent from '../searchComponent/SearchComponent';
-import Error from 'src/assets/icons/Error.gif';
 import Card from '../card/Card';
 import SkeletonCardsList from '../skeleton/SkeletonCardsList';
-
-import { startState } from 'src/store/slices/basketSlice';
+import useFilters from 'src/hooks/useFilters';
 
 import video from '../../assets/video/video.mp4';
 
+import Error from 'src/assets/icons/Error.gif';
 import './cardsList.scss';
 
 interface CardListInterface {
@@ -28,7 +24,7 @@ interface CardListInterface {
     addClassCards?: string
 }
 
-type Trender = {
+export type Trender = {
     page: number
     price: number
     id: number
@@ -42,45 +38,11 @@ type Trender = {
 const CardsList = ({ cardsView, addClassCardsTitle, title, stateFaivorite, videoStyle, addClassBg, addClassCards }: CardListInterface) => {
 
     const {
-        data: products = [],
         isLoading,
         isError,
-        isSuccess
     } = useGetProductsQuery(null);
 
-
-    const dispatch = useDispatch();
-
-    const activeFilter = useSelector((state: RootState) => state.filters.activeFilter);
-    const searchCoffee = useSelector((state: RootState) => state.filters.searchCoffee);
-    const stateArrRender = useSelector((state: RootState) => state.basket.stateStartArr);
-
-    useEffect(() => {
-        if (!stateArrRender.length) {
-            dispatch(startState(products))
-        }
-        // eslint-disable-next-line
-    }, [isSuccess])
-
-    const searchCoffeeFiltered = useMemo(() => {
-        const searchCoffeeFiltered = stateArrRender.slice();
-        if (searchCoffee === '') {
-            return searchCoffeeFiltered;
-        } else {
-            return searchCoffeeFiltered.filter((item: Record<string, string>) => {
-                return item.title.toLowerCase().indexOf(searchCoffee.toLowerCase()) > -1
-            })
-        }
-    }, [searchCoffee, stateArrRender]);
-
-    const filteredCards: Trender[] = useMemo(() => {
-        const filteredCards = searchCoffeeFiltered.slice();
-        if (activeFilter === 'all') {
-            return filteredCards
-        } else {
-            return filteredCards.filter((item: Record<string, string>) => item.country === activeFilter);
-        }
-    }, [activeFilter, searchCoffeeFiltered]);
+    const { filteredCards } = useFilters();
 
     if (isError) {
         return <Error />

@@ -1,4 +1,4 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 // import { RootState } from 'src/store/index';
@@ -15,17 +15,22 @@ interface ExitLinkintrface {
 
 const ExitLink = ({ styleExit, styleEnter, addClass }: ExitLinkintrface) => {
 
-    // const [togleExitEnter, setTogleExitEnter] = useState(true);
+
+    const [togleExitEnter, setTogleExitEnter] = useState(false);
 
 
     // const userEmail = useSelector((state: RootState) => state.user.email);
     const dispatch = useDispatch();
-    const emailView = localStorage.getItem('userEmail');
+    const userEmail = localStorage.getItem('userEmail');
     // console.log(emailView)
 
+
+
+    // console.log(togleExitEnter)
+
     return (
-        emailView !== '' ? <div style={styleExit} className={`exitLink fz-14 ${addClass}`} onClick={(e) => {
-            // setTogleExitEnter(false)
+        userEmail ? <div style={styleExit} className={`exitLink fz-14 ${addClass}`} onClick={(e) => {
+            e.preventDefault();
             dispatch(removeUser())
         }}>Exit</div> :
             <Link className={`linkPage__link ${addClass}`} style={styleEnter} to="/login">Enter</Link>

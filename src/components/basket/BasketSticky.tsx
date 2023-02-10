@@ -20,25 +20,36 @@ const Basket = ({ pleasureStyle }: basketPleasureStyle) => {
     const stateBasketAmount = useSelector((state: RootState) => state.basket.amount);
 
     // eslint-disable-next-line
-    const [localbasketObj, setLocalbasketObj] = useLocalStorage('object', 0);
-    const [localBasketAmount, setLocalBasketAmount] = useLocalStorage('amount', 0);
-    const [localBasketTotal, setLocalBasketTotal] = useLocalStorage('total', 0);
+    const [localObj, setLocatObj] = useLocalStorage('object', 0);
+    const [localAmount, setLocalAmount] = useLocalStorage('amount', 0);
+    const [localTotal, setLocalTotal] = useLocalStorage('total', 0);
+    const [persLocalObj, setPersLocalObj] = useLocalStorage('persObject', 0);
+    const [persLocalAmount, setPersLocalAmount] = useLocalStorage('persAmount', 0);
+    const [persLocalTotal, setPersLocalTotal] = useLocalStorage('persTotal', 0);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        setLocalBasketAmount(stateBasketAmount);
-        setLocalbasketObj(addProduct);
-        setLocalBasketTotal(Number(total));
-        dispatch(basketAmount())
-        localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
+        if (localStorage.getItem('userEmail')) {
+            localStorage.setItem('persStateArr', JSON.stringify(stateArrRender));
+            setPersLocalAmount(stateBasketAmount);
+            setPersLocalObj(addProduct);
+            setPersLocalTotal(Number(total));
+            dispatch(basketAmount())
+        } else {
+            localStorage.setItem('stateArr', JSON.stringify(stateArrRender));
+            setLocalAmount(stateBasketAmount);
+            setLocatObj(addProduct);
+            setLocalTotal(Number(total));
+            dispatch(basketAmount())
+        }
         // eslint-disable-next-line
     }, [addProduct, stateBasketAmount, stateArrRender]);
 
     return (
         <Link to="/basket" id="basketSticky" className={`basketSticky ${pleasureStyle} animate__animated animate__fadeIn`} >
-            <div className="basketSticky__amount">{localBasketAmount ? localBasketAmount : 0}</div>
-            <div className="basketSticky__total">{localBasketTotal > 0 ? localBasketTotal.toFixed(2) + `$` : `0.00$`}</div>
+            <div className="basketSticky__amount">{[persLocalAmount ? persLocalAmount : localAmount]}</div>
+            <div className="basketSticky__total">{localTotal > 0 ? localTotal : localTotal.toFixed(2) + `$`}</div>
         </Link>
     )
 };

@@ -12,7 +12,6 @@ const useFilters = () => {
         isSuccess
     } = useGetProductsQuery(null);
 
-
     const dispatch = useDispatch();
 
     useEffect(() => {

@@ -103,7 +103,7 @@ const Card = ({ id, img, title, country, price, quantity, faivorite, ...rest }: 
             <div ref={inputLabel}>
                 <div className="card animate__animated animate__flipInX " >
                     <div className="card__star">
-                        <img loading="lazy" onClick={() => star()} className={faivorite ? "activeStarClick card__starImg" : "cardsListItem__starImg"} src={starImg} alt="" />
+                        <img loading="lazy" onClick={() => star()} className={faivorite ? "activeStarClick card__starImg" : "card__starImg"} src={starImg} alt="" />
                     </div>
                     <div className="card__wrapperImg">
                         <Link to={`/ourcoffee/${id}`}>

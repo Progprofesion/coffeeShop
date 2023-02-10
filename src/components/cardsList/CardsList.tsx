@@ -1,10 +1,11 @@
-import { useGetProductsQuery } from '../api/apiSlice';
 import { TransitionGroup } from 'react-transition-group';
 
 import SearchComponent from '../searchComponent/SearchComponent';
 import Card from '../card/Card';
 import SkeletonCardsList from '../skeleton/SkeletonCardsList';
 import useFilters from 'src/hooks/useFilters';
+
+import { useGetProductsQuery } from '../api/apiSlice';
 
 import video from '../../assets/video/video.mp4';
 
@@ -72,7 +73,7 @@ const CardsList = ({ cardsView, addClassCardsTitle, title, stateFaivorite, video
     return (
         <section className={`cardsList ${addClassCards}`}>
             <div style={videoStyle} className="cardsList__videoWrapp" >
-                <video className="cardsList__videoWrapp-video" src={video} autoPlay muted loop>
+                <video className="cardsList__videoWrapp-video" src={video} muted loop autoPlay>
                 </video>
             </div>
             <div className="container">

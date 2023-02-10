@@ -8,7 +8,7 @@ import coffeeIcon from 'src/assets/icons/coffeeIcon.svg';
 
 import './headerBanner.scss';
 
-const HeaderPages = ({ style, title }: LinkPageInterface) => {
+const HeaderBanner = ({ style, title }: LinkPageInterface) => {
     return (
         <section className="headerBanner" style={style}>
             <LinkPage img={coffeeIcon}>
@@ -20,10 +20,10 @@ const HeaderPages = ({ style, title }: LinkPageInterface) => {
                 <ExitLink />
             </LinkPage>
             <div className="container">
-                <h2 className="headerBanner__title">{title}</h2>
+                <h2 className="headerBanner__title animate__fadeIn">{title}</h2>
             </div>
         </section>
     )
 };
 
-export default HeaderPages; 
+export default HeaderBanner; 

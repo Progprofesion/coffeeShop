@@ -15,7 +15,7 @@ import {
     statePrice,
 } from 'src/store/slices/basketSlice';
 
-interface BasketViewIntreface {
+interface BasketViewInterface {
     id: number
     img: string
     title: string
@@ -27,7 +27,7 @@ interface BasketViewIntreface {
 
 
 
-const BasketView = ({ id, img, title, country, price, quantity, faivorite, ...rest }: BasketViewIntreface) => {
+const BasketView = ({ id, img, title, country, price, quantity, faivorite, ...rest }: BasketViewInterface) => {
     const [showButton, setShowButton] = useState(false)
 
     const nodeRef = useRef(null);

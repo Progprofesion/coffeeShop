@@ -35,7 +35,7 @@ const initialState = cardsAdapter.getInitialState({
     total: localStorage.getItem('total') || 0,
     amount: localStorage.getItem('amount') || 0,
     items: JSON.parse(localStorage.getItem('object')!) || [],
-    stateStartArr: JSON.parse(localStorage.getItem('stateArr')!) || [],
+    stateStartArr: JSON.parse(localStorage.getItem('persStateArr')!) || JSON.parse(localStorage.getItem('stateArr')!) || [],
     quantity: 0,
     itemInCart: 0
 }) as basketSliceInterface

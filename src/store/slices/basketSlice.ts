@@ -4,7 +4,7 @@ export interface basketSliceInterface {
     statePrice: {
         price?: number
     }
-    total: number | string
+    total: string
     amount: number
     items: []
     stateStartArr: []

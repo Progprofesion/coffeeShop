@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 // import { RootState } from 'src/store/index';
 
@@ -16,7 +16,7 @@ interface ExitLinkintrface {
 const ExitLink = ({ styleExit, styleEnter, addClass }: ExitLinkintrface) => {
 
 
-    const [togleExitEnter, setTogleExitEnter] = useState(false);
+    // const [togleExitEnter, setTogleExitEnter] = useState(false);
 
 
     // const userEmail = useSelector((state: RootState) => state.user.email);
@@ -30,7 +30,6 @@ const ExitLink = ({ styleExit, styleEnter, addClass }: ExitLinkintrface) => {
 
     return (
         userEmail ? <div style={styleExit} className={`exitLink fz-14 ${addClass}`} onClick={(e) => {
-            e.preventDefault();
             dispatch(removeUser())
         }}>Exit</div> :
             <Link className={`linkPage__link ${addClass}`} style={styleEnter} to="/login">Enter</Link>

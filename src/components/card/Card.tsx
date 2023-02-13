@@ -1,96 +1,48 @@
-import { useState, useRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import { RootState } from 'src/store/index';
+
+import useCard from "./useCard";
 
 import coffeeBeansIconWhite from 'src/assets/icons/coffeeBeansIconWhite.svg'
 // import coffeeBeansIconBlack from 'src/assets/icons/coffeeBeansIconBlack.svg'
 import starImg from '../../assets/icons/star.svg'
-
-import {
-    statePrice,
-    addProduct,
-    incrQuantity,
-    decrQuantity,
-    removeProduct,
-    activeIncrTotals,
-    activeDecrTotals,
-    addFavorite,
-    removeFaivorite
-} from 'src/store/slices/basketSlice';
 
 import basketIcon from 'src/assets/icons/basketIcon.svg';
 
 import 'animate.css';
 import './card.scss';
 
-interface CardListItemInterface {
+export type Tcard = {
     id: number
     img: string
     title: string
     country: string
     price: number
-    quantity: number
-    faivorite: boolean
+    quantity?: number
+    faivorite?: boolean
+    number?: number
+    basketIncr?: () => void
+    basketDecr?: () => void
+    basketRandomBtn?: (e: React.MouseEvent, stateRandom: number | string) => void
+    star?: () => void
+    value?: string
+    setValue?: (value: string) => void;
 }
 
 
-
-const Card = ({ id, img, title, country, price, quantity, faivorite, ...rest }: CardListItemInterface) => {
-
-    const [value, setValue] = useState('');
-
-    const stateArrRender: CardListItemInterface[] = useSelector((state: RootState) => state.basket.stateStartArr);
+const Card = ({ id, img, title, country, price, quantity, faivorite, ...rest }: Tcard) => {
 
     const inputLabel = useRef<HTMLDivElement>(null);
 
-    const dispatch = useDispatch();
-
-    const addItem = () => {
-        const item = {
-            id,
-            img,
-            title,
-            country,
-            price,
-        }
-        dispatch(addProduct(item))
-    };
-
-    const basketIncr = () => {
-        addItem()
-        dispatch(incrQuantity(price))
-        dispatch(statePrice({ price }))
-        dispatch(activeIncrTotals(price))
-    };
-
-
-    const basketDecr = () => {
-        dispatch(statePrice({ price }))
-        dispatch(decrQuantity(id))
-        dispatch(activeDecrTotals(price))
-        dispatch(removeProduct(id))
-    };
-
-    const basketRandomBtn = (e: React.MouseEvent, stateRandom: number | string) => {
-        e.preventDefault();
-        for (let t = 0; t < stateRandom; t++) {
-            addItem()
-            dispatch(incrQuantity(price))
-            dispatch(statePrice({ price }))
-            dispatch(activeIncrTotals(price))
-            setValue('')
-        }
-    }
-
-    const star = () => {
-        if (!stateArrRender[id].faivorite) {
-            dispatch(addFavorite(id))
-        } else {
-            dispatch(removeFaivorite(id))
-        }
-    };
+    const {
+        basketIncr,
+        basketDecr,
+        basketRandomBtn,
+        star,
+        value,
+        setValue
+    } = useCard(({ id, img, title, country, price }));
 
 
     return (

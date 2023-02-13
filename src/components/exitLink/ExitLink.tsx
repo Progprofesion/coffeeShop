@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 // import { RootState } from 'src/store/index';
 
@@ -14,8 +14,8 @@ interface ExitLinkintrface {
 }
 
 const ExitLink = ({ styleExit, styleEnter, addClass }: ExitLinkintrface) => {
-
-
+    //  ???
+    // eslint-disable-next-line 
     const [exitEnter, setExitEnter] = useState(false);
 
 
@@ -25,7 +25,7 @@ const ExitLink = ({ styleExit, styleEnter, addClass }: ExitLinkintrface) => {
 
 
     return (
-        !exitEnter && userEmail ? <div style={styleExit} className={`exitLink fz-14 ${addClass}`} onClick={() => {
+        userEmail ? <div style={styleExit} className={`exitLink fz-14 ${addClass}`} onClick={() => {
             setExitEnter(true)
             dispatch(removeUser())
         }}>Exit</div> :

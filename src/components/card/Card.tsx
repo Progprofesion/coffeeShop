@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
-import useCard from "./useCard";
+import useCard from "src/hooks/useCard";
 
 import coffeeBeansIconWhite from 'src/assets/icons/coffeeBeansIconWhite.svg'
 // import coffeeBeansIconBlack from 'src/assets/icons/coffeeBeansIconBlack.svg'
@@ -21,13 +21,12 @@ export type Tcard = {
     price: number
     quantity?: number
     faivorite?: boolean
-    number?: number
-    basketIncr?: () => void
-    basketDecr?: () => void
-    basketRandomBtn?: (e: React.MouseEvent, stateRandom: number | string) => void
-    star?: () => void
-    value?: string
-    setValue?: (value: string) => void;
+    // basketIncr?: () => void
+    // basketDecr?: () => void
+    // basketRandomBtn?: (e: React.MouseEvent, stateRandom: number | string) => void
+    // star?: () => void
+    // value?: string
+    // setValue?: (value: string) => void;
 }
 
 
@@ -42,8 +41,7 @@ const Card = ({ id, img, title, country, price, quantity, faivorite, ...rest }: 
         star,
         value,
         setValue
-    } = useCard(({ id, img, title, country, price }));
-
+    } = useCard({ id, img, title, country, price });
 
     return (
         <CSSTransition

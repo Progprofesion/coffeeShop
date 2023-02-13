@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 
 import './basketView.scss';
 
-
 import {
     incrQuantity,
     decrQuantity,

@@ -1,11 +1,11 @@
-import './comments.scss';
+// import './comments.scss';
 
-const Comments = () => {
-    return (
-        <article className="comments">
+// const Comments = () => {
+//     return (
+//         <article className="comments">
 
-        </article>
-    )
-}
+//         </article>
+//     )
+// }
 
-export default Comments
+// export default Comments

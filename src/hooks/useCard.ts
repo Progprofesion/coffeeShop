@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from 'src/store/index';
 
-import { Tcard } from "./Card";
+import { Tcard } from "../components/card/Card";
 
 import {
     statePrice,

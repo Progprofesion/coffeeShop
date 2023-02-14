@@ -1,26 +1,24 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
 import { useRef, useState } from 'react';
-import { useSelector } from 'react-redux';
+
 
 import Button from '../button/Button';
 import Modal from '../modal/Modal';
 import BasketLayout from '../basket/BasketLayout';
 import Footer from '../footer/Footer';
 
+import useSubmith from 'src/hooks/useSubmith';
 import { useMask } from 'src/hooks/useMask';
-import { RootState } from '@/store';
 
-type Tdata = {
+
+export type Tdata = {
     phone: string
     name: string
     email: string | number
 };
 
 const BasketPage = () => {
-
-    const addProduct = useSelector((state: RootState) => state.basket.items);
-    const total = useSelector((state: RootState) => state.basket.total);
 
     const {
         register,
@@ -38,26 +36,8 @@ const BasketPage = () => {
 
     const [modalActive, setModalActive] = useState(false);
 
-    const onSubmit = (data: Tdata) => {
-        alert(`Данные пользователя: 
-        Телефон: ${data.phone}
-        Имя: ${data.name}
-        Почта: ${data.email}`)
-        alert(`ЗАКАЗ: ${normalData}, 
-            Общая сумма: ${JSON.stringify(total).replace(/['"]+/g, '')}$`);
-        reset();
-    };
+    const { onSubmit } = useSubmith(reset)
 
-    const normalize = (arr: []) => {
-        return arr.map(({ title, quantity, price, }) => {
-            const data = `
-            ${title},
-            Количество: ${quantity}, Цена: ${price}$`;
-            return data
-        })
-    };
-
-    const normalData = normalize(addProduct)
 
     return (
         <HelmetProvider>
@@ -111,7 +91,6 @@ const BasketPage = () => {
                                     inputRef.current = e
                                 }}
                                 onChange={(e) => onPhoneinput(e)}
-                                // возможно лишняя анонимная функция
                                 onKeyDown={onPhoneKeyDown}
                                 onPaste={onPhonePaste}
                                 maxLength={18}

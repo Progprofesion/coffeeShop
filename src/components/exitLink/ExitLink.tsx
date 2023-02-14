@@ -19,13 +19,13 @@ const ExitLink = ({ styleExit, styleEnter, addClass }: ExitLinkintrface) => {
     const [exitEnter, setExitEnter] = useState(false);
 
 
-    // const userEmail = useSelector((state: RootState) => state.user.email);
     const dispatch = useDispatch();
     const userEmail = localStorage.getItem('userEmail');
+    console.log(userEmail);
 
 
     return (
-        userEmail ? <div style={styleExit} className={`exitLink fz-14 ${addClass}`} onClick={() => {
+        userEmail !== "" ? <div style={styleExit} className={`exitLink fz-14 ${addClass}`} onClick={() => {
             setExitEnter(true)
             dispatch(removeUser())
         }}>Exit</div> :

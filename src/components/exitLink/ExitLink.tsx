@@ -21,7 +21,6 @@ const ExitLink = ({ styleExit, styleEnter, addClass }: ExitLinkintrface) => {
 
     const dispatch = useDispatch();
     const userEmail = localStorage.getItem('userEmail');
-    console.log(userEmail);
 
 
     return (

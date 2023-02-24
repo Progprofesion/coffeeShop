@@ -11,10 +11,10 @@ const LoginView = () => {
 
     const emailView = localStorage.getItem('userEmail');
     return (
-        emailView !== "" ? <div className="loginView">
+        emailView ? <div className="loginView">
             <div className="loginView__wrapper" >
                 <p className="loginView__wrapper-title" >Вы вошли как:</p>
-                <p className="loginView__wrapper-email" >{emailView!.replace(/['"]+/g, '')}</p>
+                <p className="loginView__wrapper-email" >{emailView.replace(/['"]+/g, '')}</p>
             </div>
         </div> : null
     )

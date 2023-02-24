@@ -175,3 +175,12 @@
         }
     }
 }
+
+// Height Media 
+
+@media (max-height: 450px) {
+    .headerMain {
+        height: 130vh;
+        overflow: hidden;
+    }
+}

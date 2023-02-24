@@ -59,3 +59,10 @@
    }
    
 }
+
+@media (max-height: 450px) {
+    .startPage {
+        height: 100%;
+        overflow: hidden;
+    }
+}

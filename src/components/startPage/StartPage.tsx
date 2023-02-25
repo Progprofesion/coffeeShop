@@ -38,7 +38,6 @@ const StartPage = () => {
                     <img src="https://img.icons8.com/color/48/null/sass-avatar.png" alt={'SASS'} />
                     <img src="https://img.icons8.com/color/48/null/webpack.png" alt={'webPack'} />
                     <img src="https://img.icons8.com/color/48/null/bootstrap.png" alt={'Bootstrap'} />
-                    <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/null/external-gulp-an-open-source-javascript-toolkit-by-fractal-innovations-logo-color-tal-revivo.png" alt='gulp' />
                     <a className='startPage__link' rel="stylesheet" href={"https://github.com/Progprofesion/coffeeShop"}>
                         Link to Github
                     </a>

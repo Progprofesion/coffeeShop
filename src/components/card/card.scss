@@ -1,0 +1,190 @@
+.card {
+    position: relative;
+    width: 235px;
+    height: 337px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    text-align: center;
+    &__wrapperImg {
+    margin: 0 auto 20px;
+    width: 167px;
+    height: 140px;
+    }
+    &__price {
+        padding: 5px 0 0 10px;
+        span {
+            color: darkgreen;
+        }
+    }
+    &__wrapperCountryPrice {
+        display: flex;
+        padding: 5px 25px 10px;
+    }
+    &__country {
+        padding-top: 5px;
+    }
+    &__wrapperBtnAmount {
+        position: absolute;
+        margin-top: 15px;
+        right: 22px;
+        width: 140px;
+        display: flex;
+        justify-content: space-between;
+        transition: 1s;
+        border-radius: 10px;
+        background: aliceblue;
+            :hover {
+                transition: 500ms;
+                opacity: 0.95;
+                color: brown;
+            }
+            :active {
+                transition: 150ms;
+                transform: scale(95%);
+            }
+            :nth-child(1) {
+                border-right-width: 0px;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+
+            }
+            :last-child {
+                border-left-width: 0px;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+
+    }
+    &__btn {
+        width: 50px;
+        height: 33px;      
+        border: unset;
+        background: #24383f2e;
+    }
+    &__amount {
+        width: 25px;
+        height: 25px;
+        margin-top: 3px;
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%);
+        text-align: center;
+        pointer-events: none;
+    }
+    &__form {
+        border: 1px solid burlywood;
+        border-radius: 10px;
+    }
+    &__input {
+        width: 50px;
+        height: 30px;
+        background: aliceblue;
+        border-radius: 10px;
+        border: none;
+        padding: 14px;
+        appearance: textfield;
+        outline: none;
+        &:hover{
+            transition: 500ms;
+            background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%); 
+            text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
+            background-size: 200%;
+            animation: gradientAnimation 5s ease infinite;
+        }
+    }
+    &__wrapperBasketInput {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 25px 5px 25px;
+    }
+    &__randomBtn {
+        margin-left: 10px;
+        width: 40px;
+        height: 30px;      
+        border-radius: 10px;
+        border: none;
+        background: aliceblue;
+        &:hover{
+            transition: 500ms;
+            opacity: 0.95;
+            color: brown;
+        }
+        &:active {
+            transition: 250ms;
+            transform: scale(90%);
+            background: green;
+        }
+    }
+    &__img {
+        margin-top: 15px;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+    &__basket {
+        width: 45px;
+        height: 30px;
+        background: aliceblue;
+        border-radius: 10px;
+        &:hover{
+            transition: 500ms;
+            background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%); 
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
+            background-size: 200%;
+            animation: gradientAnimation 5s ease infinite;
+        }
+        &:active {
+            transform: scale(90%);
+        }
+    }
+    filter: drop-shadow(5px 5px 35px rgba(0, 0, 0, 0.25));
+    &__imgIcon{
+        position: absolute;
+        left: 25px;
+        bottom: 20px;
+    }
+    &__arbitraryNumber {
+        max-width: 20%;
+        height: 30px;
+        padding: 6px;
+    }
+    &__star {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+    }
+    &__starImg {
+        width: 35px;
+        height: 35px;
+        transition: 500ms;
+    }
+}
+
+.activeStarClick {
+    background: gold;
+    border-radius: 20px;
+    transition: 500ms;
+}
+
+
+// Animate
+.cards__item-enter {
+    display: none;
+    opacity: 0;
+  }
+.cards__item-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+.cards__item-exit {
+    opacity: 1;
+  }
+.cards__item-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+  }

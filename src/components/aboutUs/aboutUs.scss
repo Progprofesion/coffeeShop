@@ -1,0 +1,105 @@
+.aboutUs {
+    background: url(../../assets/bg/bgAboutUs.webp) center / cover no-repeat;
+    text-align: center;
+    position: relative;
+    &__wrapper {
+        padding-top: 80px;  
+        background: radial-gradient(circle, rgba(238,174,202,0.8) 0%, rgba(148,187,233,0.8) 100%);
+        background-size: 200%;
+        animation: gradientAnimation 10s ease infinite;
+        padding-bottom: 80px;
+    } 
+    &__descr {
+        opacity: 1;
+        max-width: 590px;
+        margin: 0 auto;
+        padding-bottom: 65px;
+    }
+        &__coffeeFruit {
+            display: flex;
+            position: absolute;
+            width: 84%;
+            font-size: 56px;
+            left: 8%;
+            top: 50%;
+            transform: translateY(-50%);
+            :nth-child(1) {
+                padding-right: 51%;
+            }
+        p {
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            text-transform: uppercase;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
+
+
+
+// @Animation --------------------------------
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+// Media ----------------
+
+@media (max-width: 1350px) {
+    .aboutUs {
+        &__coffeeFruit {
+            width: 95%;
+            left: 3%;
+                :nth-child(1) {
+                    padding-right: 58%;
+                }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .aboutUs {
+        &__coffeeFruit {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .aboutUs {
+        &__descr {
+            width: 500px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .aboutUs {
+        &__title {
+            font-size: 24px;
+        }
+        &__descr {
+            width: 260px;
+        }
+    }
+} 
+
+@media (max-width: 320px) {
+    .aboutUs {
+        &__title {
+            font-size: 24px;
+        }
+        &__descr {
+            width: 260px;
+        }
+    }
+}
+

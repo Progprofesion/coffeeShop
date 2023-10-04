@@ -1,0 +1,156 @@
+.hamburgerBtn {
+    display: none;
+    position: fixed;
+    right: 10px;
+    top: 30px;
+    z-index: 1;
+    transform: translateY(-50%);
+    cursor: pointer;
+    &__wrapper {
+        padding: 20px;
+    }
+    span {
+        display: block ;
+        width: 40px;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(207, 74, 74, 0.8) 0%, rgba(29,203,253,1) 50%, rgba(252,176,69,1) 100%);
+        margin-bottom: 4px;
+        transition: 0.5s all;
+    }
+    &__active {
+        span {
+            margin-bottom: -2px ;
+            &:nth-child(1)  {
+                transform: translateY(3px) rotate(-45deg);
+            }      
+            &:nth-child(2)  {
+                display: none;
+            }               
+            &:nth-child(3) {
+                transform: translateY(3px) rotate(45deg);
+            }   
+        }
+    }
+}
+
+.hamburger {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 10;
+    transition: 0.5s;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        width: 35%;
+        height: 100vh;
+        text-align: center;
+        transition: 0.5s all;    
+        transform: translateX(-191%);
+        border: 1px solid;
+        border-right-color: gold;
+        pointer-events: all;
+    }
+    &__logoCoffeeHouse {
+        position: relative;
+        width: 100%;
+        max-height: 100%;
+        z-index: 10;
+    }
+    &__bg {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity .3s ease-in-out;
+    }
+    &__link {
+        position: relative;
+        z-index: 10;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        color: antiquewhite;
+        cursor: pointer;
+        border-block-end: 1px solid gold;
+        &:hover {
+            transition: 500ms;
+            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,203,253,1) 50%, rgba(252,176,69,1) 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
+            background-size: 200%;
+            animation: gradient 5s ease infinite;
+        }
+    }
+    &__exit {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        color: antiquewhite;
+        cursor: pointer;
+        border-block-end: 1px solid gold;
+        &:hover {
+            transition: 500ms;
+            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,203,253,1) 50%, rgba(252,176,69,1) 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 4px 4px rgba(356, 256, 156, 0.25);  
+            background-size: 200%;
+            animation: gradient 5s ease infinite;
+        }
+    }
+}
+
+.hamburger.activeHamburger {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.hamburger__content.activeHamburger {
+    transform: scale(1);
+}
+
+// Media -------------------
+
+@media (min-width: 991px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .hamburgerBtn {
+        display: block;
+    }
+    .hamburger {
+        display: block;
+        &__content {
+            width: 30%;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .hamburger {
+        &__content {
+            width: 35%;
+        }
+    }
+}
+
+
+//  Height Media
+
+
+@media (max-height: 450px) {
+    .hamburger {
+        &__logoCoffeeHouse {
+            display: none;
+        }
+    }
+}

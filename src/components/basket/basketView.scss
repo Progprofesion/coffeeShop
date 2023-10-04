@@ -1,0 +1,205 @@
+.basketView {
+    &__layout {
+        max-width: 500px;
+        min-height: 500px;
+        margin: 50px auto 0; 
+        text-align: center;
+        border: 1px solid gold;
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.65);
+        filter: drop-shadow(5px 5px 35px rgba(0, 0, 0, 0.25));
+    }
+    &__title {
+        margin-top: 15px;
+        text-align: center;
+    }
+    &__amount {
+        margin-top: 20px;
+    }
+    &__wrapper {
+        position: relative;
+        margin: 50px auto 0px;
+        max-width: 400px;
+        display: flex;
+        justify-content: center;
+        border-block-end: 1px solid antiquewhite;
+        padding-bottom: 10px;
+    } 
+    &__img {
+        margin-right: 25px;
+        width: 100px;
+        height: 100px;
+        border: 1px solid #f7bb7a;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.65);
+        filter: drop-shadow(5px 5px 35px rgba(0, 0, 0, 0.25));
+        border-block-color: coral;
+    }
+    &__country {
+        margin-top: 10px;
+    }   
+    &__result {
+        min-width: 205px;
+        text-align: left;
+        margin-left: 15px;
+    }
+    &__price {
+        margin-top: 10px;
+        span {
+            color: darkgreen;
+        }
+    }
+    &__quantity {
+        position: absolute;
+        width: 25px;
+        height: 28px;
+        top: -20px;
+        left: 115px;
+        border: 1px solid #f7bb7a;
+        border-radius: 50px;
+        color: brown;
+        border-block-color: antiquewhite;
+    }
+    &__btnWrapper {
+        position: absolute;
+        margin-top: -35px;
+        right: 30px;
+        width: 110px;
+        display: flex;
+        justify-content: space-between;
+        &-btn {
+            width: 45px;
+            height: 35px;
+            border-radius: 10px;
+            border: 1px solid rgba(33, 154, 121, 0.657);
+
+        }
+        :hover {
+            transition: 500ms;
+            opacity: 0.95;
+            color: brown;
+        }
+        :active {
+            transition: 250ms;
+            transform: scale(95%);
+        }
+    }
+    &__btnBuy {
+        position: relative;
+        margin: 20px auto 35px;
+    }
+    &__form {
+        text-align: center;
+        &-title {
+            color: brown;
+        }
+        &-modal {
+            display: flex;
+            justify-content: center;
+        }
+        &-item {
+            margin: 25px;
+        }
+        &-input {
+            width: 100%;
+            border: 1px solid;
+            border-block-color: brown;
+            outline: none;
+        }
+    }
+
+} 
+
+// Animate
+
+.basketView__wrapper-enter {
+    opacity: 0.1;
+}
+.basketView__wrapper-enter-active {
+    opacity: 0.1;
+    transition: opacity 500ms ease-in;
+}
+.basketView__wrapper-exit {
+    opacity: 1;
+}
+.basketView__wrapper-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+}
+
+
+// Media ----------------
+
+@media (max-width: 1280px) {
+    .basketView {
+        padding-top: 50px;
+        &__form {
+            &-modal {
+                flex-direction: column;
+            }
+            &-input {
+                width: 65%;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .basketView {
+        padding-top: 50px;
+        &__form {
+            &-input {
+                width: 85%;
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .basketView {
+        padding-bottom: 50px;
+        &__wrapper {
+            max-width: 250px;
+            flex-direction: column;
+            padding-bottom: 5px;
+        }
+        &__subtitle {
+            margin-top: 5px;
+            text-align: center;
+        }
+        &__quantity {
+            left: 165px;
+        }
+        &__img {
+            margin-right: 0;
+        }
+       &__btnWrapper {
+        right: 15px;
+        bottom: 5px;
+        }
+        &__btnBuy {
+            width: 120px;
+            font-size: 14px;
+        }  
+    }
+}
+
+@media (max-width: 320px) {
+    .basketView {
+        padding-top: 50px;
+        &__form {
+            &-item {
+                margin: 15px 0 15px;
+            }
+            &-input {
+                width: 90%;
+            }
+        }
+    }
+}
+
+
+
+
+
+

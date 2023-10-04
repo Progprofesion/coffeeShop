@@ -1,0 +1,73 @@
+.loginView {
+    position: absolute;
+    right: 50px;
+    top: 18px;
+    color: white;
+    &__wrapper {
+        display: flex;
+        border-top: 10px solid  rgba(32, 217, 204, 0.37);
+        border-bottom: 10px solid  rgba(32, 217, 204, 0.37);
+        border-radius: 17px;
+        font-size: 25px;
+        &-title {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            color: gold;
+        }
+        &-email{
+            padding-left: 10px;
+            color: coral;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    }
+    &__input {
+        margin-right: 25px;
+    }
+}
+
+// Media --------------------
+
+
+
+// @media (max-width: 991px) {
+//     .loginView {
+//         right: 20px;
+//         &__wrapper {
+//             font-size: 20px;
+//         }
+//         &__btn {
+//             margin-top: 17px;
+//             width: 125px;
+//             height: 38px;
+//         }
+//     }
+// }
+
+@media (max-width: 991px) {
+    .loginView {
+        left: 20px;
+        right: unset;
+    }
+}
+
+@media (max-width: 575px) {
+    .loginView {
+        &__wrapper {
+            &-title {
+                display: none;
+            }
+            &-email {
+                padding-left: 0;
+            }
+        }
+    }
+ }
+
+@media (max-width: 400px) {
+   .loginView {
+        &__wrapper {
+            font-size: 14px;
+        }
+   }
+}

@@ -1,0 +1,4 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Crawl-delay: 1
+Host: https://www.dmitriygorbunov.ru/main

@@ -1,0 +1,24 @@
+.footer {
+    position: relative;
+    min-height: 150px;
+    background: url('../../assets/bg/bGfooter.webp') center / cover no-repeat;
+    z-index: 1000;
+    &__img {
+        position: absolute;
+        top: 30px;
+        margin-left: -31px;
+    }
+}
+
+.addClassFooter {
+    background: url('../../assets/bg/bgFooterPleasure.webp') center / cover no-repeat;
+}
+
+// Media ----------
+
+@media (max-width: 767px) {
+    .footer {
+        min-height: 100px;
+        padding-bottom: 10px;
+    }
+}

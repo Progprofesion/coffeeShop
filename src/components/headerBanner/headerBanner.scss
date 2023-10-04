@@ -1,0 +1,65 @@
+.headerBanner {
+    min-height: 500px;
+    &__title {
+        padding-top: 150px;
+        text-align: center;
+        font-size: 76px;
+        color: gold;
+        animation: fadeIn 1s;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    &__descr {
+        margin-top: 80px;
+        text-align: center;
+        background-color: rgba(255, 237, 208, 0.89);
+        border-radius: 10px;
+    }
+    &__girl {
+        margin-top: 80px;
+        margin-right: 70px;
+        border-radius: 10px;
+    }
+    &__text {
+        max-width: 345px;
+    }
+    &__line {
+        margin: 60px auto 0;
+        width: 240px;
+        height: 0px;
+        border: 1px solid #d952ff96;
+    }
+};
+
+// Media ---------------------------
+
+@media (max-width: 991px) {
+    .contaier {
+        max-width: 700px;
+    }
+   .headerBanner {
+    &__title {
+        font-size: 52px;
+        padding-top: 250px;
+    }
+   }
+}
+
+@media (max-width: 575px) {
+    .headerBanner {
+        &__title {
+            font-size: 45px;
+        }
+        &__wrapper {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__girl {
+            width: 55%;
+            margin-top: 80px;
+            margin-right: 0;
+        }
+    }
+} 

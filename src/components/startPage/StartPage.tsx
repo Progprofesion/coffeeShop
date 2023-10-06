@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import startAudio from "./startAudio.mp3";
 
 import "./startPage.scss";
 

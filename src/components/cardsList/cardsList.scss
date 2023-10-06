@@ -1,99 +1,102 @@
 .cardsList {
-    background: url(../../assets/bg/bgOurCoffee.webp) center / cover no-repeat;
+  background: url(../../assets/bg/bgOurCoffee.webp) center / cover no-repeat;
+  position: relative;
+  padding: 230px 0 150px;
+  min-height: 950px;
+  &__title {
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 70px;
+    color: gold;
+    font-size: 56px;
+    border-bottom: 1px solid gold;
+    animation: fadeIn 2s;
+  }
+  &__wrapper {
+    max-width: 800px;
+    margin: 60px auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 235px);
+    justify-content: space-between;
+    grid-row-gap: 60px;
+    grid-column-gap: 20px;
+  }
+  &__bg {
     position: relative;
-    padding: 230px 0 150px;
-    min-height: 950px;
-    &__title {
-        position: absolute;
-        text-align: center;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 70px;
-        color: gold;
-        font-size: 56px;
-        border-bottom: 1px solid gold;
-        animation: fadeIn 2s;
+    margin: 0 auto;
+    background: url(../../assets/bg/bgCardsList.webp) center / cover no-repeat;
+    padding: 50px 0 50px 0;
+    max-width: 1000px;
+    min-height: 545px;
+    border-radius: 50px;
+    border: 2px solid aliceblue;
+  }
+  &__videoWrapp {
+    width: 100%;
+    height: 100%;
+    &-video {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+
+      position: absolute;
+      top: 0;
+      left: 0;
     }
-    &__wrapper {
-        max-width: 800px;
-        margin: 60px auto 0;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 235px);
-        justify-content: space-between;
-        grid-row-gap: 60px;
-        grid-column-gap: 20px;
-    }
-    &__bg {
-        position: relative;
-        margin: 0 auto;
-        background: url(../../assets/bg/bgCardsList.webp) center / cover  no-repeat;
-        padding: 50px 0 50px 0;
-        max-width: 1000px;
-        min-height: 545px;
-        border-radius: 50px;
-        border: 2px solid aliceblue;
-    }
-    &__videoWrapp {
-        width: 100%;
-        height: 100%;
-        &-video {
-            object-fit: cover;
-            height: 100%;
-            width: 100%;
-          
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-    }
+  }
 }
 
 // Media ----------------------
 
 @media (max-width: 991px) {
-    .cardsList {
-        &__wrapper {
-            justify-content: space-evenly;
-            padding-bottom: 10px;
-        }
-        &__bg {
-            background-size: cover;
-        }
+  .cardsList {
+    &__title {
+      top: 90px;
     }
+    &__wrapper {
+      justify-content: space-evenly;
+      padding-bottom: 10px;
+    }
+    &__bg {
+      background-size: cover;
+    }
+  }
 }
 
 @media (max-width: 767px) {
-    .cardsList {
-        &__title {
-            top: 90px;
-            font-size: 46px;
-        }
+  .cardsList {
+    &__title {
+      top: 90px;
+      font-size: 46px;
     }
+  }
 }
 
 @media (max-width: 575px) {
-    .cardsList {
-        &__title {
-            font-size: 36px;
-        }
+  .cardsList {
+    &__title {
+      font-size: 36px;
     }
+  }
 }
 
 .addClassCardsTitle {
-    background: none;
-    font-family: Poppins;
+  background: none;
+  font-family: Poppins;
 }
 
 .addClassBg {
-    background: aliceblue;
-    box-shadow: rgba(168, 200, 210, 0.25) 0 10px 25px 10px;
-    font-family: Poppins;
+  background: aliceblue;
+  box-shadow: rgba(168, 200, 210, 0.25) 0 10px 25px 10px;
+  font-family: Poppins;
 }
 
 .addClassCards {
-    min-height: 1308px;
+  min-height: 1308px;
 }
 
 .addClassFaivorite {
-    background: none;
+  background: none;
 }
